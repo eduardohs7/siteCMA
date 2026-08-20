@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Área do Pesquisador - Centro de Memória da Amazônia - UFPA</title>
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+
+   <style>
+      /* Estilos para o menu vermelho, letras brancas e correção do logo */
+      .main-header {
+         background-color: #7A1C20 !important;
+      }
+      .main-header .nav-menu > li > a {
+         color: #ffffff !important;
+         font-weight: 600;
+      }
+      .main-header .nav-menu > li > a:hover,
+      .main-header .nav-menu > li > a.active {
+         color: #f0f0f0 !important;
+         text-decoration: underline;
+      }
+      .main-header .nav-menu .arrow {
+         color: #ffffff !important;
+      }
+      /* Remove o fundo branco ao redor do logo UFPA CMA */
+      .main-header .brand-logo,
+      .main-header .brand-logo span,
+      .main-header .brand-logo .logo-sub,
+      .main-header .brand-logo .logo-main {
+         color: #ffffff !important;
+         background: transparent !important;
+      }
+   </style>
+</head>
+<body>
+
+   <!-- Top Nav Bar -->
+   <header class="main-header">
+      <div class="header-container">
+         <div class="brand-logo">
+            <span class="logo-sub">UFPA</span>
+            <span class="logo-main">CMA</span>
+         </div>
+         <nav class="nav-wrap">
+            <ul class="nav-menu">
+               <li><a href="home.html" class="active">Início</a></li>
+               
+               <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
+               <li class="mega-dropdown">
+                  <a href="acervo.html">Acervo <span class="arrow">▾</span></a>
+                  <div class="mega-menu">
+                     <div class="mega-menu-header">
+                        <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
+                        <span>Navegue pelos fundos, séries e documentos</span>
+                     </div>
+                     
+                     <!-- CONTAINER DINÂMICO DOS MILLER COLUMNS -->
+                     <div class="miller-container" id="millerContainer">
+                        <div class="miller-column" id="col-0">
+                           <div class="miller-header">Fundo / Entidade</div>
+                           <ul class="miller-list" id="list-0"></ul>
+                        </div>
+                     </div>
+
+                     <!-- RODAPÉ DINÂMICO DE DESCRIÇÃO -->
+                     <div class="mega-menu-footer" style="text-align: left; background: #fafafa; padding: 12px 16px; border-top: 1px solid #eee;">
+                        <div id="millerDetails" style="display: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.83rem; color: #555; line-height: 1.4;"></div>
+                     </div>
+                  </div>
+               </li>
+
+               <li><a href="biblioteca.html">Biblioteca & Coleções</a></li>
+               <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" target="_blank">Normativas de Estágio</a></li>
+               <li><a href="galeriaGeral.html">Galeria</a></li>
+               <li><a href="pesquisador.html">Pesquisador</a></li>
+               <li><a href="noticias.html">Notícias</a></li>
+            </ul>
+         </nav>
+      </div>
+      </div>
+   </header>
+
+   <!-- Conteúdo Principal da Área do Pesquisador (largura ajustada para 1100px) -->
+   <section class="pesquisador-section" style="padding: 60px 0; background-color: #f8f9fa;">
+      <div class="container" style="max-width: 1100px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+         
+         <h1 style="font-family: 'Syne', sans-serif; font-size: 2.2rem; color: #7A1C20; margin-bottom: 30px; border-bottom: 3px solid #7A1C20; padding-bottom: 10px;">ÁREA DO PESQUISADOR</h1>
+
+         <div style="margin-bottom: 40px;">
+            <h3 style="font-family: 'Montserrat', sans-serif; color: #1a1a1a; font-size: 1.3rem; margin-bottom: 15px;">Solicitação de documentos digitalizados</h3>
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; color: #4a4a4a; line-height: 1.7; margin-bottom: 15px;">
+               As solicitações de documentos devem ser feitas pelo e-mail <a href="mailto:cma@ufpa.br" style="color: #7A1C20; font-weight: 600;">cma@ufpa.br</a> ou pessoalmente na secretaria do CMA e terá custos ao solicitante que irá variar de acordo com a extensão do documento e o prazo de entrega.
+            </p>
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; color: #4a4a4a; line-height: 1.7;">
+               Os documentos já digitalizados no site do Centro de Memória da Amazônia devem ser consultados no referido endereço, devido ao seu estado de conservação. A consulta presencial aos referidos documentos, caso seja necessário, deverá ser programada com antecedência no e-mail da instituição. Para visualizá-los, entre na aba <strong>Acervo</strong> do site e consulte as abas dos projetos <em>Memórias de Além Mar</em>, <em>Processos Cíveis - CNPQ: Estatutos e Associativismo</em>, <em>Processos Criminais - Biblioteca Britânica</em> e/ou <em>Documentos digitalizados</em>.
+            </p>
+         </div>
+
+         <div>
+            <h3 style="font-family: 'Montserrat', sans-serif; color: #1a1a1a; font-size: 1.3rem; margin-bottom: 15px;">Normas</h3>
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; color: #4a4a4a; line-height: 1.7; margin-bottom: 20px;">
+               Logo abaixo você verá as normas que devem ser seguidas por todos os pesquisadores do Centro de Memória da Amazônia. Leia com atenção e siga à risca todas as normas.
+            </p>
+            
+            <ul style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; line-height: 1.6; padding-left: 20px;">
+               <li style="margin-bottom: 10px;">Não é permitida a entrada de objetos que possam causar danos aos documentos ou comprometer a segurança do acervo, como: canetas, câmeras fotográficas e objetos cortantes;</li>
+               <li style="margin-bottom: 10px;">Não é permitida a entrada na sala de pesquisa com nenhum tipo de bebida e alimento;</li>
+               <li style="margin-bottom: 10px;">É permitido portar lápis ou lapiseira, borracha, lupa, notas de pesquisa, papel para apontamentos, notebook, netbook e tablet;</li>
+               <li style="margin-bottom: 10px;">É permitida a entrada com telefone celular desde que fique no modo silencioso e não origine ou receba ligações na sala de pesquisa;</li>
+               <li style="margin-bottom: 10px;">Não é permitido molhar os dedos com saliva ou qualquer produto para virar as páginas dos documentos;</li>
+               <li style="margin-bottom: 10px;">Os documentos devem ser manuseados com cuidado, mantendo-os totalmente apoiados sobre a mesa;</li>
+               <li style="margin-bottom: 10px;">Não é permitido apoiar os braços e cotovelos sobre os documentos;</li>
+               <li style="margin-bottom: 10px;">Não é permitido escrever nos documentos;</li>
+               <li style="margin-bottom: 10px;">Os documentos do acervo só podem ser consultados na sala de pesquisa;</li>
+               <li style="margin-bottom: 10px;">Após a consulta os documentos devem ser devolvidos como foi entregue pelo atendente, conforme o acondicionamento no acervo.</li>
+            </ul>
+         </div>
+
+      </div>
+   </section>
+
+   <!-- Rodapé Padrão Completo -->
+   <footer class="footer-unipix">
+      <div class="container footer-top-grid">
+         <div class="footer-brand">
+            <img src="images/cmaufpa.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
+            <p class="footer-desc">
+               O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria do Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.
+            </p>
+         </div>
+         
+         <div class="footer-links-col">
+            <h5>VENHA NOS VISITAR</h5>
+            <p>Travessa Rui Barbosa, 491</p>
+            <p>CEP 66053-260 - Reduto</p>
+            <p>Belém, PA - BRASIL</p>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>REDES SOCIAIS</h5>
+            <ul>
+               <li><a href="https://www.facebook.com/centrodememoriaufpa" target="_blank">Facebook</a></li>
+               <li><a href="https://twitter.com/CMA_UFPA" target="_blank">Twitter</a></li>
+               <li><a href="https://www.instagram.com/cmaufpa" target="_blank">Instagram</a></li>
+            </ul>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>CONTATOS</h5>
+            <p><strong>(91) 3201-8981</strong></p>
+            <p><a href="mailto:cma@ufpa.br" class="footer-email">cma@ufpa.br</a></p>
+            <p><a href="mailto:bibcma@ufpa.br" class="footer-email">bibcma@ufpa.br</a></p>
+         </div>
+      </div>
+
+      <div class="footer-sub">
+         <div class="container footer-sub-flex">
+            <p>&copy; 2026 Centro de Memória da Amazônia</p>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Script JS externo -->
+   <script src="script.js"></script>
+</body>
+</html>

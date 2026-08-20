@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Centro de Memória da Amazônia - UFPA</title>
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <!-- Top Nav Bar -->
+   <header class="main-header">
+      <div class="header-container">
+         <div class="brand-logo">
+            <span class="logo-sub">UFPA</span>
+            <span class="logo-main">CMA</span>
+         </div>
+         <nav class="nav-wrap">
+            <ul class="nav-menu">
+               <li><a href="home.html" class="active">Início</a></li>
+               
+               <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
+               <li class="mega-dropdown">
+                  <a href="acervo.html">Acervo <span class="arrow">▾</span></a>
+                  <div class="mega-menu">
+                     <div class="mega-menu-header">
+                        <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
+                        <span>Navegue pelos fundos, séries e documentos</span>
+                     </div>
+                     
+                     <!-- CONTAINER DINÂMICO DOS MILLER COLUMNS -->
+                     <div class="miller-container" id="millerContainer">
+                        <div class="miller-column" id="col-0">
+                           <div class="miller-header">Fundo / Entidade</div>
+                           <ul class="miller-list" id="list-0"></ul>
+                        </div>
+                     </div>
+
+                     <!-- RODAPÉ DINÂMICO DE DESCRIÇÃO -->
+                     <div class="mega-menu-footer" style="text-align: left; background: #fafafa; padding: 12px 16px; border-top: 1px solid #eee;">
+                        <div id="millerDetails" style="display: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.83rem; color: #555; line-height: 1.4;"></div>
+                     </div>
+                  </div>
+               </li>
+
+               <li><a href="biblioteca.html">Biblioteca & Coleções</a></li>
+               <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" target="_blank">Normativas de Estágio</a></li>
+               <li><a href="galeriaGeral.html">Galeria</a></li>
+               <li><a href="pesquisador.html">Pesquisador</a></li>
+               <li><a href="noticias.html">Notícias</a></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
+
+   <!-- Hero Section -->
+   <section class="hero-unipix">
+      <div class="hero-grid container">
+         <div class="hero-text-side">
+            <h1 class="hero-title">CENTRO DE MEMÓRIA DA AMAZÔNIA</h1>
+            <p class="hero-desc">Salvaguarda, restauração e difusão do patrimônio judiciário e histórico da nossa Amazônia.</p>
+            <div class="hero-actions">
+               <a href="acervo.html" class="btn-hero-primary">Explorar Acervo ↗</a>
+               <a href="pesquisador.html" class="btn-hero-secondary">Área do Pesquisador</a>
+            </div>
+         </div>
+         <div class="hero-media-side">
+            <div class="hero-image-wrapper">
+               <img src="logocmaprincipal.png" alt="CMA UFPA Logo" class="hero-main-img">
+               <div class="stamp-badge">
+                  <svg viewBox="0 0 100 100" width="100" height="100">
+                     <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+                     <text class="spin-text" font-size="10.5" fill="#7A1C20" font-weight="bold">
+                        <textPath href="#circlePath">UFPA • CMA • EST. 2007 •</textPath>
+                     </text>
+                  </svg>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Seção de Apresentação do Acervo na Página Principal -->
+   <section class="acervo-intro-section container" style="margin-top: 40px; margin-bottom: 20px;">
+      <div class="acervo-intro-card" style="background: #ffffff; border: 1px solid #e0e0e0; border-left: 5px solid #7A1C20; padding: 25px 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+         <span class="section-tag" style="color: #7A1C20; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 8px;">SOBRE O ACERVO</span>
+         <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 800; color: #1a1a1a; margin-top: 0; margin-bottom: 12px; font-size: 1.3rem;">
+            Fundo do Tribunal de Justiça do Pará
+         </h3>
+         <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.98rem; color: #4a4a4a; line-height: 1.6; margin: 0;">
+            Documentação originária do atual Tribunal de Justiça do Estado do Pará, do final do século XVIII até o ano de 1970, salvaguardada pelo Centro de Memória da Amazônia (CMA) desde o ano de 2007. Consistem em sua maioria de documentos cíveis e criminais, divididos em diferentes procedências. Com o avanço do trabalho dos bolsistas do CMA, os instrumentos de pesquisa desse acervo são periodicamente atualizados.
+         </p>
+      </div>
+   </section>
+
+   <!-- Seção Sobre com Cards Editoriais -->
+   <section class="about-unipix container">
+      <div class="about-grid">
+         <div class="about-left-col">
+            <span class="section-tag">QUEM SOMOS</span>
+            <h2 class="section-heading">PRESERVAÇÃO DO PATRIMÔNIO JUDICIÁRIO</h2>
+            <div class="est-watermark">EST. 2007</div>
+            <p class="about-text-lead">
+               O Centro de Memória da Amazônia é um órgão suplementar subordinado à Reitoria da Universidade Federal do Pará (UFPA), instituído através da Resolução CONSUN Nº 662/2009.
+            </p>
+            <a href="projetos1.html" class="link-arrow">Conheça nossos projetos ↗</a>
+         </div>
+         <div class="about-right-cards">
+            <div class="info-card-editorial">
+               <span class="card-num">01</span>
+               <div class="card-body">
+                  <h4>Localização</h4>
+                  <p>Travessa Rui Barbosa, 491 (Reduto, Belém/PA) — em prédio histórico neoclássico que abrigou a antiga gráfica da Imprensa Universitária.</p>
+               </div>
+            </div>
+            
+            <div class="info-card-editorial">
+               <span class="card-num">02</span>
+               <div class="card-body">
+                  <h4>Origem Institucional</h4>
+                  <p>Criado via Convênio Nº 005/2007 (UFPA e TJE-PA) para salvaguardar processos cíveis e criminais (1785–1970) da justiça paraense.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Banner de Estatísticas -->
+   <section class="stats-banner" >
+      <div class="container stats-grid">
+         <div class="stat-item">
+            <h3>1785</h3>
+            <p>Ano do Documento Mais Antigo</p>
+         </div>
+         <div class="stat-item">
+            <h3>+1970</h3>
+            <p>Período Coberto pelo Acervo Judicial</p>
+         </div>
+         <div class="stat-item">
+            <h3>100%</h3>
+            <p>Acesso Público e Acadêmico</p>
+         </div>
+         <div class="stat-item">
+            <h3>UFPA</h3>
+            <p>Parceria TJE/PA & Reitoria</p>
+         </div>
+      </div>
+   </section>
+
+   <!-- Bloco de Certificados -->
+   <section class="certificates-section container">
+      <div class="cert-card-unipix">
+         <div class="cert-info">
+            <span class="cert-tag">SERVIÇOS AO PESQUISADOR</span>
+            <h2>Certificados para Impressão</h2>
+            <p>Acesse os certificados e fotos de cursos, oficinas e palestras ofertados pelo CMA organizados por evento.</p>
+         </div>
+         <a href="https://ufpabr.sharepoint.com/:f:/g/IgD4UAmb6LKTRaAZvh6mzXpsAVjhcMCvJzLHabCyXHyS7CU?e=07srEr" target="_blank" class="btn-cert">
+            Acessar Documentos ↗
+         </a>
+      </div>
+   </section>
+
+   <!-- Rodapé -->
+   <footer class="footer-unipix">
+      <div class="container footer-top-grid">
+         <div class="footer-brand">
+            <img src="images/cmaufpa.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
+            <p class="footer-desc">
+               O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria do Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.
+            </p>
+         </div>
+         
+         <div class="footer-links-col">
+            <h5>VENHA NOS VISITAR</h5>
+            <p>Travessa Rui Barbosa, 491</p>
+            <p>CEP 66053-260 - Reduto</p>
+            <p>Belém, PA - BRASIL</p>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>REDES SOCIAIS</h5>
+            <ul>
+               <li><a href="https://www.facebook.com/centrodememoriaufpa" target="_blank">Facebook</a></li>
+               <li><a href="https://twitter.com/CMA_UFPA" target="_blank">Twitter</a></li>
+               <li><a href="https://www.instagram.com/cmaufpa" target="_blank">Instagram</a></li>
+            </ul>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>CONTATOS</h5>
+            <p><strong>(91) 3201-8981</strong></p>
+            <p><a href="mailto:cma@ufpa.br" class="footer-email">cma@ufpa.br</a></p>
+            <p><a href="mailto:bibcma@ufpa.br" class="footer-email">bibcma@ufpa.br</a></p>
+            <span class="sub-info">(Biblioteca e Coleções Pessoais)</span>
+         </div>
+      </div>
+
+      <div class="footer-sub">
+         <div class="container footer-sub-flex">
+            <p>&copy; 2026 Centro de Memória da Amazônia</p>
+            <div class="visitor-counter">
+               <span>Número de visitantes</span>
+               <div class="counter-digits">
+                  <span>6</span><span>0</span><span>0</span><span>0</span><span>2</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Importação do arquivo JS externo -->
+   <script src="script.js"></script>
+
+</body>
+</html>

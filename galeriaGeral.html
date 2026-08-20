@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Galeria - Centro de Memória da Amazônia - UFPA</title>
+   
+   <!-- Fontes do Google -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+   
+   <!-- Folha de Estilos Principal -->
+   <link rel="stylesheet" href="style.css">
+   
+   <style>
+      /* Estilos para o menu vermelho, letras brancas e correção do logo */
+      .main-header {
+         background-color: #7A1C20 !important;
+      }
+      .main-header .nav-menu > li > a {
+         color: #ffffff !important;
+         font-weight: 600;
+      }
+      .main-header .nav-menu > li > a:hover,
+      .main-header .nav-menu > li > a.active {
+         color: #f0f0f0 !important;
+         text-decoration: underline;
+      }
+      .main-header .nav-menu .arrow {
+         color: #ffffff !important;
+      }
+      .main-header .brand-logo,
+      .main-header .brand-logo span,
+      .main-header .brand-logo .logo-sub,
+      .main-header .brand-logo .logo-main {
+         color: #ffffff !important;
+         background: transparent !important;
+      }
+      /* Estilos específicos para a Galeria */
+      .galeria-section {
+         padding: 60px 0;
+         background-color: #f8f9fa;
+      }
+      .galeria-content {
+         max-width: 1100px;
+         margin: 0 auto;
+         background: #ffffff;
+         padding: 40px;
+         border-radius: 8px;
+         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+      .galeria-title {
+         font-family: 'Syne', sans-serif;
+         font-size: 2.2rem;
+         color: #7A1C20;
+         margin-bottom: 20px;
+         border-bottom: 3px solid #7A1C20;
+         padding-bottom: 10px;
+         display: inline-block;
+      }
+      .galeria-subtitle {
+         font-family: 'Montserrat', sans-serif;
+         font-size: 1.4rem;
+         color: #1a1a1a;
+         margin-top: 40px;
+         margin-bottom: 20px;
+         border-left: 4px solid #7A1C20;
+         padding-left: 12px;
+      }
+      .galeria-text {
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         color: #4a4a4a;
+         line-height: 1.7;
+         margin-bottom: 20px;
+         text-align: justify;
+      }
+      .galeria-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+         gap: 20px;
+         margin-top: 20px;
+         margin-bottom: 40px;
+      }
+      .galeria-card {
+         background: #fff;
+         border: 1px solid #e0e0e0;
+         border-radius: 6px;
+         overflow: hidden;
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .galeria-card:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      }
+      .galeria-img-container {
+         height: 180px;
+         background-color: #f0f0f0;
+         overflow: hidden;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-bottom: 1px solid #eee;
+      }
+      .galeria-img-container img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      .galeria-card-body {
+         padding: 15px;
+      }
+      .galeria-card-body h4 {
+         font-family: 'Montserrat', sans-serif;
+         font-size: 1rem;
+         color: #1a1a1a;
+         margin: 0;
+      }
+      .sharepoint-box {
+         background: #fdf8f8;
+         border: 1px solid #f2dede;
+         padding: 25px;
+         border-radius: 6px;
+         margin-top: 30px;
+         text-align: center;
+      }
+      .sharepoint-btn {
+         display: inline-block;
+         background-color: #7A1C20;
+         color: #ffffff;
+         padding: 12px 25px;
+         border-radius: 4px;
+         font-family: 'Montserrat', sans-serif;
+         font-weight: 700;
+         text-decoration: none;
+         margin-top: 15px;
+         transition: background-color 0.3s;
+      }
+      .sharepoint-btn:hover {
+         background-color: #5d1519;
+         color: #ffffff;
+      }
+
+/* CABEÇALHO, MENU E CORREÇÃO DO LOGO */
+      .main-header {
+         background-color: #7A1C20 !important;
+      }
+      .main-header .nav-menu > li > a {
+         color: #ffffff !important;
+         font-weight: 600;
+      }
+      .main-header .nav-menu > li > a:hover,
+      .main-header .nav-menu > li > a.active {
+         color: #f0f0f0 !important;
+         text-decoration: underline;
+      }
+      .main-header .nav-menu .arrow {
+         color: #ffffff !important;
+      }
+      /* Remove o fundo branco ao redor do logo UFPA CMA */
+      .main-header .brand-logo,
+      .main-header .brand-logo span,
+      .main-header .brand-logo .logo-sub,
+      .main-header .brand-logo .logo-main {
+         color: #ffffff !important;
+         background: transparent !important;
+      }
+   </style>
+</head>
+<body>
+
+ <!-- Top Nav Bar -->
+   <header class="main-header">
+      <div class="header-container">
+         <div class="brand-logo">
+            <span class="logo-sub">UFPA</span>
+            <span class="logo-main">CMA</span>
+         </div>
+         <nav class="nav-wrap">
+            <ul class="nav-menu">
+               <li><a href="home.html">Início</a></li>
+               
+               <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
+               <li class="mega-dropdown">
+                  <a href="acervo.html">Acervo <span class="arrow">▾</span></a>
+                  <div class="mega-menu">
+                     <div class="mega-menu-header">
+                        <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
+                        <span>Navegue pelos fundos, séries e documentos</span>
+                     </div>
+                     
+                     <!-- CONTAINER DINÂMICO DOS MILLER COLUMNS -->
+                     <div class="miller-container" id="millerContainer">
+                        <div class="miller-column" id="col-0">
+                           <div class="miller-header">Fundo / Entidade</div>
+                           <ul class="miller-list" id="list-0"></ul>
+                        </div>
+                     </div>
+
+                     <!-- RODAPÉ DINÂMICO DE DESCRIÇÃO -->
+                     <div class="mega-menu-footer" style="text-align: left; background: #fafafa; padding: 12px 16px; border-top: 1px solid #eee;">
+                        <div id="millerDetails" style="display: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.83rem; color: #555; line-height: 1.4;"></div>
+                     </div>
+                  </div>
+               </li>
+
+               <li><a href="biblioteca.html">Biblioteca & Coleções</a></li>
+               <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" target="_blank">Normativas de Estágio</a></li>
+               <li><a href="galeriaGeral.html" class="active">Galeria</a></li>
+               <li><a href="pesquisador.html">Pesquisador</a></li>
+               <li><a href="noticias.html">Notícias</a></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
+
+   <!-- Conteúdo Principal da Galeria -->
+   <section class="galeria-section">
+      <div class="galeria-content">
+         <h1 class="galeria-title">GALERIA DE ACERVOS E EXPOSIÇÕES</h1>
+
+         <!-- SEÇÃO 1: RIGHINI -->
+         <h2 class="galeria-subtitle">Panorama do Pará em Doze Vistas - J.L Righini</h2>
+         <p class="galeria-text">
+            Joseph Léon Righini (Turim, Itália ca.1820 - Belém PA 1884). Pintor, desenhista, gravador, fotógrafo, cenógrafo, professor. Estudou na Academia de Belas Artes de Turim. Vem para o Brasil por volta de 1856 e fixa-se no Maranhão e no Pará. Em 1867, é publicada por Conrad Wiegandt a série de litografias <em>Panorama do Pará em Doze Vistas</em>. Desenhadas por J. L. Righini. É autor de um raro álbum de doze gravuras de Belém do Pará. A obra aqui exposta pertence à Biblioteca Guita e José Mindlin, e foi gentilmente cedida ao Centro de Memória. A digitalização das imagens foi feita por Lucia Mindlin Loeb, com apoio da Pró-Reitoria de Administração da UFPA.
+         </p>
+
+         <!-- Grade contendo as 13 imagens -->
+         <div class="galeria-grid">
+            
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="imagensNovosite/capa.jpg" alt="Vista 01"></div>
+               <div class="galeria-card-body"><h4>Capa</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-02.jpg" alt="Vista 02"></div>
+               <div class="galeria-card-body"><h4>Vista 02</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-03.jpg" alt="Vista 03"></div>
+               <div class="galeria-card-body"><h4>Vista 03</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-04.jpg" alt="Vista 04"></div>
+               <div class="galeria-card-body"><h4>Vista 04</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-05.jpg" alt="Vista 05"></div>
+               <div class="galeria-card-body"><h4>Vista 05</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-06.jpg" alt="Vista 06"></div>
+               <div class="galeria-card-body"><h4>Vista 06</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-07.jpg" alt="Vista 07"></div>
+               <div class="galeria-card-body"><h4>Vista 07</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-08.jpg" alt="Vista 08"></div>
+               <div class="galeria-card-body"><h4>Vista 08</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-09.jpg" alt="Vista 09"></div>
+               <div class="galeria-card-body"><h4>Vista 09</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-10.jpg" alt="Vista 10"></div>
+               <div class="galeria-card-body"><h4>Vista 10</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-11.jpg" alt="Vista 11"></div>
+               <div class="galeria-card-body"><h4>Vista 11</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-12.jpg" alt="Vista 12"></div>
+               <div class="galeria-card-body"><h4>Vista 12</h4></div>
+            </div>
+
+            <div class="galeria-card">
+               <div class="galeria-img-container"><img src="images/righini-13.jpg" alt="Vista 13"></div>
+               <div class="galeria-card-body"><h4>Vista 13</h4></div>
+            </div>
+
+         </div>
+
+         <!-- SEÇÃO 2: CLÓVIS MORAES REGO -->
+         <h2 class="galeria-subtitle">Fotografias do Acervo Clóvis Moraes Rego</h2>
+         <p class="galeria-text">
+            As seguintes fotos compõem uma pequena parte das fotografias localizadas no acervo de Clóvis Moraes Rêgo, parte das Coleções Pessoais da Biblioteca do Centro de Memória da Amazônia. As fotos são identificadas como registros de Belém do início do século XX, fotografias de praças e ruas, e do Intendente de Belém Antonio Lemos. O acervo encontra-se disponível para a pesquisa.
+         </p>
+
+         <!-- Caixa de Acesso ao SharePoint -->
+         <div class="sharepoint-box">
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; margin-bottom: 10px; font-weight: 500;">
+               Deseja consultar o acervo completo e as fotografias digitalizadas na íntegra?
+            </p>
+            <a href="https://ufpabr.sharepoint.com/LINK_ACERVO_CLOVIS_REGO" target="_blank" class="sharepoint-btn">
+               Acessar Acervo 
+            </a>
+         </div>
+
+      </div>
+   </section>
+
+   <!-- Rodapé Padrão -->
+   <footer class="footer-unipix">
+      <div class="container footer-top-grid">
+         <div class="footer-brand">
+            <img src="images/cmaufpa.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
+            <p class="footer-desc">
+               O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria do Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.
+            </p>
+         </div>
+         
+         <div class="footer-links-col">
+            <h5>VENHA NOS VISITAR</h5>
+            <p>Travessa Rui Barbosa, 491</p>
+            <p>CEP 66053-260 - Reduto</p>
+            <p>Belém, PA - BRASIL</p>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>REDES SOCIAIS</h5>
+            <ul>
+               <li><a href="https://www.facebook.com/centrodememoriaufpa" target="_blank">Facebook</a></li>
+               <li><a href="https://twitter.com/CMA_UFPA" target="_blank">Twitter</a></li>
+               <li><a href="https://www.instagram.com/cmaufpa" target="_blank">Instagram</a></li>
+            </ul>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>CONTATOS</h5>
+            <p><strong>(91) 3201-8981</strong></p>
+            <p><a href="mailto:cma@ufpa.br" class="footer-email">cma@ufpa.br</a></p>
+            <p><a href="mailto:bibcma@ufpa.br" class="footer-email">bibcma@ufpa.br</a></p>
+         </div>
+      </div>
+
+      <div class="footer-sub">
+         <div class="container footer-sub-flex">
+            <p>&copy; 2026 Centro de Memória da Amazônia</p>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Script JS externo -->
+   <script src="script.js"></script>
+
+</body>
+</html>
