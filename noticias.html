@@ -11,7 +11,9 @@
    <link rel="stylesheet" href="style.css">
 
    <style>
-      /* Estilos para o menu vermelho, letras brancas e correção do logo */
+      /* =========================================
+         NAVBAR E LOGO
+      ========================================= */
       .main-header {
          background-color: #7A1C20 !important;
       }
@@ -35,7 +37,9 @@
          background: transparent !important;
       }  
 
-      /* Estilos específicos para a página de Notícias */
+      /* =========================================
+         ESTILOS GERAIS DA PÁGINA DE NOTÍCIAS
+      ========================================= */
       .noticias-section {
          padding: 60px 0;
          background-color: #f8f9fa;
@@ -57,7 +61,9 @@
          padding-bottom: 10px;
       }
       
-      /* Grid e Cards de Notícias */
+      /* =========================================
+         CARDS DE NOTÍCIAS
+      ========================================= */
       .noticia-card {
          display: flex;
          flex-direction: row;
@@ -65,29 +71,54 @@
          border: 1px solid #e0e0e0;
          border-radius: 8px;
          overflow: hidden;
-         margin-bottom: 40px; /* Aumentei o espaçamento entre as notícias */
+         margin-bottom: 40px; 
          transition: box-shadow 0.3s ease;
       }
       .noticia-card:hover {
          box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       }
+      
+      /* =========================================
+         CARROSSEL DE IMAGENS NAS NOTÍCIAS
+      ========================================= */
       .noticia-img-container {
          flex: 0 0 350px;
          background-color: #f0f0f0;
-         overflow: hidden;
          display: flex;
-         align-items: center;
-         justify-content: center;
+         
+         /* Ativa a rolagem horizontal */
+         overflow-x: auto; 
+         
+         /* Faz a imagem "travar" magnéticamente no lugar certo ao rolar */
+         scroll-snap-type: x mandatory; 
+         
+         /* Esconde a barra de rolagem feia para ficar mais limpo */
+         scrollbar-width: none; 
+         -ms-overflow-style: none; 
       }
+      
+      /* Esconder barra de rolagem no Chrome/Safari */
+      .noticia-img-container::-webkit-scrollbar {
+         display: none; 
+      }
+      
       .noticia-img-container img {
-         width: 100%;
+         /* Obriga cada imagem a ter 100% da largura do espaço */
+         flex: 0 0 100%; 
          height: 100%;
          object-fit: cover;
          min-height: 240px;
+         
+         /* Ponto de atração do imã para a foto parar certinha no meio */
+         scroll-snap-align: center; 
       }
+
+      /* =========================================
+         TEXTOS DA NOTÍCIA
+      ========================================= */
       .noticia-body {
          flex: 1;
-         padding: 30px; /* Mais respiro para textos mais longos */
+         padding: 30px;
          display: flex;
          flex-direction: column;
          justify-content: center;
@@ -119,14 +150,16 @@
          margin-bottom: 0;
       }
 
-      /* Responsivo para telas menores (empilha a foto e o texto) */
+      /* =========================================
+         RESPONSIVO (CELULARES E TABLETS)
+      ========================================= */
       @media (max-width: 768px) {
          .noticia-card {
             flex-direction: column;
          }
          .noticia-img-container {
             flex: none;
-            height: auto; /* Deixa a altura se ajustar no celular */
+            height: 250px; 
          }
       }
    </style>
@@ -178,11 +211,18 @@
       <div class="noticias-content">
          <h1 class="noticias-title">NOTÍCIAS E ACONTECIMENTOS</h1>
 
-         <!-- NOTÍCIA 01: Assistência Judiciária (Conteúdo Integrado) -->
+         <!-- NOTÍCIA 01: Assistência Judiciária (Com Carrossel de Múltiplas Imagens) -->
          <div class="noticia-card">
+            
+            <!-- CARROSSEL: Coloque quantas fotos quiser aqui! O css arruma para o lado automaticamente -->
             <div class="noticia-img-container">
-               <img src="post22-04-livros/1.jpg" alt="Acervo de Assistência Judiciária">
+               <img src="post22-04-livros/1.jpg" alt="Foto 1 do acervo">
+               <img src="post22-04-livros/2.jpg" alt="Foto 2 do acervo">
+               <img src="post22-04-livros/3.jpg" alt="Foto 3 do acervo">
+               <img src="post22-04-livros/4.jpg" alt="Foto 4 do acervo">
+               <img src="post22-04-livros/5.jpg" alt="Foto 5 do acervo">
             </div>
+            
             <div class="noticia-body">
                <span class="noticia-data">Novidade no Acervo</span>
                <h3 class="noticia-card-title">Documentação Cível "Assistência Judiciária" Disponível para Pesquisa</h3>
@@ -191,7 +231,7 @@
                   Já está disponível para a pesquisa, no Centro de Memória da Amazônia (CMA), a documentação da procedência cível “Assistência Judiciária”. São cerca de 1.730 documentos, produzidos entre 1935 e 1970, oriundos dos cartórios dos escrivães da Assistência Judiciária do Estado do Pará.
                </p>
                <p class="noticia-text">
-                  A assistência judiciária gratuita aos necessitados foi estabelecida com base na Constituição brasileira de 1934, em seu artigo 113, número 32. Pessoas pobres no sentido da lei são os principais sujeitos presentes na documentação, que em grande parte, abarca os Direitos de Família e Sucessões.
+                  A assistência judiciária gratuita aos necessitados foi estabelecida com base na Constituição brasileira de 1934, em seu artigo 113, número 32. Pessoas pobres no sentido da lei são os principais sujeitos presentes na documentação, que em grande parte, abarca os Direitos de Família e Sucessões. <em>(Deslize as fotos ao lado para ver mais imagens deste acervo).</em>
                </p>
                <p class="noticia-text">
                   Para consultar o guia e os catálogos da procedência, faça o percurso em nosso site: Acervo > Fundo do Tribunal de Justiça do Pará > Série - Cível, e acesse as seções de guias e catálogos cíveis. A pesquisa aos documentos funciona presencialmente, das 09h:00 às 16h:30.
@@ -199,7 +239,19 @@
             </div>
          </div>
 
-         <!-- Você pode colar os outros cartões de notícia aqui embaixo seguindo o mesmo modelo acima -->
+         <!-- NOTÍCIA 02: Exemplo com apenas 1 imagem (O layout funciona igual!) -->
+         <div class="noticia-card">
+            <div class="noticia-img-container">
+               <img src="foto1_2008.jpeg" alt="Foto única da notícia">
+            </div>
+            <div class="noticia-body">
+               <span class="noticia-data">20 de Agosto de 2026</span>
+               <h3 class="noticia-card-title">Visita de Alunos e Pesquisadores ao Centro</h3>
+               <p class="noticia-text">
+                  Escreva aqui o relato correspondente a esta notícia. Para adicionar novas publicações, basta continuar copiando todo o bloco "noticia-card" e alterando as fotos e os textos conforme os eventos forem acontecendo.
+               </p>
+            </div>
+         </div>
 
       </div>
    </section>
@@ -249,61 +301,3 @@
    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-/* =========================================
-         CARROSSEL DE IMAGENS NAS NOTÍCIAS
-      ========================================= */
-      .noticia-img-container {
-         flex: 0 0 350px;
-         background-color: #f0f0f0;
-         display: flex;
-         
-         /* Ativa a rolagem horizontal */
-         overflow-x: auto; 
-         
-         /* Faz a imagem "travar" magnéticamente no lugar certo ao rolar */
-         scroll-snap-type: x mandatory; 
-         
-         /* Esconde a barra de rolagem feia para ficar mais limpo */
-         scrollbar-width: none; 
-         -ms-overflow-style: none; 
-      }
-      
-      /* Código extra para esconder a barra de rolagem no Chrome/Safari */
-      .noticia-img-container::-webkit-scrollbar {
-         display: none; 
-      }
-      
-      .noticia-img-container img {
-         /* Obriga cada imagem a ter 100% da largura do espaço, não importando quantas tenham */
-         flex: 0 0 100%; 
-         height: 100%;
-         object-fit: cover;
-         
-         /* Ponto de atração do imã para a foto parar certinha no meio */
-         scroll-snap-align: center; 
-      }
-
-<!-- NOTÍCIA COM VÁRIAS FOTOS -->
-         <div class="noticia-card">
-            
-            <!-- Basta colocar quantas imagens quiser aqui dentro! -->
-            <div class="noticia-img-container">
-               <img src="post22-04-livros/1.jpg" alt="Foto 1 do evento">
-               <img src="post22-04-livros/2.jpg" alt="Foto 2 do evento">
-               <img src="post22-04-livros/3.jpg" alt="Foto 3 do evento">
-               <img src="post22-04-livros/4.jpg" alt="Foto 4 do evento">
-            </div>
-            
-            <div class="noticia-body">
-               <span class="noticia-data">07 de Agosto de 2026</span>
-               <h3 class="noticia-card-title">Título da Notícia</h3>
-               <p class="noticia-text">
-                  Texto da sua notícia aqui. No celular, o visitante só precisa passar o dedo para o lado em cima da foto para ver as outras. No computador, basta usar o touch do mouse!
-               </p>
-            </div>
-         </div>
