@@ -1,1 +1,971 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="pt-br"> <!--<![endif]-->
+<head>
 
+   <!--- Basic Page Needs
+   ================================================== -->
+   <!-- Favicons
+   ================================================== -->
+   <link href="favicon.png" type="image/png" rel="icon">
+   <link href="favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
+
+   <meta charset="utf-8">
+   <title>Centro de Memória da Amazônia</title>
+   <meta name="description" content="Site do Centro de Memória da Amazônia-UFPA. Centro de pesquisa e restauração de Obras da Nossa Amazônia">  
+   <meta name="author" content="Edinaldo Luis dos Santos">
+   <meta name="keywords" content="Centro de Memória da Amazônia, centro de memoria da amazonia, memoria da amazonia, memória da amazônia, centro, memoria, memória, amazonia, amazônia, CMA, belém, belem, Pará, Para, PA, Brasil, história, Século XIX">
+   <meta name="robots" content="index, follow">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/animate.css">
+   <link rel="stylesheet" href="css/prettyPhoto.css">
+   <link rel="stylesheet" href="css/colorbutton.css">
+   <!-- Script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+
+</head>
+
+<body>
+   <!-- Header
+   ================================================== -->
+   <header>
+
+      <nav id="nav-wrap">         
+         
+         <a class="mobile-btn" href="#nav-wrap" title="Mostrar menu">Show Menu</a>
+         <a class="mobile-btn" href="#" title="Esconder menu">Hide Menu</a>         
+
+         <ul id="nav" class="nav">
+             <li><a href="index.php" title="Página inicial do site.">Home</a></li>
+            <li><a href="acervo.html" title="Página de acervos do site.">Acervo</a></li>
+            <li><a href="projetos1.html" title="Demais projetos do Centro de Memória da Amazônia">Projetos</a></li> 
+            <li><a href="galeriaGeral.html" title="imagens do acervo">Galeria</a></li>
+       <!-- <li><a href="projetos.html" title="Demais projetos do Centro de Memória da Amazônia">Projetos</a></li> -->
+            <li><a href="pesquisador.php" title="Página Área Pesquisador">Pesquisador</a></li>
+            <!--<li><a href="agenda.html" title="Página de Fotos">Agenda de eventos</a></li>-->
+			<!--<li><a href="mapoteca.html" title="Mapoteca.">Mapoteca Virtual</a></li>-->
+            <li><a href="noticias.html" title="Notícias">Notícias</a></li>
+            <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" title="Normativas de Estágio">Normativas de Estágio</a></li>
+            <li><a href="bibliografia.html" title="bibliografia">Bibliografia</a></li>
+
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <ul class="header-social">
+          <!-- <li><a href="#" title="Blog CMA" target="_blank" style="font:14px'montserrat', sans-serif;text-transform: uppercase;">Blog</a></li> -->
+         <li><a href="https://www.facebook.com/amazonia.centrodememoria" target="_blank"><i class="fa fa-facebook" title="CMA no Facebook"></i></a></li>
+         <li><a href="https://twitter.com/CMA_UFPA" target="_blank"><i class="fa fa-twitter" title="CMA no Twitter"></i></a></li>
+      </ul>
+
+   </header> <!-- Header End -->
+
+
+   <!-- Homepage Hero
+   ================================================== -->
+   <section id="hero">
+   <br>
+   
+	   <div class="row">
+
+		   <div class="twelve columns">
+
+            <div class="hero-image">
+               <img src="images/cmaufpa.png" alt="Imagem do logo do Centro de Memória da Amazônia" id="centro"/>
+            </div>
+			
+                
+		   </div>
+
+	   </div>
+       <br/>
+	               
+       </section> <!-- Homepage Hero end -->
+
+
+   <!-- Features Section
+   ================================================== -->
+
+<section id='features'>
+
+     <div class="row feature design">
+	 <center><h2>Notícias</h2></center>
+	 <br>
+      <div class="buttonA">  
+            
+               <div>       
+               
+               <br />
+               <p>
+            <h2></h2>
+            <a href="noticia32.html"><img style="height: 400px;" src="post22-04-livros/1.jpg"></a>
+            </p>
+            
+            </div>
+         
+      
+         <div>
+               <h3><a class="button"  href="noticia30.html" title="Noticia 30"><b>Saiba mais</b></a></h3>
+               <br />
+               </p>
+            </div>
+      </div>
+     <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="noticia31.html"><img style="height: 400px;" src="post_livros/1.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia31.html" title="Noticia 31"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="noticia30.html"><img style="height: 400px;" src="post do funcionamento abril.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia30.html" title="Noticia 30"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="noticia29.html"><img style="height: 400px;" src="defesa 26-03.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia29.html" title="Noticia 29"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+     <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="noticia28.html"><img style="height: 400px;" src="visita_dos_alunos_ifpa 25-03.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia28.html" title="Noticia 28"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="noticia27.html"><img style="height: 400px;" src="semana_do_calouro 2026 capa.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia27.html" title="Noticia 27"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+  
+     <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="noticia26.html"><img style="height: 400px;" src="Cópia de MODELO DE POST PRO INSTA 26.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia26.html" title="Noticia 26"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="noticia25.html"><img style ="width: auto; height: 400px;padding-left:40px; margin-bottom: 1px;" src="foto 1.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia25.html" title="Noticia 25"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+  
+    <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="funcionamento carnaval.png"><img src="funcionamento carnaval.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia24.html" title="Noticia 24"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="Cópia de MODELO DE POST PRO INSTA.png"><img src="Cópia de MODELO DE POST PRO INSTA.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia23.html" title="Noticia 23"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    
+    <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="post-funcionamento-23-1.png"><img src="post-funcionamento-23-1.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia22.html" title="Noticia 22"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="post novidades site.png"><img src="post novidades site.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia21.html" title="Noticia 21"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="post oficinas-emaus.png"><img src="post oficinas-emaus.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia20.html" title="Noticia 18"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="post-funcionamento-cma-17-12.png"><img src="post-funcionamento-cma-17-12.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia19.html" title="Noticia 19"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+        <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="posttt.png"><img src="posttt.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia18.html" title="Noticia 18"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="noticia17.png"><img src="noticia17.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia17.html" title="Noticia 17"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="cma novembro.png"><img src="cma novembro.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia16.html" title="Noticia 16"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+      <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="1.png"><img src="1.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticias15.html" title="Noticia 15"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+      <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="foto1_1709.png"><img src="foto1_1709.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia14.html" title="Noticia 14"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="foto1_1209.png"><img src="foto1_1209.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia13.html" title="Noticia 13"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="foto1_0909.png"><img src="foto1_0909.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia12.html" title="Noticia 12"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+    <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="foto1_0509.png"><img src="foto1_0509.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia11.html" title="Noticia 11"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+	 <div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="foto1_2008.jpeg"><img src="foto1_2008.jpeg"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia10.html" title="Noticia 10"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+	<div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="foto1_2706.png"><img src="foto1_2706.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia9.html" title="Noticia 9"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+	</div>
+		
+
+	<div class="buttonA">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="foto5_0606.png"><img src="foto5_0606.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia8.html" title="Noticia 8"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+		
+
+     </div>
+	 <div class="buttonB">  
+			
+            <div>       
+            
+            <br />
+            <p>
+			<h2></h2>
+			<a href="errata.png"><img src="errata.png"></a>
+			</p>
+			
+         </div>
+      
+	  
+		 <div>
+            <h3><a class="button"  href="noticia7.html" title="Noticia 7"><b>Saiba mais</b></a></h3>
+            <br />
+            </p>
+         </div>
+		
+
+     </div>
+
+      <hr />
+      <h3><a class="button" href="noticias.html" title="Voltar à página Noticias">Voltar à Página Inicial de Notícias</a></h3>
+
+   </section>
+   
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">         
+
+         <div class="six columns info">
+
+            <div class="footer-logo">
+                  <img src="images/slide/cma.jpg" alt="Imagem do logo do Centro de Memória da Amazônia."/>
+            </div>
+
+            <p>O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria do Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.</p>
+
+         </div>
+
+         <div class="six columns right-cols">
+
+            <div class="row">
+
+               <div class="columns">
+                  <h3 class="address">Venha nos Visitar</h3>
+                 
+                  Travessa Rui Barbosa, 491<br/>
+                  66053-260 - Reduto <br/>
+                  Belém, PA - BRASIL<br/>
+                  
+               </div>
+
+               <div class="columns">
+                  <h3 class="social">Redes Sociais</h3>
+                  <ul>
+                     <li><a href="https://www.facebook.com/amazonia.centrodememoria" target="_blank" title="CMA no Facebook">Facebook</a></li>
+                     <li><a href="https://twitter.com/CMA_UFPA" target="_blank" title="CMA no Twitter">Twitter</a></li>
+                    <!-- <li><a href="#" title="Blog CMA">Blog do CMA</a></li>-->
+                  </ul>
+               </div>
+
+               <div class="columns last">
+                  <h3 class="contact">Contatos</h3>
+                  <ul>
+                    <li>(91) 3201-8981</li>
+                    
+                    <li><a href="">cma@ufpa.br</a></li>
+                  </ul>
+               </div>
+
+            </div> <!-- Nested Row End -->
+
+         </div>
+
+         <p class="copyright">&copy; 2018 Centro de Memória da Amazônia</p>
+         <br/>
+         <div id="go-top">
+            <a class="smoothscroll" title="Voltar para Topo" href="#hero_acervos-doc"><i class="icon-up-open"></i></a>
+         </div>
+
+      </div> <!-- Row End -->
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/jquery.fitvids.js"></script>
+   <script src="js/imagelightbox.js"></script>
+   <script src="js/jquery.prettyPhoto.js"></script>   
+   <script src="js/main.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+exemplo noticia
+
+ 
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="pt-br"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <!-- Favicons
+   ================================================== -->
+   <link href="favicon.png" type="image/png" rel="icon">
+   <link href="favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
+
+   <meta charset="utf-8">
+   <title>Centro de Memória da Amazônia</title>
+   <meta name="description" content="Site do Centro de Memória da Amazônia-UFPA. Centro de pesquisa e restauração de Obras da Nossa Amazônia">  
+   <meta name="author" content="Thiago Gonçalves">
+   <meta name="keywords" content="Centro de Memória da Amazônia, centro de memoria da amazonia, memoria da amazonia, memória da amazônia, centro, memoria, memória, amazonia, amazônia, CMA, belém, belem, Pará, Para, PA, Brasil, história, Século XIX">
+   <meta name="robots" content="index, follow">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout1.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/animate.css">
+   <link rel="stylesheet" href="css/prettyPhoto.css">
+   <link rel="stylesheet" href="css/eventos.css">
+	
+   <!-- Script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+
+</head>
+
+<body>
+   <!-- Header
+   ================================================== -->
+   <header>
+
+      <nav id="nav-wrap">         
+         
+         <a class="mobile-btn" href="#nav-wrap" title="Mostrar menu">Show Menu</a>
+         <a class="mobile-btn" href="#" title="Esconder menu">Hide Menu</a>         
+
+         <ul id="nav" class="nav">
+           <li><a href="index.php" title="Página inicial do site.">Home</a></li>
+            <li><a href="acervo.html" title="Página de acervos do site.">Acervo</a></li>
+            <li><a href="projetos1.html" title="Demais projetos do Centro de Memória da Amazônia">Projetos</a></li> 
+            <li><a href="galeriarighini.html" title="imagens do acervo">Galeria</a></li>
+            <li><a href="pesquisador.php" title="Página Área Pesquisador">Pesquisador</a></li>
+            <li><a href="noticias.html" title="Notícias">Notícias</a></li>
+            <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" title="Normativas de Estágio">Normativas de Estágio</a></li>
+            <li><a href="bibliografia.html" title="Bibliografia">Bibliografia</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <ul class="header-social">
+          <!--<li><a href="#" title="Blog CMA" target="_blank" style="font:14px'montserrat', sans-serif;text-transform: uppercase;">Blog</a></li>-->
+         <li><a href="https://www.facebook.com/amazonia.centrodememoria" target="_blank"><i class="fa fa-facebook" title="CMA no Facebook"></i></a></li>
+         <li><a href="https://twitter.com/CMA_UFPA" target="_blank"><i class="fa fa-twitter" title="CMA no Twitter"></i></a></li>
+      </ul>
+
+   </header> <!-- Header End -->
+
+<!-- Homepage Hero
+   ================================================== -->
+  <section id="hero">
+   <br>
+   
+	   <div class="row">
+
+		   <div class="twelve columns">
+
+            <div class="hero-image">
+               <img src="images/cmaufpa.png" alt="Imagem do logo do Centro de Memória da Amazônia" id="centro"/>
+            </div>
+			
+                
+		   </div>
+
+	   </div>
+       <br/>
+	               
+       </section> <!-- Homepage Hero end -->
+
+<section id="testimonials">
+
+          <div class="row content">
+
+              <span><i class="chevron-left fa fa-chevron-left"></i></span>
+
+             <div class="text-container">
+
+                <div class="twelve columns">
+
+                   <h2></h2>
+
+                </div>
+
+                <div class="twelve columns flex-container">
+
+                   <div class="flexslider">
+
+                      <ul class="slides">
+
+						 
+                        <li>
+                           <figure><img src="post22-04-livros/1.jpg" alt=""></figure>
+                         </li> 
+                         
+                        <li>
+                           <figure><img src="post22-04-livros/2.jpg" alt=""></figure>
+                         </li>
+                        <li>
+                           <figure><img src="post22-04-livros/3.jpg" alt=""></figure>
+                         </li>
+                        <li>
+                           <figure><img src="post22-04-livros/4.jpg" alt=""></figure>
+                         </li>
+                        <li>
+                           <figure><img src="post22-04-livros/5.jpg" alt=""></figure>
+                         </li>
+                      </ul>
+
+                   </div> <!-- div.flexslider ends -->
+
+                </div> <!-- div.flex-container ends -->
+
+             </div>  <!-- text-container ends -->
+
+              <span>
+                <i class="chevron-right fa fa-chevron-right"></i>
+              </span>
+              <span>
+                <i class="chevron-left fa fa-chevron-keft"></i>
+              </span>
+              
+
+          </div> <!-- row ends -->
+
+        </section> <!-- Testimonials Section End-->
+  <section id='features'>
+
+       
+                  
+
+         <div class="row section-head">
+		 
+		 
+		 
+		 
+
+
+
+<div>
+                 
+                  <font size="4">
+                  <title>text-indent</title>
+                  <style type="text/css">
+                 h3{text-align: center;}
+                  </style>    
+                  <p>á está disponível para a pesquisa, no Centro de Memória da Amazônia (CMA), a documentação da procedência cível “Assistência Judiciária”.</p>
+
+<p>São cerca de 1730 documentos, produzidos entre 1935 e 1970, oriundos dos cartórios dos escrivães da Assistência Judiciária do Estado do Pará.</p>
+
+<p>A assistência judiciária gratuita aos necessitados foi estabelecida com base na Constituição brasileira de 1934, em seu artigo 113, número 32. Pessoas pobres no sentido da lei são os principais sujeitos presentes na documentação, que em grande parte, abarca os Direitos de Família e Sucessões.</p>
+
+<p>Para consultar o guia e os catálogos da procedência, consulte o site do CMA (cma.ufpa.br), e faça o percurso: Acervo>Fundo do Tribunal de Justiça do Pará>Série - Cível, e acesse as seções de guias e catálogos cíveis. A pesquisa aos documentos funciona presencialmente, das 09h:00 às 16h:30.</p>
+
+                </font>
+               </div>
+         </div>	
+       
+   
+
+   </section> <!-- Homepage Hero end -->
+
+
+<br/> 
+<br/>             
+<br/> 
+<br/> 
+<br/>             
+<br/> 
+
+   
+<hr />
+           <h3 class="h3_agenda"><a class="button" href="index.php" title="Voltar à página Inicial">Voltar à página Inicial</a></h3>	   
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">         
+
+         <div class="six columns info">
+
+            <div class="footer-logo">
+                  <img src="images/cma.svg" alt="Imagem do logo do centro de memória da Amazônia."/>
+            </div>
+
+            <p>O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria com o Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.</p>
+
+         </div>
+
+         <div class="six columns right-cols">
+
+            <div class="row">
+
+               <div class="columns">
+                  <h3 class="address">Venha nos Visitar</h3>
+                  
+                  Travessa Rui Barbosa, 491<br/>
+                  66053-260 - Reduto <br/>
+                  Belém, PA - BRASIL<br/>
+                  
+               </div>
+
+               <div class="columns">
+                  <h3 class="social">Redes Sociais</h3>
+                  <ul>
+                     <li><a href="https://www.facebook.com/amazonia.centrodememoria" target="_blank" title="CMA no Facebook">Facebook</a></li>
+                     <li><a href="https://twitter.com/CMA_UFPA" target="_blank" title="CMA no Twitter">Twitter</a></li>
+                     <!--<li><a href="#" title="Blog CMA">Blog do CMA</a></li>-->
+                  </ul>
+               </div>
+
+               <div class="columns last">
+                  <h3 class="contact">Contatos</h3>
+                  <ul>
+                    <li>(91) 3201-8981</li>
+                    
+                    <li><a href="">cma@ufpa.br</a></li>
+                  </ul>
+               </div>
+
+            </div> <!-- Nested Row End -->
+
+         </div>
+
+         <p class="copyright">&copy; 2014 Centro de Memória da Amazônia | Template by: <a href="http://www.styleshout.com/">Styleshout</a></p>
+         <br />
+
+         
+      </div> <!-- Row End -->
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/jquery.fitvids.js"></script>
+   <script src="js/imagelightbox.js"></script>
+   <script src="js/jquery.prettyPhoto.js"></script>   
+   <script src="js/main.js"></script>
+
+</body>
+
+</html> 
