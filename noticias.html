@@ -249,3 +249,42 @@
    <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+/* =========================================
+         CARROSSEL DE IMAGENS NAS NOTÍCIAS
+      ========================================= */
+      .noticia-img-container {
+         flex: 0 0 350px;
+         background-color: #f0f0f0;
+         display: flex;
+         
+         /* Ativa a rolagem horizontal */
+         overflow-x: auto; 
+         
+         /* Faz a imagem "travar" magnéticamente no lugar certo ao rolar */
+         scroll-snap-type: x mandatory; 
+         
+         /* Esconde a barra de rolagem feia para ficar mais limpo */
+         scrollbar-width: none; 
+         -ms-overflow-style: none; 
+      }
+      
+      /* Código extra para esconder a barra de rolagem no Chrome/Safari */
+      .noticia-img-container::-webkit-scrollbar {
+         display: none; 
+      }
+      
+      .noticia-img-container img {
+         /* Obriga cada imagem a ter 100% da largura do espaço, não importando quantas tenham */
+         flex: 0 0 100%; 
+         height: 100%;
+         object-fit: cover;
+         
+         /* Ponto de atração do imã para a foto parar certinha no meio */
+         scroll-snap-align: center; 
+      }
+
