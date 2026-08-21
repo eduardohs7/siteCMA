@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Biblioteca e Coleções - Centro de Memória da Amazônia - UFPA</title>
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Playfair+Display:wght@900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+
+   <style>
+      /* =========================================
+         NAVBAR E LOGO
+      ========================================= */
+      .main-header {
+         background-color: #7A1C20 !important;
+      }
+      .main-header .nav-menu > li > a {
+         color: #ffffff !important;
+         font-weight: 600;
+      }
+      .main-header .nav-menu > li > a:hover,
+      .main-header .nav-menu > li > a.active {
+         color: #f0f0f0 !important;
+         text-decoration: underline;
+      }
+      .main-header .nav-menu .arrow {
+         color: #ffffff !important;
+      }
+      .main-header .brand-logo,
+      .main-header .brand-logo span,
+      .main-header .brand-logo .logo-sub,
+      .main-header .brand-logo .logo-main {
+         color: #ffffff !important;
+         background: transparent !important;
+      }
+
+      /* =========================================
+         ESTILOS DA BIBLIOTECA
+      ========================================= */
+      .page-title {
+         font-family: 'Syne', sans-serif;
+         font-size: 2.2rem;
+         color: #7A1C20;
+         margin-bottom: 30px;
+         border-bottom: 3px solid #7A1C20;
+         padding-bottom: 10px;
+      }
+
+      /* Caixa de Destaque - Acervo Geral */
+      .acervo-geral-box {
+         background-color: #fdf8f8;
+         border: 1px solid #f2dede;
+         border-left: 5px solid #7A1C20;
+         padding: 30px;
+         border-radius: 8px;
+         margin-bottom: 40px;
+      }
+      .acervo-geral-box h3 {
+         font-family: 'Montserrat', sans-serif;
+         color: #1a1a1a;
+         font-size: 1.4rem;
+         margin-bottom: 15px;
+      }
+      .acervo-geral-box p {
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         color: #4a4a4a;
+         line-height: 1.7;
+         margin-bottom: 15px;
+         text-align: justify;
+      }
+      .acervo-geral-box a {
+         color: #7A1C20;
+         font-weight: 700;
+         text-decoration: none;
+      }
+      .acervo-geral-box a:hover {
+         text-decoration: underline;
+      }
+
+      /* Intro das Coleções Pessoais */
+      .colecoes-intro {
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         color: #4a4a4a;
+         line-height: 1.7;
+         text-align: justify;
+         margin-bottom: 30px;
+      }
+
+      /* Cartões (Cards) das Coleções */
+      .colecoes-grid {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+      }
+      .colecao-card {
+         background: #ffffff;
+         border: 1px solid #e0e0e0;
+         border-left: 4px solid #7A1C20;
+         border-radius: 8px;
+         padding: 25px;
+         box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+         transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .colecao-card:hover {
+         transform: translateX(5px);
+         box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+      }
+      .colecao-header {
+         display: flex;
+         align-items: center;
+         flex-wrap: wrap;
+         gap: 10px;
+         margin-bottom: 12px;
+      }
+      .colecao-title {
+         font-family: 'Montserrat', sans-serif;
+         color: #1a1a1a;
+         font-size: 1.2rem;
+         font-weight: 800;
+         margin: 0;
+      }
+      .colecao-tag {
+         background-color: #F4EFEA;
+         color: #7A1C20;
+         font-family: 'Montserrat', sans-serif;
+         font-size: 0.75rem;
+         font-weight: 800;
+         padding: 4px 8px;
+         border-radius: 4px;
+         letter-spacing: 0.5px;
+      }
+      .colecao-text {
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         color: #4a4a4a;
+         font-size: 0.95rem;
+         line-height: 1.7;
+         text-align: justify;
+         margin: 0;
+      }
+      .colecao-text a {
+         color: #7A1C20;
+         font-weight: 600;
+         text-decoration: underline;
+      }
+   </style>
+</head>
+<body>
+
+   <!-- Top Nav Bar -->
+   <header class="main-header">
+      <div class="header-container">
+         <div class="brand-logo">
+            <span class="logo-sub">UFPA</span>
+            <span class="logo-main">CMA</span>
+         </div>
+         <nav class="nav-wrap">
+            <ul class="nav-menu">
+               <li><a href="home.html">Início</a></li>
+               
+               <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
+               <li class="mega-dropdown">
+                  <a href="acervo.html">Acervo <span class="arrow">▾</span></a>
+                  <div class="mega-menu">
+                     <div class="mega-menu-header">
+                        <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
+                        <span>Navegue pelos fundos, séries e documentos</span>
+                     </div>
+                     <div class="miller-container" id="millerContainer">
+                        <div class="miller-column" id="col-0">
+                           <div class="miller-header">Fundo / Entidade</div>
+                           <ul class="miller-list" id="list-0"></ul>
+                        </div>
+                     </div>
+                     <div class="mega-menu-footer" style="text-align: left; background: #fafafa; padding: 12px 16px; border-top: 1px solid #eee;">
+                        <div id="millerDetails" style="display: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.83rem; color: #555; line-height: 1.4;"></div>
+                     </div>
+                  </div>
+               </li>
+
+               <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" target="_blank">Normativas de Estágio</a></li>
+               <li><a href="galeriaGeral.html">Galeria</a></li>
+               <li><a href="pesquisador.html">Pesquisador</a></li>
+               <li><a href="bibliografia.html">Bibliografia</a></li>
+               <li><a href="noticias.html">Notícias</a></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
+
+   <!-- Conteúdo Principal -->
+   <section style="padding: 60px 0; background-color: #f8f9fa;">
+      <div class="container" style="max-width: 1100px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+         
+         <h1 class="page-title">BIBLIOTECA E COLEÇÕES PESSOAIS</h1>
+
+         <!-- DESTAQUE: ACERVO GERAL -->
+         <div class="acervo-geral-box">
+            <h3>Acervo Geral</h3>
+            <p>
+               O acervo geral da Biblioteca do CMA foi formado a partir de importantes doações realizadas por pesquisadores como Walmir Santos Rodrigues, Geraldo Mártires Coelho e Marcelo Dergan, além de contribuições institucionais, como as da Biblioteca do DETRAN. Atualmente, o acervo está organizado por áreas temáticas, seguindo a Classificação Decimal de Dewey (CDD).
+            </p>
+            <p>
+               A inserção dos títulos no sistema está sendo feita de forma gradual, no entanto, grande parte do material já está disponível para consulta presencial na própria instituição e pode ser acompanhada por meio do Sistema Pergamum, disponível em: <a href="https://bibcentral.ufpa.br/" target="_blank">bibcentral.ufpa.br</a>
+            </p>
+            <p style="margin-bottom: 0;">
+               Para informações acerca da disponibilidade dos livros, revistas, dentre outros itens da Biblioteca e Coleções Pessoais, entrar em contato pelo e-mail: <a href="mailto:bibcma@ufpa.br">bibcma@ufpa.br</a>
+            </p>
+         </div>
+
+         <!-- INTRODUÇÃO: COLEÇÕES PESSOAIS -->
+         <h3 style="font-family: 'Montserrat', sans-serif; color: #1a1a1a; font-size: 1.4rem; margin-bottom: 15px;">Coleções Pessoais</h3>
+         <p class="colecoes-intro">
+            Constituídos por coleções particulares de importantes intelectuais do estado do Pará, os acervos pessoais reúnem estudos e pesquisas voltados à Amazônia e a outros temas relevantes. Sua origem remonta ao antigo <strong>Memorial do Livro “Morongueta” (MLM)</strong>, idealizado pelo Prof. Flávio Nassar e organizado pela bibliotecária Dra. Elisangela Silva da Costa, criado em 12 de setembro de 2012, a partir da doação da biblioteca da Professora Maria Annunciada Ramos Chaves. Desde então, o memorial passou a receber diversas outras coleções. Atualmente, todos os acervos pessoais provenientes do antigo memorial, assim como novas incorporações, estão sob a guarda da Biblioteca do Centro de Memória da Amazônia.
+         </p>
+
+         <!-- GRID DE CARTÕES DAS COLEÇÕES -->
+         <div class="colecoes-grid">
+
+            <!-- Card 1 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Aluizio Lins Leal / Coleção Guaimiaba</h4>
+                  <span class="colecao-tag">CMA</span>
+               </div>
+               <p class="colecao-text">
+                  É um economista e professor aposentado da Universidade Federal do Pará (UFPA), reconhecido por sua atuação acadêmica e política. Durante os anos de chumbo da ditadura militar brasileira, foi uma figura proeminente no movimento estudantil, participando ativamente de manifestações, pichações contra o regime e da ocupação da UFPA em 1968. Foi preso em 1966 e, após sua libertação, integrou os quadros iniciais da Ação Libertadora Nacional (ALN) no Pará. Após o fim do regime militar, ingressou na UFPA como docente por meio de concurso público em 1985. Sua trajetória foi registrada em uma série de entrevistas no projeto “A UFPA e os Anos de Chumbo”, coordenado pela professora Edilza Joana Oliveira Fontes, que resgata memórias de professores, técnicos administrativos e ex-estudantes da UFPA durante o período da ditadura. Sua coleção tem o nome de Guaimiaba em homenagem ao líder indígena com o mesmo nome, a pedido de Aluizio Leal. Além de sua atuação política e acadêmica, Aluizio Leal tem se dedicado à pesquisa sobre a história econômica da Amazônia, o desenvolvimento regional, a política brasileira e a realidade latino-americana.
+               </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Arthur Napoleão Figueiredo</h4>
+                  <span class="colecao-tag">CMA</span>
+               </div>
+               <p class="colecao-text">
+                  Foi um importante antropólogo e professor, natural de Belém do Pará. Ele foi pioneiro na introdução e consolidação dos estudos antropológicos na Universidade Federal do Pará (UFPA), especialmente na área da etnologia e etnografia da Amazônia. Figueiredo contribuiu significativamente para o conhecimento das culturas indígenas e afro-brasileiras da região. Em reconhecimento ao seu legado, o Laboratório de Antropologia da UFPA foi nomeado em sua homenagem e seu acervo pessoal encontra-se salvaguardado no Centro de Memória da Amazônia, continuando seu trabalho de ensino e pesquisa para novas gerações.
+               </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Carlos Miranda</h4>
+                  <span class="colecao-tag">CMA</span>
+               </div>
+               <p class="colecao-text">
+                  É um ator paraense que se destacou na cena teatral brasileira nas décadas de 1950 e 1960. Formado em Direito pela Universidade Federal do Pará (UFPA) em 1960, iniciou sua carreira artística na mesma instituição. Sua trajetória artística e acadêmica contribuiu significativamente para o desenvolvimento do teatro na Amazônia paraense e para a formação de uma identidade cultural local. O acervo é composto por livros voltados arte, dança e teatro, a maioria pertencia ao prof. Claudio Barradas, importante ator, diretor, dramaturgo, professor e sacerdote paraense. Foi um dos principais nomes do teatro na Amazônia e teve papel fundamental na criação e consolidação da Escola de Teatro e Dança da Universidade Federal do Pará (ETDUFPA), onde lecionou por mais de 30 anos.
+               </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Edson Soares Diniz</h4>
+                  <span class="colecao-tag">CMA</span>
+               </div>
+               <p class="colecao-text">
+                  Foi um destacado etnólogo e indigenista brasileiro, com significativa atuação no Museu Paraense Emílio Goeldi (MPEG) e na Universidade Estadual Paulista Júlio de Mesquita Filho (UNESP). Ao longo de sua carreira, Diniz realizou pesquisas de campo com diversas etnias indígenas, incluindo os Kayapó, Makuxi, Yanomami, Krikati, Terêna e Tenetehara, abordando temas como organização social, processos de integração intertribal e interétnica, e relações de contato entre grupos indígenas e não indígenas Seu trabalho no MPEG contribuiu para o entendimento das dinâmicas culturais e sociais dos povos indígenas da Amazônia, e sua produção acadêmica inclui estudos etnográficos e monografias que são referência na área. Além disso, Diniz recebeu diversas homenagens e reconhecimentos por sua contribuição à antropologia e aos estudos indígenas no Brasil. Seu legado permanece vivo por meio de suas pesquisas, publicações e pela influência que exerceu na formação de novas gerações de antropólogos e indigenistas.
+               </p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Geraldo Correa</h4>
+                  <span class="colecao-tag">CMA</span>
+               </div>
+               <p class="colecao-text">
+                  Geraldo Caetano Correa Sobrinho nasceu em 09 de outubro de 1915, em Santarém, Pará. Último dos seis filhos de Ambrósio Caetano Corrêa e Raimunda Picanço Corrêa. Passou a infância e juventude em Santarém, onde sua família possuía fazendas no Lago Grande, estando sempre em contato com a Natureza e fundamentalmente com o Rio Tapajós, tema sempre abismal em sua obra e em sua vida. Sendo um homem poliédrico; naturista, estudioso dos viajantes – Cientistas que percorreram o Amazonas e o Tapajós, apreciador da astronomia, da cultura grega, um dos fundadores da sociedade paraense de orquidófilos, filatelista, numismático, Artista visual, pintor e Médico especialista em tisiogia no Rio de Janeiro graduando–se em 1940.
+               </p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Lauro Sodré</h4>
+                  <span class="colecao-tag">CMA</span>
+               </div>
+               <p class="colecao-text">
+                  Foi uma das figuras políticas mais influentes do Pará e do Brasil no final do século XIX e início do século XX. Militar, político, jornalista e intelectual, destacou-se como presidente do estado do Pará, senador da República, governador do estado do Maranhão e interventor federal em diversas ocasiões. Republicano convicto e defensor de ideias nacionalistas, teve atuação marcante durante a transição do Império para a República e na consolidação das instituições republicanas no Brasil. Foi também um incentivador da educação e das artes, deixando um legado relevante na vida política e cultural do país. Recentemente, suas bisnetas, Laura e Nina Sodré, realizaram a doação de parte de seu acervo pessoal a uma instituição de memória. A coleção inclui fotografias raras, partituras musicais, correspondências, livretos, documentos históricos e outros itens que lançam luz sobre sua trajetória pública e privada. Esse gesto de preservação fortalece a memória política e cultural da Amazônia e do Brasil, contribuindo para a pesquisa histórica, a educação patrimonial e o acesso público a documentos de grande valor. O acervo amplia o entendimento sobre a vida de Lauro Sodré e o contexto histórico de sua atuação, além de enriquecer os acervos locais com peças únicas que dialogam com a história nacional.
+               </p>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Maria Angélica Motta-Maués e Raymundo Heraldo Maués</h4>
+                  <span class="colecao-tag">CMA</span>
+               </div>
+               <p class="colecao-text">
+                  São renomados antropólogos e professores da Universidade Federal do Pará (UFPA), com importante contribuição para o estudo da cultura, gênero e sociedade na Amazônia. Maria Angélica foi pioneira nos estudos de gênero na região Norte do Brasil, enquanto Heraldo teve papel fundamental na formação de pesquisadores em antropologia social na UFPA. Juntos, ajudaram a consolidar o Programa de Pós-Graduação em Antropologia Social e deixaram um legado duradouro na academia. O casal doou seu acervo pessoal bibliográfico ao Centro de Memória da UFPA, enriquecendo a pesquisa e preservação do conhecimento sobre a antropologia amazônica.
+               </p>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Paulo Fonteles</h4>
+                  <span class="colecao-tag">CMA</span>
+               </div>
+               <p class="colecao-text">
+                  Foi advogado, sindicalista e político brasileiro, destacado por sua atuação em defesa dos direitos dos trabalhadores rurais no estado do Pará. Formado em Direito pela Universidade Federal do Pará, tornou-se conhecido como o "advogado do mato" por sua defesa incansável dos camponeses, especialmente na região de Marabá, no sudeste do estado. Atuou como advogado da Comissão Pastoral da Terra (CPT) e do Sindicato dos Trabalhadores Rurais, enfrentando a repressão da ditadura militar e a violência dos latifundiários. Eleito deputado estadual pelo PMDB em 1982, utilizou seu mandato para denunciar abusos contra os trabalhadores rurais e promover a reforma agrária. Foi assassinado em 11 de junho de 1987, aos 38 anos, vítima de um atentado a mando de latifundiários. Seu legado como defensor dos direitos humanos e da justiça social continua vivo. Para consultar o acervo digitalizado clique <a href="https://docvirt.com/docreader.net/webindex/WIBib/PauloFonteles" target="_blank">aqui</a>.
+               </p>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Rosa Marga Rothe</h4>
+                  <span class="colecao-tag">CMA</span>
+               </div>
+               <p class="colecao-text">
+                  Foi uma pastora luterana, antropóloga e ativista de direitos humanos com trajetória marcante na Amazônia, especialmente no Pará. Nascida na Alemanha e naturalizada brasileira, formou-se em Teologia e Antropologia pela UFPA, onde também atuou na educação popular e na luta por justiça social. Foi uma das fundadoras da Sociedade Paraense de Defesa dos Direitos Humanos (SDDH) e pioneira na atuação da Pastoral Popular Luterana. Exerceu quatro mandatos como Ouvidora Geral do Sistema Estadual de Segurança Pública do Pará, sendo a primeira mulher a ocupar o cargo. Reconhecida por sua firme atuação contra a violência institucional e em defesa dos direitos das populações vulneráveis, recebeu diversos prêmios nacionais, como o Prêmio Nacional de Direitos Humanos. Seu legado segue vivo por meio de ações institucionais, como o Prêmio Rosa Marga Rothe de Direitos Humanos, e pela preservação de seu acervo no Centro de Memória da Amazônia (UFPA). Confira a exposição "As rosas Marga não morrem", de 2019 <a href="colecaoRosaMarga.html">aqui.</a>
+               </p>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Albeniza de Carvalho e Chaves</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  Foi uma importante professora, pesquisadora e estudiosa paraense, reconhecida por suas contribuições na área de Teoria Literária. Atuou na Universidade Federal do Pará (UFPA), onde deixou legado acadêmico significativo, especialmente no estudo da literatura regional e da obra do poeta Mário Faustino. Em sua homenagem, a Biblioteca setorial de letras e comunicação leva seu nome, sendo especializada em Linguística, Literatura e Comunicação, foi criada no Instituto de Letras e Comunicação da UFPA, tornando-se um importante centro de pesquisa e referência para estudantes e pesquisadores da região e seu acervo pessoal encontra-se salvaguardado no Centro de Memória da Amazônia.
+               </p>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Baim Klautau</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  Aldebaro Cavaleiro de Macêdo Klautau Filho, também conhecido como Baim Klautau, foi um destacado jurista, professor e liderança da advocacia paraense. Filho do também jurista Aldebaro Klautau, seguiu os passos do pai na vida pública e jurídica. Atuou por mais de 30 anos como professor da Faculdade de Direito da Universidade Federal do Pará (UFPA), contribuindo para a formação de gerações de advogados. Foi presidente da Ordem dos Advogados do Brasil – Seccional Pará (OAB-PA) entre 1971 e 1973, período em que defendeu os direitos da advocacia em um contexto político sensível. Também teve participação política, sendo suplente do senador Jarbas Passarinho. Faleceu em 2009, aos 73 anos, em Belém, sendo amplamente homenageado pela classe jurídica. Seu legado permanece como símbolo de ética, compromisso com o Direito e serviço público no Pará.
+               </p>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Célia Coelho Bassalo</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  Nascida em 1940, foi uma intelectual paraense apaixonada por literatura e arte. Filha de Inocêncio Machado Coelho e Celina Mártires Coelho, irmã do historiador Geraldo Mártires Coelho e esposa do físico José Maria Filardo Bassalo, destacou-se como professora da Universidade Federal do Pará, mestra em Teoria Literária e pesquisadora da arte no Pará. Foi fundadora da Academia Paraense de Ciências, diretora do Departamento de Patrimônio Histórico e Cultural do Pará nos anos 1990 e colaboradora da revista <i>Asas da Palavra</i>, da Universidade da Amazônia. Especialista em Art Nouveau, publicou <i>Art Nouveau em Belém</i> (1984), relançado em edição bilíngue em 2008 pelo IPHAN, obra que reúne roteiro de visitação a patrimônios da cidade. Também publicou, em 1973, um ensaio sobre Mário de Andrade no Pará, em parceria com Joaquim Francisco Coelho, republicado em 1993 no centenário do escritor. Apresentou sua pesquisa sobre Art Nouveau na 34ª reunião da SBPC, em São Paulo. Célia Bassalo foi uma referência nacional no estudo do Art Nouveau e figura marcante no cenário cultural e acadêmico do Pará.
+               </p>
+            </div>
+
+            <!-- Card 13 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Clóvis Silva de Morais Rêgo</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  Homem público nascido em Passagem Franca (MA), em 19 de novembro de 1919, mudou-se ainda criança para Belém (PA), onde construiu sua vida como advogado, professor e político. Órfão de pai aos 4 anos, foi criado pela avó materna junto com seus irmãos e primos. Sempre excelente aluno, formou-se em Direito pela Faculdade de Direito do Pará em 1943, onde também passou a lecionar em 1944. Atuou como professor em colégios como o Moderno e o Paes de Carvalho. Durante a juventude, envolveu-se intensamente no movimento estudantil, sendo vice-presidente da UNE em 1942 e colaborador em publicações como <i>Revista Estudantil</i> e <i>Terra Imatura</i>. Politicamente, foi um dos fundadores da UDN e militou contra o regime do Estado Novo. Após uma tentativa fracassada em 1946, foi eleito deputado estadual em 1950 e reeleito em 1954. Em 1958, foi eleito deputado federal pela UDN, sendo reeleito em 1962. Em 1964, teve seu mandato cassado e seus direitos políticos suspensos após o golpe militar. Além da atuação legislativa, exerceu diversos cargos públicos de destaque: foi Diretor do Instituto Lauro Sodré, da Biblioteca e do Arquivo Público; Secretário de Estado de Educação; Conselheiro do Tribunal de Contas do Estado do Pará; Presidente do Conselho Estadual de Cultura; Vice-Governador e, posteriormente, Governador do Estado do Pará. Confira algumas das fotografias do acervo <a href="galeriaGeral.html#acervo-clovis">clicando aqui</a>.
+               </p>
+            </div>
+
+            <!-- Card 14 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Dalcídio Jurandir</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  Foi um dos mais importantes romancistas da literatura amazônica e brasileira do século XX. Nascido em Ponta de Pedras, na Ilha do Marajó (Pará), sua obra tem como marca o profundo retrato da realidade social, cultural e geográfica da Amazônia, especialmente da vida ribeirinha e marajoara. É autor da série Extremo Norte, composta por dez romances que narram a formação do povo amazônico, com destaque para obras como <i>Chove nos Campos de Cachoeira</i>, <i>Marajó</i>, <i>Belém do Grão-Pará</i> e <i>Ponte do Galo</i>. Seu estilo combina lirismo, denúncia social e um olhar sensível sobre a infância, a pobreza e os conflitos humanos na região Norte do Brasil. Além de romancista, Dalcídio teve intensa atuação como jornalista e manteve rica correspondência com escritores, amigos e intelectuais da época, revelando aspectos íntimos de sua vida e de seu processo criativo. Em seu acervo é possível encontrar a seleção de suas obras, além de cartas e registros pessoais, oferecendo um panorama afetivo e literário da trajetória de um dos maiores nomes da literatura paraense e do modernismo regionalista brasileiro.
+               </p>
+            </div>
+
+            <!-- Card 15 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Francisco Paulo Mendes</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  Paulo Mendes nasceu em 1910 em uma família que valorizava a arte, a leitura e a escrita. Seu avô, João Affonso do Nascimento, pintor e escritor, foi uma grande influência intelectual, enquanto sua mãe Arabella Mendes e tias maternas transmitiram um refinamento cultural com forte influência francesa. Formou-se em Direito pela Faculdade de Direito do Pará em 1932, onde também foi bibliotecário. Iniciou sua carreira docente em 1939, lecionando Português e Literatura em diversos colégios de Belém. Defensor de uma educação justa e igualitária, era conhecido como “o mestre que sabia de tudo”. Foi fundador da Faculdade de Filosofia, Ciências e Letras da Universidade Federal do Pará, contribuindo para a formação de importantes nomes da cultura paraense. Atuou também como professor de Teoria e História do Teatro e de História da Literatura e das Artes na UFPA. Destacou-se ainda no cenário teatral, sendo um dos líderes do Teatro do Estudante do Pará (1941–1951), ao lado de Margarida Schivazappa, promovendo espetáculos com objetivos educativos e estéticos. Crítico da má política e das injustiças sociais, teve como amigos intelectuais como Ruy Barata, Clóvis Malcher e Benedito Nunes. É lembrado até hoje por seu legado cultural, educacional e artístico no Pará.
+               </p>
+            </div>
+
+            <!-- Card 16 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Francisco Paulo Nunes</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  É professor e pesquisador da Universidade da Amazônia (UNAMA), em Belém do Pará. Atua no Programa de Pós-Graduação em Comunicação, Linguagens e Cultura (PPGCLC), com destaque para suas pesquisas sobre literatura, cultura afro-brasileira e memória amazônica. É autor do livro infantil A Força do Tambor: Robertinho Silva, o griô da fala musical, obra que valoriza as raízes africanas na cultura brasileira. Também colabora com atividades de extensão e divulgação literária na universidade, incluindo projetos voltados à formação de leitores e recomendações literárias em programas de rádio educativa. Francisco Paulo Nunes é ainda reconhecido como um dos estudiosos da vida e obra do escritor paraense Dalcídio Jurandir, tendo contribuído para o fortalecimento da crítica literária em torno da produção do autor de Marajó e da série de romances conhecida como "Ciclo do Extremo Norte". Seu trabalho acadêmico combina literatura, identidade regional e compromisso com a valorização da memória cultural da Amazônia.
+               </p>
+            </div>
+
+            <!-- Card 17 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Inocêncio Machado Coelho</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  Nasceu em Belém em 1909, iniciou seus estudos em Bragança (PA) cidade em qual seu pai era fiscal dos Correios e Telégrafos. Seguiu seus estudos no antigo Liceu Paraense, atual Escola Paes de Carvalho. Em Belém, seguiu seus estudos no antigo Lyceu Paraense, hoje Escola Estadual Paes de Carvalho. Foi jornalista, tendo atuado nos jornais <i>Estado do Pará</i>, <i>Folha do Norte</i> e <i>A Província do Pará</i>. Neste último manteve, de 1952 e 1953, a coluna "Sapos e Estrelas". Foi diretor do Museu Paraense Emilio Goeldi na década de 1940. Integrou a Academia Paraense de Letras (APL), o Conselho Estadual de Cultura e o Instituto Histórico e Geográfico do Pará.
+               </p>
+            </div>
+
+            <!-- Card 18 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Maria Annunciada Ramos Chaves</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  Foi uma destacada jurista e educadora paraense, nascida em 16 de dezembro de 1915, em Belém do Pará. Formou-se em Direito pela Faculdade de Direito do Pará, sendo premiada com o “Teixeira de Freitas”. Embora advogada, sua principal atuação foi na educação, iniciando como professora ainda durante a graduação. Lecionou em instituições renomadas como o Colégio Moderno, Instituto Gentil Bittencourt e Colégio Estadual Paes de Carvalho. No ensino superior, ajudou a fundar a Faculdade de Filosofia, Ciências e Letras, tornando-se professora titular da Universidade Federal do Pará, onde também exerceu cargos administrativos. Além da atuação acadêmica, integrou diversas instituições científicas e culturais, como o Instituto Histórico e Geográfico do Pará e a Academia Paraense de Letras. Foi presidente do Conselho Estadual de Cultura por 14 anos. Sua biblioteca pessoal continha mais de 2.000 volumes, abrangendo diversas áreas do conhecimento, com destaque para o Direito.
+               </p>
+            </div>
+
+            <!-- Card 19 -->
+            <div class="colecao-card">
+               <div class="colecao-header">
+                  <h4 class="colecao-title">Raimundo Antonio da Costa Jinkings</h4>
+                  <span class="colecao-tag">MLM</span>
+               </div>
+               <p class="colecao-text">
+                  Raimundo Jinkings nasceu em 5 de setembro de 1927, em Turimrim, distrito de Santa Helena (MA). Órfão de mãe aos 8 anos, teve desde cedo forte sensibilidade social, despertada ao ler <i>As Dores do Mundo</i>, de Schopenhauer. Em 1945, mudou-se para Belém (PA), onde ingressou na Força Aérea Brasileira, chegando ao posto de cabo e atuando como enfermeiro no Hospital da Aeronáutica. Casou-se com Isa Tavares em 1949 e teve cinco filhos. Trabalhou como bancário no Banco da Amazônia, após ser aprovado em concurso, e também atuou como jornalista. Foi um importante líder sindical, comandando o Comando Geral dos Trabalhadores (CGT), com ideias ligadas ao PCB e às reformas de base. Com o golpe militar de 1964, foi preso, teve os direitos políticos cassados e perdeu o emprego. Após a prisão, reinventou-se ao fundar a Livraria Jinkings, que se tornou um importante ponto cultural de Belém, graças ao seu acervo montado com livros adquiridos via reembolso postal. Em 1951, participou da fundação do Partido Socialista Brasileiro (PSB) no Pará, sendo eleito Secretário-Geral do diretório estadual. Concluiu o curso ginasial e foi escolhido orador da turma, destacando-se como humanista.
+               </p>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+   <!-- Rodapé Padrão Completo -->
+   <footer class="footer-unipix">
+      <div class="container footer-top-grid">
+         <div class="footer-brand">
+            <img src="images/cmaufpa.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
+            <p class="footer-desc">
+               O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria do Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.
+            </p>
+         </div>
+         
+         <div class="footer-links-col">
+            <h5>VENHA NOS VISITAR</h5>
+            <p>Travessa Rui Barbosa, 491</p>
+            <p>CEP 66053-260 - Reduto</p>
+            <p>Belém, PA - BRASIL</p>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>REDES SOCIAIS</h5>
+            <ul>
+               <li><a href="https://www.facebook.com/centrodememoriaufpa" target="_blank">Facebook</a></li>
+               <li><a href="https://twitter.com/CMA_UFPA" target="_blank">Twitter</a></li>
+               <li><a href="https://www.instagram.com/cmaufpa" target="_blank">Instagram</a></li>
+            </ul>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>CONTATOS</h5>
+            <p><strong>(91) 3201-8981</strong></p>
+            <p><a href="mailto:cma@ufpa.br" class="footer-email">cma@ufpa.br</a></p>
+            <p><a href="mailto:bibcma@ufpa.br" class="footer-email">bibcma@ufpa.br</a></p>
+         </div>
+      </div>
+
+      <div class="footer-sub">
+         <div class="container footer-sub-flex">
+            <p>&copy; 2026 Centro de Memória da Amazônia</p>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Script JS externo -->
+   <script src="script.js"></script>
+</body>
+</html>

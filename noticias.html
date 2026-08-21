@@ -11,124 +11,188 @@
    <link rel="stylesheet" href="style.css">
 
    <style>
-      /* Estilos para o menu vermelho, letras brancas e correção do logo */
-      .main-header {
-         background-color: #7A1C20 !important;
-      }
-      .main-header .nav-menu > li > a {
-         color: #ffffff !important;
-         font-weight: 600;
-      }
+      /* =========================================
+         NAVBAR E LOGO
+      ========================================= */
+      .main-header { background-color: #7A1C20 !important; }
+      .main-header .nav-menu > li > a { color: #ffffff !important; font-weight: 600; }
       .main-header .nav-menu > li > a:hover,
-      .main-header .nav-menu > li > a.active {
-         color: #f0f0f0 !important;
-         text-decoration: underline;
-      }
-      .main-header .nav-menu .arrow {
-         color: #ffffff !important;
-      }
-      .main-header .brand-logo,
-      .main-header .brand-logo span,
-      .main-header .brand-logo .logo-sub,
-      .main-header .brand-logo .logo-main {
-         color: #ffffff !important;
-         background: transparent !important;
-      }  
+      .main-header .nav-menu > li > a.active { color: #f0f0f0 !important; text-decoration: underline; }
+      .main-header .nav-menu .arrow { color: #ffffff !important; }
+      .main-header .brand-logo, .main-header .brand-logo span,
+      .main-header .brand-logo .logo-sub, .main-header .brand-logo .logo-main { color: #ffffff !important; background: transparent !important; }  
 
-      /* Estilos específicos para a página de Notícias */
-      .noticias-section {
-         padding: 60px 0;
-         background-color: #f8f9fa;
-      }
+      /* =========================================
+         ESTILOS GERAIS DA PÁGINA DE NOTÍCIAS
+      ========================================= */
+      .noticias-section { padding: 60px 0; background-color: #f8f9fa; }
       .noticias-content {
-         max-width: 1100px;
-         margin: 0 auto;
-         background: #ffffff;
-         padding: 40px;
-         border-radius: 8px;
-         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+         max-width: 1100px; margin: 0 auto; background: #ffffff;
+         padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
       }
       .noticias-title {
-         font-family: 'Syne', sans-serif;
-         font-size: 2.2rem;
-         color: #7A1C20;
-         margin-bottom: 30px;
-         border-bottom: 3px solid #7A1C20;
-         padding-bottom: 10px;
+         font-family: 'Syne', sans-serif; font-size: 2.2rem; color: #7A1C20;
+         margin-bottom: 30px; border-bottom: 3px solid #7A1C20; padding-bottom: 10px;
       }
       
-      /* Grid e Cards de Notícias */
+      /* =========================================
+         CARDS DE NOTÍCIAS
+      ========================================= */
       .noticia-card {
+         display: flex; flex-direction: row;
+         background: #fff; border: 1px solid #e0e0e0;
+         border-radius: 8px; overflow: hidden; 
+         margin-bottom: 40px; transition: box-shadow 0.3s ease;
+         align-items: stretch; /* Deixa as duas colunas com a mesma altura */
+      }
+      .noticia-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+      
+      /* =========================================
+         CARROSSEL DE IMAGENS E BOLINHAS
+      ========================================= */
+      .noticia-img-wrapper {
+         position: relative; 
+         flex: 0 0 350px; 
          display: flex;
-         flex-direction: row;
-         background: #fff;
-         border: 1px solid #e0e0e0;
-         border-radius: 8px;
-         overflow: hidden;
-         margin-bottom: 30px;
-         transition: box-shadow 0.3s ease;
+         align-items: center; /* Mantém as imagens estáticas no centro vertical */
+         background-color: #ffffff;
       }
-      .noticia-card:hover {
-         box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      }
+      
       .noticia-img-container {
-         flex: 0 0 350px;
-         background-color: #f0f0f0;
-         overflow: hidden;
          display: flex;
-         align-items: center;
-         justify-content: center;
+         width: 110%;
+         height: 420px; /* Altura fixa no centro */
+         overflow-x: auto; 
+         scroll-snap-type: x mandatory; 
+         scrollbar-width: none; 
+         -ms-overflow-style: none;
+         scroll-behavior: smooth;
       }
+      .noticia-img-container::-webkit-scrollbar { display: none; }
+      
       .noticia-img-container img {
+         flex: 0 0 100%; 
          width: 100%;
          height: 100%;
-         object-fit: cover;
-         min-height: 240px;
+         object-fit: contain; 
+         scroll-snap-align: center; 
+         cursor: zoom-in; 
+         transition: transform 0.3s ease;
       }
+      .noticia-img-container img:hover { transform: scale(1.02); }
+
+      .nav-side-btn {
+         position: absolute; top: 0; bottom: 0; width: 15%; background: transparent;
+         border: none; cursor: pointer; z-index: 5; display: flex; align-items: center;
+         justify-content: center; color: transparent; font-size: 2rem;
+         transition: background 0.3s ease, color 0.3s ease;
+      }
+      .nav-side-btn.prev { left: 0; }
+      .nav-side-btn.next { right: 0; }
+      .noticia-img-wrapper:hover .nav-side-btn { color: rgba(0, 0, 0, 0.4); }
+      .nav-side-btn:hover { background: rgba(0, 0, 0, 0.08); color: #1a1a1a; }
+
+      .carousel-dots {
+         position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);
+         display: flex; gap: 8px; z-index: 10;
+      }
+      .dot {
+         width: 10px; height: 10px; border-radius: 50%; background: rgba(0, 0, 0, 0.2); 
+         cursor: pointer; transition: all 0.3s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      .dot.active { background: #7A1C20; transform: scale(1.3); }
+
+      /* =========================================
+         TEXTOS DA NOTÍCIA
+      ========================================= */
       .noticia-body {
-         flex: 1;
-         padding: 25px;
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
+         flex: 1; padding: 30px; display: flex;
+         flex-direction: column; justify-content: center;
       }
       .noticia-data {
-         font-family: 'Montserrat', sans-serif;
-         font-size: 0.85rem;
-         color: #7A1C20;
-         font-weight: 700;
-         text-transform: uppercase;
-         margin-bottom: 8px;
+         font-family: 'Montserrat', sans-serif; font-size: 0.85rem;
+         color: #7A1C20; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;
       }
       .noticia-card-title {
-         font-family: 'Montserrat', sans-serif;
-         font-size: 1.3rem;
-         color: #1a1a1a;
-         margin-bottom: 12px;
-         font-weight: 700;
+         font-family: 'Montserrat', sans-serif; font-size: 1.3rem;
+         color: #1a1a1a; margin-bottom: 15px; font-weight: 700; line-height: 1.4;
       }
       .noticia-text {
-         font-family: 'Plus Jakarta Sans', sans-serif;
-         color: #4a4a4a;
-         line-height: 1.7;
-         text-align: justify;
+         font-family: 'Plus Jakarta Sans', sans-serif; color: #4a4a4a;
+         line-height: 1.7; text-align: justify; margin-bottom: 15px;
+      }
+      .noticia-text:last-child { margin-bottom: 0; }
+
+      /* =========================================
+         ACORDEÃO DE RESUMOS
+      ========================================= */
+      .resumo-item {
+         background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px;
+         margin-bottom: 10px; overflow: hidden;
+      }
+      .resumo-item summary {
+         font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700;
+         color: #1a1a1a; padding: 15px; cursor: pointer; list-style: none; 
+         display: flex; justify-content: space-between; align-items: center;
+         background-color: #fafafa; transition: background-color 0.3s ease;
+      }
+      .resumo-item summary:hover { background-color: #f0f0f0; }
+      .resumo-item summary::after {
+         content: "▼"; font-size: 0.8rem; color: #7A1C20; transition: transform 0.3s ease;
+      }
+      .resumo-item[open] summary::after { transform: rotate(180deg); }
+      .resumo-item p {
+         font-family: 'Plus Jakarta Sans', sans-serif; color: #4a4a4a; line-height: 1.6;
+         padding: 15px; margin: 0; border-top: 1px solid #eee; text-align: justify; font-size: 0.9rem;
       }
 
-      /* Responsivo para telas menores (empilha a foto e o texto) */
+      /* =========================================
+         LIGHTBOX (AMPLIADOR GALERIA)
+      ========================================= */
+      .lightbox {
+         display: none; position: fixed; z-index: 99999; 
+         top: 0; left: 0; width: 100%; height: 100%; 
+         background-color: rgba(0, 0, 0, 0.9); 
+         align-items: center; justify-content: center;
+         backdrop-filter: blur(3px);
+      }
+      .lightbox img {
+         max-width: 90%; max-height: 90vh; 
+         object-fit: contain; border-radius: 8px;
+         box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+         animation: zoomIn 0.3s ease;
+      }
+      @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+      
+      .lightbox-close {
+         position: absolute; top: 20px; right: 30px; color: #fff; 
+         font-size: 45px; font-weight: 300; cursor: pointer; transition: color 0.3s;
+      }
+      .lightbox-close:hover { color: #7A1C20; }
+
+      /* Setas da Galeria Lightbox */
+      .lightbox-btn {
+         position: absolute; top: 50%; transform: translateY(-50%);
+         color: rgba(255,255,255,0.6); font-size: 60px; font-weight: 300;
+         cursor: pointer; background: transparent; border: none; padding: 20px;
+         transition: color 0.3s ease;
+      }
+      .lightbox-btn:hover { color: #ffffff; }
+      .lightbox-btn.prev { left: 20px; }
+      .lightbox-btn.next { right: 20px; }
+
+      /* =========================================
+         RESPONSIVO (CELULARES)
+      ========================================= */
       @media (max-width: 768px) {
-         .noticia-card {
-            flex-direction: column;
-         }
-         .noticia-img-container {
-            flex: none;
-            height: 220px;
-         }
+         .noticia-card { flex-direction: column; }
+         .noticia-img-wrapper { flex: none; height: 350px; } 
+         .lightbox-btn { font-size: 40px; padding: 10px; }
       }
    </style>
 </head>
 <body>
 
-   <!-- Top Nav Bar -->
    <header class="main-header">
       <div class="header-container">
          <div class="brand-logo">
@@ -137,138 +201,306 @@
          </div>
          <nav class="nav-wrap">
             <ul class="nav-menu">
-               <li><a href="home.html" class="active">Início</a></li>
-               
-               <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
+               <li><a href="home.html">Início</a></li>
                <li class="mega-dropdown">
                   <a href="acervo.html">Acervo <span class="arrow">▾</span></a>
-                  <div class="mega-menu">
-                     <div class="mega-menu-header">
-                        <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
-                        <span>Navegue pelos fundos, séries e documentos</span>
-                     </div>
-                     
-                     <!-- CONTAINER DINÂMICO DOS MILLER COLUMNS -->
-                     <div class="miller-container" id="millerContainer">
-                        <div class="miller-column" id="col-0">
-                           <div class="miller-header">Fundo / Entidade</div>
-                           <ul class="miller-list" id="list-0"></ul>
-                        </div>
-                     </div>
-
-                     <!-- RODAPÉ DINÂMICO DE DESCRIÇÃO -->
-                     <div class="mega-menu-footer" style="text-align: left; background: #fafafa; padding: 12px 16px; border-top: 1px solid #eee;">
-                        <div id="millerDetails" style="display: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.83rem; color: #555; line-height: 1.4;"></div>
-                     </div>
-                  </div>
                </li>
-
-               <li><a href="biblioteca.html">Biblioteca & Coleções</a></li>
                <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" target="_blank">Normativas de Estágio</a></li>
                <li><a href="galeriaGeral.html">Galeria</a></li>
                <li><a href="pesquisador.html">Pesquisador</a></li>
-               <li><a href="noticias.html">Notícias</a></li>
+               <li><a href="bibliografia.html">Bibliografia</a></li>
+               <li><a href="noticias.html" class="active">Notícias</a></li>
             </ul>
          </nav>
       </div>
-      </div>
    </header>
 
-   <!-- Conteúdo Principal de Notícias -->
    <section class="noticias-section">
       <div class="noticias-content">
          <h1 class="noticias-title">NOTÍCIAS E ACONTECIMENTOS</h1>
 
          <!-- NOTÍCIA 01 -->
          <div class="noticia-card">
-            <div class="noticia-img-container">
-               <img src="post22-04-livros/1.jpg" alt="Foto da Notícia 1">
+            <div class="noticia-img-wrapper">
+               <button class="nav-side-btn prev">‹</button>
+               <button class="nav-side-btn next">›</button>
+               <div class="noticia-img-container">
+                  <img src="imagemNoticia32/1.jpg" alt="Foto 1">
+                  <img src="imagemNoticia32/2.jpg" alt="Foto 2">
+                  <img src="imagemNoticia32/3.jpg" alt="Foto 3">
+                  <img src="imagemNoticia32/4.jpg" alt="Foto 4">
+                  <img src="imagemNoticia32/5.jpg" alt="Foto 5">
+               </div>
+               <div class="carousel-dots">
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+               </div>
             </div>
+            
             <div class="noticia-body">
-               <span class="noticia-data">07 de Agosto de 2026</span>
-               <h3 class="noticia-card-title">Título da Primeira Notícia Acontecida</h3>
+               <span class="noticia-data">Novidade no Acervo</span>
+               <h3 class="noticia-card-title">Documentação Cível "Assistência Judiciária" Disponível para Pesquisa</h3>
                <p class="noticia-text">
-                  Escreva aqui o texto detalhando o que aconteceu neste evento ou notícia. Explique os principais pontos, quem participou, datas importantes e informações relevantes para os visitantes do Centro de Memória da Amazônia.
+                  Já está disponível para a pesquisa, no Centro de Memória da Amazônia (CMA), a documentação da procedência cível “Assistência Judiciária”. São cerca de 1.730 documentos, produzidos entre 1935 e 1970.
+               </p>
+               <p class="noticia-text">
+                  A assistência judiciária gratuita aos necessitados foi estabelecida com base na Constituição brasileira de 1934. Pessoas pobres no sentido da lei são os principais sujeitos presentes na documentação, que em grande parte, abarca os Direitos de Família e Sucessões.
                </p>
             </div>
          </div>
 
-         <!-- NOTÍCIA 02 -->
+
+         <!-- NOTÍCIA 03: DICAS DE LEITURA (COM ACORDEÃO) -->
          <div class="noticia-card">
-            <div class="noticia-img-container">
-               <img src="images/noticia-02.jpg" alt="Foto da Notícia 2">
+            <div class="noticia-img-wrapper">
+               <button class="nav-side-btn prev">‹</button>
+               <button class="nav-side-btn next">›</button>
+               <div class="noticia-img-container">
+                  <img src="imgNoticia31_livros/1.png" alt="Capa">
+                  <img src="imgNoticia31_livros/2.png" alt="Capa Livro 2">
+                  <img src="imgNoticia31_livros/3.png" alt="Capa Livro 3">
+                  <img src="imgNoticia31_livros/4.png" alt="Capa Livro 4">
+                  <img src="imgNoticia31_livros/5.png" alt="Capa Livro 5">
+                  <img src="imgNoticia31_livros/6.png" alt="Capa Livro 6">
+                  <img src="imgNoticia31_livros/7.png" alt="Capa Livro 7">
+                  <img src="imgNoticia31_livros/livros sobre pajelança e práticas populares de saúde no acervo do centro de memória da amazônia.png" alt="Capa Livro 8">
+                  <img src="imgNoticia31_livros/8vedd.png" alt="Capa Livro 9">
+                  <img src="imgNoticia31_livros/10.png" alt="Capa Livro 10">
+
+
+                  <img src="imgNoticia31_livros/11.png" alt="contracapa">
+               </div>
+               <div class="carousel-dots">
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>    
+                  <span class="dot"></span>   
+                  <span class="dot"></span>                
+                  
+               </div>
             </div>
+            
             <div class="noticia-body">
-               <span class="noticia-data">01 de Agosto de 2026</span>
-               <h3 class="noticia-card-title">Título da Segunda Notícia ou Exposição</h3>
-               <p class="noticia-text">
-                  Descreva aqui os detalhes da segunda notícia. O layout se ajusta automaticamente para manter a foto ao lado do texto de forma elegante e limpa em qualquer tela de computador ou celular.
-               </p>
+               <span class="noticia-data">Dicas de leitura</span>
+               <h3 class="noticia-card-title" style="margin-bottom: 20px;">Dicas de leitura sobre a pajelança, medicina e práticas populares na Amazônia</h3>
+               
+               <div class="acordeao-container">
+                  <details class="resumo-item">
+                     <summary>1. Religiões afro-indígenas e pajelança cabocla</summary>
+                     <p>As religiões afro-indígenas, como a própria denominação revela, tiveram origem entre os indígenas, em especial os tupi, e entre os escravizados africanos. Também foram influenciadas pelo cristianismo europeu, incorporado no Brasil pelos portugueses. Candomblé, umbanda, macumba, pajelanças caboclas e encantamentos são alguns exemplos de rituais do cotidiano religioso amazônico. Os vinte artigos presentes visam analisar a forma de xamanismo bastante difundida na Amazônia, a pajelança cabocla.</p>
+                  </details>
+                  <details class="resumo-item">
+                     <summary>2. A Ilha Encantada: medicina e xamanismo numa comunidade de pescadores</summary>
+                     <p>apresenta a medicina popular da povoação de pescadores – Itapuá -, que se localiza no município de Vigia, no Estado do Pará. Analisa os conceitos e práticas sociais ligadas às doenças não-naturais reconhecidas pela população de Itapuá, investigadas nos domínios: agentes causais (espíritos, seres humanos e astros), doenças (com atenção particular ao subconjunto das não naturais) e especialistas no seu tratamento. Procura elucidar e analisar sua estrutura, nos casos estudados, que é de tipo taxonômica, analisando não apenas o aspecto semântico, mas também o modo como os membros da comunidade vivenciam a cultura, no que diz respeito à medicina.</p>
+                  </details>
+                   <details class="resumo-item">
+                     <summary>3. Medicinas Tradicionais e Política de Saúde</summary>
+                     <p>Os trabalhos reunidos neste livro foram apresentados no Encontro “Medicinas Tradicionais e Política de Saúde na Amazônia”. O encontro abordou, dentre vários aspectos, as representações e práticas das medicinas tradicionais em vários grupos indígenas e a questão do impacto do contato sobre as representações e práticas indígenas da doença.</p>
+                  </details>
+                  <details class="resumo-item">
+                     <summary>4. Medicina popular na povoação de Itapuá</summary>
+                     <p>Apresenta a medicina popular da povoação de pescadores – Itapuá -, que se localiza no município de Vigia, no Estado do Pará. Analisa os conceitos e práticas sociais ligadas às doenças não-naturais reconhecidas pela população de Itapuá, investigadas nos domínios: agentes causais e especialistas no seu tratamento.</p>
+                  </details>
+                  <details class="resumo-item">
+                     <summary>5. Saúde popular e cuidadores invisíveis</summary>
+                     <p>Essa coletânea reúne autoras e autores que têm pensado sobre realidades pouco visíveis no cenário oficial do cuidado com a saúde do Brasil. As terapêuticas e os cuidadores são acionados diariamente a partir de uma “saúde popular” justamente pelo fato de fazerem sentido para essas pessoas e não por uma suposta falta de acesso.</p>
+                  </details>
+                  <details class="resumo-item">
+                     <summary>6. Saberes das parteiras da Ilha do Marajó</summary>
+                     <p>Esta é uma obra que nos leva a conhecer de muito perto os saberes, os desafios, as desigualdades, os conflitos e as redes de reciprocidade das quais fazem parte as parteiras da Ilha do Marajó, no Pará.</p>
+                  </details>
+                  <details class="resumo-item">
+                     <summary>7. Magia, religião e modernidade em Manaus</summary>
+                     <p>O presente livro trata de discutir a relação entre magia, religião e modernidade, partindo do caso dos rezadores da cidade de Manaus. A questão inicial que motivou toda a reflexão é como que formas tidas como arcaicas ainda se apresentam num mundo desencadeado pela ciência e pela técnica.</p>
+                  </details>
+                  <details class="resumo-item">
+                     <summary>8. A cura e a pajelança ribeirinha</summary>
+                     <p>A cura de doenças ocupa um lugar central na pajelança praticada pelos ribeirinhos amazônicos. Nisso, eles seguem conceitos e rituais herdados dos antepassados indígenas com a função primordial da cura através do xamã ou pajé, integrando o xamanismo, um sistema milenar de extensa difusão geográfica.</p>
+                  </details>
+                  <details class="resumo-item">
+                     <summary>9. História das religiões amazônicas</summary>
+                     <p>O livro reconta a história das religiões amazônicas, especialmente sobre a crença nos encantados, e de como essas manifestações se tornaram o tema predileto de antropólogos desde o século XIX. Traça a história de vida de muitos pajés e pais de santo que ficaram famosos na Belém da belle-époque e no interior do Pará.</p>
+                  </details>
+                  <details class="resumo-item">
+                     <summary>10. A vocação dos pajés e benzedeiras</summary>
+                     <p>Neste livro vamos tratar da vocação, da missão e do ofício dos pajés, benzedores, puxadores e parteiras. Como esses especialistas são preparados, treinados e testados? Apontaremos respostas a partir dos casos de pessoas reconhecidas como portadoras desse dom e que vivem na região do baixo Amazonas, com depoimentos do Projeto A Hora do Xibé.</p>
+                  </details>
+                  
+               </div>
+               
             </div>
          </div>
-
-         <!-- NOTÍCIA 03 -->
+   
+               <!-- NOTÍCIA 04: IMAGENS DE BELÉM ANTIGA -->
          <div class="noticia-card">
-            <div class="noticia-img-container">
-               <img src="images/noticia-03.jpg" alt="Foto da Notícia 3">
+            <div class="noticia-img-wrapper">
+               <!-- Botões do carrossel -->
+               <button class="nav-side-btn prev">‹</button>
+               <button class="nav-side-btn next">›</button>
+               
+               <!-- Imagens: basta trocar o src para a pasta onde estão as fotos de Belém -->
+               <div class="noticia-img-container">
+                  <img src="noticiasDiversos/post novidades site.png" alt="Registro de Belém Antiga 1">
+               </div>
+               
+               <!-- Bolinhas correspondentes à quantidade de fotos acima -->
+               <div class="carousel-dots">
+                  <span class="dot active"></span>
+               </div>
             </div>
+            
             <div class="noticia-body">
-               <span class="noticia-data">25 de Julho de 2026</span>
-               <h3 class="noticia-card-title">Título da Terceira Notícia ou Atividade</h3>
+               <span class="noticia-data">Acervo Fotográfico</span>
+               <h3 class="noticia-card-title">Registros Fotográficos de Belém do Início do Século XX</h3>
                <p class="noticia-text">
-                  Insira aqui o relato correspondente à terceira foto cadastrada. Para adicionar mais notícias no futuro, basta copiar e colar todo o bloco de código "noticia-card" acima e alterar a imagem e os textos.
+                  As seguintes fotos compõem uma pequena parte das fotografias localizadas no acervo de Clóvis Moraes Rêgo, parte das Coleções Pessoais da Biblioteca do Centro de Memória da Amazônia.
+               </p>
+               <p class="noticia-text">
+                  As fotos são identificadas como registros de Belém do início do século XX, trazendo belíssimas fotografias de praças, ruas da capital e do então Intendente de Belém, Antonio Lemos. Todo esse rico acervo iconográfico encontra-se disponível para consulta e pesquisa em nosso espaço físico.
                </p>
             </div>
          </div>
 
-         
-         
-
-      </div>
    </section>
 
-   <!-- Rodapé Padrão Completo -->
+
    <footer class="footer-unipix">
       <div class="container footer-top-grid">
          <div class="footer-brand">
-            <img src="images/cmaufpa.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
-            <p class="footer-desc">
-               O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria do Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.
-            </p>
-         </div>
-         
-         <div class="footer-links-col">
-            <h5>VENHA NOS VISITAR</h5>
-            <p>Travessa Rui Barbosa, 491</p>
-            <p>CEP 66053-260 - Reduto</p>
-            <p>Belém, PA - BRASIL</p>
-         </div>
-
-         <div class="footer-links-col">
-            <h5>REDES SOCIAIS</h5>
-            <ul>
-               <li><a href="https://www.facebook.com/centrodememoriaufpa" target="_blank">Facebook</a></li>
-               <li><a href="https://twitter.com/CMA_UFPA" target="_blank">Twitter</a></li>
-               <li><a href="https://www.instagram.com/cmaufpa" target="_blank">Instagram</a></li>
-            </ul>
-         </div>
-
-         <div class="footer-links-col">
-            <h5>CONTATOS</h5>
-            <p><strong>(91) 3201-8981</strong></p>
-            <p><a href="mailto:cma@ufpa.br" class="footer-email">cma@ufpa.br</a></p>
-            <p><a href="mailto:bibcma@ufpa.br" class="footer-email">bibcma@ufpa.br</a></p>
-         </div>
-      </div>
-
-      <div class="footer-sub">
-         <div class="container footer-sub-flex">
-            <p>&copy; 2026 Centro de Memória da Amazônia</p>
+            <img src="images/cmaufpa.png" alt="CMA" class="footer-logo-img">
+            <p class="footer-desc">O Centro de Memória da Amazônia é um centro cultural criado em 31 de janeiro de 2007...</p>
          </div>
       </div>
    </footer>
 
-   <!-- Script JS externo -->
-   <script src="script.js"></script>
+   <!-- LIGHTBOX GALERIA (COM SETAS LATERAIS) -->
+   <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <button class="lightbox-btn prev">‹</button>
+      <img id="lightbox-img" src="" alt="Imagem Ampliada">
+      <button class="lightbox-btn next">›</button>
+   </div>
+
+   <!-- SCRIPT: CARROSSEL + LIGHTBOX GALERIA -->
+   <script>
+      // ==========================================
+      // 1. Lógica dos Mini-Carrosséis nas Notícias
+      // ==========================================
+      document.querySelectorAll('.noticia-card').forEach(card => {
+         const wrapper = card.querySelector('.noticia-img-wrapper');
+         if (!wrapper) return;
+         
+         const container = wrapper.querySelector('.noticia-img-container');
+         const dots = wrapper.querySelectorAll('.dot');
+         const btnPrev = wrapper.querySelector('.nav-side-btn.prev');
+         const btnNext = wrapper.querySelector('.nav-side-btn.next');
+         
+         if (container && dots.length > 0) {
+            container.addEventListener('scroll', () => {
+               const scrollRatio = container.scrollLeft / container.clientWidth;
+               const activeIndex = Math.round(scrollRatio);
+               dots.forEach((dot, index) => {
+                  dot.classList.toggle('active', index === activeIndex);
+               });
+            });
+
+            dots.forEach((dot, index) => {
+               dot.addEventListener('click', () => {
+                  container.scrollTo({ left: index * container.clientWidth, behavior: 'smooth' });
+               });
+            });
+         }
+
+         if (btnPrev && container) {
+            btnPrev.addEventListener('click', () => { container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' }); });
+         }
+         if (btnNext && container) {
+            btnNext.addEventListener('click', () => { container.scrollBy({ left: container.clientWidth, behavior: 'smooth' }); });
+         }
+      });
+
+      // ==========================================
+      // 2. Lógica do Lightbox (Galeria Ampliada)
+      // ==========================================
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const lbPrev = document.querySelector('.lightbox-btn.prev');
+      const lbNext = document.querySelector('.lightbox-btn.next');
+      
+      let currentGallery = []; // Vai guardar as fotos da notícia atual
+      let currentIndex = 0;    // Vai guardar qual foto estamos vendo na tela ampliada
+
+      function updateLightbox() {
+         lightboxImg.src = currentGallery[currentIndex].src;
+      }
+
+      document.querySelectorAll('.noticia-card').forEach(card => {
+         const images = Array.from(card.querySelectorAll('.noticia-img-container img'));
+         
+         images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+               currentGallery = images; // Pega todas as fotos DESSA notícia específica
+               currentIndex = index;    // Pega a posição da foto que você clicou
+               updateLightbox();
+               
+               // Se a notícia só tem 1 foto, esconde as setas da tela preta
+               if (currentGallery.length <= 1) {
+                  lbPrev.style.display = 'none';
+                  lbNext.style.display = 'none';
+               } else {
+                  lbPrev.style.display = 'block';
+                  lbNext.style.display = 'block';
+               }
+               
+               lightbox.style.display = 'flex';
+            });
+         });
+      });
+
+      // Passar foto pra trás na tela ampliada
+      lbPrev.addEventListener('click', (e) => {
+         e.stopPropagation(); // Impede o clique de fechar o lightbox acidentalmente
+         if (currentGallery.length > 0) {
+            currentIndex = (currentIndex === 0) ? currentGallery.length - 1 : currentIndex - 1;
+            updateLightbox();
+         }
+      });
+
+      // Passar foto pra frente na tela ampliada
+      lbNext.addEventListener('click', (e) => {
+         e.stopPropagation();
+         if (currentGallery.length > 0) {
+            currentIndex = (currentIndex === currentGallery.length - 1) ? 0 : currentIndex + 1;
+            updateLightbox();
+         }
+      });
+
+      // Fechar no X
+      closeBtn.addEventListener('click', () => { lightbox.style.display = 'none'; });
+
+      // Fechar clicando no fundo preto
+      lightbox.addEventListener('click', (e) => {
+         if (e.target === lightbox) { lightbox.style.display = 'none'; }
+      });
+      
+      // Bônus: Passar fotos pelo teclado!
+      document.addEventListener('keydown', (e) => {
+         if (lightbox.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') lbPrev.click();
+            if (e.key === 'ArrowRight') lbNext.click();
+            if (e.key === 'Escape') closeBtn.click();
+         }
+      });
+   </script>
 </body>
 </html>

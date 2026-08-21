@@ -92,7 +92,7 @@ const acervoData = {
     "Biblioteca e Coleções Pessoais": {
         description: "Constituídas a partir de doações de acervos bibliográficos por instituições e pesquisadores, a Biblioteca do Centro de Memória da Amazônia guarda um número considerável de coleções de livros.",
         items: {
-            "Acesse a Biblioteca": "https://ufpabr.sharepoint.com/SEU_LINK_BIBLIOTECA"
+            "Acesse a Biblioteca": "biblioteca.html"
         }
     },
     "Projetos": {

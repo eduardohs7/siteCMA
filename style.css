@@ -20,7 +20,7 @@ body {
 
 /* HEADER / NAV BAR */
 .main-header {
-    background-color: #FFFFFF;
+    background-color: #7A1C20;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
@@ -58,7 +58,7 @@ body {
 .logo-main {
     font-size: 1.9rem; 
     font-weight: 800; /* Black (peso máximo do negrito da Montserrat) */
-    color: #8b2828;
+    color: #ffffff;
     letter-spacing: 1px;
 }
 
@@ -71,7 +71,7 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: #4A4A4A;
+    color: #f7f6f6;
     font-weight: 500;
     font-size: 0.95rem;
     transition: color 0.2s ease;
@@ -339,34 +339,24 @@ body {
 }
 /* HERO SECTION COM TEXTURA DE LAJOTA */
 .hero-unipix {
-    background: linear-gradient(135deg, #8b2828 0%, #4A0E11 100%);
+    background-image: url(bannerDeFundo.png);
+    background-size: 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent;
     color: #FFFFFF;
-    padding: 80px 0;
+    padding: 30px 0 !important;
+    min-height:  auto !important;
     position: relative;
     overflow: hidden;
 }
 
-/* Camada da textura de lajota */
-.hero-unipix::before,
-.stats-banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('lajotinha.png'); 
-    background-repeat: repeat;
-    
-    /* Aumentando o tamanho para as lajotas ficarem maiores */
-    background-size: 1000px; 
-    
-    /* Deixando a lajota mais forte e visível */
-    opacity: 0.8; 
-    
-    pointer-events: none;
-    z-index: 1;
+#hero .hero-image img {
+    max-height: 20px !important;
+    width: auto;
 }
+
+
 
 /* Mantém o conteúdo por cima da textura */
 .hero-unipix .container {
@@ -493,10 +483,7 @@ body {
     justify-content: center;
 }
 
-.spin-text {
-    transform-origin: 50px 50px;
-    animation: rotateStamp 22s linear infinite;
-}
+
 
 @keyframes rotateStamp {
     from {

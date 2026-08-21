@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bibliografia - Centro de Memória da Amazônia - UFPA</title>
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Playfair+Display:wght@900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+
+   <style>
+      /* Estilos para o menu vermelho, letras brancas e correção do logo */
+      .main-header {
+         background-color: #7A1C20 !important;
+      }
+      .main-header .nav-menu > li > a {
+         color: #ffffff !important;
+         font-weight: 600;
+      }
+      .main-header .nav-menu > li > a:hover,
+      .main-header .nav-menu > li > a.active {
+         color: #f0f0f0 !important;
+         text-decoration: underline;
+      }
+      .main-header .nav-menu .arrow {
+         color: #ffffff !important;
+      }
+      .main-header .brand-logo,
+      .main-header .brand-logo span,
+      .main-header .brand-logo .logo-sub,
+      .main-header .brand-logo .logo-main {
+         color: #ffffff !important;
+         background: transparent !important;
+      }
+
+      /* Estilos específicos para os Cards da Bibliografia */
+      .biblio-card {
+         padding-bottom: 30px;
+         margin-bottom: 30px;
+         border-bottom: 1px solid #e0e0e0;
+      }
+      .biblio-card:last-child {
+         border-bottom: none;
+         margin-bottom: 0;
+         padding-bottom: 0;
+      }
+      .biblio-ref {
+         font-family: 'Montserrat', sans-serif;
+         font-size: 1.05rem;
+         color: #1a1a1a;
+         line-height: 1.5;
+         margin-bottom: 12px;
+      }
+      .biblio-resumo {
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         font-size: 0.95rem;
+         color: #4a4a4a;
+         line-height: 1.7;
+         text-align: justify;
+         margin-bottom: 15px;
+      }
+      .btn-biblio {
+         display: inline-block;
+         background-color: #7A1C20;
+         color: #ffffff;
+         padding: 10px 22px;
+         border-radius: 4px;
+         font-family: 'Montserrat', sans-serif;
+         font-weight: 700;
+         font-size: 0.85rem;
+         text-decoration: none;
+         transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .btn-biblio:hover {
+         background-color: #5d1519;
+         color: #ffffff;
+         transform: translateY(-2px);
+      }
+   </style>
+</head>
+<body>
+
+   <!-- Top Nav Bar Atualizada (Sem a Biblioteca Solta) -->
+   <header class="main-header">
+      <div class="header-container">
+         <div class="brand-logo">
+            <span class="logo-sub">UFPA</span>
+            <span class="logo-main">CMA</span>
+         </div>
+         <nav class="nav-wrap">
+            <ul class="nav-menu">
+               <li><a href="home.html">Início</a></li>
+               
+               <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
+               <li class="mega-dropdown">
+                  <a href="acervo.html">Acervo <span class="arrow">▾</span></a>
+                  <div class="mega-menu">
+                     <div class="mega-menu-header">
+                        <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
+                        <span>Navegue pelos fundos, séries e documentos</span>
+                     </div>
+                     
+                     <div class="miller-container" id="millerContainer">
+                        <div class="miller-column" id="col-0">
+                           <div class="miller-header">Fundo / Entidade</div>
+                           <ul class="miller-list" id="list-0"></ul>
+                        </div>
+                     </div>
+
+                     <div class="mega-menu-footer" style="text-align: left; background: #fafafa; padding: 12px 16px; border-top: 1px solid #eee;">
+                        <div id="millerDetails" style="display: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.83rem; color: #555; line-height: 1.4;"></div>
+                     </div>
+                  </div>
+               </li>
+
+               <!-- Link removido da navbar a seu pedido (agora vive no script.js) -->
+               
+               <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" target="_blank">Normativas de Estágio</a></li>
+               <li><a href="galeriaGeral.html">Galeria</a></li>
+               <li><a href="pesquisador.html">Pesquisador</a></li>
+               <li><a href="noticias.html">Notícias</a></li>
+               <li><a href="bibliografia.html" class="active">Bibliografia</a></li>
+
+            </ul>
+         </nav>
+      </div>
+   </header>
+
+   <!-- Conteúdo Principal da Bibliografia -->
+   <section style="padding: 60px 0; background-color: #f8f9fa;">
+      <div class="container" style="max-width: 1100px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+         
+         <h1 style="font-family: 'Syne', sans-serif; font-size: 2.2rem; color: #7A1C20; margin-bottom: 20px; border-bottom: 3px solid #7A1C20; padding-bottom: 10px;">BIBLIOGRAFIA</h1>
+
+         <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; color: #4a4a4a; line-height: 1.7; margin-bottom: 40px;">
+            Esta seção reúne alguns trabalhos (artigos, dissertações, trabalhos de conclusão de curso, etc.) que abordam aspectos da história, organização e relevância social do Centro de Memória da Amazônia. O objetivo é facilitar o acesso ao conhecimento produzido sobre a instituição, seu acervo e importância.
+         </p>
+
+         <!-- CARD 1 -->
+         <div class="biblio-card">
+            <p class="biblio-ref">
+               BARBOSA, Raíssa Santos. <b>“SALVAGUARDA DA COLEÇÃO DE PROCESSOS E LIVROS CARTORIAIS DO TRIBUNAL DE JUSTIÇA DO PARÁ-BRASIL (1818-1970)”:</b> um projeto do Centro de Memória da Amazônia para o Endangered Archives Programme da Biblioteca Britânica. 2025. Trabalho de Conclusão de Curso (Licenciatura em História) - Faculdade de História, Instituto de Filosofia e Ciências Humanas, Universidade Federal do Pará, Belém, 2025.
+            </p>
+            <p class="biblio-resumo">
+               <strong>Resumo:</strong> O relatório que segue apresenta as atividades desenvolvidas durante o projeto intitulado "Salvaguarda da Coleção de Processos e Livros Cartoriais do Tribunal de Justiça do Pará – Brasil (1818-1970)", realizado pelo Centro de Memória da Amazônia (CMA) em parceria com a Biblioteca Britânica (Reino Unido). O objetivo do projeto era promover o tratamento, a catalogação e a digitalização de processos criminais e livros cartoriais pertencentes ao Tribunal de Justiça do Estado do Pará (TJE/PA)...
+            </p>
+            <a class="btn-biblio" href="https://ufpabr.sharepoint.com/:b:/g/IQAij0U3noVTTqdtcjJs0fV5AXXi7bJRSelcjAQfMxHZvN0?e=YR4ObU" target="_blank">Acessar Documento ↗</a>
+         </div>
+
+         <!-- CARD 2 -->
+         <div class="biblio-card">
+            <p class="biblio-ref">
+               CATUNDA, Eronice Visgueira Sampaio. <b>Testemunhos escritos da Amazônia:</b> a gestão de acervos do Poder Judiciário no Pará (1991-2021). Dissertação (Mestrado em História) - Instituto de Filosofia e Ciências Humanas, Universidade Federal do Pará, Belém, 2022.
+            </p>
+            <p class="biblio-resumo">
+               <strong>Resumo:</strong> A pesquisa desta dissertação objetivou analisar o processo de gestão, organização e tratamento do acervo judiciário do Tribunal de Justiça do Pará-TJPA, considerando os convênios com instituições públicas e sociedade literária como estratégia de garantia da preservação do acervo e democratização do acesso a documentação à sociedade em geral, utilizando como recorte de tempo o ano de 1991-2021...
+            </p>
+            <a class="btn-biblio" href="https://ufpabr.sharepoint.com/:b:/g/IQCrwbicRFrUQ6F91PWG4KgYAXOhdiz9EImWzbDZytpQXYQ?e=TFI7Aj" target="_blank">Acessar Documento ↗</a>
+         </div>
+
+         <!-- CARD 3 -->
+         <div class="biblio-card">
+            <p class="biblio-ref">
+               FERREIRA, Victoria Ketery Costa. <b>Análise paleográfica de um auto cível de casamento (1899) do acervo do Centro de Memória da Amazônia.</b> Trabalho de Conclusão de Curso (Bacharelado em Arquivologia) – Faculdade de Arquivologia, Instituto de Ciências Sociais Aplicadas, Universidade Federal do Pará, Belém, 2024.
+            </p>
+            <p class="biblio-resumo">
+               <strong>Resumo:</strong> Essa pesquisa tem como tema a Paleografia e apresenta uma análise paleográfica de um documento manuscrito do acervo permanente do Centro de Memória da Amazônia (CMA). O interesse na escolha dessa temática surgiu a partir do contato com a disciplina de Paleografia e na percepção da importância do campo de estudo da mesma...
+            </p>
+            <a class="btn-biblio" href="https://ufpabr.sharepoint.com/:b:/g/IQBj6tCS8i6aSqfrlHTsL5XCAWme-qih-hKGF3dka1B_-uM?e=RMbfcJ" target="_blank">Acessar Documento ↗</a>
+         </div>
+
+         <!-- CARD 4 -->
+         <div class="biblio-card">
+            <p class="biblio-ref">
+               GUZMÁN, Décio Marco Antônio de Alencar; OLIVEIRA JUNIOR, A. O.; BOMBARDI, F. A. <b>O Centro de Memória da Amazônia e a História Demográfica: Documentação Cartorária de Belém do Pará (1800-1822).</b> In: SCOTT, A. S. V.; FLECK, E. C. D. (Org.). A corte no Brasil: população e sociedade no Brasil e em Portugal no início do século XIX. 1ªed.São Leopoldo: Oikos; UNISINOS, 2008, p. 104-116.
+            </p>
+            <p class="biblio-resumo">
+               <strong>Introdução:</strong> A documentação relativa aos primórdios do século XIX sob a guarda do Centro de Memória da Amazônia, órgão da Universidade Federal do Pará, é extremamente volumosa e rica em elementos de estudo para a História Demográfica. Selecionamos nesta comunicação alguns testamentos e inventários post-mortem procedentes de alguns cartórios de Belém do Pará, entre os anos 1800 e 1822...
+            </p>
+            <a class="btn-biblio" href="https://ufpabr.sharepoint.com/:b:/g/IQDNC2JyqHgiSYhvGzqXQ5nvASpecks7454bKakjs3fo-l0?e=kE6Hd0" target="_blank">Acessar Documento ↗</a>
+         </div>
+
+         <!-- CARD 5 -->
+         <div class="biblio-card">
+            <p class="biblio-ref">
+               MARTINS, Elane Epifane; MARTINS, Eliane Epifane. <b>Centro de Memória da Amazônia no processo de preservação da memória social: a iniciativa que salvou parte da história do Estado do Pará, sob o risco de deterioração.</b> Múltiplos Olhares em Ciência da Informação, Belo Horizonte, v. 3, n. 2, 2014.
+            </p>
+            <p class="biblio-resumo">
+               <strong>Resumo:</strong> Este artigo pretende mostrar a importância da iniciativa do Centro de Memória da Amazônia (CMA) no processo de preservação da memória social do Estado do Pará, quase deteriorada pelo tempo e esquecida pela sociedade paraense. Mostra o surgimento do Centro de Memória da Amazônia e o objetivo de divulgar a história de documentos jurídicos de uma época pouco conhecida...
+            </p>
+            <a class="btn-biblio" href="https://ufpabr.sharepoint.com/:b:/g/IQBv2YZWPhI-RrpO_JmD7znTAeRkcX72omoQpLDSK8nS04M?e=OCNp9e" target="_blank">Acessar Documento ↗</a>
+         </div>
+
+         <!-- CARD 6 -->
+         <div class="biblio-card">
+            <p class="biblio-ref">
+               PACHECO, Erike Gomes. <b>Análise do projeto Estatutos e Associativismo na Amazônia Brasileira:</b> as contribuições e os passos para a historiografia paraense (2023-24). 2025. Trabalho de Curso (Licenciatura em História) - Faculdade de História, Instituto de Filosofia e Ciências Humanas, Universidade Federal do Pará, Belém, 2025.
+            </p>
+            <p class="biblio-resumo">
+               <strong>Resumo:</strong> Este estudo é um relatório das atividades efetivadas dentro do projeto de pesquisa intitulado de Estatutos e Associativismo na Amazônia brasileira: Estudos sobre a documentação estatutária de associações culturais, comerciais, políticas, religiosas, recreativas, esportivas e profissionais do Pará (1835-1988)...
+            </p>
+            <a class="btn-biblio" href="https://ufpabr.sharepoint.com/:b:/g/IQDBrVVomIgbT5uYS3T-5tdcAdnxU3rRBWMz162HCv_p5eA?e=yGZppf" target="_blank">Acessar Documento ↗</a>
+         </div>
+
+         <!-- CARD 7 -->
+         <div class="biblio-card">
+            <p class="biblio-ref">
+               SOUSA, João Henrique da Rocha. <b>O blog do Centro de Memória da Amazônia sob o prisma da história digital (2010-2013).</b> 2025. Trabalho de Conclusão de Curso (Bacharelado em História) - Faculdade de História, Instituto de Filosofia e Ciências Humanas, Universidade Federal do Pará, Belém, 2025.
+            </p>
+            <p class="biblio-resumo">
+               <strong>Resumo:</strong> A presente pesquisa tem por objetivo analisar a importância do blog do Centro de Memória da Amazônia (CMA), instituição patrimonial vinculada à Universidade Federal do Pará (UFPA) criada em 2007, a partir de um convênio realizado entre a UFPa e o Tribunal de Justiça do Estado do Pará (TJ-PA)...
+            </p>
+            <a class="btn-biblio" href="https://ufpabr.sharepoint.com/:b:/g/IQCJMb2081JoTZRZi_PbJLhAAYLIZcL0mgQiM-ZhTuuHz8w?e=JxdRhp" target="_blank">Acessar Documento ↗</a>
+         </div>
+
+         <!-- CARD 8 -->
+         <div class="biblio-card">
+            <p class="biblio-ref">
+               SOUZA, Renan Ismael Martins; COSTA, Elisangela Silva da; COELHO, Maria Elvira Rodrigues. <b>Cartografia do movimento associativista no Pará - uma análise bibliométrica do acervo estatutos pertencentes ao Centro de Memória da Amazônia da Universidade Federal do Pará e ao Arquivo Público do Pará.</b> Ciência Inclusiva e Global: Métricas, Dados e Infraestruturas, v. 9, p. 1-5, 2024.
+            </p>
+            <p class="biblio-resumo">
+               <strong>Resumo:</strong> O presente estudo tem o objetivo principal de elaborar uma análise bibliométrica dos estatutos integrantes dos acervos do Centro de Memória da Amazônia da Universidade Federal do Pará e do Arquivo Público do Pará...
+            </p>
+            <a class="btn-biblio" href="https://ufpabr.sharepoint.com/:b:/g/IQCUZ5LIKeb0SpjZuXG3La7zASXebqgZtM0AK8eUyK__-MM?e=2m5T3V" target="_blank">Acessar Documento ↗</a>
+         </div>
+
+         <!-- CARD 9 -->
+         <div class="biblio-card">
+            <p class="biblio-ref">
+               SPANNER, Júlia Ramos. <b>Arquivos e sua importância para a memória:</b> uma análise do Centro de Memória da Amazônia. Trabalho de Curso (Bacharelado em Arquivologia) – Faculdade de Arquivologia, Instituto de Ciências Sociais Aplicadas, Universidade Federal do Pará, Belém, 2018.
+            </p>
+            <p class="biblio-resumo">
+               <strong>Resumo:</strong> O estudo arquivístico está cada vez mais ampliando o seu alcance, mesmo se tratando de uma área de pesquisa relativamente nova, muito se tem discutido sobre os princípios básicos de arquivologia, entre eles a noção de arquivo e a sua importância. Acerca disso, suscitou a indagação acerca da importância de guardar memórias...
+            </p>
+            <a class="btn-biblio" href="https://ufpabr.sharepoint.com/:b:/g/IQA4V2YSgj50TbDCr145kpvJAYMn8VFCdTefgK3h8he8ETM?e=L8IIpQ" target="_blank">Acessar Documento ↗</a>
+         </div>
+
+      </div>
+   </section>
+
+   <!-- Rodapé Padrão Completo -->
+   <footer class="footer-unipix">
+      <div class="container footer-top-grid">
+         <div class="footer-brand">
+            <img src="images/cmaufpa.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
+            <p class="footer-desc">
+               O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria do Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.
+            </p>
+         </div>
+         
+         <div class="footer-links-col">
+            <h5>VENHA NOS VISITAR</h5>
+            <p>Travessa Rui Barbosa, 491</p>
+            <p>CEP 66053-260 - Reduto</p>
+            <p>Belém, PA - BRASIL</p>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>REDES SOCIAIS</h5>
+            <ul>
+               <li><a href="https://www.facebook.com/centrodememoriaufpa" target="_blank">Facebook</a></li>
+               <li><a href="https://twitter.com/CMA_UFPA" target="_blank">Twitter</a></li>
+               <li><a href="https://www.instagram.com/cmaufpa" target="_blank">Instagram</a></li>
+            </ul>
+         </div>
+
+         <div class="footer-links-col">
+            <h5>CONTATOS</h5>
+            <p><strong>(91) 3201-8981</strong></p>
+            <p><a href="mailto:cma@ufpa.br" class="footer-email">cma@ufpa.br</a></p>
+            <p><a href="mailto:bibcma@ufpa.br" class="footer-email">bibcma@ufpa.br</a></p>
+         </div>
+      </div>
+
+      <div class="footer-sub">
+         <div class="container footer-sub-flex">
+            <p>&copy; 2026 Centro de Memória da Amazônia</p>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Script JS externo -->
+   <script src="script.js"></script>
+</body>
+</html>
