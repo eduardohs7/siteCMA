@@ -18,18 +18,65 @@ body {
     padding: 0 20px;
 }
 
-/* HEADER / NAV BAR */
-.main-header {
-    background-color: #7A1C20;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+/* =========================================
+   NAVBAR DEFINITIVA E IGUAL PARA TODO O SITE
+========================================= */
+.main-header { 
+   background-color: #7A1C20 !important; 
+   padding: 7px 0 !important; /* Garante que a grossura da barra seja igual na Home e nas internas */
 }
 
+/* 1. TEXTOS DO MENU (Tamanho e Negrito idênticos) */
+.main-header .nav-menu > li > a { 
+   color: #ffffff !important; 
+   font-weight: 800 !important; 
+   font-size: 17px !important; 
+   font-family: 'Montserrat', sans-serif !important;
+}
+.main-header .nav-menu > li > a:hover,
+.main-header .nav-menu > li > a.active { 
+   color: #f0f0f0 !important; 
+   text-decoration: underline !important; 
+}
+.main-header .nav-menu .arrow { 
+   color: #ffffff !important; 
+}
+
+/* 2. TAMANHO DA LOGO (CMA) */
+.main-header .brand-logo, 
+.main-header .brand-logo .logo-main { 
+   color: #ffffff !important; 
+   background: transparent !important; 
+   font-size: 32px !important; /* Altere aqui se quiser o CMA maior ou menor */
+   font-weight: 800 !important;
+   display: inline-flex !important;
+   align-items: center !important;
+}  
+
+/* 3. QUADRADINHO BRANCO (UFPA) */
+.main-header .brand-logo .logo-sub { 
+   background-color: #ffffff !important; 
+   color: #7A1C20 !important; 
+   padding: 4px 8px !important; 
+   border-radius: 10px !important; 
+   font-weight: 900 !important;
+   font-size: 15px !important; /* Altere aqui se quiser o UFPA maior ou menor */
+   margin-right: 2px !important;
+}
+
+/* 4. COR DO TEXTO NO MENU ACERVO (Para não ficar invisível) */
+.mega-menu, 
+.mega-menu .miller-list li,
+.mega-menu .miller-header {
+   color: #0e0e0e !important;
+}
+.mega-menu a {
+   color: #1a1a1a !important;
+   font-weight: 600 !important;
+   font-size: 20px !important;
+}
 .header-container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 15px 20px;
     display: flex;
@@ -56,7 +103,7 @@ body {
 }
 
 .logo-main {
-    font-size: 1.9rem; 
+    font-size: 2rem; 
     font-weight: 800; /* Black (peso máximo do negrito da Montserrat) */
     color: #ffffff;
     letter-spacing: 1px;
@@ -73,7 +120,7 @@ body {
     text-decoration: none;
     color: #f7f6f6;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     transition: color 0.2s ease;
 }
 
@@ -140,7 +187,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #8b2828;
     white-space: normal !important;
 }
@@ -192,6 +239,16 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* =========================================
+   COR DA LETRA NAS OPÇÕES SELECIONADAS DO ACERVO
+========================================= */
+/* Quando o item da lista recebe o fundo vermelho (selecionado, ativo ou hover) a letra fica branca */
+.mega-menu .miller-list li.selected,
+.mega-menu .miller-list li.active {
+   color: #ffffff !important;
+}
+ 
+
 .mega-menu .miller-list {
     list-style: none;
     margin: 0;
@@ -212,6 +269,8 @@ body {
     transition: background 0.15s ease, color 0.15s ease;
     white-space: normal !important;
     word-break: break-word;
+
+    
 }
 
 .mega-menu .miller-list li:hover {
@@ -345,14 +404,14 @@ body {
     background-repeat: no-repeat !important;
     background-color: transparent;
     color: #FFFFFF;
-    padding: 30px 0 !important;
+    padding: 35px 0 !important;
     min-height:  auto !important;
     position: relative;
     overflow: hidden;
 }
 
 #hero .hero-image img {
-    max-height: 20px !important;
+    max-height: 25px !important;
     width: auto;
 }
 
@@ -373,7 +432,7 @@ body {
 
 .hero-text-side {
     flex: 1;
-    max-width: 580px;
+    max-width: px;
 }
 
 .hero-badge {
