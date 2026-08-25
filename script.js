@@ -313,3 +313,33 @@ function clearDescription() {
         detailsBox.innerHTML = '';
     }
 }
+
+// ==========================================
+// MENU RESPONSIVO MOBILE (CRIADO AUTOMATICAMENTE)
+// ==========================================
+document.addEventListener("DOMContentLoaded", function() {
+   const headerContainer = document.querySelector('.header-container');
+   const navWrap = document.querySelector('.nav-wrap');
+
+   if (headerContainer && navWrap) {
+      // 1. Cria o botão Hambúrguer
+      const mobileBtn = document.createElement('button');
+      mobileBtn.className = 'mobile-menu-btn';
+      mobileBtn.innerHTML = '☰'; // Ícone de menu
+      
+      // 2. Coloca o botão logo antes da lista do menu
+      headerContainer.insertBefore(mobileBtn, navWrap);
+
+      // 3. Adiciona a função de clicar para abrir/fechar
+      mobileBtn.addEventListener('click', function() {
+         navWrap.classList.toggle('menu-aberto');
+         
+         // Se o menu estiver aberto, muda o ícone para um "X"
+         if (navWrap.classList.contains('menu-aberto')) {
+            mobileBtn.innerHTML = '✖';
+         } else {
+            mobileBtn.innerHTML = '☰';
+         }
+      });
+   }
+});
