@@ -965,4 +965,74 @@ body {
    .noticia-img-container {
       height: 100% !important;
    }
+
+  /* =========================================
+      5. AJUSTES DA TELA INICIAL (HOME) NO CELULAR LADO A LADO
+   ========================================= */
+   .hero-unipix {
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      padding: 30px 10px !important; /* Diminui o respiro para a tela não ficar gigante */
+      min-height: auto !important; /* Remove a altura gigante do manuscrito */
+   }
+
+   /* Força a grade a ficar LADO A LADO no celular, igual ao PC */
+   .hero-unipix .hero-grid {
+      display: flex !important;
+      flex-direction: row !important; /* Lado a lado */
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 10px !important;
+   }
+
+   /* Coluna da esquerda: Textos e Botões */
+   .hero-text-side {
+      flex: 1.2 !important; /* Ocupa um pouquinho mais da metade da tela */
+      text-align: left !important;
+      margin-bottom: 0 !important;
+   }
+
+   /* Diminui os textos para caberem de um lado só */
+   .hero-title {
+      font-size: 1.2rem !important;
+      text-align: left !important;
+      margin-bottom: 10px !important;
+   }
+   
+   .hero-desc {
+      font-size: 0.85rem !important;
+      text-align: left !important;
+      margin-bottom: 15px !important;
+   }
+
+   /* Botões: Um em cima do outro */
+   .hero-actions {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+      align-items: flex-start !important;
+   }
+   
+   .hero-actions a {
+      width: 100% !important;
+      font-size: 0.8rem !important;
+      padding: 8px 10px !important;
+      text-align: center !important;
+   }
+
+   /* Coluna da direita: A Logo do CMA/UFPA */
+   .hero-media-side {
+      flex: 1 !important; /* Ocupa o resto da tela */
+      display: flex !important;
+      justify-content: center !important;
+   }
+
+   /* Deixa a logo pequena e delicada para caber do lado */
+   .hero-main-img {
+      width: 100% !important;
+      max-width: 150px !important; /* Reduz o tamanho máximo dela */
+      height: auto !important;
+      margin: 0 !important;
+    }
 }
