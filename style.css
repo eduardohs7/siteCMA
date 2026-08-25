@@ -23,10 +23,9 @@ body {
 ========================================= */
 .main-header { 
    background-color: #7A1C20 !important; 
-   padding: 7px 0 !important; /* Garante que a grossura da barra seja igual na Home e nas internas */
+   padding: 7px 0 !important; 
 }
 
-/* 1. TEXTOS DO MENU (Tamanho e Negrito idênticos) */
 .main-header .nav-menu > li > a { 
    color: #ffffff !important; 
    font-weight: 800 !important; 
@@ -47,7 +46,7 @@ body {
 .main-header .brand-logo .logo-main { 
    color: #ffffff !important; 
    background: transparent !important; 
-   font-size: 32px !important; /* Altere aqui se quiser o CMA maior ou menor */
+   font-size: 32px !important; 
    font-weight: 800 !important;
    display: inline-flex !important;
    align-items: center !important;
@@ -60,11 +59,11 @@ body {
    padding: 4px 8px !important; 
    border-radius: 10px !important; 
    font-weight: 900 !important;
-   font-size: 15px !important; /* Altere aqui se quiser o UFPA maior ou menor */
+   font-size: 15px !important; 
    margin-right: 2px !important;
 }
 
-/* 4. COR DO TEXTO NO MENU ACERVO (Para não ficar invisível) */
+/* 4. COR DO TEXTO NO MENU ACERVO  */
 .mega-menu, 
 .mega-menu .miller-list li,
 .mega-menu .miller-header {
@@ -94,7 +93,7 @@ body {
 
 .logo-sub {
     font-size: 1rem;
-    font-weight: 800; /* Extra Bold para deixar o UFPA bem gordinho */
+    font-weight: 800; 
     color: #8b2828;
     background: #F4EFEA;
     padding: 4px 8px; 
@@ -104,7 +103,7 @@ body {
 
 .logo-main {
     font-size: 2rem; 
-    font-weight: 800; /* Black (peso máximo do negrito da Montserrat) */
+    font-weight: 800; 
     color: #ffffff;
     letter-spacing: 1px;
 }
@@ -239,10 +238,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* =========================================
-   COR DA LETRA NAS OPÇÕES SELECIONADAS DO ACERVO
-========================================= */
-/* Quando o item da lista recebe o fundo vermelho (selecionado, ativo ou hover) a letra fica branca */
+
 .mega-menu .miller-list li.selected,
 .mega-menu .miller-list li.active {
    color: #ffffff !important;
@@ -396,7 +392,6 @@ body {
         transform: translate(-50%, 0);
     }
 }
-/* HERO SECTION COM TEXTURA DE LAJOTA */
 .hero-unipix {
     background-image: url(bannerDeFundo.png);
     background-size: 100% !important;
@@ -910,7 +905,7 @@ body {
 
    header.main-header .nav-menu {
       flex-direction: column !important;
-      background-color: #5d1519 !important; /* Vermelho mais escuro para destacar */
+      background-color: #5d1519 !important; 
       border-radius: 8px;
       padding: 10px !important;
    }
@@ -924,7 +919,6 @@ body {
       border-bottom: 1px solid rgba(255,255,255,0.1);
    }
 
-   /* 3. Mega Menu (Acervo) no Celular/Tablet - Correções Avançadas */
    .mega-menu {
       position: static !important; 
       width: 100% !important;
@@ -933,7 +927,6 @@ body {
       padding: 10px 5px !important;
    }
 
-   /* Empilha o título e o subtítulo para não ficarem espremidos */
    .mega-menu-header {
       display: flex !important;
       flex-direction: column !important;
@@ -942,39 +935,35 @@ body {
       padding-bottom: 15px !important;
    }
 
-   /* Garante que os containers fiquem um embaixo do outro com espaço */
    .miller-container {
       display: flex !important;
       flex-direction: column !important;
-      gap: 15px !important; /* Distância entre cada coluna vermelha */
+      gap: 15px !important; 
    }
 
    .miller-column {
       width: 100% !important;
       height: auto !important;
-      max-height: none !important; /* Remove a trava que cortava o conteúdo */
-      border: 1px solid #e0e0e0 !important; /* Cria uma caixinha ao redor de cada lista */
+      max-height: none !important; 
+      border: 1px solid #e0e0e0 !important; 
       border-radius: 6px !important;
       overflow: hidden !important;
    }
 
-   /* Habilita rolagem interna se a lista de itens for muito grande */
    .miller-list {
       max-height: 250px !important; 
       overflow-y: auto !important;
    }
 
-   /* O truque mágico para o texto não vazar: permitir quebra de linha */
    .miller-list li {
       white-space: normal !important; 
       word-wrap: break-word !important;
       line-height: 1.4 !important;
       padding: 12px 10px !important;
-      height: auto !important; /* Deixa a altura se adaptar ao tamanho do texto */
+      height: auto !important; 
       border-bottom: 1px solid #f0f0f0 !important;
    }
 
-   /* 4. Ajustes Gerais de Layout (Empilhar tudo) */
    .hero-grid, 
    .about-grid, 
    .footer-top-grid,
@@ -993,7 +982,7 @@ body {
    .noticia-img-wrapper {
       flex: none !important;
       width: 100% !important;
-      height: 280px !important; /* Deixa a foto quadradinha no topo do card */
+      height: 280px !important; 
       border-radius: 8px 8px 0 0 !important;
    }
    .noticia-img-container {
@@ -1011,15 +1000,13 @@ body {
       min-height: auto !important;
    }
 
-   /* Trava o crescimento exagerado em tablets e telas grandes */
    .hero-unipix .hero-grid {
       display: grid !important;
-      /* A mágica aqui: a coluna da direita (auto) fica exatamente do tamanho da logo. 
-         A da esquerda (1fr) ocupa o resto. */
+ 
       grid-template-columns: 1fr auto !important; 
       gap: 20px 15px !important;
-      max-width: 480px !important; /* Impede que tudo se espalhe demais em tablets */
-      margin: 0 auto !important; /* Mantém tudo centralizado */
+      max-width: 480px !important; 
+      margin: 0 auto !important; 
    }
 
    .hero-text-side {
@@ -1043,7 +1030,6 @@ body {
       line-height: 1.4 !important;
    }
 
-   /* BOTÕES (Esquerda) */
    .hero-actions {
       grid-column: 1 / 2 !important;
       display: flex !important;
@@ -1059,7 +1045,6 @@ body {
       text-align: center !important;
    }
 
-   /* LOGO E A CAIXA BRANCA (Direita) */
    .hero-media-side {
       grid-column: 2 / 3 !important;
       display: flex !important;
@@ -1067,11 +1052,10 @@ body {
       justify-content: center !important;
    }
 
-   /* O TRUQUE PARA SUMIR A MOLDURA GIGANTE: 
-      Limitamos o tamanho da 'caixa' que envolve a imagem, não apenas a imagem! */
+
    .hero-image-wrapper {
       width: 100% !important;
-      max-width: 160px !important; /* Mantém a caixinha branca sempre contida */
+      max-width: 160px !important; 
       margin: 0 !important;
    }
 
@@ -1081,10 +1065,7 @@ body {
       display: block !important;
    }
 
-   /* =========================================
-      6. CORREÇÃO DO "FECHAR" ACERVO NO CELULAR
-   ========================================= */
-   /* Bloqueia o "hover" fantasma do celular que impedia o menu de fechar */
+
    .mega-dropdown:hover .mega-menu,
    .mega-dropdown:focus .mega-menu {
       display: none !important;
@@ -1092,7 +1073,6 @@ body {
       visibility: hidden !important;
    }
    
-   /* O menu agora SÓ abre e fecha quando o JavaScript der a ordem exata do clique */
    .mega-dropdown.menu-ativo .mega-menu {
       display: block !important;
       opacity: 1 !important;
@@ -1100,15 +1080,11 @@ body {
    }
 }
 
-/* =========================================
-   MENU ACERVO: CLIQUE NA PALAVRA INTEIRA
-========================================= */
-/* Faz a setinha ser ignorada pelo clique, forçando o clique na palavra inteira */
+
 .mega-dropdown > a .arrow {
    pointer-events: none !important; 
 }
 
-/* Classe que o JavaScript vai usar para abrir o menu */
 .mega-dropdown.menu-ativo .mega-menu {
    display: block !important;
    opacity: 1 !important;

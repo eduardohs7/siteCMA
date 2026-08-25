@@ -40,13 +40,13 @@
       .noticia-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
       
       /* =========================================
-         CARROSSEL DE IMAGENS E BOLINHAS
+         CARROSSEL DE IMAGENS
       ========================================= */
       .noticia-img-wrapper {
          position: relative; 
          flex: 0 0 350px; 
          display: flex;
-         align-items: center; /* Mantém as imagens estáticas no centro vertical */
+         align-items: center; 
          background-color: #ffffff;
       }
       
@@ -174,7 +174,7 @@
       .lightbox-btn.next { right: 20px; }
 
       /* =========================================
-         RESPONSIVO (CELULARES)
+         RESPONSIVIDADE
       ========================================= */
       @media (max-width: 768px) {
          .noticia-card { flex-direction: column; }
@@ -218,7 +218,6 @@
                      </div>
                   </li>
 
-                  <!-- O link solto da Biblioteca foi removido daqui! -->
                   
                   <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" target="_blank">Normativas de Estágio</a></li>
                   <li><a href="galeriaGeral.html">Galeria</a></li>
@@ -236,7 +235,7 @@
       <div class="noticias-content">
          <h1 class="noticias-title">NOTÍCIAS E ACONTECIMENTOS</h1>
 
-         <!-- NOTÍCIA 01: Assistência Judiciária (Com Carrossel de Múltiplas Imagens) -->
+         <!-- NOTÍCIA 01: Assistência Judiciária  -->
          <div class="noticia-card">
             <div class="noticia-img-wrapper">
                <button class="nav-side-btn prev">‹</button>
@@ -270,7 +269,7 @@
          </div>
 
 
-         <!-- NOTÍCIA 03: DICAS DE LEITURA (COM ACORDEÃO) -->
+         <!-- NOTÍCIA 03: DICAS DE LEITURA -->
          <div class="noticia-card">
             <div class="noticia-img-wrapper">
                <button class="nav-side-btn prev">‹</button>
@@ -369,7 +368,6 @@
                   <img src="noticiasDiversos/post novidades site.png" alt="Registro de Belém Antiga 1">
                </div>
                
-               <!-- Bolinhas correspondentes à quantidade de fotos acima -->
                <div class="carousel-dots">
                   <span class="dot active"></span>
                </div>
@@ -410,9 +408,7 @@
 
    <!-- SCRIPT: CARROSSEL + LIGHTBOX GALERIA -->
    <script>
-      // ==========================================
-      // 1. Lógica dos Mini-Carrosséis nas Notícias
-      // ==========================================
+
       document.querySelectorAll('.noticia-card').forEach(card => {
          const wrapper = card.querySelector('.noticia-img-wrapper');
          if (!wrapper) return;

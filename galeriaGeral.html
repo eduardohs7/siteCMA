@@ -275,7 +275,7 @@
             As seguintes fotos compõem uma pequena parte das fotografias localizadas no acervo de Clóvis Moraes Rêgo, parte das Coleções Pessoais da Biblioteca do Centro de Memória da Amazônia. As fotos são identificadas como registros de Belém do início do século XX, fotografias de praças e ruas, e do Intendente de Belém Antonio Lemos. O acervo encontra-se disponível para a pesquisa.
          </p>
 
-         <!-- Caixa de Acesso ao SharePoint Modernizada -->
+         <!-- Caixa de Acesso ao SharePoint -->
          <div class="sharepoint-box">
             <h4 style="font-family: 'Montserrat', sans-serif; color: #1a1a1a; margin-bottom: 15px; font-size: 1.2rem;">
                Consulte o Acervo Completo
@@ -344,14 +344,12 @@
    <script src="script.js"></script>
    
    <script>
-      // ==========================================
       // Lógica do Botão "Mostrar Mais / Mostrar Menos"
-      // ==========================================
+
       const btnMostrarMais = document.getElementById('btnMostrarMais');
       
-      // Nós pegamos todos os itens que têm a classe 'hidden-item' ao carregar a página
       const hiddenCards = document.querySelectorAll('.hidden-item');
-      let isExpanded = false; // Guarda o estado: se está aberto ou fechado
+      let isExpanded = false;
 
       if (btnMostrarMais) {
          btnMostrarMais.addEventListener('click', function() {
@@ -359,7 +357,7 @@
                // AÇÃO: MOSTRAR AS FOTOS
                hiddenCards.forEach(card => {
                   card.classList.remove('hidden-item');
-                  card.style.animation = 'zoomIn 0.4s ease'; // Efeito de entrada suave
+                  card.style.animation = 'zoomIn 0.4s ease';
                });
                // Muda o botão para "Esconder"
                this.innerHTML = 'Mostrar menos ▴';
@@ -368,28 +366,25 @@
                // AÇÃO: ESCONDER AS FOTOS DE VOLTA
                hiddenCards.forEach(card => {
                   card.classList.add('hidden-item');
-                  card.style.animation = ''; // Limpa a animação
+                  card.style.animation = ''; 
                });
-               // Volta o botão para o texto original
                this.innerHTML = 'Ver todas as vistas ▾';
                isExpanded = false;
                
-               // Rola a tela suavemente de volta para o topo dessa galeria para o usuário não se perder
                document.getElementById('galeria-righini').scrollIntoView({ behavior: 'smooth' });
             }
          });
       }
 
-      // ==========================================
+
       // Lógica do Lightbox para a Galeria
-      // ==========================================
+
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const closeBtn = document.querySelector('.lightbox-close');
       const lbPrev = document.querySelector('.lightbox-btn.prev');
       const lbNext = document.querySelector('.lightbox-btn.next');
       
-      // Captura todas as imagens dentro da grade da galeria (até mesmo as escondidas!)
       const galleryImages = Array.from(document.querySelectorAll('.galeria-img-container img'));
       let currentIndex = 0;
 
@@ -397,7 +392,6 @@
          lightboxImg.src = galleryImages[currentIndex].src;
       }
 
-      // Adiciona o evento de clique em todas as imagens da galeria
       galleryImages.forEach((img, index) => {
          img.addEventListener('click', () => {
             currentIndex = index;
@@ -406,7 +400,6 @@
          });
       });
 
-      // Passar foto pra trás na tela ampliada
       lbPrev.addEventListener('click', (e) => {
          e.stopPropagation();
          if (galleryImages.length > 0) {
@@ -415,7 +408,6 @@
          }
       });
 
-      // Passar foto pra frente na tela ampliada
       lbNext.addEventListener('click', (e) => {
          e.stopPropagation();
          if (galleryImages.length > 0) {
@@ -424,15 +416,12 @@
          }
       });
 
-      // Fechar no X
       closeBtn.addEventListener('click', () => { lightbox.style.display = 'none'; });
 
-      // Fechar clicando no fundo preto
       lightbox.addEventListener('click', (e) => {
          if (e.target === lightbox) { lightbox.style.display = 'none'; }
       });
       
-      // Passar fotos pelo teclado
       document.addEventListener('keydown', (e) => {
          if (lightbox.style.display === 'flex') {
             if (e.key === 'ArrowLeft') lbPrev.click();
