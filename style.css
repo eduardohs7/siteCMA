@@ -871,7 +871,7 @@ body {
 }
 
 /* Quando a tela for menor que 768px (Celulares) */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
    
    /* 1. Ajuste da Navbar e Logo */
    header.main-header .header-container {
@@ -924,20 +924,54 @@ body {
       border-bottom: 1px solid rgba(255,255,255,0.1);
    }
 
-   /* 3. Mega Menu (Acervo) no Celular */
+   /* 3. Mega Menu (Acervo) no Celular/Tablet - Correções Avançadas */
    .mega-menu {
-      position: static !important; /* Tira o menu de flutuar e empurra o resto pra baixo */
+      position: static !important; 
       width: 100% !important;
       box-shadow: none !important;
-      margin-top: 5px;
-      padding: 10px !important;
+      margin-top: 10px !important;
+      padding: 10px 5px !important;
    }
-   .miller-container {
+
+   /* Empilha o título e o subtítulo para não ficarem espremidos */
+   .mega-menu-header {
+      display: flex !important;
       flex-direction: column !important;
+      gap: 8px !important;
+      text-align: left !important;
+      padding-bottom: 15px !important;
    }
+
+   /* Garante que os containers fiquem um embaixo do outro com espaço */
+   .miller-container {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 15px !important; /* Distância entre cada coluna vermelha */
+   }
+
    .miller-column {
       width: 100% !important;
-      max-height: 250px;
+      height: auto !important;
+      max-height: none !important; /* Remove a trava que cortava o conteúdo */
+      border: 1px solid #e0e0e0 !important; /* Cria uma caixinha ao redor de cada lista */
+      border-radius: 6px !important;
+      overflow: hidden !important;
+   }
+
+   /* Habilita rolagem interna se a lista de itens for muito grande */
+   .miller-list {
+      max-height: 250px !important; 
+      overflow-y: auto !important;
+   }
+
+   /* O truque mágico para o texto não vazar: permitir quebra de linha */
+   .miller-list li {
+      white-space: normal !important; 
+      word-wrap: break-word !important;
+      line-height: 1.4 !important;
+      padding: 12px 10px !important;
+      height: auto !important; /* Deixa a altura se adaptar ao tamanho do texto */
+      border-bottom: 1px solid #f0f0f0 !important;
    }
 
    /* 4. Ajustes Gerais de Layout (Empilhar tudo) */
@@ -966,73 +1000,123 @@ body {
       height: 100% !important;
    }
 
-  /* =========================================
-      5. AJUSTES DA TELA INICIAL (HOME) NO CELULAR LADO A LADO
+/* =========================================
+      5. AJUSTES DA TELA INICIAL (CELULARES E TABLETS)
    ========================================= */
    .hero-unipix {
       background-size: cover !important;
       background-position: center !important;
       background-repeat: no-repeat !important;
-      padding: 30px 10px !important; /* Diminui o respiro para a tela não ficar gigante */
-      min-height: auto !important; /* Remove a altura gigante do manuscrito */
+      padding: 40px 20px !important;
+      min-height: auto !important;
    }
 
-   /* Força a grade a ficar LADO A LADO no celular, igual ao PC */
+   /* Trava o crescimento exagerado em tablets e telas grandes */
    .hero-unipix .hero-grid {
-      display: flex !important;
-      flex-direction: row !important; /* Lado a lado */
-      align-items: center !important;
-      justify-content: space-between !important;
-      gap: 10px !important;
+      display: grid !important;
+      /* A mágica aqui: a coluna da direita (auto) fica exatamente do tamanho da logo. 
+         A da esquerda (1fr) ocupa o resto. */
+      grid-template-columns: 1fr auto !important; 
+      gap: 20px 15px !important;
+      max-width: 480px !important; /* Impede que tudo se espalhe demais em tablets */
+      margin: 0 auto !important; /* Mantém tudo centralizado */
    }
 
-   /* Coluna da esquerda: Textos e Botões */
    .hero-text-side {
-      flex: 1.2 !important; /* Ocupa um pouquinho mais da metade da tela */
+      display: contents !important; 
+   }
+
+   /* TÍTULO E TEXTO */
+   .hero-title {
+      grid-column: 1 / 3 !important;
+      font-size: 1.5rem !important; 
       text-align: left !important;
       margin-bottom: 0 !important;
-   }
-
-   /* Diminui os textos para caberem de um lado só */
-   .hero-title {
-      font-size: 1.2rem !important;
-      text-align: left !important;
-      margin-bottom: 10px !important;
+      letter-spacing: normal !important; /* Evita letras muito espaçadas */
    }
    
    .hero-desc {
-      font-size: 0.85rem !important;
+      grid-column: 1 / 3 !important;
+      font-size: 0.95rem !important;
       text-align: left !important;
-      margin-bottom: 15px !important;
+      margin-bottom: 5px !important;
+      line-height: 1.4 !important;
    }
 
-   /* Botões: Um em cima do outro */
+   /* BOTÕES (Esquerda) */
    .hero-actions {
+      grid-column: 1 / 2 !important;
       display: flex !important;
       flex-direction: column !important;
-      gap: 10px !important;
-      align-items: flex-start !important;
+      gap: 12px !important;
+      justify-content: center !important;
    }
    
    .hero-actions a {
       width: 100% !important;
-      font-size: 0.8rem !important;
-      padding: 8px 10px !important;
+      font-size: 0.85rem !important;
+      padding: 10px !important;
       text-align: center !important;
    }
 
-   /* Coluna da direita: A Logo do CMA/UFPA */
+   /* LOGO E A CAIXA BRANCA (Direita) */
    .hero-media-side {
-      flex: 1 !important; /* Ocupa o resto da tela */
+      grid-column: 2 / 3 !important;
       display: flex !important;
+      align-items: center !important;
       justify-content: center !important;
    }
 
-   /* Deixa a logo pequena e delicada para caber do lado */
+   /* O TRUQUE PARA SUMIR A MOLDURA GIGANTE: 
+      Limitamos o tamanho da 'caixa' que envolve a imagem, não apenas a imagem! */
+   .hero-image-wrapper {
+      width: 100% !important;
+      max-width: 160px !important; /* Mantém a caixinha branca sempre contida */
+      margin: 0 !important;
+   }
+
    .hero-main-img {
       width: 100% !important;
-      max-width: 150px !important; /* Reduz o tamanho máximo dela */
       height: auto !important;
-      margin: 0 !important;
-    }
+      display: block !important;
+   }
+
+   /* =========================================
+      6. CORREÇÃO DO "FECHAR" ACERVO NO CELULAR
+   ========================================= */
+   /* Bloqueia o "hover" fantasma do celular que impedia o menu de fechar */
+   .mega-dropdown:hover .mega-menu,
+   .mega-dropdown:focus .mega-menu {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+   }
+   
+   /* O menu agora SÓ abre e fecha quando o JavaScript der a ordem exata do clique */
+   .mega-dropdown.menu-ativo .mega-menu {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+   }
+}
+
+/* =========================================
+   MENU ACERVO: CLIQUE NA PALAVRA INTEIRA
+========================================= */
+/* Faz a setinha ser ignorada pelo clique, forçando o clique na palavra inteira */
+.mega-dropdown > a .arrow {
+   pointer-events: none !important; 
+}
+
+/* Classe que o JavaScript vai usar para abrir o menu */
+.mega-dropdown.menu-ativo .mega-menu {
+   display: block !important;
+   opacity: 1 !important;
+   visibility: visible !important;
+   animation: fadeInMenu 0.3s ease;
+}
+
+@keyframes fadeInMenu {
+   from { opacity: 0; transform: translateY(-10px); }
+   to { opacity: 1; transform: translateY(0); }
 }

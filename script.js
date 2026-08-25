@@ -253,6 +253,20 @@ function renderColumn(dataObject, level, containerId = 'millerContainer') {
             li.onclick = (e) => {
                 e.stopPropagation();
                 
+                // NOVIDADE AQUI: Lógica de retração!
+                // Se o item clicado JÁ ESTIVER ativo, ele limpa e fecha as próximas colunas.
+                if (li.classList.contains('active')) {
+                    li.classList.remove('active');
+                    clearDescription();
+                    
+                    // Remove todas as colunas que estão à frente deste nível
+                    while (container.children.length > level + 1) {
+                        container.removeChild(container.lastChild);
+                    }
+                    return; // Encerra a função aqui para não reabrir
+                }
+                
+                // Se não estava ativo, procede normalmente (desmarca os outros e marca este)
                 Array.from(currentList.children).forEach(el => el.classList.remove('active'));
                 li.classList.add('active');
 
@@ -339,6 +353,58 @@ document.addEventListener("DOMContentLoaded", function() {
             mobileBtn.innerHTML = '✖';
          } else {
             mobileBtn.innerHTML = '☰';
+         }
+      });
+   }
+});
+
+// ==========================================
+// ABRIR O MENU ACERVO CLICANDO NA PALAVRA INTEIRA + RESETAR AO FECHAR
+// ==========================================
+document.addEventListener("DOMContentLoaded", function() {
+   const acervoItem = document.querySelector('.mega-dropdown');
+   const acervoLink = document.querySelector('.mega-dropdown > a');
+
+   // Função auxiliar para resetar o menu sempre que ele for fechado
+   function resetarMenuAcervo() {
+       const container = document.getElementById('millerContainer');
+       if (container) {
+           // Deleta todas as colunas que estão na frente da primeira (Nível 0)
+           while (container.children.length > 1) {
+               container.removeChild(container.lastChild);
+           }
+           // Tira a marcação vermelha de qual item estava selecionado na primeira coluna
+           const list0 = document.getElementById('list-0');
+           if (list0) {
+               Array.from(list0.children).forEach(el => el.classList.remove('active'));
+           }
+           // Esconde a caixa de descrição usando a função que já existe no seu código
+           if (typeof clearDescription === 'function') {
+               clearDescription();
+           }
+       }
+   }
+
+   if (acervoLink && acervoItem) {
+      acervoLink.addEventListener('click', function(e) {
+         // 1. Impede de recarregar a página ao clicar na palavra "Acervo"
+         e.preventDefault(); 
+         
+         if (acervoItem.classList.contains('menu-ativo')) {
+             // SE VAI FECHAR: Esconde o menu e reseta as colunas
+             acervoItem.classList.remove('menu-ativo');
+             resetarMenuAcervo();
+         } else {
+             // SE VAI ABRIR: Só mostra o menu
+             acervoItem.classList.add('menu-ativo');
+         }
+      });
+
+      // 3. (Bônus) Fecha e reseta o menu automaticamente se a pessoa clicar fora dele!
+      document.addEventListener('click', function(e) {
+         if (!acervoItem.contains(e.target) && acervoItem.classList.contains('menu-ativo')) {
+            acervoItem.classList.remove('menu-ativo');
+            resetarMenuAcervo();
          }
       });
    }
