@@ -410,3 +410,33 @@ document.addEventListener("DOMContentLoaded", function() {
       });
    }
 });
+
+// ==========================================
+// BOTÃO VOLTAR AO TOPO (GERADO AUTOMATICAMENTE)
+// ==========================================
+document.addEventListener("DOMContentLoaded", function() {
+   // 1. Cria o botão HTML
+   const btnTopo = document.createElement('button');
+   btnTopo.className = 'btn-voltar-topo';
+   btnTopo.innerHTML = '↑'; // A setinha para cima
+   btnTopo.title = 'Voltar ao topo';
+   document.body.appendChild(btnTopo);
+
+   // 2. Vigia a rolagem da página para mostrar ou esconder o botão
+   window.addEventListener('scroll', function() {
+      // Se rolar mais de 300 pixels para baixo, o botão aparece
+      if (window.scrollY > 300) {
+         btnTopo.classList.add('mostrar');
+      } else {
+         btnTopo.classList.remove('mostrar');
+      }
+   });
+
+   // 3. Ao clicar, volta ao topo de forma bem suave
+   btnTopo.addEventListener('click', function() {
+      window.scrollTo({
+         top: 0,
+         behavior: 'smooth'
+      });
+   });
+});
