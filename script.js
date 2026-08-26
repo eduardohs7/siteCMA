@@ -411,9 +411,7 @@ document.addEventListener("DOMContentLoaded", function() {
    }
 });
 
-// ==========================================
-// BOTÃO VOLTAR AO TOPO (GERADO AUTOMATICAMENTE)
-// ==========================================
+// BOTÃO VOLTAR AO TOPO 
 document.addEventListener("DOMContentLoaded", function() {
    // 1. Cria o botão HTML
    const btnTopo = document.createElement('button');
