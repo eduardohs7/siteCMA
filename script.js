@@ -243,15 +243,16 @@ function renderColumn(dataObject, level, containerId = 'millerContainer') {
         const isFinalLink = typeof value === 'string';
 
         if (isFinalLink) {
-            li.innerHTML = `<span class="miller-item-text">${key}</span> <span class="arrow">↗</span>`;
+            // SETINHA REMOVIDA AQUI:
+            li.innerHTML = `<span class="miller-item-text">${key}</span>`;
             li.onclick = (e) => {
                 e.stopPropagation();
                 window.open(value, '_blank');
             };
         } else {
-            li.innerHTML = `<span class="miller-item-text">${key}</span> <span class="arrow">›</span>`;
+            // SETINHA REMOVIDA AQUI TAMBÉM:
+            li.innerHTML = `<span class="miller-item-text">${key}</span>`;
             li.onclick = (e) => {
-                e.stopPropagation();
                 
                 // NOVIDADE AQUI: Lógica de retração!
                 // Se o item clicado JÁ ESTIVER ativo, ele limpa e fecha as próximas colunas.

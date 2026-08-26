@@ -1096,3 +1096,12 @@ body {
    from { opacity: 0; transform: translateY(-10px); }
    to { opacity: 1; transform: translateY(0); }
 }
+
+/* =========================================
+   TRAVA ANTI-EMOJI PARA IPHONE/IOS
+========================================= */
+.arrow {
+   font-variant-emoji: text !important; /* Obriga o iPhone a renderizar como texto limpo */
+   color: inherit !important;
+   font-family: sans-serif !important;
+} 
