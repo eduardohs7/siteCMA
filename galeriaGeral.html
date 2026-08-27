@@ -10,9 +10,9 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
-   <link rel="icon" type="image/png" href="images/noticiasDiversos/favicon.ico">
-   <link href="images/noticiasDiversos/favicon.png" type="image/png" rel="icon">
-   <link href="images/noticiasDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
+   <link rel="icon" type="image/png" href="images/noticiaDiversos/favicon.ico">
+   <link href="images/noticiaDiversos/favicon.png" type="image/png" rel="icon">
+   <link href="images/noticiaDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
 
    <style>
       /* =========================================
@@ -140,39 +140,49 @@
 </head>
 <body>
 
-   <!-- Top Nav Bar -->
+<!-- Top Nav Bar -->
    <header class="main-header">
       <div class="header-container">
-         <div class="brand-logo">
+         
+         <!-- LOGO CLICÁVEL -->
+         <a href="index.html" class="brand-logo" style="text-decoration: none;">
             <span class="logo-sub">UFPA</span>
             <span class="logo-main">CMA</span>
-         </div>
+         </a>
+         
+         <!-- MENU DE NAVEGAÇÃO -->
          <nav class="nav-wrap">
             <ul class="nav-menu">
                <li><a href="index.html">Início</a></li>
+               
+               <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
                <li class="mega-dropdown">
-                  <a href="">Acervo <span class="arrow">▾</span></a>
+                  <a href="#">Acervo <span class="arrow">▾</span></a>
                   <div class="mega-menu">
                      <div class="mega-menu-header">
                         <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
                         <span>Navegue pelos fundos, séries e documentos</span>
                      </div>
+                     
                      <div class="miller-container" id="millerContainer">
                         <div class="miller-column" id="col-0">
                            <div class="miller-header">Fundo / Entidade</div>
                            <ul class="miller-list" id="list-0"></ul>
                         </div>
                      </div>
+
                      <div class="mega-menu-footer" style="text-align: left; background: #fafafa; padding: 12px 16px; border-top: 1px solid #eee;">
                         <div id="millerDetails" style="display: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.83rem; color: #555; line-height: 1.4;"></div>
                      </div>
                   </div>
                </li>
+               
                <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" target="_blank">Normativas de Estágio</a></li>
-               <li><a href="galeriaGeral.html" class="active">Galeria</a></li>
+               <li><a href="galeriaGeral.html">Galeria</a></li>
                <li><a href="pesquisador.html">Pesquisador</a></li>
                <li><a href="noticias.html">Notícias</a></li>
                <li><a href="bibliografia.html">Bibliografia</a></li>
+
             </ul>
          </nav>
       </div>
@@ -200,13 +210,13 @@
 
             <!-- FOTO 2 (VISÍVEL) -->
             <div class="galeria-card">
-               <div class="galeria-img-container"><img src="images/galeriaJLRighini/Banco_Central.jpg" alt="Vista 02"></div>
+               <div class="galeria-img-container"><img src="images/galeriaJLRighini/banco_Central.jpg" alt="Vista 02"></div>
                <div class="galeria-card-body"><h4>Banco Central</h4></div>
             </div>
       
             <!-- FOTO 3 (VISÍVEL) -->
             <div class="galeria-card">
-               <div class="galeria-img-container"><img src="images/galeriaJLRighini/Cathedral.jpg" alt="Vista 03"></div>
+               <div class="galeria-img-container"><img src="images/galeriaJLRighini/cathedral.jpg" alt="Vista 03"></div>
                <div class="galeria-card-body"><h4>Cathedral - Atual Igreja da Sé</h4></div>
             </div>
 
@@ -296,7 +306,7 @@
    <footer class="footer-unipix">
       <div class="container footer-top-grid">
          <div class="footer-brand">
-            <img src="images/noticiasDiversos/cma-positivo.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
+            <img src="images/noticiaDiversos/cma-positivo.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
             <p class="footer-desc">
                O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria do Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.
             </p>
@@ -342,7 +352,7 @@
    </div>
 
    <!-- Script JS externo e Script da Galeria -->
-   <script src="script.js"></script>
+   <script src="script.js?v=3"></script>
    
    <script>
       // Lógica do Botão "Mostrar Mais / Mostrar Menos"
@@ -431,6 +441,8 @@
          }
       });
    </script>
+
+
 
 </body>
 </html>

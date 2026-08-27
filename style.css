@@ -67,7 +67,7 @@ body {
 .mega-menu, 
 .mega-menu .miller-list li,
 .mega-menu .miller-header {
-   color: #0e0e0e !important;
+   color: #ffffff ! ;
 }
 .mega-menu a {
    color: #1a1a1a !important;
@@ -393,7 +393,7 @@ body {
     }
 }
 .hero-unipix {
-    background-image: url(images/bannerDeFundo.png);
+    background-image: url(images/bannerdefundo1.jpg);
     background-size: 100% !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -483,7 +483,7 @@ body {
 }
 
 .btn-hero-secondary {
-    background-color: #5e1f1f ;
+    background-color: #7A1C20 ;
     color: #FFFFFF;
     border: 2px solid rgba(255, 255, 255, 0.4);
 }
@@ -641,7 +641,7 @@ body {
 .stats-banner {
     background-color: #8b2828;
     color: #FFFFFF;
-    padding: 50px 0;
+    padding: 20px 0; /* Aumentado para dar mais respiro em cima e embaixo */
     position: relative;
     overflow: hidden;
 }
@@ -654,20 +654,25 @@ body {
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 40px; /* Aumentado de 20px para 40px (mais espaço lateral entre eles) */
     text-align: center;
 }
 
 .stat-item h3 {
     font-family: 'Syne', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3rem; /* Reduzimos levemente para caber textos longos */
     font-weight: 800;
     color: #F4EFEA;
+    margin-bottom: 10px;
+    white-space: nowrap; /* A MÁGICA: Proíbe o texto de quebrar de linha */
+    letter-spacing: -1px; /* Aproxima os números bem pouquinho para ganhar espaço */
 }
 
 .stat-item p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem; /* Aumentado o tamanho da descrição */
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.95); /* Deixado o branco mais opaco/legível */
 }
 
 /* CERTIFICADOS */
@@ -826,7 +831,12 @@ body {
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 40px; /* Espaço maior no celular também */
+    }
+
+    .stat-item h3 {
+        font-size: 1.5rem; /* Tamanho seguro para celulares */
+        white-space: nowrap;
     }
 
     .footer-top-grid {
@@ -1153,4 +1163,19 @@ body {
       height: 45px;
       font-size: 20px;
    }
+}
+
+/* 
+   TEXTURA DE LAJOTINHAS (NAVBAR E ESTATÍSTICAS)
+ */
+.main-header, 
+.stats-banner {
+    background-color: #7A1C20 !important; 
+    
+    background-image: url('images/lajotinha do cma.png') !important; 
+    
+    background-repeat: repeat !important;
+    
+    background-size: 750px !important; 
+    
 }

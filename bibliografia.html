@@ -9,9 +9,9 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Playfair+Display:wght@900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
-   <link rel="icon" type="image/png" href="images/noticiasDiversos/favicon.ico">
-   <link href="images/noticiasDiversos/favicon.png" type="image/png" rel="icon">
-   <link href="images/noticiasDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
+   <link rel="icon" type="image/png" href="images/noticiaDiversos/favicon.ico">
+   <link href="images/noticiaDiversos/favicon.png" type="image/png" rel="icon">
+   <link href="images/noticiaDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
 
    <style>
     
@@ -63,20 +63,24 @@
 </head>
 <body>
 
-   <!-- Top Nav Bar -->
+<!-- Top Nav Bar -->
    <header class="main-header">
       <div class="header-container">
-         <div class="brand-logo">
+         
+         <!-- LOGO CLICÁVEL -->
+         <a href="index.html" class="brand-logo" style="text-decoration: none;">
             <span class="logo-sub">UFPA</span>
             <span class="logo-main">CMA</span>
-         </div>
+         </a>
+         
+         <!-- MENU DE NAVEGAÇÃO -->
          <nav class="nav-wrap">
             <ul class="nav-menu">
                <li><a href="index.html">Início</a></li>
                
                <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
                <li class="mega-dropdown">
-                  <a href="">Acervo <span class="arrow">▾</span></a>
+                  <a href="#">Acervo <span class="arrow">▾</span></a>
                   <div class="mega-menu">
                      <div class="mega-menu-header">
                         <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
@@ -95,13 +99,12 @@
                      </div>
                   </div>
                </li>
-
                
                <li><a href="https://ufpabr.sharepoint.com/:b:/g/EfiBwlS57XFKqm_l7sTNnAIBRiPbbHGcIZM5KA9w9NUznw?e=PW7R0l" target="_blank">Normativas de Estágio</a></li>
                <li><a href="galeriaGeral.html">Galeria</a></li>
                <li><a href="pesquisador.html">Pesquisador</a></li>
                <li><a href="noticias.html">Notícias</a></li>
-               <li><a href="bibliografia.html" class="active">Bibliografia</a></li>
+               <li><a href="bibliografia.html">Bibliografia</a></li>
 
             </ul>
          </nav>
@@ -224,7 +227,7 @@
    <footer class="footer-unipix">
       <div class="container footer-top-grid">
          <div class="footer-brand">
-            <img src="images/noticiasDiversos/cma-positivo.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
+            <img src="images/noticiaDiversos/cma-positivo.png" alt="Centro de Memória da Amazônia" class="footer-logo-img">
             <p class="footer-desc">
                O Centro de Memória da Amazônia é um centro cultural, criado em 31 de janeiro de 2007, em parceria do Tribunal de Justiça do Estado do Pará (TJE/PA) e a Universidade Federal do Pará (UFPA), e reformado em 13 de Abril de 2012.
             </p>
@@ -262,6 +265,6 @@
    </footer>
 
    <!-- Script JS externo -->
-   <script src="script.js"></script>
+   <script src="script.js?v=3"></script>
 </body>
 </html>

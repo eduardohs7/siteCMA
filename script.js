@@ -150,6 +150,7 @@ const acervoData = {
                     "Economia popular": "https://ufpabr.sharepoint.com/:b:/g/IQCPO2L8xBSUQK9vmqGTYaP0AVjQaNhYTnEhP6FV8gzgLpU?e=eowmX5",
                     "Embriaguez": "https://ufpabr.sharepoint.com/:b:/r/Documentos%20Compartilhados/Projeto%20Biblioteca%20Brit%C3%A2nica%20-%20Planilhas/Cat%C3%A1logos%20para%20o%20site/Disparo%20de%20arma%20de%20fogo/Cat%C3%A1logo%20Disparo%20de%20arma%20de%20fogo.pdf?d=we2384774de144f84a0b150c9ff7d2275&csf=1&web=1&e=V5PyyH",
                     "Entorpecentes": "https://ufpabr.sharepoint.com/:b:/g/IQD3-U30bnA_TZ76R_zxG4e5ASQdr4TO9_11DCkB4-YSFpI?e=BY45KI",
+                    "Estelionato": "https://ufpabr.sharepoint.com/:b:/g/IQDwyVK8aIoxQLLsrgpx9wcnAV-csxL5T55GePFXx6jCVkM?e=kZQKLJ",
                     "Espancamento": "https://ufpabr.sharepoint.com/:b:/g/IQAnLJeezccsQrD0rdBsaV0EAWx6y-q9Z9UW4gtuPY269_4?e=Oz2Jsi",
                     "Flagrante e comunicação de prisão": "https://ufpabr.sharepoint.com/:b:/g/IQDv1vPibm12RIYngLPxl1dkAdtTmSHYktCNTnvffDWqPq8?e=jWpi9H",
                     "Queixa crime - difamação, calúnia e injúrias": "https://ufpabr.sharepoint.com/:b:/g/IQDOHSvY4IVVTrZaqsDijOctAeerOTBtOFp6vSMX_ydkYHo?e=AQu1KV",
