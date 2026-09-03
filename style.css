@@ -1,6 +1,4 @@
-/* =========================================
-   1. RESET E CONFIGURAÇÕES GERAIS
-========================================= */
+/* RESET E CONFIGURAÇÕES GERAIS */
 * {
     margin: 0;
     padding: 0;
@@ -20,17 +18,128 @@ body {
     padding: 0 20px;
 }
 
-/* =========================================
-   2. CABEÇALHO, LAJOTINHA E LOGO
-========================================= */
-.main-header, 
-.stats-banner {
-    background-color: #7A1C20 !important; 
-    background-image: url('images/lajotinha do cma.png') !important; 
-    background-repeat: repeat !important;
-    background-size: 750px !important; 
+/* NAVBAR DEFINITIVA */
+/* 1. CONFIGURAÇÃO DOS LINKS DO MENU */
+.main-header .nav-menu > li > a { 
+   color: #ffffff !important; 
+   font-weight: 800 !important; 
+   font-size: 17px !important; 
+   font-family: 'Montserrat', sans-serif !important;
+   text-decoration: none !important; 
+   position: relative; 
+   padding-bottom: 5px; 
 }
 
+/* 1.1 EXTERMINADOR DE SUBLINHADOS NATIVOS E BORDAS */
+.main-header .nav-menu > li > a,
+.main-header .nav-menu > li > a:link,
+.main-header .nav-menu > li > a:visited,
+.main-header .nav-menu > li > a:hover,
+.main-header .nav-menu > li > a:active,
+.main-header .nav-menu > li > a:focus {
+    text-decoration: none !important;
+    -webkit-text-decoration-line: none !important; /* Força no Safari/iPhone */
+    border-bottom: none !important; /* Evita que seja uma borda disfarçada de sublinhado */
+    box-shadow: none !important; /* Evita sombras disfarçadas */
+    outline: none !important;
+}
+
+/* 2. CRIA A BARRINHA INVISÍVEL (tamanho zero) */
+.main-header .nav-menu > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Começa invisível */
+    background-color: #ffffff;
+    transition: width 0.3s ease; /* Faz a barra aparecer deslizando suavemente */
+}
+
+/* 3. FAZ A BARRINHA CRESCER AO PASSAR O MOUSE OU NA PÁGINA ATIVA */
+.main-header .nav-menu > li > a:hover::after,
+.main-header .nav-menu > li > a.active::after {
+    width: 100%;
+}
+
+/* 4. MUDANÇA SUTIL NA COR DO TEXTO AO PASSAR O MOUSE */
+.main-header .nav-menu > li > a:hover,
+.main-header .nav-menu > li > a.active { 
+   color: #f0f0f0 !important; 
+}
+
+.main-header .nav-menu > li > a { 
+   color: #ffffff !important; 
+   font-weight: 700 !important; 
+   font-size: 14px !important; 
+   font-family: 'Montserrat', sans-serif !important;
+
+}
+.main-header .nav-menu > li > a:hover,
+.main-header .nav-menu > li > a.active { 
+   color: #f0f0f0 !important; 
+   text-decoration: underline !important; 
+}
+.main-header .nav-menu .arrow { 
+   color: #ffffff !important; 
+}
+
+/* 2. TAMANHO DA LOGO (CMA) */
+.main-header .brand-logo, 
+.main-header .brand-logo .logo-main { 
+   color: #ffffff !important; 
+   background: transparent !important; 
+   font-size: 32px !important; 
+   font-weight: 800 !important;
+   display: inline-flex !important;
+   align-items: center !important;
+}  
+
+/* 1. CONFIGURAÇÃO DOS LINKS DO MENU */
+.main-header .nav-menu > li > a { 
+   color: #ffffff !important; 
+   font-weight: 800 !important; 
+   font-size: 17px !important; 
+   font-family: 'Montserrat', sans-serif !important;
+   text-decoration: none !important; /* Remove o sublinhado comum */
+   position: relative; /* Necessário para a barrinha flutuante funcionar */
+   padding-bottom: 5px; /* Controla a distância entre a palavra e a barrinha */
+}
+
+/* 2. CRIA A BARRINHA INVISÍVEL (tamanho zero) */
+.main-header .nav-menu > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Começa invisível */
+    height: 3px; /* Grossura da barra (igual ao site da UFPA) */
+    background-color: #ffffff;
+    transition: width 0.3s ease; /* Faz a barra aparecer deslizando suavemente */
+}
+
+/* 3. FAZ A BARRINHA CRESCER AO PASSAR O MOUSE OU NA PÁGINA ATIVA */
+.main-header .nav-menu > li > a:hover::after,
+.main-header .nav-menu > li > a.active::after {
+    width: 100%;
+}
+
+/* 4. MUDANÇA SUTIL NA COR DO TEXTO AO PASSAR O MOUSE */
+.main-header .nav-menu > li > a:hover,
+.main-header .nav-menu > li > a.active { 
+   color: #f0f0f0 !important; 
+}
+
+/* 4. COR DO TEXTO NO MENU ACERVO  */
+.mega-menu, 
+.mega-menu .miller-list li,
+.mega-menu .miller-header {
+   color: #ffffff ! ;
+}
+.mega-menu a {
+   color: #1a1a1a !important;
+   font-weight: 600 !important;
+   font-size: 20px !important;
+}
 .header-container {
     max-width: 1500px;
     margin: 0 auto;
@@ -38,121 +147,71 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
-.brand-logo-nova {
-    display: flex;
+/* =========================================
+   BLINDAGEM DA LOGO (IMPEDE QUE ELA SEJA ESMAGADA)
+========================================= */
+
+
+.brand-logo {
+    height: auto;
     align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    max-width: 80%;
-    margin-left: 5px;
+    padding: 10px 0 !important;
 }
 
-.logo-img-header {
-    height: 70px !important; 
-    width: auto !important;
-    display: block;
+.brand-logo span,
+.brand-logo .logo-main, 
+.brand-logo .logo-sub {
+    white-space: nowrap !important; 
+    line-height: 1.4rem !important;
+    display: block !important;
+    margin-bottom: 3px !important;
+
 }
 
-.logo-textos {
+
+
+.logo-sub {
+    font-size: 1rem;
+    font-weight: 800; 
+    color: #8b2828;
+    background: #F4EFEA;
+    padding: 4px 8px; 
+    border-radius: 6px;
+    letter-spacing: 0.5px; 
+}
+
+.logo-main {
+    font-size: 2rem; 
+    font-weight: 800; 
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
 }
 
-.logo-texto-principal {
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 800;
-    line-height: 1.1;
-    white-space: normal;
+.nav-menu a {
+    text-decoration: none;
+    color: #f7f6f6;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
 }
 
-.logo-texto-ufpa {
-    font-size: 1.1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    color: #ffffff;
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #8b2828;
+    font-weight: 600;
 }
 
-/* =========================================
-   3. MENU DESKTOP (ESTILO SHAREPOINT)
-========================================= */
-@media (min-width: 601px) {
-    .mobile-menu-btn { 
-        display: none !important; 
-    }
-    
-    .header-container {
-        flex-wrap: nowrap !important;
-        overflow: hidden !important; 
-    }
-    
-    .nav-wrap {
-        display: flex;
-        flex: 1;
-        justify-content: flex-end;
-        overflow-x: auto; /* A MÁGICA DO SHAREPOINT: Rolagem horizontal suave */
-        overflow-y: visible;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(255,255,255,0.4) transparent;
-        margin-right: 20px;
-    }
-    
-    .nav-menu {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap !important; /* Proíbe a quebra de linha */
-        align-items: center;
-        gap: 15px;
-        list-style: none;
-        padding-bottom: 5px;
-    }
-
-    .nav-menu li {
-        flex-shrink: 0 !important; /* Proíbe amassar as palavras */
-    }
-
-    .nav-menu > li > a {
-        color: #ffffff;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: clamp(12px, 1.2vw, 16px);
-        text-decoration: none;
-        white-space: nowrap !important;
-        padding: 5px 10px;
-        position: relative;
-        transition: color 0.2s;
-    }
-
-    /* Animação da barrinha inferior */
-    .nav-menu > li > a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background-color: #ffffff;
-        transition: width 0.3s ease;
-    }
-
-    .nav-menu > li > a:hover::after,
-    .nav-menu > li > a.active::after {
-        width: 100%;
-    }
-
-    .nav-menu > li > a:hover,
-    .nav-menu > li > a.active { 
-        color: #f0f0f0; 
-    }
-}
-
-/* =========================================
-   4. MEGA MENU (ACERVO)
-========================================= */
+/* MEGA MENU DROPDOWN */
 .mega-dropdown {
     position: relative;
 }
@@ -162,7 +221,6 @@ body {
     margin-left: 2px;
     transition: transform 0.2s ease;
     display: inline-block;
-    pointer-events: none;
 }
 
 .mega-dropdown:hover .arrow {
@@ -175,25 +233,32 @@ body {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 90vw;
-    max-width: 1160px;
-    min-width: 700px;
+    width: 90vw !important;
+    max-width: 1160px !important;
+    min-width: 700px !important;
     background-color: #FFFFFF;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     border: 1px solid rgba(122, 28, 32, 0.2);
     padding: 20px;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
-.mega-dropdown:hover .mega-menu {
+.mega-dropdown:hover .mega-menu,
+.mega-menu:hover {
     display: block;
     animation: megaFadeIn 0.25s ease-out;
 }
 
-@keyframes megaFadeIn {
-    from { opacity: 0; transform: translate(-50%, 8px); }
-    to { opacity: 1; transform: translate(-50%, 0); }
+.mega-menu::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: transparent;
 }
 
 .mega-menu-header {
@@ -202,12 +267,26 @@ body {
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 1rem;
     color: #8b2828;
+    white-space: normal !important;
 }
 
-.miller-container {
-    display: flex;
+.mega-menu-header span {
+    font-weight: 600;
+}
+
+.mega-menu-header strong {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+}
+
+/* CONTAINER DAS COLUNAS MILLER */
+.mega-menu .miller-container {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
     height: 380px;
     border: 1px solid rgba(122, 28, 32, 0.2);
     border-radius: 8px;
@@ -215,15 +294,22 @@ body {
     overflow-x: auto;
 }
 
-.miller-column {
-    flex: 0 0 250px;
+.mega-menu .miller-column {
+    flex: 0 0 250px !important;
+    min-width: 250px !important;
+    max-width: 280px !important;
     border-right: 1px solid #EAE2D8;
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
+    box-sizing: border-box;
 }
 
-.miller-header {
+.mega-menu .miller-column:last-child {
+    border-right: none;
+}
+
+.mega-menu .miller-header {
     background-color: #8b2828;
     color: #FFFFFF;
     font-family: 'Syne', sans-serif;
@@ -231,178 +317,1850 @@ body {
     font-weight: 700;
     padding: 10px 14px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.miller-list {
+
+.mega-menu .miller-list li.selected,
+.mega-menu .miller-list li.active {
+   color: #ffffff !important;
+}
+ 
+
+.mega-menu .miller-list {
     list-style: none;
+    margin: 0;
+    padding: 0;
     overflow-y: auto;
     flex: 1;
 }
 
-.miller-list li {
+.mega-menu .miller-list li {
     padding: 10px 14px;
     font-size: 0.83rem;
-    border-bottom: 1px solid #F5F0EB;
+    color: #2D2D2D;
     cursor: pointer;
-    transition: background 0.15s, color 0.15s;
+    border-bottom: 1px solid #F5F0EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: normal !important;
     word-break: break-word;
+
+    
 }
 
-.miller-list li:hover {
+.mega-menu .miller-list li:hover {
     background-color: #F4EFEA;
     color: #8b2828;
 }
 
-/* =========================================
-   5. MENU MOBILE (SÓ APARECE ABAIXO DE 600px)
-========================================= */
-@media (max-width: 600px) {
-    .mobile-menu-btn {
-        display: block;
-        background: transparent;
-        border: none;
-        color: #ffffff;
-        font-size: 28px;
-        cursor: pointer;
-        padding: 5px 10px;
-        z-index: 10000;
-    }
-    
-    .logo-texto-principal { font-size: 1rem; }
-    .logo-texto-ufpa { font-size: 0.9rem; }
-    .logo-img-header { height: 50px !important; }
-
-    /* Estilo "Gaveta" (Facebook) */
-    .nav-wrap {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 350px;
-        height: 100vh;
-        background-color: #7A1C20;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.6);
-        transition: right 0.4s ease-in-out;
-        z-index: 9999;
-        overflow-y: auto;
-        padding-top: 80px;
-    }
-
-    .nav-wrap.menu-aberto { right: 0; }
-    
-    .nav-menu {
-        flex-direction: column;
-        padding: 0 25px 40px;
-        list-style: none;
-    }
-
-    .nav-menu > li > a {
-        color: #fff;
-        font-size: 1.15rem;
-        text-decoration: none;
-        display: block;
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* Acervo super compacto no celular */
-    .mega-menu {
-        position: static !important;
-        width: 100% !important;
-        transform: none;
-        min-width: unset;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        padding: 10px;
-        margin-top: 10px;
-    }
-    
-    .mega-menu-header { display: none; }
-    .miller-container { flex-direction: column; height: auto; gap: 8px; border: none; background: transparent; }
-    .miller-column { width: 100%; flex: none; border: 1px solid #ddd; border-radius: 6px; }
+.mega-menu .miller-list li.active {
+    background-color: #8b2828;
+    color: #FFFFFF;
+    font-weight: 600;
 }
 
-/* =========================================
-   6. HERO, ESTATÍSTICAS E COMPONENTES
-========================================= */
+.mega-menu .miller-list li.active .arrow {
+    color: #FFFFFF;
+}
+
+.mega-menu .miller-list li a {
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    white-space: normal !important;
+    word-break: break-word;
+}
+
+/* --- PAINEL DE DETALHES / PRÉ-VISUALIZAÇÃO --- */
+.miller-preview {
+    flex: 1 !important;
+    min-width: 260px !important;
+    background-color: #FAF8F5;
+    padding: 16px;
+    border-left: 1px solid #EAE2D8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.miller-preview-title {
+    color: #8b2828;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.miller-preview-desc {
+    font-size: 0.82rem;
+    color: #4A4A4A;
+    line-height: 1.45;
+    flex: 1;
+}
+
+.miller-preview-btn {
+    display: inline-block;
+    background-color: #8b2828;
+    color: #FFFFFF !important;
+    padding: 9px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 12px;
+    transition: background 0.2s ease;
+}
+
+.miller-preview-btn:hover {
+    background-color: #6a1e1e;
+}
+
+.mega-menu-footer {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: #777777;
+}
+
+/* --- ADAPTAÇÃO MOBILE (DISPOSITIVOS MÓVEIS) --- */
+@media (max-width: 768px) {
+.mega-menu {
+    width: 95vw !important;
+    min-width: unset !important;
+    padding: 12px;
+    top: 100%;
+    left: 50%;
+}
+
+.mega-menu .miller-container {
+    flex-direction: column !important;
+    height: auto !important;
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+.mega-menu .miller-column {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    border-right: none;
+    border-bottom: 1px solid #EAE2D8;
+}
+
+.miller-preview {
+    width: 100% !important;
+    min-width: 100% !important;
+    border-left: none;
+    border-top: 2px solid #8b2828;
+    margin-top: 10px;
+}
+}
+
+@keyframes megaFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 8px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
 .hero-unipix {
     background-image: url(images/bannerdefundo1.jpg);
-    background-size: cover;
-    background-position: center;
+    background-size: 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent;
     color: #FFFFFF;
-    padding: 60px 0;
+    padding: 35px 0 !important;
+    min-height:  auto !important;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2.2rem; }
-.btn-hero-primary { background-color: #F4EFEA; color: #8b2828; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; }
-.btn-hero-secondary { background-color: #7A1C20; color: #FFFFFF; padding: 14px 28px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.4); text-decoration: none; font-weight: 600; }
+#hero .hero-image img {
+    max-height: 25px !important;
+    width: auto;
+}
 
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
-.stat-item h3 { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 800; color: #F4EFEA; margin-bottom: 0; }
-.stat-item p { margin-top: 0; font-size: 1.15rem; color: rgba(255,255,255,0.95); }
 
-/* =========================================
-   7. CARTÕES (NOTÍCIAS, CLIPPING, BIBLIO) E CORREÇÃO MOBILE
-========================================= */
-.clipping-card, .biblio-card, .card-noticia {
-    background: #FFFFFF;
-    border-left: 5px solid #7A1C20;
-    padding: 30px;
-    margin-bottom: 30px;
+
+/* Mantém o conteúdo por cima da textura */
+.hero-unipix .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text-side {
+    flex: 1;
+    max-width: px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Título principal do Hero */
+.hero-title {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 800; /* Ou 900 para um visual mais marcante */
+   letter-spacing: -0.02em; /* Melhora o alinhamento em caixas altas */
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 35px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+    display: inline-block;
+    padding: 14px 28px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.clipping-title, .noticia-card-title { font-family: 'Syne', sans-serif; font-size: 1.6rem; color: #1a1a1a; margin-bottom: 15px; font-weight: 700; }
-.clipping-text, .biblio-resumo, .noticia-text { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; line-height: 1.7; color: #4a4a4a; text-align: justify; }
+.btn-hero-primary {
+    background-color: #F4EFEA;
+    color: #8b2828;
+}
 
-/* A MÁGICA DOS CARTÕES LARGOS E LEGÍVEIS NO CELULAR */
-@media (max-width: 768px) {
-    .container { padding-left: 10px; padding-right: 10px; width: 100%; max-width: 100vw; }
-    
-    .clipping-card, .biblio-card, .card-noticia {
-        padding: 20px 15px !important; /* Estica o cartão reduzindo o vazio interno */
-        margin-left: 0; margin-right: 0;
+.btn-hero-primary:hover {
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hero-secondary {
+    background-color: #7A1C20 ;
+    color: #FFFFFF;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-hero-secondary:hover {
+    border-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* CONTAINER DA IMAGEM E CARIMBO */
+.hero-media-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-main-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.stamp-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 90px;
+    height: 90px;
+    z-index: 2;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    padding: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@keyframes rotateStamp {
+    from {
+        transform: rotate(0deg);
     }
-    
-    /* Remove os buracos entre as palavras */
-    .clipping-text, .biblio-resumo, .noticia-text, .clipping-card p {
-        text-align: left !important;
-        font-size: 1.05rem;
-        line-height: 1.5;
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* SEÇÃO SOBRE */
+.about-unipix {
+    padding: 90px 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.section-tag {
+    color: #8b2828;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+}
+
+.section-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    color: #8b2828;
+    line-height: 1.2;
+    margin: 10px 0 20px;
+}
+
+.est-watermark {
+    font-family: 'Syne', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: rgba(122, 28, 32, 0.08);
+    margin-top: -30px;
+    margin-bottom: 10px;
+}
+
+.about-text-lead {
+    font-size: 1.1rem;
+    color: #4A4A4A;
+    margin-bottom: 25px;
+}
+
+.link-arrow {
+    color: #8b2828;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.link-arrow:hover {
+    transform: translateX(5px);
+}
+
+.about-right-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card-editorial {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(122, 28, 32, 0.1);
+}
+
+.card-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #8b2828;
+}
+
+.card-body h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #2D2D2D;
+}
+
+.card-body p {
+    color: #666666;
+    font-size: 0.95rem;
+}
+
+/* ESTATÍSTICAS */
+.stats-banner {
+    background-color: #8b2828;
+    color: #FFFFFF;
+    padding: 20px 0; /* Aumentado para dar mais respiro em cima e embaixo */
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px; /* Aumentado de 20px para 40px (mais espaço lateral entre eles) */
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-family: 'montserrat', sans-serif;
+    font-size: 3rem; 
+    font-weight: 800;
+    color: #F4EFEA;
+    /* AQUI: Mudei de 10px para 0 para tirar o espaço abaixo do número */
+    margin-bottom: -5; 
+    white-space: nowrap; 
+    letter-spacing: -1px; 
+}
+
+.stat-item p {
+    /* AQUI: Zerei a margem de cima do texto para garantir que ele cole no H3 */
+    margin-top: -2; 
+    font-size: 1.15rem; 
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.95); 
+}
+
+/* CERTIFICADOS */
+.certificates-section {
+    padding: 80px 20px;
+}
+
+.cert-card-unipix {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #8b2828;
+}
+
+.cert-tag {
+    color: #8b2828;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.cert-info h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    color: #2D2D2D;
+    margin: 5px 0 10px;
+}
+
+.cert-info p {
+    color: #666666;
+    max-width: 600px;
+}
+
+.btn-cert {
+    background-color: #8b2828;
+    color: #FFFFFF;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cert:hover {
+    background-color: #4A0E11;
+}
+
+/* RODAPÉ */
+.footer-unipix {
+    background-color: #1F1F1F;
+    color: #CCCCCC;
+    padding-top: 60px;
+}
+
+.footer-top-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo-img {
+    max-width: 180px;
+    margin-bottom: 15px;
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    color: #999999;
+}
+
+.footer-links-col h5 {
+    font-family: 'Syne', sans-serif;
+    color: #FFFFFF;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.footer-links-col p,
+.footer-links-col ul li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.footer-links-col ul {
+    list-style: none;
+}
+
+.footer-links-col a {
+    color: #CCCCCC;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links-col a:hover {
+    color: #FFFFFF;
+}
+
+.sub-info {
+    font-size: 0.8rem;
+    color: #777777;
+}
+
+.footer-sub {
+    background-color: #141414;
+    padding: 20px 0;
+}
+
+.footer-sub-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.visitor-counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.counter-digits span {
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    margin-left: 2px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .hero-grid, 
+    .about-grid,
+    .cert-card-unipix {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
-    .hero-grid { flex-direction: column; text-align: center; }
+.hero-title {
+    font-size: 2.2rem;
+}
+
+.hero-actions {
+    justify-content: center;
+}
+
+.stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px; /* Espaço maior no celular também */
+}
+
+.stat-item h3 {
+    font-size: 1.5rem; /* Tamanho seguro para celulares */
+    white-space: nowrap;
+}
+
+.footer-top-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+.footer-sub-flex {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.finder-grid {
+    grid-template-columns: 1fr;
+}
+
+.mega-menu {
+    position: static;
+    transform: none;
+    width: 100%;  
+}
 }
 
 /* =========================================
-   8. LIGHTBOX & MODAL GLOBAL
+RESPONSIVIDADE MOBILE (CELULARES E TABLETS)
 ========================================= */
-.lightbox { display: none; position: fixed; z-index: 999999; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; backdrop-filter: blur(3px); }
-.lightbox img { max-width: 90%; max-height: 90vh; object-fit: contain; border-radius: 8px; animation: zoomIn 0.3s ease; }
-.lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 45px; cursor: pointer; z-index: 1000; }
-.lightbox-btn { position: absolute; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.6); font-size: 60px; cursor: pointer; background: transparent; border: none; padding: 20px; z-index: 1000; }
-.lightbox-btn.prev { left: 10px; } .lightbox-btn.next { right: 10px; }
 
+/* Esconde o botão do menu hambúrguer no computador */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Quando a tela for menor que 768px (Celulares) */
+@media (max-width: 1200px) {
+
+/* 1. Ajuste da Navbar e Logo */
+header.main-header .header-container {
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    padding: 10px 20px !important;
+}
+header.main-header .brand-logo {
+    font-size: 22px !important; 
+}
+header.main-header .brand-logo .logo-sub {
+    font-size: 13px !important;
+    padding: 3px 6px !important;
+}
+.mobile-menu-btn {
+    display: block !important;
+}
+
+/* 2. Menu Oculto (Desce ao clicar) */
+header.main-header .nav-wrap {
+    width: 100% !important;
+    display: none; /* Fica escondido até clicar no botão */
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+header.main-header .nav-wrap.menu-aberto {
+    display: block !important;
+    animation: descerMenu 0.3s ease;
+}
+@keyframes descerMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header.main-header .nav-menu {
+    flex-direction: column !important;
+    background-color: #5d1519 !important; 
+    border-radius: 8px;
+    padding: 10px !important;
+}
+header.main-header .nav-menu > li {
+    margin: 0 !important;
+    width: 100%;
+}
+header.main-header .nav-menu > li > a {
+    display: block !important;
+    padding: 12px 15px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mega-menu {
+    position: static !important; 
+    width: 100% !important;
+    box-shadow: none !important;
+    margin-top: 10px !important;
+    padding: 10px 5px !important;
+}
+
+.mega-menu-header {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: left !important;
+    padding-bottom: 15px !important;
+}
+
+.miller-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important; 
+}
+
+.miller-column {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important; 
+    border: 1px solid #585858 !important; 
+    border-radius: 6px !important;
+    overflow: hidden !important;
+}
+
+.miller-list {
+    max-height: 250px !important; 
+    overflow-y: auto !important;
+}
+
+.miller-list li {
+    white-space: normal !important; 
+    word-wrap: break-word !important;
+    line-height: 1.4 !important;
+    padding: 12px 10px !important;
+    height: auto !important; 
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.hero-grid, 
+.about-grid, 
+.footer-top-grid,
+.noticia-card {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Reduz o tamanho de títulos gigantes */
+h1, .page-title, .galeria-title, .noticias-title, .hero-title {
+    font-size: 1.8rem !important;
+    text-align: center;
+}
+
+/* 5. Ajuste das Imagens nas Notícias */
+.noticia-img-wrapper {
+    flex: none !important;
+    width: 100% !important;
+    height: 280px !important; 
+    border-radius: 8px 8px 0 0 !important;
+}
+.noticia-img-container {
+    height: 100% !important;
+}
+
+/* =========================================
+    5. AJUSTES DA TELA INICIAL (CELULARES E TABLETS)
+========================================= */
+.hero-unipix {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    padding: 40px 20px !important;
+    min-height: auto !important;
+}
+
+.hero-unipix .hero-grid {
+    display: grid !important;
+
+    grid-template-columns: 1fr auto !important; 
+    gap: 20px 15px !important;
+    max-width: 480px !important; 
+    margin: 0 auto !important; 
+}
+
+.hero-text-side {
+    display: contents !important; 
+}
+
+/* TÍTULO E TEXTO */
+.hero-title {
+    grid-column: 1 / 3 !important;
+    font-size: 1.5rem !important; 
+    text-align: left !important;
+    margin-bottom: 0 !important;
+    letter-spacing: normal !important; /* Evita letras muito espaçadas */
+}
+
+.hero-desc {
+    grid-column: 1 / 3 !important;
+    font-size: 0.95rem !important;
+    text-align: left !important;
+    margin-bottom: 5px !important;
+    line-height: 1.4 !important;
+}
+
+.hero-actions {
+    grid-column: 1 / 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    justify-content: center !important;
+}
+
+.hero-actions a {
+    width: 100% !important;
+    font-size: 0.85rem !important;
+    padding: 10px !important;
+    text-align: center !important;
+}
+
+.hero-media-side {
+    grid-column: 2 / 3 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+.hero-image-wrapper {
+    width: 100% !important;
+    max-width: 160px !important; 
+    margin: 0 !important;
+}
+
+.hero-main-img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+
+.mega-dropdown:hover .mega-menu,
+.mega-dropdown:focus .mega-menu {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.mega-dropdown.menu-ativo .mega-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+}
+
+
+.mega-dropdown > a .arrow {
+    pointer-events: none !important; 
+}
+
+.mega-dropdown.menu-ativo .mega-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation: fadeInMenu 0.3s ease;
+}
+
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.arrow {
+    font-variant-emoji: text !important;
+    color: inherit !important;
+    font-family: sans-serif !important;
+} 
+
+/* =========================================
+BOTÃO VOLTAR AO TOPO
+========================================= */
+.btn-voltar-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #7A1C20;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Deixa redondinho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+/* Começa invisível */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    border: none;
+}
+
+/* Efeito ao passar o mouse */
+.btn-voltar-topo:hover {
+    background-color: #5d1519;
+    transform: translateY(-5px); /* Dá um pulinho pra cima */
+}
+
+/* Classe que o JavaScript usa para fazer o botão aparecer */
+.btn-voltar-topo.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Deixa um pouco menor no celular para não atrapalhar a leitura */
+@media (max-width: 768px) {
+.btn-voltar-topo {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+}
+}
+
+/* =========================================
+TEXTURA DE LAJOTINHAS (NAVBAR E ESTATÍSTICAS)
+========================================= */
+
+/* Aplica a textura no Cabeçalho (Navbar) e nas Estatísticas */
+.main-header, 
+.stats-banner {
+/* MANTÉM a cor vinho de fundo original */
+background-color: #7A1C20 !important; 
+
+/* PUXA a imagem da lajotinha (MUDE O NOME DO ARQUIVO AQUI) */
+background-image: url('images/lajotinha do cma.png') !important; 
+
+/* FAZ a lajotinha se repetir infinitamente lado a lado */
+background-repeat: repeat !important;
+
+/* CONTROLA o tamanho da lajotinha (pode aumentar ou diminuir esse valor) */
+background-size: 750px !important; 
+
+/* O TRUQUE MÁGICO: Mistura a lajotinha com a cor vinho para não ficar "cheguei" demais */
+}
+
+/* =========================================
+TAMANHO DA IMAGEM DA LOGO NO CABEÇALHO
+========================================= */
+.logo-img-header {
+height: 70px !important; 
+width: auto !important;
+display: block !important;    
+}
+
+@media (max-width: 992px) {
+.logo-img-header {
+height: 70px !important; 
+}
+}
+
+
+@media (min-width: 993px) {
+.nav-wrap {
+
+    margin-right: 40px !important; 
+}
+
+.nav-menu {
+
+    gap: 20px !important; 
+}
+}
+
+/* =========================================
+ESTILO DA NOVA LOGO (COMPUTADOR)
+========================================= */
+.brand-logo-nova {
+display: flex;
+align-items: center;
+gap: 12px;
+text-decoration: none;
+max-width: 80%; /* Impede a logo de empurrar o menu */
+}
+
+.logo-textos {
+display: flex;
+flex-direction: column;
+align-items:start;
+}
+
+.logo-texto-principal {
+color: #ffffff;
+font-family: 'Montserrat', sans-serif;
+font-size: 1.3rem;
+font-weight: 800;
+line-height: 0.70;
+}
+
+.logo-texto-ufpa {
+font-size: 1.1rem;
+font-family: 'Montserrat', sans-serif;
+font-weight: 800;
+color: #ffffff;
+}
+
+/* =========================================
+ESTILO DA NOVA LOGO (CELULAR)
+========================================= */
+@media (max-width: 768px) {
+.header-container {
+    /* Força a barra a ficar em 1 única linha, não importando o aperto */
+    flex-wrap: nowrap !important; 
+}
+
+.logo-texto-principal {
+    font-size: 1rem; /* Reduz a frase principal */
+    padding: 1px 4px;
+    line-height: 1;
+    line-height: 1.2rem !important
+}
+
+.logo-texto-ufpa {
+    font-size: 0.90rem; /* Reduz a sigla UFPA */
+    padding: 1px 4px;
+}
+}
+
+/* =========================================
+AJUSTE FINO: PUXAR A LOGO PARA A ESQUERDA
+========================================= */
+.brand-logo-nova {
+/* O valor negativo "puxa" a logo para a esquerda. 
+    Se quiser mais para a esquerda, aumente para -30px ou -40px */
+margin-left: 5px !important; 
+}
+
+/* Garante que no celular ela não acabe saindo da tela */
+@media (max-width: 992px) {
+.brand-logo-nova {
+    margin-left: -2px !important; 
+}
+}
+
+/* =========================================
+MENU MOBILE ESTILO FACEBOOK (LATERAL DIREITA)
+========================================= */
+@media (max-width: 1200px) {
+/* 1. O Menu Deslizante (Drawer) */
+.nav-wrap {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Fica escondido fora da tela na direita */
+    width: 80%; /* Ocupa 80% da tela (deixa 20% da página visível) */
+    max-width: 350px;
+    height: 100vh;
+    background-color: #7A1C20; /* Cor vinho da UFPA */
+    box-shadow: -5px 0 20px rgba(0,0,0,0.6); /* Sombra lateral */
+    transition: right 0.4s ease-in-out; /* O deslize suave */
+    z-index: 9999;
+    overflow-y: auto; /* Permite rolar as opções */
+    padding-top: 90px; /* Espaço para o botão fechar lá em cima */
+}
+
+/* Quando o menu estiver aberto, ele desliza para a posição 0 */
+.nav-wrap.menu-aberto {
+    right: 0; 
+}
+
+/* 2. O Fundo Escuro (Parte que sobra da tela) */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease-in-out;
+}
+.menu-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3. Botão Hambúrguer e Fechar */
+.mobile-menu-btn {
+    position: relative;
+    z-index: 10000; /* Fica acima do menu e da sombra */
+    font-size: 2rem !important; /* Botão bem visível */
+}
+
+/* 4. Lista do Menu Principal */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 25px 40px 25px;
+}
+.nav-menu > li > a {
+    font-size: 1.15rem !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+    display: block;
+}
+
+/* =========================================
+    O SEGREDO DO ACERVO SUPER COMPACTO
+========================================= */
+.mega-menu {
+    position: static !important; 
+    width: 100% !important;
+    background-color: #f9f9f9 !important; /* Vira um "cartão" branco dentro do menu vinho */
+    border-radius: 8px !important;
+    padding: 8px !important;
+    margin-top: 10px !important;
+    max-height: 50vh  !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+}
+
+/* SUMIMOS com o cabeçalho gigante que ocupava a tela */
+.mega-menu-header {
+    display: none !important; 
+}
+
+/* Diminuímos o buraco entre as colunas */
+.miller-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px !important;
+    padding: 0 !important;
+}
+
+.miller-column {
+    border: 1px solid #ddd !important;
+    border-radius: 6px !important;
+    background: #fff !important;
+    min-width: 100% !important;
+}
+
+.miller-header {
+    background-color: #ebebeb !important;
+    color: #333 !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    padding: 8px 10px !important;
+}
+
+/* Botões do acervo bem mais finos e delicados */
+.miller-list li {
+    padding: 8px 10px !important;
+    font-size: 0.85rem !important;
+    color: #333 !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+}
+
+/* =========================================
+   EXTERMINADOR DEFINITIVO DE LINHA DUPLA 
+========================================= */
+.main-header .nav-menu > li > a,
+.main-header .nav-menu > li > a:hover,
+.main-header .nav-menu > li > a:active,
+.main-header .nav-menu > li > a:focus,
+.main-header .nav-menu > li {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    background-image: none !important; /* Remove sublinhados feitos com gradiente */
+    box-shadow: none !important; /* Remove sombras disfarçadas de linha */
+    border-bottom: none !important; /* Garante que não é uma borda */
+}
+
+
+/* ESTILOS GERAIS DA PÁGINA DE NOTÍCIAS */
+
+.noticias-section { padding: 60px 0; background-color: #f8f9fa; }
+.noticias-content {
+    max-width: 1100px; margin: 0 auto; background: #ffffff;
+    padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+.noticias-title {
+    font-family: 'Syne', sans-serif; font-size: 2.2rem; color: #7A1C20;
+    margin-bottom: 30px; border-bottom: 3px solid #7A1C20; padding-bottom: 10px;
+}
+
+.noticia-body {
+    flex: 1; padding: 30px; display: flex;
+    flex-direction: column; justify-content: center;
+}
+.noticia-data {
+    font-family: 'Montserrat', sans-serif; font-size: 1.2rem;
+    color: #7A1C20; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;
+    }
+.noticia-card-title {
+    font-family: 'Montserrat', sans-serif; font-size: 1.3rem;
+    color: #1a1a1a; margin-bottom: 15px; font-weight: 700; line-height: 1.4;
+}
+.noticia-text {
+    font-family: 'Plus Jakarta Sans', sans-serif; color: #4a4a4a;
+    line-height: 1.7; text-align: justify; margin-bottom: 15px;
+}
+.noticia-text:last-child { margin-bottom: 0; }
+
+/* =========================================
+ACORDEÃO DE RESUMOS
+========================================= */
+.resumo-item {
+    background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px;
+    margin-bottom: 10px; overflow: hidden;
+}
+.resumo-item summary {
+    font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700;
+    color: #1a1a1a; padding: 15px; cursor: pointer; list-style: none; 
+    display: flex; justify-content: space-between; align-items: center;
+    background-color: #fafafa; transition: background-color 0.3s ease;
+}
+.resumo-item summary:hover { background-color: #f0f0f0; }
+.resumo-item summary::after {
+    content: "▼"; font-size: 0.8rem; color: #7A1C20; transition: transform 0.3s ease;
+}
+.resumo-item[open] summary::after { transform: rotate(180deg); }
+.resumo-item p {
+    font-family: 'Plus Jakarta Sans', sans-serif; color: #4a4a4a; line-height: 1.6;
+    padding: 15px; margin: 0; border-top: 1px solid #eee; text-align: justify; font-size: 0.9rem;
+}
+
+/* =========================================
+LIGHTBOX (AMPLIADOR GALERIA)
+========================================= */
+.lightbox {
+    display: none; position: fixed; z-index: 99999; 
+    top: 0; left: 0; width: 100%; height: 100%; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    align-items: center; justify-content: center;
+    backdrop-filter: blur(3px);
+}
+.lightbox img {
+    max-width: 90%; max-height: 90vh; 
+    object-fit: contain; border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
 @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
+.lightbox-close {
+    position: absolute; top: 20px; right: 30px; color: #fff; 
+    font-size: 45px; font-weight: 300; cursor: pointer; transition: color 0.3s;
+}
+.lightbox-close:hover { color: #7A1C20; }
+
+/* Setas da Galeria Lightbox */
+.lightbox-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    color: rgba(255,255,255,0.6); font-size: 60px; font-weight: 300;
+    cursor: pointer; background: transparent; border: none; padding: 20px;
+    transition: color 0.3s ease;
+}
+.lightbox-btn:hover { color: #ffffff; }
+.lightbox-btn.prev { left: 20px; }
+.lightbox-btn.next { right: 20px; }
+
 /* =========================================
-   9. RODAPÉ E VOLTAR AO TOPO
+RESPONSIVIDADE
 ========================================= */
-.footer-unipix { background-color: #1F1F1F; color: #CCCCCC; padding-top: 60px; }
-.footer-top-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.footer-sub { background-color: #141414; padding: 20px 0; }
-.footer-sub-flex { display: flex; justify-content: space-between; font-size: 0.85rem; }
-
 @media (max-width: 768px) {
-    .footer-top-grid { grid-template-columns: 1fr; text-align: center; }
-    .footer-sub-flex { flex-direction: column; gap: 15px; }
+    .noticia-card { flex-direction: column; }
+    .noticia-img-wrapper { flex: none; height: 350px; } 
+    .lightbox-btn { font-size: 40px; padding: 10px; }
 }
 
-.btn-voltar-topo {
-    position: fixed; bottom: 30px; right: 30px; background-color: #7A1C20; color: #ffffff;
-    width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 24px; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; z-index: 9999; border: none;
+
+.modal-noticia-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.82); /* Fundo escuro */
+    backdrop-filter: blur(5px); /* Desfoque chique no fundo */
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.btn-voltar-topo.mostrar { opacity: 1; visibility: visible; transform: translateY(0); }
+/* =========================================
+   CARD DE NOTÍCIA COM CAPA (PREVIEW MODAL)
+========================================= */
+.card-noticia-preview {
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 35px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-noticia-preview:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Espaço da Capa */
+.card-noticia-thumb {
+    flex: 0 0 320px;
+    background-color: #ffffff; /* Fundo branco para a imagem não ficar com barras cinzas feias */
+    position: relative;
+    overflow: hidden;
+    display: flex; /* Ajuda a centralizar a foto perfeitamente */
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #f0f0f0; /* Cria uma divisão sutil com o texto */
+}
+
+.card-noticia-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* A MÁGICA: Força a imagem a caber inteira sem cortar as bordas! */
+    display: block;
+    transition: transform 0.4s ease;
+    padding: 10px; /* Dá um respiro pequeno para a imagem não colar nas paredes da caixa */
+}
+
+.card-noticia-preview:hover .card-noticia-thumb img {
+    transform: scale(1.05); /* Leve zoom suave na capa ao passar o mouse */
+}
+
+/* Textos e Botão */
+.card-noticia-info {
+    flex: 1;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-noticia-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #7A1C20;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.card-noticia-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.card-noticia-resumo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 18px;
+}
+
+.btn-ler-mais {
+    align-self: flex-start;
+    background: #7A1C20;
+    color: #ffffff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.card-noticia-preview:hover .btn-ler-mais {
+    background-color: #5d1518;
+}
+
+/* Ajuste Responsivo para Mobile */
+@media (max-width: 768px) {
+    .card-noticia-preview {
+        flex-direction: column;
+    }
+    .card-noticia-thumb {
+        flex: none;
+        height: 200px;
+        width: 100%;
+    }
+    .card-noticia-info {
+        padding: 20px;
+    }
+    .card-noticia-titulo {
+        font-size: 1.15rem;
+    }
+}
+
+/* Quando o JS colocar a classe 'ativo', ele aparece suavemente */
+.modal-noticia-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Caixa principal branca do Modal */
+.modal-noticia-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+    border-radius: 12px;
+    position: relative;
+    overflow-y: auto; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    animation: modalSubir 0.3s ease-out;
+}
+
+@keyframes modalSubir {
+    from { transform: translateY(30px) scale(0.95); }
+    to { transform: translateY(0) scale(1); }
+}
+
+/* Botão Fechar (X) */
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #f0f0f0;
+    border: none;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s, transform 0.2s;
+}
+.modal-close-btn:hover {
+    background: #7A1C20;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Textos dentro da janela flutuante */
+.modal-noticia-body { padding: 35px; }
+.modal-tag { color: #7A1C20; font-weight: 800; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+.modal-titulo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: #1a1a1a; margin: 8px 0; line-height: 1.3; }
+.modal-data { display: block; font-size: 0.85rem; color: #777; margin-bottom: 20px; }
+
+/* =========================================
+   CARROSSEL DA JANELA FLUTUANTE (MODAL)
+========================================= */
+.carrossel-wrapper { 
+    position: relative; 
+    width: 100%; 
+    height: 550px; /* Aumentamos a altura para imagens "em pé" ficarem gigantes e legíveis! */
+    background: #f9f9f9; /* Fundo bem clarinho para sumir com as barras laterais */
+    border: 1px solid #ebebeb; /* Borda bem suave */
+    border-radius: 8px; 
+    overflow: hidden; 
+    margin-bottom: 25px; 
+}
+
+.carrossel-slide { 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.carrossel-slide img { 
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+    padding: 10px; /* Um pequeno respiro nas bordas */
+}
+
+/* Setas de avançar e voltar */
+.carrossel-btn { 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    background: rgba(122, 28, 32, 0.7); /* Cor vinho da UFPA semi-transparente */
+    color: white; 
+    border: none; 
+    font-size: 1.5rem; 
+    padding: 12px 16px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    transition: background 0.2s; 
+    z-index: 5; 
+}
+.carrossel-btn:hover { 
+    background: #7A1C20; /* Vinho sólido ao passar o mouse */
+}
+.btn-prev { left: 10px; }
+.btn-next { right: 10px; }
+
+/* Bolinhas indicadoras embaixo da foto */
+.carrossel-indicadores { 
+    position: absolute; 
+    bottom: 15px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex; 
+    gap: 8px; 
+}
+.carrossel-dot { 
+    width: 12px; 
+    height: 12px; 
+    border-radius: 50%; 
+    background: #cccccc; /* Cinza claro nas bolinhas inativas */
+    cursor: pointer; 
+    transition: background 0.3s; 
+}
+.carrossel-dot.ativo { 
+    background: #7A1C20; /* Vinho da UFPA na bolinha ativa */
+}
+
+/* Texto longo da notícia */
+.modal-texto-ampliado { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; line-height: 1.8; color: #333; }
+.modal-texto-ampliado p { margin-bottom: 16px; }
+
+/* =========================================
+   ESTILO DA NOTÍCIA CLICÁVEL (CARD 01)
+========================================= */
+.card-noticia {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-left: 5px solid #7A1C20; /* Borda vinho elegante na lateral */
+}
+.card-noticia:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transform: translateY(-3px); /* Dá um pulinho pra cima ao passar o mouse */
+}
+.btn-ler-mais {
+    background: #7A1C20;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+/* Responsivo celular */
+@media (max-width: 768px) {
+    .modal-noticia-body { padding: 20px; }
+    .modal-titulo { font-size: 1.3rem; }
+    .carrossel-wrapper { height: 240px; }
+    .modal-texto-ampliado { font-size: 0.95rem; }
+}
+
+/* =========================================
+   LIGHTBOX (AMPLIADOR DE IMAGENS - GLOBAL)
+========================================= */
+.lightbox {
+    display: none; 
+    position: fixed; 
+    z-index: 999999; 
+    top: 0; left: 0; width: 100vw; height: 100vh; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    align-items: center; justify-content: center;
+    backdrop-filter: blur(3px);
+}
+.lightbox img {
+    max-width: 90%; max-height: 90vh; 
+    object-fit: contain; border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
+@keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.lightbox-close {
+    position: absolute; top: 20px; right: 30px; color: #fff; 
+    font-size: 45px; font-weight: 300; cursor: pointer; transition: color 0.3s; z-index: 10;
+}
+.lightbox-close:hover { color: #7A1C20; }
+
+.lightbox-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    color: rgba(255,255,255,0.6); font-size: 60px; font-weight: 300;
+    cursor: pointer; background: transparent; border: none; padding: 20px;
+    transition: color 0.3s ease; z-index: 10;
+}
+.lightbox-btn:hover { color: #ffffff; }
+.lightbox-btn.prev { left: 20px; }
+.lightbox-btn.next { right: 20px; }
+
+/* =========================================
+   CORREÇÃO DA NAVBAR EM TELAS MÉDIAS E NOTEBOOKS
+========================================= */
+
+/* 1. Proíbe terminantemente que os botões do menu quebrem o texto ao meio */
+.nav-menu li a {
+    white-space: nowrap !important;
+}
+
+/* 2. Protege a Logo para não ficar com palavras sobrepostas */
+.brand-logo, .brand-logo * {
+    white-space: nowrap !important;
+    min-width: max-content !important; 
+}
+
+/* 3. Quando a tela for de Notebook/Tablet (menor que 1200px) */
+@media (max-width: 1200px) {
+    .nav-menu {
+        gap: 5px !important; /* Diminui o vazio entre os botões */
+    }
+    .nav-menu li a {
+        padding: 8px 10px !important; /* Deixa a área de clique um pouco menor */
+        font-size: 0.9rem !important; /* Reduz a fonte levemente para caber tudo */
+    }
+}
+
+/* 4. Se a tela apertar demais antes de virar versão celular (menor que 992px) */
+@media (max-width: 992px) {
+    .header-container {
+        flex-wrap: wrap !important; /* Permite que o menu caia para a linha de baixo */
+        justify-content: center !important; /* Centraliza a logo */
+        padding: 15px 20px !important;
+    }
+    
+    .nav-wrap {
+        margin-top: 15px !important;
+        width: 100% !important;
+    }
+
+    .nav-menu {
+        justify-content: center !important; /* Centraliza os botões */
+        flex-wrap: wrap !important; /* Permite botões em duas linhas organizadas */
+        gap: 10px !important;
+    }
+}
+
+/* =========================================
+   FORÇA BRUTA CONTRA TEXTO ENCAVALADO NA LOGO
+========================================= */
+.brand-logo * {
+    line-height: 1.3 !important; /* Cria o escudo de espaço entre as linhas */
+    white-space: normal !important; /* Permite a quebra de linha natural */
+}
+
+
+
+/* =========================================
+   CORREÇÃO DEFINITIVA: TRAVAR MENU ACERVO NA ESQUERDA (FIM DO DESLIZE)
+========================================= */
+@media (max-width: 992px) {
+    /* 1. Trava o botão Acervo na esquerda */
+    .mega-dropdown {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Proíbe a centralização herdada */
+    }
+
+    /* 2. Congela a caixa branca exatamente debaixo do botão */
+    .mega-menu {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        transform: none !important; /* Mata qualquer animação de deslize */
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* 3. Cria o trilho pregado na esquerda (Carrossel Horizontal) */
+    .miller-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important; /* A MÁGICA: Obriga as colunas a nascerem na esquerda, e não no meio */
+        align-items: flex-start !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important; /* Permite arrastar com o dedo */
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* 4. Colunas fixas e blindadas */
+    .miller-column {
+        flex: 0 0 250px !important; /* Define a largura fixa de 250px (não amassa) */
+        max-width: 250px !important;
+        margin-right: 15px !important;
+        transform: none !important;
+    }
+}
+
+/* =========================================
+   MENU ELÁSTICO: SÓ ENCOLHE, NUNCA QUEBRA, SÓ VIRA HAMBÚRGUER NO CELULAR
+========================================= */
+
+/* 1. PC, Tela Dividida e Tablet (Telas MAIORES que 600px) */
+@media (min-width: 601px) {
+    .mobile-menu-btn {
+        display: none !important; /* Esconde o hambúrguer no PC */
+    }
+    
+    .header-container {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* Proíbe a quebra entre a logo e o menu */
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .nav-wrap {
+        display: flex !important;
+        flex: 1 1 auto !important; /* Pega o espaço livre e permite encolher */
+        justify-content: flex-end !important;
+        min-width: 0 !important; /* O SEGREDO: permite espremer a caixa infinitamente sem sumir */
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .nav-menu {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* Proíbe as opções de caírem para a linha de baixo */
+        align-items: center !important;
+        gap: 5px !important;
+        min-width: 0 !important;
+    }
+
+    .nav-menu li {
+        flex-shrink: 1 !important; /* Permite amassar os botões */
+        min-width: 0 !important;
+    }
+
+    .nav-menu li a {
+        white-space: nowrap !important; /* Palavras nunca se quebram */
+        font-size: clamp(8px, 1.2vw, 16px) !important; /* Encolhe a fonte até 8px se precisar */
+        padding: 5px 6px !important; /* Encolhe o espaço interno entre os links */
+    }
+    
+    /* Mantém a caixa do mega menu funcionando no PC */
+    .mega-menu {
+        position: absolute !important;
+        top: 100% !important;
+        width: max-content !important;
+        left: 0 !important;
+    }
+}
+
+/* =========================================
+   AJUSTE DE IMAGENS - PÁGINA MARGA ROTHE
+========================================= */
+.img-margarothe {
+    max-width: 450px !important; /* Impede que a foto fique gigante no PC (pode aumentar ou diminuir esse número) */
+    width: 100% !important; /* No celular, ela se adapta perfeitamente à tela */
+    height: auto !important;
+    display: block !important;
+    margin: 30px auto !important; /* Centraliza a imagem e dá um respiro em cima e embaixo */
+    border-radius: 8px !important; /* Bônus: deixa as bordas levemente arredondadas, fica mais sofisticado */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important; /* Bônus 2: coloca uma sombrinha bem suave */
+}
+
+/* =========================================
+   IMAGENS MARGA ROTHE - LADO A LADO FORÇADO
+========================================= */
+.marga-img-container {
+    display: flex !important;
+    flex-direction: row !important; /* Obriga a ficar uma do lado da outra */
+    flex-wrap: nowrap !important; /* Proíbe de cair para a linha de baixo no celular */
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important; /* Espacinho entre as fotos */
+    margin: 30px auto !important;
+    width: 100% !important;
+    max-width: 900px !important;
+}
+
+.marga-img-container .img-margarothe {
+    flex: 1 1 50% !important; /* Força cada imagem a ocupar exatamente metade do espaço da tela */
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important; /* Remove as margens antigas que empurravam a foto para baixo */
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    object-fit: cover !important; /* Evita que a foto fique esticada ou deformada */
+}
+
+
+/* =========================================
+   LEITURA DE TEXTOS NO CELULAR (TIPO ARTIGO LIMPO)
+========================================= */
+@media (max-width: 768px) {
+    /* 1. Desmonta a "caixa" (cartão) para aproveitar toda a tela */
+    .clipping-card {
+        padding: 10px 5px !important; /* Diminui drasticamente as margens internas */
+        border-left: none !important; /* Remove a barra vermelha lateral grossa */
+        background: transparent !important; /* Remove o fundo bege, deixando branco e limpo */
+        box-shadow: none !important; /* Tira a sombra */
+        margin-bottom: 20px !important;
+    }
+
+    /* 2. Formata os parágrafos igual ao site de exemplo */
+    .clipping-text, 
+    .clipping-card p {
+        text-align: left !important; /* A MÁGICA: Texto à esquerda evita palavras espremidas e buracos */
+        font-size: 1.1rem !important; /* Letra num tamanho confortável para ler */
+        line-height: 1.6 !important; /* Espaço ideal entre as linhas */
+        padding: 0 10px !important; /* Dá um leve respiro para a letra não colar na borda do celular */
+        margin-bottom: 15px !important;
+    }
+
+    /* 3. Ajusta os títulos dentro dos textos */
+    .clipping-title {
+        font-size: 1.4rem !important;
+        padding: 0 10px !important;
+        text-align: left !important;
+    }
+}
+
