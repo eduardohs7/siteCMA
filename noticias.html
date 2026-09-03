@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="pt-br">
 <head>
    <meta charset="utf-8">
@@ -8,181 +8,11 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style.css?v=21" >
    <link rel="icon" type="image/png" href="images/noticiaDiversos/favicon.ico">
    <link href="images/noticiaDiversos/favicon.png" type="image/png" rel="icon">
    <link href="images/noticiaDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
 
-   <style>
-      /* =========================================
-         ESTILOS GERAIS DA PÁGINA DE NOTÍCIAS
-      ========================================= */
-      .noticias-section { padding: 60px 0; background-color: #f8f9fa; }
-      .noticias-content {
-         max-width: 1100px; margin: 0 auto; background: #ffffff;
-         padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      }
-      .noticias-title {
-         font-family: 'Syne', sans-serif; font-size: 2.2rem; color: #7A1C20;
-         margin-bottom: 30px; border-bottom: 3px solid #7A1C20; padding-bottom: 10px;
-      }
-      
-      /* =========================================
-         CARDS DE NOTÍCIAS
-      ========================================= */
-
-      .noticia-card {
-         display: flex; flex-direction: row;
-         background: #fff; border: 1px solid #e0e0e0;
-         border-radius: 8px; overflow: hidden; 
-         margin-bottom: 40px; transition: box-shadow 0.3s ease;
-         align-items: stretch; /* Deixa as duas colunas com a mesma altura */
-      }
-      .noticia-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-      
-      /* =========================================
-         CARROSSEL DE IMAGENS
-      ========================================= */
-      .noticia-img-wrapper {
-         position: relative; 
-         flex: 0 0 350px; 
-         display: flex;
-         align-items: center; 
-         background-color: #ffffff;
-      }
-      
-      .noticia-img-container {
-         display: flex;
-         width: 110%;
-         height: 420px; /* Altura fixa no centro */
-         overflow-x: auto; 
-         scroll-snap-type: x mandatory; 
-         scrollbar-width: none; 
-         -ms-overflow-style: none;
-         scroll-behavior: smooth;
-      }
-      .noticia-img-container::-webkit-scrollbar { display: none; }
-      
-      .noticia-img-container img {
-         flex: 0 0 100%; 
-         width: 100%;
-         height: 100%;
-         object-fit: contain; 
-         scroll-snap-align: center; 
-         cursor: zoom-in; 
-         transition: transform 0.3s ease;
-      }
-      .noticia-img-container img:hover { transform: scale(1.02); }
-
-      .nav-side-btn {
-         position: absolute; top: 0; bottom: 0; width: 15%; background: transparent;
-         border: none; cursor: pointer; z-index: 5; display: flex; align-items: center;
-         justify-content: center; color: transparent; font-size: 2rem;
-         transition: background 0.3s ease, color 0.3s ease;
-      }
-      .nav-side-btn.prev { left: 0; }
-      .nav-side-btn.next { right: 0; }
-      .noticia-img-wrapper:hover .nav-side-btn { color: rgba(0, 0, 0, 0.4); }
-      .nav-side-btn:hover { background: rgba(0, 0, 0, 0.08); color: #1a1a1a; }
-
-      .carousel-dots {
-         position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);
-         display: flex; gap: 8px; z-index: 10;
-      }
-      .dot {
-         width: 10px; height: 10px; border-radius: 50%; background: rgba(0, 0, 0, 0.2); 
-         cursor: pointer; transition: all 0.3s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      }
-      .dot.active { background: #7A1C20; transform: scale(1.3); }
-
-      /* =========================================
-         TEXTOS DA NOTÍCIA
-      ========================================= */
-      .noticia-body {
-         flex: 1; padding: 30px; display: flex;
-         flex-direction: column; justify-content: center;
-      }
-      .noticia-data {
-         font-family: 'Montserrat', sans-serif; font-size: 1.2rem;
-         color: #7A1C20; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;
-      }
-      .noticia-card-title {
-         font-family: 'Montserrat', sans-serif; font-size: 1.3rem;
-         color: #1a1a1a; margin-bottom: 15px; font-weight: 700; line-height: 1.4;
-      }
-      .noticia-text {
-         font-family: 'Plus Jakarta Sans', sans-serif; color: #4a4a4a;
-         line-height: 1.7; text-align: justify; margin-bottom: 15px;
-      }
-      .noticia-text:last-child { margin-bottom: 0; }
-
-      /* =========================================
-         ACORDEÃO DE RESUMOS
-      ========================================= */
-      .resumo-item {
-         background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px;
-         margin-bottom: 10px; overflow: hidden;
-      }
-      .resumo-item summary {
-         font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700;
-         color: #1a1a1a; padding: 15px; cursor: pointer; list-style: none; 
-         display: flex; justify-content: space-between; align-items: center;
-         background-color: #fafafa; transition: background-color 0.3s ease;
-      }
-      .resumo-item summary:hover { background-color: #f0f0f0; }
-      .resumo-item summary::after {
-         content: "▼"; font-size: 0.8rem; color: #7A1C20; transition: transform 0.3s ease;
-      }
-      .resumo-item[open] summary::after { transform: rotate(180deg); }
-      .resumo-item p {
-         font-family: 'Plus Jakarta Sans', sans-serif; color: #4a4a4a; line-height: 1.6;
-         padding: 15px; margin: 0; border-top: 1px solid #eee; text-align: justify; font-size: 0.9rem;
-      }
-
-      /* =========================================
-         LIGHTBOX (AMPLIADOR GALERIA)
-      ========================================= */
-      .lightbox {
-         display: none; position: fixed; z-index: 99999; 
-         top: 0; left: 0; width: 100%; height: 100%; 
-         background-color: rgba(0, 0, 0, 0.9); 
-         align-items: center; justify-content: center;
-         backdrop-filter: blur(3px);
-      }
-      .lightbox img {
-         max-width: 90%; max-height: 90vh; 
-         object-fit: contain; border-radius: 8px;
-         box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-         animation: zoomIn 0.3s ease;
-      }
-      @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-      
-      .lightbox-close {
-         position: absolute; top: 20px; right: 30px; color: #fff; 
-         font-size: 45px; font-weight: 300; cursor: pointer; transition: color 0.3s;
-      }
-      .lightbox-close:hover { color: #7A1C20; }
-
-      /* Setas da Galeria Lightbox */
-      .lightbox-btn {
-         position: absolute; top: 50%; transform: translateY(-50%);
-         color: rgba(255,255,255,0.6); font-size: 60px; font-weight: 300;
-         cursor: pointer; background: transparent; border: none; padding: 20px;
-         transition: color 0.3s ease;
-      }
-      .lightbox-btn:hover { color: #ffffff; }
-      .lightbox-btn.prev { left: 20px; }
-      .lightbox-btn.next { right: 20px; }
-
-      /* =========================================
-         RESPONSIVIDADE
-      ========================================= */
-      @media (max-width: 768px) {
-         .noticia-card { flex-direction: column; }
-         .noticia-img-wrapper { flex: none; height: 350px; } 
-         .lightbox-btn { font-size: 40px; padding: 10px; }
-      }
-   </style>
 </head>
 <body>
 
@@ -190,12 +20,14 @@
    <header class="main-header">
       <div class="header-container">
          
-         <!-- LOGO CLICÁVEL -->
-         <a href="index.html" class="brand-logo" style="text-decoration: none;">
-            <span class="logo-sub">UFPA</span>
-            <span class="logo-main">CMA</span>
+      <!-- LOGO CLICÁVEL -->
+         <a href="index.html" class="brand-logo-nova">
+            <img src="images/cma-positivo.png" alt="Logo CMA" class="logo-img-header">
+            <div class="logo-textos">
+               <span class="logo-texto-principal" style="line-height: 1.1 !important; white-space: normal !important; ">CENTRO DE MEMÓRIA DA AMAZÔNIA</span>
+               <span class="logo-texto-ufpa">UFPA</span>
+            </div>
          </a>
-         
          <!-- MENU DE NAVEGAÇÃO -->
          <nav class="nav-wrap">
             <ul class="nav-menu">
@@ -203,7 +35,7 @@
                
                <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
                <li class="mega-dropdown">
-                  <a href="#">Acervo <span class="arrow">▾</span></a>
+                  <a href="#">Acervos <span class="arrow">▾</span></a>
                   <div class="mega-menu">
                      <div class="mega-menu-header">
                         <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
@@ -234,211 +66,157 @@
       </div>
    </header>
 
-   <section class="noticias-section">
-      <div class="noticias-content">
-         <h1 class="noticias-title">NOTÍCIAS E ACONTECIMENTOS</h1>
+         <section class="noticias-section">
+
+            <!-- NOTÍCIA 04: INFORME DE INDISPONIBILIDADE DE DOCUMENTOS -->
+            <div class="noticias-content">
+               <div class="card-noticia-preview" onclick='abrirNoticia({
+                  categoria: "INFORME",
+                  titulo: "Indisponibilização parcial do acervo judicial",
+                  fotos: [
+                     "images/imagensNoticia04/1.png",
+                     "images/imagensNoticia04/2.png",
+                  ],
+                  texto: [
+                     "Devido a uma falha mecânica nas estantes deslizantes do ac  ervo do fundo TJPA, as seguintes procedências e seus respectivos documentos estarão temporariamente indisponíveis para a pesquisa:",
+                     "SÉRIE CÍVEL:",
+                     "11ª Vara Cível - Cartório Fabiliano Lobato",
+                     "Assistência Judiciária",
+                     "Distritos Cíveis",
+                     "Comarcas dos Interiores - Cível",
+                     "SÉRIE CRIMINAL: ",
+                     "1ª - 10ª Varas Penais ",
+                     "1º - 3º Distritos Criminais ",
+                     "1ª - 4ª Pretorias ",
+                     "Comarcas dos Interiores - Criminal",
+                     "A redisponibilização do acesso à pesquisa dos documentos será feita logo após o conserto das estantes, e será informada pelas redes sociais do CMA.",
+
+                  ]
+               })'>
+                  <!-- Imagem de Capa -->
+                  <div class="card-noticia-thumb">
+                     <img src="images/imagensNoticia04/1.png" alt="Capa da Notícia">
+                  </div>
+
+                  <!-- Conteúdo do Card -->
+                  <div class="card-noticia-info">
+                     <span class="card-noticia-tag">INFORME</span>
+                     <h3 class="card-noticia-titulo">Indisponibilização parcial do acervo judicial</h3>
+                     <p class="card-noticia-resumo">
+                        Devido a uma falha mecânica nas estantes deslizantes do ac  ervo do fundo TJPA, as seguintes procedências e seus respectivos documentos estarão temporariamente indisponíveis para a pesquisa:                     </p>
+                     <button class="btn-ler-mais">Ler Notícia Completa </button>
+                  </div>
+               </div>
+
+
+            <!-- NOTÍCIA 04: INFORME DE INDISPONIBILIDADE DE DOCUMENTOS -->
+               <div class="card-noticia-preview" onclick='abrirNoticia({
+                  categoria: "NOVIDADE NO ACERVO",
+                  titulo: "Indisponibilização parcial do acervo judicial",
+                  fotos: [
+                     "images/imagemNoticia32/1.jpg",
+                     "images/imagemNoticia32/2.jpg",
+                     "images/imagemNoticia32/3.jpg",
+                     "images/imagemNoticia32/4.jpg",
+                     "images/imagemNoticia32/5.jpg",
+                  ],
+                  texto: [
+                     "Já está disponível para a pesquisa, no Centro de Memória da Amazônia (CMA), a documentação da procedência cível “Assistência Judiciária”. São cerca de 1.730 documentos, produzidos entre 1935 e 1970",
+                     "A assistência judiciária gratuita aos necessitados foi estabelecida com base na Constituição brasileira de 1934. Pessoas pobres no sentido da lei são os principais sujeitos presentes na documentação, que em grande parte, abarca os Direitos de Família e Sucessões.",
+
+
+                  ]
+               })'>
+                  <!-- Imagem de Capa -->
+                  <div class="card-noticia-thumb">
+                     <img src="images/imagemNoticia32/1.jpg" alt="Capa da Notícia">
+                  </div>
+
+                  <!-- Conteúdo do Card -->
+                  <div class="card-noticia-info">
+                     <span class="card-noticia-tag">INFORME</span>
+                     <h3 class="card-noticia-titulo">Documentação Cível "Assistência Judiciária" Disponível para Pesquisa</h3>
+                     <p class="card-noticia-resumo">
+                        Já está disponível para a pesquisa, no Centro de Memória da Amazônia (CMA), a documentação da procedência cível “Assistência Judiciária”. São cerca de 1.730 documentos, produzidos entre 1935 e 1970. </p> 
+                        <button class="btn-ler-mais">Ler Notícia Completa</button>
+                  </div>
+               </div>
+
+               <div class="card-noticia-preview" onclick='abrirNoticia({
+                  categoria: "DICAS DE LEITURA",
+                  titulo: "Dicas de leitura sobre a pajelança, medicina e práticas populares na Amazônia",
+                  data: "Biblioteca CMA",
+                  fotos: [
+                     "images/imgNoticia31_livros/1.png",
+                     "images/imgNoticia31_livros/2.png",
+                     "images/imgNoticia31_livros/3.png",
+                     "images/imgNoticia31_livros/4.png",
+                     "images/imgNoticia31_livros/5.png",
+                     "images/imgNoticia31_livros/6.png",
+                     "images/imgNoticia31_livros/7.png",
+                     "images/imgNoticia31_livros/livros-sobre-pajelança.png",
+                     "images/imgNoticia31_livros/8vedd.png",
+                     "images/imgNoticia31_livros/10.png",
+                     "images/imgNoticia31_livros/11.png"
+                  ],
+                  texto: [
+                     "Confira uma seleção especial de obras disponíveis em nosso acervo sobre religiosidades, saúde popular, xamanismo e tradições medicinais na Amazônia:",
+                     "<strong>1. Religiões afro-indígenas e pajelança cabocla:</strong> As religiões afro-indígenas tiveram origem entre os indígenas (em especial os tupi) e escravizados africanos, com influências do cristianismo europeu. Rituais como candomblé, umbanda, macumba, pajelanças caboclas e encantamentos integram o cotidiano religioso amazônico. Os vinte artigos presentes visam analisar a pajelança cabocla.",
+                     "<strong>2. A Ilha Encantada: medicina e xamanismo numa comunidade de pescadores:</strong> Apresenta a medicina popular da povoação de pescadores de Itapuá (Vigia/PA), analisando conceitos e práticas sociais ligadas às doenças não-naturais, seus agentes causais e especialistas de tratamento.",
+                     "<strong>3. Medicinas Tradicionais e Política de Saúde:</strong> Reúne trabalhos apresentados no Encontro “Medicinas Tradicionais e Política de Saúde na Amazônia”, abordando representações e práticas de saúde em vários grupos indígenas.",
+                     "<strong>4. Medicina popular na povoação de Itapuá:</strong> Analisa a medicina popular, conceitos e práticas sociais ligadas a doenças não-naturais investigadas em comunidades tradicionais no interior do Pará.",
+                     "<strong>5. Saúde popular e cuidadores invisíveis:</strong> Coletânea que reúne autoras e autores pensando realidades pouco visíveis no cenário oficial do cuidado com a saúde no Brasil, destacando o papel da medicina popular.",
+                     "<strong>6. Saberes das parteiras da Ilha do Marajó:</strong> Obra que aborda de perto os saberes, desafios, desigualdades, conflitos e redes de reciprocidade das quais fazem parte as parteiras marajoaras.",
+                     "<strong>7. Magia, religião e modernidade em Manaus:</strong> Discute a relação entre magia, religião e modernidade a partir do caso dos rezadores em Manaus e a permanência de saberes tradicionais.",
+                     "<strong>8. A cura e a pajelança ribeirinha:</strong> Trata do lugar central da cura de doenças na pajelança praticada por ribeirinhos amazônicos, integrando o xamanismo como sistema milenar.",
+                     "<strong>9. História das religiões amazônicas:</strong> Reconta a história das religiões na região, a crença nos encantados e a trajetória de pajés e pais de santo famosos em Belém e no interior do Pará desde o século XIX.",
+                     "<strong>10. A vocação dos pajés e benzedeiras:</strong> Trata da vocação, missão e ofício de pajés, benzedores, puxadores e parteiras no Baixo Amazonas, com depoimentos do Projeto A Hora do Xibé."
+                  ]
+               })'>
+                  <div class="card-noticia-thumb">
+                     <img src="images/imgNoticia31_livros/1.png" alt="Dicas de leitura sobre pajelança e medicina popular">
+                  </div>
+
+                  <div class="card-noticia-info">
+                     <span class="card-noticia-tag">DICAS DE LEITURA</span>
+                     <h3 class="card-noticia-titulo">Dicas de leitura sobre a pajelança, medicina e práticas populares na Amazônia</h3>
+                     <p class="card-noticia-resumo">
+                        Confira uma seleção de 10 obras essenciais do nosso acervo sobre religiões afro-indígenas, saberes das parteiras do Marajó, cura ribeirinha, pajelança e saúde popular na Amazônia.
+                     </p>
+                     <button class="btn-ler-mais">Ler Notícia Completa </button>
+                  </div>
+               </div>
+
    
-               <!-- NOTÍCIA 04: INFORME DE INDISPONIBILIDADE DE DOCUMENTOS -->
-         <div class="noticia-card">
-            <div class="noticia-img-wrapper">
-               <!-- Botões do carrossel -->
-               <button class="nav-side-btn prev">‹</button>
-               <button class="nav-side-btn next">›</button>
-               
-               <div class="noticia-img-container">
-                  <img src="images/imagensNoticia04/1.png" alt="1.png">
-                  <img src="images/imagensNoticia04/2.png" alt="img02">
+                  <div class="card-noticia-preview" onclick='abrirNoticia({
+                     categoria: "ACERVO FOTOGRÁFICO",
+                     titulo: "Registros fotográficos de Belém no inicio do Século XX",
+                     fotos: [
+                           "images/noticiaDiversos/post-novidades-site.png"
+                     ],
+                     texto: [
+                           "As seguintes fotos compõem uma pequena parte das fotografias localizadas no acervo de Clóvis Moraes Rêgo, parte das Coleções Pessoais da Biblioteca do Centro de Memória da Amazônia.",
+                           "As fotos são identificadas como registros de Belém do início do século XX, trazendo belíssimas fotografias de praças, ruas da capital e do então Intendente de Belém, Antonio Lemos. Todo esse rico acervo iconográfico encontra-se disponível para consulta e pesquisa em nosso espaço físico. Disponíveis também em nossa galeria digital. Confira! <a href=\"galeriaGeral.html\" class=\"link-arrow\" style=\"color: #7A1C20; font-weight: bold; text-decoration: none;\">Clique aqui</a>"
+                     ]
+                  })'>
+                     <!-- Imagem de Capa -->
+                     <div class="card-noticia-thumb">
+                           <!-- Troquei a foto aqui para a correta de Belém Antiga -->
+                           <img src="images/noticiaDiversos/post-novidades-site.png" alt="Capa da Notícia">
+                     </div>
 
-               </div>
-               
-               <div class="carousel-dots">
-                  <span class="dot active"></span>
-                  <span class="dot "></span>
-
-               </div>
+                     <!-- Conteúdo do Card -->
+                     <div class="card-noticia-info">
+                           <span class="card-noticia-tag">ACERVO FOTOGRÁFICO</span>
+                           <h3 class="card-noticia-titulo">Registros fotográficos de Belém no inicio do Século XX</h3>
+                           <p class="card-noticia-resumo">
+                              As seguintes fotos compõem uma pequena parte das fotografias localizadas no acervo de Clóvis Moraes Rêgo, parte das Coleções Pessoais da Biblioteca do Centro de Memória da Amazônia.
+                           </p>
+                           <button class="btn-ler-mais">Ler Notícia Completa </button>
+                     </div>
+                  </div>
             </div>
-            
-            <div class="noticia-body">
-               <span class="noticia-data">INFORME</span>
-               <h3 class="noticia-card-title">Devido a uma falha mecânica nas estantes deslizantes do acervo do fundo TJPA</h3>
-               <p class="noticia-text">
-                  <p>Devido a uma falha mecânica nas estantes deslizantes do acervo do fundo TJPA, as seguintes procedências e seus respectivos documentos estarão temporariamente indisponíveis para a pesquisa:</p> 
-                  
-                  <br><br> <!-- Pulo de linha extra inserido aqui -->
-
-                  <p>SÉRIE CÍVEL: </p>
-                  <p>11ª Vara Cível - Cartório Fabiliano Lobato</p>
-                  <p>Assistência Judiciária </p>
-                  <p>Distritos Cíveis </p>
-                  <p>Comarcas dos Interiores - Cível </p>
-                  
-                  <br><br> <!-- Pulo de linha extra inserido aqui -->
-
-                  <p>SÉRIE CRIMINAL: </p> 
-               
-                  <p>1ª - 10ª Varas Penais </p>
-                  <p>1º - 3º Distritos Criminais  </p>
-                  <p>1ª - 4ª Pretorias  </p>
-                  <p>Comarcas dos Interiores - Criminal  </p>
-                  
-                  <br><br> <!-- Pulo de linha extra inserido aqui -->
-
-                  <p>A redisponibilização do acesso à pesquisa dos documentos será feita logo após o conserto das estantes, e será informada pelas redes sociais do CMA.</p>               </p>
-
-               </p>
-            </div>
-         </div>
-
-         <!-- NOTÍCIA 03: Assistência Judiciária  -->
-         <div class="noticia-card">
-            <div class="noticia-img-wrapper">
-               <button class="nav-side-btn prev">‹</button>
-               <button class="nav-side-btn next">›</button>
-               <div class="noticia-img-container">
-                  <img src="images/imagemNoticia32/1.jpg" alt="Foto 1">
-                  <img src="images/imagemNoticia32/2.jpg" alt="Foto 2">
-                  <img src="images/imagemNoticia32/3.jpg" alt="Foto 3">
-                  <img src="images/imagemNoticia32/4.jpg" alt="Foto 4">
-                  <img src="images/imagemNoticia32/5.jpg" alt="Foto 5">
-               </div>
-               <div class="carousel-dots">
-                  <span class="dot active"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-               </div>
-            </div>
-            
-            <div class="noticia-body">
-               <span class="noticia-data">Novidade no Acervo</span>
-               <h3 class="noticia-card-title">Documentação Cível "Assistência Judiciária" Disponível para Pesquisa</h3>
-               <p class="noticia-text">
-                  Já está disponível para a pesquisa, no Centro de Memória da Amazônia (CMA), a documentação da procedência cível “Assistência Judiciária”. São cerca de 1.730 documentos, produzidos entre 1935 e 1970.
-               </p>
-               <p class="noticia-text">
-                  A assistência judiciária gratuita aos necessitados foi estabelecida com base na Constituição brasileira de 1934. Pessoas pobres no sentido da lei são os principais sujeitos presentes na documentação, que em grande parte, abarca os Direitos de Família e Sucessões.
-               </p>
-            </div>
-         </div>
-
-
-         <!-- NOTÍCIA 02: DICAS DE LEITURA -->
-         <div class="noticia-card">
-            <div class="noticia-img-wrapper">
-               <button class="nav-side-btn prev">‹</button>
-               <button class="nav-side-btn next">›</button>
-               <div class="noticia-img-container">
-                  <img src="images/imgNoticia31_livros/1.png" alt="Capa">
-                  <img src="images/imgNoticia31_livros/2.png" alt="Capa Livro 2">
-                  <img src="images/imgNoticia31_livros/3.png" alt="Capa Livro 3">
-                  <img src="images/imgNoticia31_livros/4.png" alt="Capa Livro 4">
-                  <img src="images/imgNoticia31_livros/5.png" alt="Capa Livro 5">
-                  <img src="images/imgNoticia31_livros/6.png" alt="Capa Livro 6">
-                  <img src="images/imgNoticia31_livros/7.png" alt="Capa Livro 7">
-                  <img src="images/imgNoticia31_livros/livros-sobre-pajelança.png" alt="Capa Livro 8">
-                  <img src="images/imgNoticia31_livros/8vedd.png" alt="Capa Livro 9">
-                  <img src="images/imgNoticia31_livros/10.png" alt="Capa Livro 10">
-
-
-                  <img src="images/imgNoticia31_livros/11.png" alt="contracapa">
-               </div>
-               <div class="carousel-dots">
-                  <span class="dot active"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>    
-                  <span class="dot"></span>   
-                  <span class="dot"></span>                
-                  
-               </div>
-            </div>
-            
-            <div class="noticia-body">
-               <span class="noticia-data">Dicas de leitura</span>
-               <h3 class="noticia-card-title" style="margin-bottom: 20px;">Dicas de leitura sobre a pajelança, medicina e práticas populares na Amazônia</h3>
-               
-               <div class="acordeao-container">
-                  <details class="resumo-item">
-                     <summary>1. Religiões afro-indígenas e pajelança cabocla</summary>
-                     <p>As religiões afro-indígenas, como a própria denominação revela, tiveram origem entre os indígenas, em especial os tupi, e entre os escravizados africanos. Também foram influenciadas pelo cristianismo europeu, incorporado no Brasil pelos portugueses. Candomblé, umbanda, macumba, pajelanças caboclas e encantamentos são alguns exemplos de rituais do cotidiano religioso amazônico. Os vinte artigos presentes visam analisar a forma de xamanismo bastante difundida na Amazônia, a pajelança cabocla.</p>
-                  </details>
-                  <details class="resumo-item">
-                     <summary>2. A Ilha Encantada: medicina e xamanismo numa comunidade de pescadores</summary>
-                     <p>apresenta a medicina popular da povoação de pescadores – Itapuá -, que se localiza no município de Vigia, no Estado do Pará. Analisa os conceitos e práticas sociais ligadas às doenças não-naturais reconhecidas pela população de Itapuá, investigadas nos domínios: agentes causais (espíritos, seres humanos e astros), doenças (com atenção particular ao subconjunto das não naturais) e especialistas no seu tratamento. Procura elucidar e analisar sua estrutura, nos casos estudados, que é de tipo taxonômica, analisando não apenas o aspecto semântico, mas também o modo como os membros da comunidade vivenciam a cultura, no que diz respeito à medicina.</p>
-                  </details>
-                   <details class="resumo-item">
-                     <summary>3. Medicinas Tradicionais e Política de Saúde</summary>
-                     <p>Os trabalhos reunidos neste livro foram apresentados no Encontro “Medicinas Tradicionais e Política de Saúde na Amazônia”. O encontro abordou, dentre vários aspectos, as representações e práticas das medicinas tradicionais em vários grupos indígenas e a questão do impacto do contato sobre as representações e práticas indígenas da doença.</p>
-                  </details>
-                  <details class="resumo-item">
-                     <summary>4. Medicina popular na povoação de Itapuá</summary>
-                     <p>Apresenta a medicina popular da povoação de pescadores – Itapuá -, que se localiza no município de Vigia, no Estado do Pará. Analisa os conceitos e práticas sociais ligadas às doenças não-naturais reconhecidas pela população de Itapuá, investigadas nos domínios: agentes causais e especialistas no seu tratamento.</p>
-                  </details>
-                  <details class="resumo-item">
-                     <summary>5. Saúde popular e cuidadores invisíveis</summary>
-                     <p>Essa coletânea reúne autoras e autores que têm pensado sobre realidades pouco visíveis no cenário oficial do cuidado com a saúde do Brasil. As terapêuticas e os cuidadores são acionados diariamente a partir de uma “saúde popular” justamente pelo fato de fazerem sentido para essas pessoas e não por uma suposta falta de acesso.</p>
-                  </details>
-                  <details class="resumo-item">
-                     <summary>6. Saberes das parteiras da Ilha do Marajó</summary>
-                     <p>Esta é uma obra que nos leva a conhecer de muito perto os saberes, os desafios, as desigualdades, os conflitos e as redes de reciprocidade das quais fazem parte as parteiras da Ilha do Marajó, no Pará.</p>
-                  </details>
-                  <details class="resumo-item">
-                     <summary>7. Magia, religião e modernidade em Manaus</summary>
-                     <p>O presente livro trata de discutir a relação entre magia, religião e modernidade, partindo do caso dos rezadores da cidade de Manaus. A questão inicial que motivou toda a reflexão é como que formas tidas como arcaicas ainda se apresentam num mundo desencadeado pela ciência e pela técnica.</p>
-                  </details>
-                  <details class="resumo-item">
-                     <summary>8. A cura e a pajelança ribeirinha</summary>
-                     <p>A cura de doenças ocupa um lugar central na pajelança praticada pelos ribeirinhos amazônicos. Nisso, eles seguem conceitos e rituais herdados dos antepassados indígenas com a função primordial da cura através do xamã ou pajé, integrando o xamanismo, um sistema milenar de extensa difusão geográfica.</p>
-                  </details>
-                  <details class="resumo-item">
-                     <summary>9. História das religiões amazônicas</summary>
-                     <p>O livro reconta a história das religiões amazônicas, especialmente sobre a crença nos encantados, e de como essas manifestações se tornaram o tema predileto de antropólogos desde o século XIX. Traça a história de vida de muitos pajés e pais de santo que ficaram famosos na Belém da belle-époque e no interior do Pará.</p>
-                  </details>
-                  <details class="resumo-item">
-                     <summary>10. A vocação dos pajés e benzedeiras</summary>
-                     <p>Neste livro vamos tratar da vocação, da missão e do ofício dos pajés, benzedores, puxadores e parteiras. Como esses especialistas são preparados, treinados e testados? Apontaremos respostas a partir dos casos de pessoas reconhecidas como portadoras desse dom e que vivem na região do baixo Amazonas, com depoimentos do Projeto A Hora do Xibé.</p>
-                  </details>
-                  
-               </div>
-               
-            </div>
-         </div>
-   
-               <!-- NOTÍCIA 01: IMAGENS DE BELÉM ANTIGA -->
-         <div class="noticia-card">
-            <div class="noticia-img-wrapper">
-               <!-- Botões do carrossel -->
-               <button class="nav-side-btn prev">‹</button>
-               <button class="nav-side-btn next">›</button>
-               
-               <!-- Imagens: basta trocar o src para a pasta onde estão as fotos de Belém -->
-               <div class="noticia-img-container">
-                  <img src="images/noticiaDiversos/post-novidades-site.png" alt="Registro de Belém Antiga 1">
-               </div>
-               
-               <div class="carousel-dots">
-                  <span class="dot active"></span>
-               </div>
-            </div>
-            
-            <div class="noticia-body">
-               <span class="noticia-data">Acervo Fotográfico</span>
-               <h3 class="noticia-card-title">Registros Fotográficos de Belém do Início do Século XX</h3>
-               <p class="noticia-text">
-                  As seguintes fotos compõem uma pequena parte das fotografias localizadas no acervo de Clóvis Moraes Rêgo, parte das Coleções Pessoais da Biblioteca do Centro de Memória da Amazônia.
-               </p>
-               <p class="noticia-text">
-                  As fotos são identificadas como registros de Belém do início do século XX, trazendo belíssimas fotografias de praças, ruas da capital e do então Intendente de Belém, Antonio Lemos. Todo esse rico acervo iconográfico encontra-se disponível para consulta e pesquisa em nosso espaço físico. Disponiveis também em nossa galeria digitla. Confira! <a href="galeriaGeral.html" class="link-arrow">Clique aqui↗</a>
-
-               </p>
-            </div>
-         </div>
+         
 
    </section>
 
@@ -463,19 +241,18 @@
          <div class="footer-links-col">
             <h5>REDES SOCIAIS</h5>
             <ul>
-               <li><a href="https://www.facebook.com/centrodememoriaufpa" target="_blank">Facebook</a></li>
-               <li><a href="https://twitter.com/CMA_UFPA" target="_blank">Twitter</a></li>
                <li><a href="https://www.instagram.com/cmaufpa" target="_blank">Instagram</a></li>
             </ul>
          </div>
 
          <div class="footer-links-col">
             <h5>CONTATOS</h5>
-            <p><strong>(91) 3201-8981</strong></p>
+            <p class="footer-email">(91) 3201-8981</p>
             <p><a href="mailto:cma@ufpa.br" class="footer-email">cma@ufpa.br</a></p>
             <p><a href="mailto:bibcma@ufpa.br" class="footer-email">bibcma@ufpa.br</a></p>
             <span class="sub-info">(Biblioteca e Coleções Pessoais)</span>
          </div>
+      </div>
       </div>
 
       <div class="footer-sub">
@@ -499,6 +276,34 @@
       <img id="lightbox-img" src="" alt="Imagem Ampliada">
       <button class="lightbox-btn next">›</button>
    </div>
+
+   <div id="modalNoticia" class="modal-noticia-overlay">
+      <div class="modal-noticia-container">
+         
+         <button class="modal-close-btn" onclick="fecharNoticia()">&times;</button>
+         
+         <div class="modal-noticia-body">
+            
+            <span id="modalCategoria" class="modal-tag">NOTÍCIA</span>
+            <h2 id="modalTitulo" class="modal-titulo">Título da Notícia</h2>
+            <span id="modalData" class="modal-data">01 de Setembro de 2026</span>
+
+            <div id="modalCarrossel" class="carrossel-wrapper">
+               <button class="carrossel-btn btn-prev" onclick="mudarFoto(-1)">&#10094;</button>
+               <div class="carrossel-slide">
+                  <img id="modalImagem" src="" alt="Imagem da notícia">
+               </div>
+               <button class="carrossel-btn btn-next" onclick="mudarFoto(1)">&#10095;</button>
+               <div id="carrosselIndicadores" class="carrossel-indicadores"></div>
+            </div>
+
+            <div id="modalTexto" class="modal-texto-ampliado">
+               </div>
+
+         </div>
+      </div>
+   </div>
+
 
    <!-- SCRIPT: CARROSSEL + LIGHTBOX GALERIA -->
    <script>
@@ -611,6 +416,9 @@
       });
    </script>
 
-   <script src="script.js?v=3"></script>
+   <script src="script.js?v=7"></script>
+
+
+
 </body>
 </html>
