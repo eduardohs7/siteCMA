@@ -44,6 +44,19 @@ body {
     outline: none !important;
 }
 
+<<<<<<< HEAD
+=======
+/* 2. CRIA A BARRINHA INVISÍVEL (tamanho zero) */
+.main-header .nav-menu > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Começa invisível */
+    background-color: #ffffff;
+    transition: width 0.3s ease; /* Faz a barra aparecer deslizando suavemente */
+}
+>>>>>>> 173667703d4622e0cbb660040f795cb3bb5760c9
 
 /* 3. FAZ A BARRINHA CRESCER AO PASSAR O MOUSE OU NA PÁGINA ATIVA */
 .main-header .nav-menu > li > a:hover::after,
@@ -1236,6 +1249,7 @@ BOTÃO VOLTAR AO TOPO
     height: 45px;
     font-size: 20px;
 }
+<<<<<<< HEAD
 }
 
 /* =========================================
@@ -1475,6 +1489,249 @@ margin-left: 5px !important;
 /* 
    linha dos links da nav bar 
  */
+=======
+}
+
+/* =========================================
+TEXTURA DE LAJOTINHAS (NAVBAR E ESTATÍSTICAS)
+========================================= */
+
+/* Aplica a textura no Cabeçalho (Navbar) e nas Estatísticas */
+.main-header, 
+.stats-banner {
+/* MANTÉM a cor vinho de fundo original */
+background-color: #7A1C20 !important; 
+
+/* PUXA a imagem da lajotinha (MUDE O NOME DO ARQUIVO AQUI) */
+background-image: url('images/lajotinha do cma.png') !important; 
+
+/* FAZ a lajotinha se repetir infinitamente lado a lado */
+background-repeat: repeat !important;
+
+/* CONTROLA o tamanho da lajotinha (pode aumentar ou diminuir esse valor) */
+background-size: 750px !important; 
+
+/* O TRUQUE MÁGICO: Mistura a lajotinha com a cor vinho para não ficar "cheguei" demais */
+}
+
+/* =========================================
+TAMANHO DA IMAGEM DA LOGO NO CABEÇALHO
+========================================= */
+.logo-img-header {
+height: 70px !important; 
+width: auto !important;
+display: block !important;    
+}
+
+@media (max-width: 992px) {
+.logo-img-header {
+height: 70px !important; 
+}
+}
+
+
+@media (min-width: 993px) {
+.nav-wrap {
+
+    margin-right: 40px !important; 
+}
+
+.nav-menu {
+
+    gap: 20px !important; 
+}
+}
+
+/* =========================================
+ESTILO DA NOVA LOGO (COMPUTADOR)
+========================================= */
+.brand-logo-nova {
+display: flex;
+align-items: center;
+gap: 12px;
+text-decoration: none;
+max-width: 80%; /* Impede a logo de empurrar o menu */
+}
+
+.logo-textos {
+display: flex;
+flex-direction: column;
+align-items:start;
+}
+
+.logo-texto-principal {
+color: #ffffff;
+font-family: 'Montserrat', sans-serif;
+font-size: 1.3rem;
+font-weight: 800;
+line-height: 0.70;
+}
+
+.logo-texto-ufpa {
+font-size: 1.1rem;
+font-family: 'Montserrat', sans-serif;
+font-weight: 800;
+color: #ffffff;
+}
+
+/* =========================================
+ESTILO DA NOVA LOGO (CELULAR)
+========================================= */
+@media (max-width: 768px) {
+.header-container {
+    /* Força a barra a ficar em 1 única linha, não importando o aperto */
+    flex-wrap: nowrap !important; 
+}
+
+.logo-texto-principal {
+    font-size: 1rem; /* Reduz a frase principal */
+    padding: 1px 4px;
+    line-height: 1;
+    line-height: 1.2rem !important
+}
+
+.logo-texto-ufpa {
+    font-size: 0.90rem; /* Reduz a sigla UFPA */
+    padding: 1px 4px;
+}
+}
+
+/* =========================================
+AJUSTE FINO: PUXAR A LOGO PARA A ESQUERDA
+========================================= */
+.brand-logo-nova {
+/* O valor negativo "puxa" a logo para a esquerda. 
+    Se quiser mais para a esquerda, aumente para -30px ou -40px */
+margin-left: 5px !important; 
+}
+
+/* Garante que no celular ela não acabe saindo da tela */
+@media (max-width: 992px) {
+.brand-logo-nova {
+    margin-left: -2px !important; 
+}
+}
+
+/* =========================================
+MENU MOBILE ESTILO FACEBOOK (LATERAL DIREITA)
+========================================= */
+@media (max-width: 1200px) {
+/* 1. O Menu Deslizante (Drawer) */
+.nav-wrap {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Fica escondido fora da tela na direita */
+    width: 80%; /* Ocupa 80% da tela (deixa 20% da página visível) */
+    max-width: 350px;
+    height: 100vh;
+    background-color: #7A1C20; /* Cor vinho da UFPA */
+    box-shadow: -5px 0 20px rgba(0,0,0,0.6); /* Sombra lateral */
+    transition: right 0.4s ease-in-out; /* O deslize suave */
+    z-index: 9999;
+    overflow-y: auto; /* Permite rolar as opções */
+    padding-top: 90px; /* Espaço para o botão fechar lá em cima */
+}
+
+/* Quando o menu estiver aberto, ele desliza para a posição 0 */
+.nav-wrap.menu-aberto {
+    right: 0; 
+}
+
+/* 2. O Fundo Escuro (Parte que sobra da tela) */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease-in-out;
+}
+.menu-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3. Botão Hambúrguer e Fechar */
+.mobile-menu-btn {
+    position: relative;
+    z-index: 10000; /* Fica acima do menu e da sombra */
+    font-size: 2rem !important; /* Botão bem visível */
+}
+
+/* 4. Lista do Menu Principal */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 25px 40px 25px;
+}
+.nav-menu > li > a {
+    font-size: 1.15rem !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+    display: block;
+}
+
+/* =========================================
+    O SEGREDO DO ACERVO SUPER COMPACTO
+========================================= */
+.mega-menu {
+    position: static !important; 
+    width: 100% !important;
+    background-color: #f9f9f9 !important; /* Vira um "cartão" branco dentro do menu vinho */
+    border-radius: 8px !important;
+    padding: 8px !important;
+    margin-top: 10px !important;
+    max-height: 50vh  !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+}
+
+/* SUMIMOS com o cabeçalho gigante que ocupava a tela */
+.mega-menu-header {
+    display: none !important; 
+}
+
+/* Diminuímos o buraco entre as colunas */
+.miller-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px !important;
+    padding: 0 !important;
+}
+
+.miller-column {
+    border: 1px solid #ddd !important;
+    border-radius: 6px !important;
+    background: #fff !important;
+    min-width: 100% !important;
+}
+
+.miller-header {
+    background-color: #ebebeb !important;
+    color: #333 !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    padding: 8px 10px !important;
+}
+
+/* Botões do acervo bem mais finos e delicados */
+.miller-list li {
+    padding: 8px 10px !important;
+    font-size: 0.85rem !important;
+    color: #333 !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+}
+
+/* =========================================
+   EXTERMINADOR DEFINITIVO DE LINHA DUPLA 
+========================================= */
+>>>>>>> 173667703d4622e0cbb660040f795cb3bb5760c9
 .main-header .nav-menu > li > a,
 .main-header .nav-menu > li > a:hover,
 .main-header .nav-menu > li > a:active,
@@ -1744,7 +2001,11 @@ RESPONSIVIDADE
     to { transform: translateY(0) scale(1); }
 }
 
+<<<<<<< HEAD
 /* X */
+=======
+/* Botão Fechar (X) */
+>>>>>>> 173667703d4622e0cbb660040f795cb3bb5760c9
 .modal-close-btn {
     position: absolute;
     top: 15px;
@@ -1923,11 +2184,23 @@ RESPONSIVIDADE
 .lightbox-btn.prev { left: 20px; }
 .lightbox-btn.next { right: 20px; }
 
+<<<<<<< HEAD
 /* CORREÇÃO DA NAVBAR EM TELAS MÉDIAS E NOTEBOOKS */
+=======
+/* =========================================
+   CORREÇÃO DA NAVBAR EM TELAS MÉDIAS E NOTEBOOKS
+========================================= */
+
+/* 1. Proíbe terminantemente que os botões do menu quebrem o texto ao meio */
+>>>>>>> 173667703d4622e0cbb660040f795cb3bb5760c9
 .nav-menu li a {
     white-space: nowrap !important;
 }
 
+<<<<<<< HEAD
+=======
+/* 2. Protege a Logo para não ficar com palavras sobrepostas */
+>>>>>>> 173667703d4622e0cbb660040f795cb3bb5760c9
 .brand-logo, .brand-logo * {
     white-space: nowrap !important;
     min-width: max-content !important; 
@@ -1945,12 +2218,17 @@ RESPONSIVIDADE
 }
 
 /* 4. Se a tela apertar demais antes de virar versão celular (menor que 992px) */
+<<<<<<< HEAD
 @media (max-width: 768px) {
+=======
+@media (max-width: 992px) {
+>>>>>>> 173667703d4622e0cbb660040f795cb3bb5760c9
     .header-container {
         flex-wrap: wrap !important; /* Permite que o menu caia para a linha de baixo */
         justify-content: center !important; /* Centraliza a logo */
         padding: 15px 20px !important;
     }
+<<<<<<< HEAD
     
     .nav-wrap {
         margin-top: 15px !important;
@@ -2173,4 +2451,343 @@ RESPONSIVIDADE
 
 @media (max-width: 699px) {
     .mobile-menu-btn { display: block !important; }
+=======
+    
+    .nav-wrap {
+        margin-top: 15px !important;
+        width: 100% !important;
+    }
+
+    .nav-menu {
+        justify-content: center !important; /* Centraliza os botões */
+        flex-wrap: wrap !important; /* Permite botões em duas linhas organizadas */
+        gap: 10px !important;
+    }
+}
+
+/* =========================================
+   FORÇA BRUTA CONTRA TEXTO ENCAVALADO NA LOGO
+========================================= */
+.brand-logo * {
+    line-height: 1.3 !important; /* Cria o escudo de espaço entre as linhas */
+    white-space: normal !important; /* Permite a quebra de linha natural */
+}
+
+
+
+/* =========================================
+   CORREÇÃO DEFINITIVA: TRAVAR MENU ACERVO NA ESQUERDA (FIM DO DESLIZE)
+========================================= */
+@media (max-width: 992px) {
+    /* 1. Trava o botão Acervo na esquerda */
+    .mega-dropdown {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Proíbe a centralização herdada */
+    }
+
+    /* 2. Congela a caixa branca exatamente debaixo do botão */
+    .mega-menu {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        transform: none !important; /* Mata qualquer animação de deslize */
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* 3. Cria o trilho pregado na esquerda (Carrossel Horizontal) */
+    .miller-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important; /* A MÁGICA: Obriga as colunas a nascerem na esquerda, e não no meio */
+        align-items: flex-start !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important; /* Permite arrastar com o dedo */
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* 4. Colunas fixas e blindadas */
+    .miller-column {
+        flex: 0 0 250px !important; /* Define a largura fixa de 250px (não amassa) */
+        max-width: 250px !important;
+        margin-right: 15px !important;
+        transform: none !important;
+    }
+}
+
+/* =========================================
+   MENU ELÁSTICO: SÓ ENCOLHE, NUNCA QUEBRA, SÓ VIRA HAMBÚRGUER NO CELULAR
+========================================= */
+
+/* 1. PC, Tela Dividida e Tablet (Telas MAIORES que 600px) */
+@media (min-width: 601px) {
+    .mobile-menu-btn {
+        display: none !important; /* Esconde o hambúrguer no PC */
+    }
+    
+    .header-container {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* Proíbe a quebra entre a logo e o menu */
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .nav-wrap {
+        display: flex !important;
+        flex: 1 1 auto !important; /* Pega o espaço livre e permite encolher */
+        justify-content: flex-end !important;
+        min-width: 0 !important; /* O SEGREDO: permite espremer a caixa infinitamente sem sumir */
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .nav-menu {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* Proíbe as opções de caírem para a linha de baixo */
+        align-items: center !important;
+        gap: 5px !important;
+        min-width: 0 !important;
+    }
+
+    .nav-menu li {
+        flex-shrink: 1 !important; /* Permite amassar os botões */
+        min-width: 0 !important;
+    }
+
+    .nav-menu li a {
+        white-space: nowrap !important; /* Palavras nunca se quebram */
+        font-size: clamp(8px, 1.2vw, 16px) !important; /* Encolhe a fonte até 8px se precisar */
+        padding: 5px 6px !important; /* Encolhe o espaço interno entre os links */
+    }
+    
+    /* Mantém a caixa do mega menu funcionando no PC */
+    .mega-menu {
+        position: absolute !important;
+        top: 100% !important;
+        width: max-content !important;
+        left: 0 !important;
+    }
+}
+
+/* =========================================
+   AJUSTE DE IMAGENS - PÁGINA MARGA ROTHE
+========================================= */
+.img-margarothe {
+    max-width: 450px !important; /* Impede que a foto fique gigante no PC (pode aumentar ou diminuir esse número) */
+    width: 100% !important; /* No celular, ela se adapta perfeitamente à tela */
+    height: auto !important;
+    display: block !important;
+    margin: 30px auto !important; /* Centraliza a imagem e dá um respiro em cima e embaixo */
+    border-radius: 8px !important; /* Bônus: deixa as bordas levemente arredondadas, fica mais sofisticado */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important; /* Bônus 2: coloca uma sombrinha bem suave */
+}
+
+/* =========================================
+   IMAGENS MARGA ROTHE - LADO A LADO FORÇADO
+========================================= */
+.marga-img-container {
+    display: flex !important;
+    flex-direction: row !important; /* Obriga a ficar uma do lado da outra */
+    flex-wrap: nowrap !important; /* Proíbe de cair para a linha de baixo no celular */
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important; /* Espacinho entre as fotos */
+    margin: 30px auto !important;
+    width: 100% !important;
+    max-width: 900px !important;
+}
+
+.marga-img-container .img-margarothe {
+    flex: 1 1 50% !important; /* Força cada imagem a ocupar exatamente metade do espaço da tela */
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important; /* Remove as margens antigas que empurravam a foto para baixo */
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    object-fit: cover !important; /* Evita que a foto fique esticada ou deformada */
+}
+
+
+/* =========================================
+   LEITURA DE TEXTOS NO CELULAR (TIPO ARTIGO LIMPO)
+========================================= */
+@media (max-width: 768px) {
+    /* 1. Desmonta a "caixa" (cartão) para aproveitar toda a tela */
+    .clipping-card {
+        padding: 10px 5px !important; /* Diminui drasticamente as margens internas */
+        border-left: none !important; /* Remove a barra vermelha lateral grossa */
+        background: transparent !important; /* Remove o fundo bege, deixando branco e limpo */
+        box-shadow: none !important; /* Tira a sombra */
+        margin-bottom: 20px !important;
+    }
+
+    /* 2. Formata os parágrafos igual ao site de exemplo */
+    .clipping-text, 
+    .clipping-card p {
+        text-align: left !important; /* A MÁGICA: Texto à esquerda evita palavras espremidas e buracos */
+        font-size: 1.1rem !important; /* Letra num tamanho confortável para ler */
+        line-height: 1.6 !important; /* Espaço ideal entre as linhas */
+        padding: 0 10px !important; /* Dá um leve respiro para a letra não colar na borda do celular */
+        margin-bottom: 15px !important;
+    }
+
+    /* 3. Ajusta os títulos dentro dos textos */
+    .clipping-title {
+        font-size: 1.4rem !important;
+        padding: 0 10px !important;
+        text-align: left !important;
+    }
+}
+
+/* =========================================================
+   CORREÇÕES CIRÚRGICAS (ADICIONADO NO FINAL PARA NÃO QUEBRAR O SITE)
+========================================================= */
+
+/* 1. NAVBAR NO PC: TRAVADA NA MESMA LINHA E ENCOLHENDO ATÉ O LIMITE */
+@media (min-width: 800px) {
+    header.main-header .header-container {
+        flex-wrap: nowrap !important;
+        overflow: hidden !important;
+    }
+    .nav-wrap {
+        flex: 1 1 auto !important;
+        overflow-x: auto !important; /* Cria rolagem invisível se apertar muito */
+        scrollbar-width: none; /* Esconde a barra de rolagem */
+    }
+    .nav-wrap::-webkit-scrollbar { display: none; } /* Esconde no Chrome */
+    .nav-menu {
+        flex-wrap: nowrap !important;
+        min-width: max-content !important; /* Proíbe de quebrar de linha */
+    }
+    .nav-menu > li {
+        flex-shrink: 0 !important;
+    }
+    .nav-menu > li > a {
+        white-space: nowrap !important; /* Proíbe quebrar a palavra */
+        font-size: clamp(12px, 1.2vw, 17px) !important; /* Encolhe suavemente */
+        padding: 5px 10px !important;
+    }
+}
+
+/* 2. MENU HAMBÚRGUER RESTRITO PARA CELULAR/TABLET */
+@media (min-width: 768px) {
+    .mobile-menu-btn { display: none !important; }
+    .nav-wrap { display: flex !important; }
+}
+
+/* 3. CORREÇÃO ANDROID: TRAVAR AS COLUNAS DO ACERVO PARA NÃO SUMIREM */
+@media (max-width: 992px) {
+    .mega-dropdown {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    .mega-menu {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+    .miller-container {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: auto !important; /* Permite arrastar para o lado */
+        -webkit-overflow-scrolling: touch !important; /* Rolar suave no celular */
+    }
+    .miller-column {
+        flex: 0 0 250px !important;
+        max-width: 250px !important;
+    }
+}
+
+/* 4. CORREÇÃO CARTÕES (FIM DO EFEITO "TUBO" FINO NO CELULAR) */
+@media (max-width: 768px) {
+    .container {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .clipping-card, .biblio-card, .colecao-card, .acervo-geral-box, .card-noticia {
+        padding: 20px 15px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .clipping-text, .biblio-resumo, .colecao-text, .noticia-text, .clipping-card p {
+        text-align: left !important; /* Evita buracos entre as palavras */
+        font-size: 1.05rem !important;
+        line-height: 1.5 !important;
+    }
+}
+
+/* =========================================================
+   MENU ELÁSTICO: ENCOLHE NA TELA DIVIDIDA DO PC (SÓ HAMBÚRGUER NO MOBILE)
+========================================================= */
+@media (min-width: 769px) {
+    /* 1. Garante que o menu principal fique visível e o hambúrguer suma */
+    .mobile-menu-btn { display: none !important; }
+    
+    .nav-wrap { 
+        display: flex !important; 
+        flex: 1 1 auto !important; 
+        overflow: visible !important; /* Remove a barra de rolagem lateral */
+        min-width: 0 !important; /* O segredo para permitir o esmagamento */
+    }
+
+    /* 2. Força a barra inteira a ficar em uma linha única */
+    .header-container {
+        flex-wrap: nowrap !important;
+        padding: 10px 15px !important;
+        min-width: 0 !important;
+    }
+
+    .nav-menu {
+        flex-wrap: nowrap !important;
+        justify-content: flex-end !important;
+        gap: 0.8vw !important; /* O espaço entre botões age como elástico */
+        min-width: 0 !important;
+    }
+
+    .nav-menu > li {
+        flex-shrink: 1 !important; /* Permite que os itens sejam espremidos */
+        min-width: 0 !important;
+    }
+
+    /* 3. A MÁGICA: A fonte encolhe de 17px até 9px se a tela for dividida */
+    .nav-menu > li > a {
+        white-space: nowrap !important; /* Nunca quebra a palavra ao meio */
+        padding: 5px 0.5vw !important; /* O espaço interno diminui junto */
+        font-size: clamp(9px, 1.2vw, 17px) !important;
+    }
+
+    /* 4. Permite que a Logo encolha um pouquinho para ajudar a dar espaço */
+    .brand-logo-nova {
+        flex-shrink: 1 !important;
+        min-width: 0 !important;
+        gap: 8px !important;
+    }
+    
+    .logo-texto-principal {
+        font-size: clamp(10px, 1.3vw, 20px) !important;
+    }
+    
+    .logo-img-header {
+        height: clamp(35px, 4vw, 70px) !important;
+    }
+>>>>>>> 173667703d4622e0cbb660040f795cb3bb5760c9
 }
