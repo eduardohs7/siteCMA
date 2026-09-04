@@ -30,18 +30,18 @@ const acervoData = {
                     }
                 },
                 "Guias das Procedências": {
-                    "Guia dos Cartórios Judiciais/Cíveis": {
-                        "1ª Vara Cível Cartório Santiago": "https://ufpabr.sharepoint.com/:b:/g/IQC6By2bev7WQ5XPa0cDHeNoAfVpFNJEEBKtcVM5DLxSekY?e=cIeUNf",
-                        "2ª Vara Cível Cartório Odon": "https://ufpabr.sharepoint.com/:b:/g/IQC97R6LHp_ERYtblI11R_DMAU0uPYwVZx20UshmdedvYl8?e=tV0L0Y",
-                        "3ª Vara Cível Cartório Sampaio": "https://ufpabr.sharepoint.com/:b:/g/IQBNXeTCPOUSQKEClh48GLQ6AfW8B8MLrfaKKbN413FZVAc?e=f5Bj92",
-                        "4ª Vara Cível Cartório Leão": "https://ufpabr.sharepoint.com/:b:/g/IQBxm68VKbcBQLT9NBP_JEOiAQl6UIX1anJDEM3_HvjDjDw?e=RktalF",
-                        "5ª Vara Cível Cartório Pepes": "https://ufpabr.sharepoint.com/:b:/g/IQCykgU9rByZTpO0HaLefX--Abbo7wn_wjc_RZelYR9Ekno?e=URPd3v",
-                        "6ª Vara Cível Cartório Barata": "https://ufpabr.sharepoint.com/:b:/g/IQDdHSggWcueQ5PNsGJB88rMAeQQwKM8PFQrpHEijlnbtf8?e=5KbDpC",
-                        "7ª Vara Cível Cartório Trindade": "https://ufpabr.sharepoint.com/:b:/g/IQBq4ecl8oq9Tqxav1kbFn9aAVsNpKe8OPu7tBana619qC4?e=zZvyOT",
-                        "8ª Vara Cível Cartório Ana Lobato": "https://ufpabr.sharepoint.com/:b:/g/IQC1pGA_iW09QqtyfBLuvkEKAVtqvbeP6hMJgGSEcwlth0o?e=99BZAM",
-                        "10ª Vara Cível Cartório Sermanho": "https://ufpabr.sharepoint.com/:b:/g/IQCOS7v0pB3YTqeHMlDqin44AfFsh-p24N4ofaYvFkch1uM?e=r6rkre",
-                        "11ª Vara Cível Cartório Fabiliano Lobato": "https://ufpabr.sharepoint.com/:b:/g/IQC7ooOGI9dLSbKSUqewTC3wAbDPDpSjbu7yCxbhmEUC3l4?e=noPgYZ",
-                        "14ª Vara Cível Cartório Sermento": "https://ufpabr.sharepoint.com/:b:/g/IQC3Xu_AQNfgT4jzl_94QC_bAXnX20oR98ctN41Wl5zRchg?e=Vcasql"
+                    "Guia dos Cartórios Judiciais/ Varas Cíveis": {
+                        "1ª Vara Cível-Cartório Santiago": "https://ufpabr.sharepoint.com/:b:/g/IQC6By2bev7WQ5XPa0cDHeNoAfVpFNJEEBKtcVM5DLxSekY?e=cIeUNf",
+                        "2ª Vara Cível-Cartório Odon": "https://ufpabr.sharepoint.com/:b:/g/IQC97R6LHp_ERYtblI11R_DMAU0uPYwVZx20UshmdedvYl8?e=tV0L0Y",
+                        "3ª Vara Cível-Cartório Sampaio": "https://ufpabr.sharepoint.com/:b:/g/IQBNXeTCPOUSQKEClh48GLQ6AfW8B8MLrfaKKbN413FZVAc?e=f5Bj92",
+                        "4ª Vara Cível-Cartório Leão": "https://ufpabr.sharepoint.com/:b:/g/IQBxm68VKbcBQLT9NBP_JEOiAQl6UIX1anJDEM3_HvjDjDw?e=RktalF",
+                        "5ª Vara Cível-Cartório Pepes": "https://ufpabr.sharepoint.com/:b:/g/IQCykgU9rByZTpO0HaLefX--Abbo7wn_wjc_RZelYR9Ekno?e=URPd3v",
+                        "6ª Vara Cível-Cartório Barata": "https://ufpabr.sharepoint.com/:b:/g/IQDdHSggWcueQ5PNsGJB88rMAeQQwKM8PFQrpHEijlnbtf8?e=5KbDpC",
+                        "7ª Vara Cível-Cartório Trindade": "https://ufpabr.sharepoint.com/:b:/g/IQBq4ecl8oq9Tqxav1kbFn9aAVsNpKe8OPu7tBana619qC4?e=zZvyOT",
+                        "8ª Vara Cível-Cartório Ana Lobato": "https://ufpabr.sharepoint.com/:b:/g/IQC1pGA_iW09QqtyfBLuvkEKAVtqvbeP6hMJgGSEcwlth0o?e=99BZAM",
+                        "10ª Vara Cível-Cartório Sarmanho": "https://ufpabr.sharepoint.com/:b:/g/IQCOS7v0pB3YTqeHMlDqin44AfFsh-p24N4ofaYvFkch1uM?e=r6rkre",
+                        "11ª Vara Cível-Cartório Fabiliano Lobato": "https://ufpabr.sharepoint.com/:b:/g/IQC7ooOGI9dLSbKSUqewTC3wAbDPDpSjbu7yCxbhmEUC3l4?e=noPgYZ",
+                        "14ª Vara Cível-Cartório Sarmento": "https://ufpabr.sharepoint.com/:b:/g/IQC3Xu_AQNfgT4jzl_94QC_bAXnX20oR98ctN41Wl5zRchg?e=Vcasql"
                     },
                     "Guia da Assistência Judiciária": "https://ufpabr.sharepoint.com/:b:/g/IQBc8nDsV5cjTaGTBQH9I6QVAW0NRMKBtkyLapoNt7_MPRA?e=wiiZ0f"
                 }
@@ -180,7 +180,7 @@ const acervoData = {
         }
     },
     "Acervo do Grupo de Mulheres Prostitutas do Estado do Pará": {
-        description: "A documentação da associação do Grupo de Mulheres Prostitutas do Estado do Pará encontra-se salvaguardada pelo Centro de Memória da Amazônia, desde o ano de 2022, quando foi organizada e adequada em um projeto coordenado pelos professores Adriana Coimbra e José do Espírito Santo Júnior, no ano de 2022, e disponibilizada para consulta.",
+        description: "A documentação da associação do Grupo de Mulheres Prostitutas do Estado do Pará encontra-se salvaguardada pelo Centro de Memória da Amazônia, desde o ano de 2022, quando foi organizada e adequada em um projeto coordenado pelos professores Adriana Coimbra e José do Espírito Santo Júnior e disponibilizada para consulta.",
         items: {
             "Acesse o Acervo": "https://ufpabr.sharepoint.com/:b:/g/IQCsav4uQac4TL9si0zYhR8FAQL4kzL8WNGBDzfz1vH-S3A?e=fN1Dzx"
         }
@@ -208,12 +208,9 @@ const headerNames = [
 
 // 4. INICIALIZAÇÃO DA APLICAÇÃO
 window.addEventListener('DOMContentLoaded', () => {
-    // Inicializa o Acervo se o container existir na página
     if (document.getElementById('millerContainer')) {
         renderColumn(acervoData, 0, 'millerContainer');
     }
-    
-    // Inicializa a Galeria se o container existir na página
     if (document.getElementById('galeriaContainer')) {
         renderColumn(galeriaData, 0, 'galeriaContainer');
     }
@@ -243,32 +240,24 @@ function renderColumn(dataObject, level, containerId = 'millerContainer') {
         const li = document.createElement('li');
         const isFinalLink = typeof value === 'string';
 
+        li.innerHTML = `<span class="miller-item-text">${key}</span>`;
+
         if (isFinalLink) {
-            // SETINHA REMOVIDA AQUI:
-            li.innerHTML = `<span class="miller-item-text">${key}</span>`;
             li.onclick = (e) => {
                 e.stopPropagation();
                 window.open(value, '_blank');
             };
         } else {
-            // SETINHA REMOVIDA AQUI TAMBÉM:
-            li.innerHTML = `<span class="miller-item-text">${key}</span>`;
             li.onclick = (e) => {
-                
-                // NOVIDADE AQUI: Lógica de retração!
-                // Se o item clicado JÁ ESTIVER ativo, ele limpa e fecha as próximas colunas.
                 if (li.classList.contains('active')) {
                     li.classList.remove('active');
                     clearDescription();
-                    
-                    // Remove todas as colunas que estão à frente deste nível
                     while (container.children.length > level + 1) {
                         container.removeChild(container.lastChild);
                     }
-                    return; // Encerra a função aqui para não reabrir
+                    return; 
                 }
-                
-                // Se não estava ativo, procede normalmente (desmarca os outros e marca este)
+
                 Array.from(currentList.children).forEach(el => el.classList.remove('active'));
                 li.classList.add('active');
 
@@ -277,14 +266,23 @@ function renderColumn(dataObject, level, containerId = 'millerContainer') {
                     descText = value.description || null;
                 }
 
-                if (descText) {
-                    showDescription(descText);
-                } else {
-                    clearDescription();
-                }
+                if (descText) showDescription(descText);
+                else clearDescription();
 
                 createNextColumn(level + 1, containerId);
                 renderColumn(value, level + 1, containerId);
+
+                // AUTOMATIZAÇÃO MOBILE: Rolar suavemente para a nova coluna
+                setTimeout(() => {
+                    const nextColumn = document.getElementById(`col-${level + 1}`);
+                    if (nextColumn) {
+                        if (window.innerWidth <= 768) {
+                            nextColumn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        } else {
+                            nextColumn.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                        }
+                    }
+                }, 100);
             };
         }
         currentList.appendChild(li);
@@ -331,111 +329,190 @@ function clearDescription() {
 }
 
 // ==========================================
-// MENU RESPONSIVO MOBILE (CRIADO AUTOMATICAMENTE)
+// MESTRE: MENU RESPONSIVO + LÓGICA DO ACERVO + VOLTAR AO TOPO
 // ==========================================
 document.addEventListener("DOMContentLoaded", function() {
-   const headerContainer = document.querySelector('.header-container');
-   const navWrap = document.querySelector('.nav-wrap');
+    const headerContainer = document.querySelector('.header-container');
+    const navWrap = document.querySelector('.nav-wrap');
+    const acervoItem = document.querySelector('.mega-dropdown');
+    const acervoLink = document.querySelector('.mega-dropdown > a');
 
-   if (headerContainer && navWrap) {
-      // 1. Cria o botão Hambúrguer
-      const mobileBtn = document.createElement('button');
-      mobileBtn.className = 'mobile-menu-btn';
-      mobileBtn.innerHTML = '☰'; // Ícone de menu
-      
-      // 2. Coloca o botão logo antes da lista do menu
-      headerContainer.insertBefore(mobileBtn, navWrap);
+    // --- FUNÇÃO PARA RESETAR O ACERVO E FECHAR A CAIXA ---
+    function resetarMenuAcervo() {
+        if (acervoItem) acervoItem.classList.remove('menu-ativo');
+        const container = document.getElementById('millerContainer');
+        if (container) {
+            while (container.children.length > 1) {
+                container.removeChild(container.lastChild);
+            }
+            const list0 = document.getElementById('list-0');
+            if (list0) Array.from(list0.children).forEach(el => el.classList.remove('active'));
+            if (typeof clearDescription === 'function') clearDescription();
+        }
+    }
 
-      // 3. Adiciona a função de clicar para abrir/fechar
-      mobileBtn.addEventListener('click', function() {
-         navWrap.classList.toggle('menu-aberto');
-         
-         // Se o menu estiver aberto, muda o ícone para um "X"
-         if (navWrap.classList.contains('menu-aberto')) {
-            mobileBtn.innerHTML = '✖';
-         } else {
-            mobileBtn.innerHTML = '☰';
-         }
-      });
-   }
+    if (headerContainer && navWrap) {
+        // 1. Cria a sombra escura da tela (overlay)
+        const overlay = document.createElement('div');
+        overlay.className = 'menu-overlay';
+        document.body.appendChild(overlay);
+
+        // A LOGO EXTRA FOI REMOVIDA DAQUI!
+
+        // 2. Cria o botão Hambúrguer
+        const mobileBtn = document.createElement('button');
+        mobileBtn.className = 'mobile-menu-btn';
+        mobileBtn.innerHTML = '☰'; 
+        headerContainer.insertBefore(mobileBtn, navWrap);
+
+        // 3. Função para abrir/fechar o menu vertical
+        function toggleMenu() {
+            navWrap.classList.toggle('menu-aberto');
+            overlay.classList.toggle('ativo');
+
+            if (navWrap.classList.contains('menu-aberto')) {
+                mobileBtn.innerHTML = '✖'; 
+                document.body.style.overflow = 'hidden'; // Trava a tela de fundo
+            } else {
+                mobileBtn.innerHTML = '☰'; 
+                document.body.style.overflow = ''; // Destrava a tela
+                resetarMenuAcervo(); // Limpa o acervo toda vez que o menu fecha
+            }
+        }
+
+        mobileBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu); // Clicou no fundo escuro, fecha tudo
+    }
+
+    // --- Lógica do clique na palavra "Acervo" no menu ---
+    if (acervoLink && acervoItem) {
+        acervoLink.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            if (acervoItem.classList.contains('menu-ativo')) {
+                resetarMenuAcervo();
+            } else {
+                acervoItem.classList.add('menu-ativo');
+            }
+        });
+
+        // Se o usuário clicar fora do Acervo (no computador), ele fecha
+        document.addEventListener('click', function(e) {
+            if (!acervoItem.contains(e.target) && acervoItem.classList.contains('menu-ativo')) {
+                resetarMenuAcervo();
+            }
+        });
+    }
+
+    // --- BOTÃO VOLTAR AO TOPO ---
+    const btnTopo = document.createElement('button');
+    btnTopo.className = 'btn-voltar-topo';
+    btnTopo.innerHTML = '↑';
+    btnTopo.title = 'Voltar ao topo';
+    document.body.appendChild(btnTopo);
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) btnTopo.classList.add('mostrar');
+        else btnTopo.classList.remove('mostrar');
+    });
+
+    btnTopo.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
 
-// ==========================================
-// ABRIR O MENU ACERVO CLICANDO NA PALAVRA INTEIRA + RESETAR AO FECHAR
-// ==========================================
-document.addEventListener("DOMContentLoaded", function() {
-   const acervoItem = document.querySelector('.mega-dropdown');
-   const acervoLink = document.querySelector('.mega-dropdown > a');
+// =========================================
+// SISTEMA DE MODAL FLUTUANTE DE NOTÍCIAS + CARROSSEL
+// =========================================
+let fotosAtuais = [];
+let fotoIndexAtual = 0;
 
-   // Função auxiliar para resetar o menu sempre que ele for fechado
-   function resetarMenuAcervo() {
-       const container = document.getElementById('millerContainer');
-       if (container) {
-           // Deleta todas as colunas que estão na frente da primeira (Nível 0)
-           while (container.children.length > 1) {
-               container.removeChild(container.lastChild);
-           }
-           // Tira a marcação vermelha de qual item estava selecionado na primeira coluna
-           const list0 = document.getElementById('list-0');
-           if (list0) {
-               Array.from(list0.children).forEach(el => el.classList.remove('active'));
-           }
-           // Esconde a caixa de descrição usando a função que já existe no seu código
-           if (typeof clearDescription === 'function') {
-               clearDescription();
-           }
-       }
-   }
+function abrirNoticia(dados) {
+    const modal = document.getElementById('modalNoticia');
+    if (!modal) return;
 
-   if (acervoLink && acervoItem) {
-      acervoLink.addEventListener('click', function(e) {
-         // 1. Impede de recarregar a página ao clicar na palavra "Acervo"
-         e.preventDefault(); 
-         
-         if (acervoItem.classList.contains('menu-ativo')) {
-             // SE VAI FECHAR: Esconde o menu e reseta as colunas
-             acervoItem.classList.remove('menu-ativo');
-             resetarMenuAcervo();
-         } else {
-             // SE VAI ABRIR: Só mostra o menu
-             acervoItem.classList.add('menu-ativo');
-         }
-      });
+    // 1. Preenche Título, Categoria e Data
+    document.getElementById('modalCategoria').innerText = dados.categoria || 'NOTÍCIA';
+    document.getElementById('modalTitulo').innerText = dados.titulo;
+    document.getElementById('modalData').innerText = dados.data || '';
 
-      // 3. (Bônus) Fecha e reseta o menu automaticamente se a pessoa clicar fora dele!
-      document.addEventListener('click', function(e) {
-         if (!acervoItem.contains(e.target) && acervoItem.classList.contains('menu-ativo')) {
-            acervoItem.classList.remove('menu-ativo');
-            resetarMenuAcervo();
-         }
-      });
-   }
-});
+    // 2. Preenche o Texto Ampliado (se for um array de parágrafos ou string)
+    const containerTexto = document.getElementById('modalTexto');
+    if (Array.isArray(dados.texto)) {
+        containerTexto.innerHTML = dados.texto.map(p => `<p>${p}</p>`).join('');
+    } else {
+        containerTexto.innerHTML = `<p>${dados.texto}</p>`;
+    }
 
-// BOTÃO VOLTAR AO TOPO 
-document.addEventListener("DOMContentLoaded", function() {
-   // 1. Cria o botão HTML
-   const btnTopo = document.createElement('button');
-   btnTopo.className = 'btn-voltar-topo';
-   btnTopo.innerHTML = '↑'; // A setinha para cima
-   btnTopo.title = 'Voltar ao topo';
-   document.body.appendChild(btnTopo);
+    // 3. Configura o Carrossel de Fotos
+    fotosAtuais = dados.fotos || [];
+    fotoIndexAtual = 0;
+    
+    const carrosselArea = document.getElementById('modalCarrossel');
+    if (fotosAtuais.length > 0) {
+        carrosselArea.style.display = 'block';
+        atualizarCarrossel();
+    } else {
+        carrosselArea.style.display = 'none'; // Esconde se não tiver foto
+    }
 
-   // 2. Vigia a rolagem da página para mostrar ou esconder o botão
-   window.addEventListener('scroll', function() {
-      // Se rolar mais de 300 pixels para baixo, o botão aparece
-      if (window.scrollY > 300) {
-         btnTopo.classList.add('mostrar');
-      } else {
-         btnTopo.classList.remove('mostrar');
-      }
-   });
+    // 4. Abre o Modal e trava a rolagem do fundo
+    modal.classList.add('ativo');
+    document.body.style.overflow = 'hidden';
+}
 
-   // 3. Ao clicar, volta ao topo de forma bem suave
-   btnTopo.addEventListener('click', function() {
-      window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-      });
-   });
+function fecharNoticia() {
+    const modal = document.getElementById('modalNoticia');
+    if (modal) {
+        modal.classList.remove('ativo');
+        document.body.style.overflow = ''; // Destrava a tela
+    }
+}
+
+function mudarFoto(direcao) {
+    if (fotosAtuais.length <= 1) return;
+    fotoIndexAtual = (fotoIndexAtual + direcao + fotosAtuais.length) % fotosAtuais.length;
+    atualizarCarrossel();
+}
+
+function atualizarCarrossel() {
+    const imgTag = document.getElementById('modalImagem');
+    const btnPrev = document.querySelector('.btn-prev');
+    const btnNext = document.querySelector('.btn-next');
+    const indicadoresArea = document.getElementById('carrosselIndicadores');
+
+    imgTag.src = fotosAtuais[fotoIndexAtual];
+
+    // Se só tiver 1 foto, esconde os botões de avançar/voltar
+    if (fotosAtuais.length <= 1) {
+        btnPrev.style.display = 'none';
+        btnNext.style.display = 'none';
+        indicadoresArea.innerHTML = '';
+    } else {
+        btnPrev.style.display = 'block';
+        btnNext.style.display = 'block';
+        
+        // Cria as bolinhas (indicadores)
+        indicadoresArea.innerHTML = fotosAtuais.map((_, idx) => 
+            `<span class="carrossel-dot ${idx === fotoIndexAtual ? 'ativo' : ''}" onclick="irParaFoto(${idx})"></span>`
+        ).join('');
+    }
+}
+
+function irParaFoto(idx) {
+    fotoIndexAtual = idx;
+    atualizarCarrossel();
+}
+
+// FECHAR AO CLICAR FORA DA CAIXA OU PRESSIONAR ESC
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modalNoticia');
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) fecharNoticia();
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') fecharNoticia();
+    });
 });

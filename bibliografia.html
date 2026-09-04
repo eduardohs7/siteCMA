@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="pt-br">
 <head>
    <meta charset="utf-8">
@@ -8,7 +8,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Playfair+Display:wght@900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style.css?v=46">
    <link rel="icon" type="image/png" href="images/noticiaDiversos/favicon.ico">
    <link href="images/noticiaDiversos/favicon.png" type="image/png" rel="icon">
    <link href="images/noticiaDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
@@ -59,7 +59,42 @@
          color: #ffffff;
          transform: translateY(-2px);
       }
-   </style>
+/* =========================================
+   FORÇA BRUTA PARA ALARGAR O CARTÃO NO CELULAR
+========================================= */
+@media (max-width: 768px) {
+    /* 1. Tira as margens invisíveis da página inteira */
+    section {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        overflow-x: hidden !important;
+    }
+    
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        margin: 0 auto !important;
+    }
+
+    /* 2. Estica a moldura até quase colar na tela */
+    .clipping-card {
+        width: 100% !important;
+        padding: 20px 12px !important; /* O 12px deixa a gordura interna bem fininha */
+        margin: 0 0 20px 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Conserta o texto para não ficar cheio de buracos */
+    .clipping-card p, 
+    .clipping-text {
+        text-align: left !important;
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -67,10 +102,13 @@
    <header class="main-header">
       <div class="header-container">
          
-         <!-- LOGO CLICÁVEL -->
-         <a href="index.html" class="brand-logo" style="text-decoration: none;">
-            <span class="logo-sub">UFPA</span>
-            <span class="logo-main">CMA</span>
+      <!-- LOGO CLICÁVEL -->
+         <a href="index.html" class="brand-logo-nova">
+            <img src="images/cma-positivo.png" alt="Logo CMA" class="logo-img-header">
+            <div class="logo-textos">
+               <span class="logo-texto-principal" style="line-height: 1.1 !important; white-space: normal !important; ">CENTRO DE MEMÓRIA DA AMAZÔNIA</span>
+               <span class="logo-texto-ufpa">UFPA</span>
+            </div>
          </a>
          
          <!-- MENU DE NAVEGAÇÃO -->
@@ -80,7 +118,7 @@
                
                <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
                <li class="mega-dropdown">
-                  <a href="#">Acervo <span class="arrow">▾</span></a>
+                  <a href="#">Acervos <span class="arrow">▾</span></a>
                   <div class="mega-menu">
                      <div class="mega-menu-header">
                         <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
@@ -243,17 +281,16 @@
          <div class="footer-links-col">
             <h5>REDES SOCIAIS</h5>
             <ul>
-               <li><a href="https://www.facebook.com/centrodememoriaufpa" target="_blank">Facebook</a></li>
-               <li><a href="https://twitter.com/CMA_UFPA" target="_blank">Twitter</a></li>
                <li><a href="https://www.instagram.com/cmaufpa" target="_blank">Instagram</a></li>
             </ul>
          </div>
 
          <div class="footer-links-col">
             <h5>CONTATOS</h5>
-            <p><strong>(91) 3201-8981</strong></p>
+            <p class="footer-email">(91) 3201-8981</p>
             <p><a href="mailto:cma@ufpa.br" class="footer-email">cma@ufpa.br</a></p>
             <p><a href="mailto:bibcma@ufpa.br" class="footer-email">bibcma@ufpa.br</a></p>
+            <span class="sub-info">(Biblioteca e Coleções Pessoais)</span>
          </div>
       </div>
 
@@ -265,6 +302,6 @@
    </footer>
 
    <!-- Script JS externo -->
-   <script src="script.js?v=3"></script>
+   <script src="script.js?v=8"></script>
 </body>
 </html>

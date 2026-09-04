@@ -8,7 +8,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Playfair+Display:wght@900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style.css?v=46">
    <link rel="icon" type="image/png" href="images/noticiaDiversos/favicon.ico">
    <link href="images/noticiaDiversos/favicon.png" type="image/png" rel="icon">
    <link href="images/noticiaDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
@@ -67,24 +67,143 @@
          margin-bottom: 10px;
       }
 
-/* Galeria de Imagens (Grid) */
+      /* =========================================
+         CORREÇÃO DA GALERIA (TAMANHO NO MOBILE E PC)
+      ========================================= */
       .marga-gallery {
          display: grid;
-         /* 280px garante um tamanho médio, preenchendo a tela de forma harmoniosa */
-         grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-         gap: 20px;
+         grid-template-columns: repeat(2, 1fr); /* FORÇA 2 FOTOS POR LINHA NO CELULAR */
+         gap: 10px;
          margin-bottom: 50px;
       }
+      
+      @media (min-width: 768px) {
+         .marga-gallery {
+            grid-template-columns: repeat(3, 1fr); /* FORÇA 3 FOTOS POR LINHA NO PC */
+            gap: 20px;
+         }
+      }
+
       .marga-gallery img {
-         width: 105%; /* Preenche 100% da nova caixa de 280px, eliminando os espaços vazios */
-         height: auto; /* Mantém a proporção sem cortar a imagem */
+         width: 100%; 
+         height: 180px; /* Trava a altura para ficarem todas do mesmo tamanho */
+         object-fit: cover; /* Corta o excesso sem deformar a foto */
          border-radius: 8px;
          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
          transition: transform 0.3s ease;
+         cursor: pointer;
       }
+      
       .marga-gallery img:hover {
-         transform: scale(1.02);
+         transform: scale(1.03);
       }
+
+      /* =========================================
+         CAIXA DE AMPLIAR A FOTO (LIGHTBOX) E SETAS
+      ========================================= */
+      .lightbox-modal {
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.9);
+          align-items: center;
+          justify-content: center;
+      }
+      .lightbox-modal img {
+          max-width: 95%;
+          max-height: 90%;
+          border-radius: 4px;
+          box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      }
+      .lightbox-close {
+          position: absolute;
+          top: 15px;
+          right: 25px;
+          color: white;
+          font-size: 45px;
+          font-weight: bold;
+          cursor: pointer;
+          line-height: 1;
+          z-index: 10001;
+      }
+
+      /* Botões de avançar e voltar */
+      .lightbox-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          font-size: 40px;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 4px;
+          z-index: 10000;
+          transition: background 0.3s;
+      }
+      .lightbox-btn:hover {
+          background: rgba(0, 0, 0, 0.9);
+      }
+      .lightbox-btn.prev {
+          left: 20px;
+      }
+      .lightbox-btn.next {
+          right: 20px;
+      }
+      
+      @media (max-width: 768px) {
+          .lightbox-btn {
+              font-size: 28px;
+              padding: 8px 15px;
+          }
+          .lightbox-btn.prev { left: 5px; }
+          .lightbox-btn.next { right: 5px; }
+      }
+
+            /* =========================================
+         AJUSTE DE IMAGENS - PÁGINA MARGA ROTHE
+      ========================================= */
+      .img-margarothe {
+         max-width: 450px !important; /* Impede que a foto fique gigante no PC (pode aumentar ou diminuir esse número) */
+         width: 100% !important; /* No celular, ela se adapta perfeitamente à tela */
+         height: auto !important;
+         display: block !important;
+         margin: 30px auto !important; /* Centraliza a imagem e dá um respiro em cima e embaixo */
+         border-radius: 8px !important; /* Bônus: deixa as bordas levemente arredondadas, fica mais sofisticado */
+         box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important; /* Bônus 2: coloca uma sombrinha bem suave */
+      }
+
+      /* =========================================
+         IMAGENS MARGA ROTHE - LADO A LADO FORÇADO
+      ========================================= */
+      .marga-img-container {
+         display: flex !important;
+         flex-direction: row !important; /* Obriga a ficar uma do lado da outra */
+         flex-wrap: nowrap !important; /* Proíbe de cair para a linha de baixo no celular */
+         justify-content: center !important;
+         align-items: center !important;
+         gap: 10px !important; /* Espacinho entre as fotos */
+         margin: 30px auto !important;
+         width: 100% !important;
+         max-width: 900px !important;
+      }
+
+      .marga-img-container .img-margarothe {
+         flex: 1 1 50% !important; /* Força cada imagem a ocupar exatamente metade do espaço da tela */
+         width: 100% !important;
+         height: auto !important;
+         margin: 0 !important; /* Remove as margens antigas que empurravam a foto para baixo */
+         border-radius: 8px !important;
+         box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+         object-fit: cover !important; /* Evita que a foto fique esticada ou deformada */
+      }
+
+
 
       /* Container Responsivo para o Vídeo do YouTube */
       .video-wrapper {
@@ -155,18 +274,51 @@
       .clipping-text:last-child {
          margin-bottom: 0;
       }
+
+      /* Esconde o botão do menu hambúrguer no computador */
+      .mobile-menu-btn {
+          display: none;
+          background: transparent;
+          border: none;
+          color: #ffffff;
+          font-size: 28px;
+          cursor: pointer;
+          padding: 5px 10px;
+      }
+
+      /* Quando a tela for menor que 768px (Celulares) */
+      @media (max-width: 1200px) {
+         header.main-header .header-container {
+             flex-wrap: wrap !important;
+             justify-content: space-between !important;
+             padding: 10px 20px !important;
+         }
+         header.main-header .brand-logo {
+             font-size: 22px !important; 
+         }
+         header.main-header .brand-logo .logo-sub {
+             font-size: 13px !important;
+             padding: 3px 6px !important;
+         }
+         .mobile-menu-btn {
+             display: block !important;
+         }
+      }
    </style>
 </head>
 <body>
 
- <!-- Top Nav Bar -->
+   <!-- Top Nav Bar -->
    <header class="main-header">
       <div class="header-container">
          
          <!-- LOGO CLICÁVEL -->
-         <a href="index.html" class="brand-logo" style="text-decoration: none;">
-            <span class="logo-sub">UFPA</span>
-            <span class="logo-main">CMA</span>
+         <a href="index.html" class="brand-logo-nova">
+            <img src="images/cma-positivo.png" alt="Logo CMA" class="logo-img-header">
+            <div class="logo-textos">
+               <span class="logo-texto-principal" style="line-height: 1.1 !important; white-space: normal !important; ">CENTRO DE MEMÓRIA DA AMAZÔNIA</span>
+               <span class="logo-texto-ufpa">UFPA</span>
+            </div>
          </a>
          
          <!-- MENU DE NAVEGAÇÃO -->
@@ -176,7 +328,7 @@
                
                <!-- ITEM ACERVO COM MEGA MENU INTEGRADO -->
                <li class="mega-dropdown">
-                  <a href="#">Acervo <span class="arrow">▾</span></a>
+                  <a href="#">Acervos <span class="arrow">▾</span></a>
                   <div class="mega-menu">
                      <div class="mega-menu-header">
                         <strong>CONSULTA AO ACERVO — CENTRO DE MEMÓRIA DA AMAZÔNIA</strong>
@@ -223,15 +375,17 @@
          <h3 style="font-family: 'Montserrat', sans-serif; color: #1a1a1a; font-size: 1.4rem; margin-bottom: 20px; border-left: 4px solid #7A1C20; padding-left: 12px;">
             Exposição "As rosas Marga não morrem" (2019)
          </h3>
+
+         <!-- IMAGENS DA GALERIA -->
          <div class="marga-gallery">
-            <img src="images/colecaoRosaMargarothe/exposicao-1.jpeg" alt="Exposição Marga Rothe 1">
-            <img src="images/colecaoRosaMargarothe/Exposição-2.jpeg" alt="Exposição Marga Rothe 2">
-            <img src="images/colecaoRosaMargarothe/Exposição-3.jpeg" alt="Exposição Marga Rothe 3">
-            <img src="images/colecaoRosaMargarothe/Exposição-4.jpeg" alt="Exposição Marga Rothe 4">
-            <img src="images/colecaoRosaMargarothe/Exposição-5.jpeg" alt="Exposição Marga Rothe 5">
+            <img src="images/margarothe/exposicao1.jpeg" class="img-margarothe" alt="Exposição Marga Rothe 1">
+            <img src="images/margarothe/exposicao2.jpeg" class="img-margarothe" alt="Exposição Marga Rothe 2">
+            <img src="images/margarothe/exposicao3.jpeg" class="img-margarothe" alt="Exposição Marga Rothe 3">
+            <img src="images/margarothe/exposicao4.jpeg" class="img-margarothe" alt="Exposição Marga Rothe 4">
+            <img src="images/margarothe/exposicao5.jpeg" class="img-margarothe" alt="Exposição Marga Rothe 5">
          </div> 
             
-<!-- VÍDEO DOCUMENTÁRIO -->
+         <!-- VÍDEO DOCUMENTÁRIO -->
          <div class="video-wrapper">
             <div class="video-responsive">
                <!-- Iframe moderno substitui o Flash Object antigo -->
@@ -434,17 +588,16 @@
          <div class="footer-links-col">
             <h5>REDES SOCIAIS</h5>
             <ul>
-               <li><a href="https://www.facebook.com/centrodememoriaufpa" target="_blank">Facebook</a></li>
-               <li><a href="https://twitter.com/CMA_UFPA" target="_blank">Twitter</a></li>
                <li><a href="https://www.instagram.com/cmaufpa" target="_blank">Instagram</a></li>
             </ul>
          </div>
 
          <div class="footer-links-col">
             <h5>CONTATOS</h5>
-            <p><strong>(91) 3201-8981</strong></p>
+            <p class="footer-email">(91) 3201-8981</p>
             <p><a href="mailto:cma@ufpa.br" class="footer-email">cma@ufpa.br</a></p>
             <p><a href="mailto:bibcma@ufpa.br" class="footer-email">bibcma@ufpa.br</a></p>
+            <span class="sub-info">(Biblioteca e Coleções Pessoais)</span>
          </div>
       </div>
 
@@ -455,7 +608,72 @@
       </div>
    </footer>
 
-   <!-- Script JS externo -->
-   <script src="script.js?v=3"></script>
+   <!-- CAIXA INVISÍVEL PARA AMPLIAR A FOTO (LIGHTBOX) -->
+   <div id="lightbox" class="lightbox-modal">
+       <span class="lightbox-close">&times;</span>
+       
+       <!-- AS SETINHAS APARECEM AQUI -->
+       <button class="lightbox-btn prev">&#10094;</button>
+       <img id="lightbox-img" src="">
+       <button class="lightbox-btn next">&#10095;</button>
+   </div>
+
+   <!-- SCRIPT DA GALERIA COM PASSADOR DE FOTOS -->
+   <script>
+      const imagens = Array.from(document.querySelectorAll('.img-margarothe'));
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const btnPrev = document.querySelector('.lightbox-btn.prev');
+      const btnNext = document.querySelector('.lightbox-btn.next');
+      
+      let currentIndex = 0; // Guarda qual foto está aberta
+
+      // 1. Abre a foto ao clicar
+      imagens.forEach((img, index) => {
+          img.addEventListener('click', function() {
+              currentIndex = index;
+              lightbox.style.display = 'flex';
+              lightboxImg.src = imagens[currentIndex].src;
+          });
+      });
+
+      // 2. Função para fechar a foto
+      function fecharFoto() {
+          lightbox.style.display = 'none';
+      }
+
+      // 3. Passar foto para trás
+      btnPrev.addEventListener('click', function(e) {
+          e.stopPropagation(); // Evita que o clique vaze e feche a tela
+          currentIndex = (currentIndex === 0) ? imagens.length - 1 : currentIndex - 1;
+          lightboxImg.src = imagens[currentIndex].src;
+      });
+
+      // 4. Passar foto para frente
+      btnNext.addEventListener('click', function(e) {
+          e.stopPropagation();
+          currentIndex = (currentIndex === imagens.length - 1) ? 0 : currentIndex + 1;
+          lightboxImg.src = imagens[currentIndex].src;
+      });
+
+      // 5. Fecha clicando no X ou no fundo preto
+      if (closeBtn) closeBtn.addEventListener('click', fecharFoto);
+      lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox) fecharFoto();
+      });
+
+      // 6. Controle pelo teclado (Setas e ESC) no computador
+      document.addEventListener('keydown', (e) => {
+          if (lightbox.style.display === 'flex') {
+              if (e.key === 'Escape') fecharFoto();
+              if (e.key === 'ArrowLeft') btnPrev.click();
+              if (e.key === 'ArrowRight') btnNext.click();
+          }
+      });
+   </script>
+
+   <!-- Script JS externo principal -->
+   <script src="script.js?v=8"></script>
 </body>
 </html>
