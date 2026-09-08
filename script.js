@@ -384,18 +384,27 @@ document.addEventListener("DOMContentLoaded", function() {
         overlay.addEventListener('click', toggleMenu); // Clicou no fundo escuro, fecha tudo
     }
 
-    // --- Lógica do clique na palavra "Acervo" no menu ---
+ // --- Lógica do clique na palavra "Acervo" no menu ---
     if (acervoLink && acervoItem) {
         acervoLink.addEventListener('click', function(e) {
-            e.preventDefault(); 
-            if (acervoItem.classList.contains('menu-ativo')) {
-                resetarMenuAcervo();
-            } else {
-                acervoItem.classList.add('menu-ativo');
+            // No PC em tela cheia, o CSS cuida do hover. No celular/tela dividida, o clique comanda.
+            if (window.innerWidth <= 768 || acervoItem.classList.contains('menu-ativo')) {
+                e.preventDefault(); 
+                e.stopPropagation();
+                acervoItem.classList.toggle('menu-ativo');
+                if(!acervoItem.classList.contains('menu-ativo')) resetarMenuAcervo();
             }
         });
 
-        // Se o usuário clicar fora do Acervo (no computador), ele fecha
+        // Impede que clicar dentro da caixa branca feche o menu sem querer
+        const megaMenuBox = document.querySelector('.mega-menu');
+        if (megaMenuBox) {
+            megaMenuBox.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+
+        // Se o usuário clicar fora, ele fecha
         document.addEventListener('click', function(e) {
             if (!acervoItem.contains(e.target) && acervoItem.classList.contains('menu-ativo')) {
                 resetarMenuAcervo();
@@ -442,7 +451,6 @@ function abrirNoticia(dados) {
     } else {
         containerTexto.innerHTML = `<p>${dados.texto}</p>`;
     }
-<<<<<<< HEAD
 
     // 3. Configura o Carrossel de Fotos
     fotosAtuais = dados.fotos || [];
@@ -517,124 +525,3 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') fecharNoticia();
     });
 });
-=======
-
-    // 3. Configura o Carrossel de Fotos
-    fotosAtuais = dados.fotos || [];
-    fotoIndexAtual = 0;
-    
-    const carrosselArea = document.getElementById('modalCarrossel');
-    if (fotosAtuais.length > 0) {
-        carrosselArea.style.display = 'block';
-        atualizarCarrossel();
-    } else {
-        carrosselArea.style.display = 'none'; // Esconde se não tiver foto
-    }
-
-    // 4. Abre o Modal e trava a rolagem do fundo
-    modal.classList.add('ativo');
-    document.body.style.overflow = 'hidden';
-}
-
-function fecharNoticia() {
-    const modal = document.getElementById('modalNoticia');
-    if (modal) {
-        modal.classList.remove('ativo');
-        document.body.style.overflow = ''; // Destrava a tela
-    }
-}
-
-function mudarFoto(direcao) {
-    if (fotosAtuais.length <= 1) return;
-    fotoIndexAtual = (fotoIndexAtual + direcao + fotosAtuais.length) % fotosAtuais.length;
-    atualizarCarrossel();
-}
-
-function atualizarCarrossel() {
-    const imgTag = document.getElementById('modalImagem');
-    const btnPrev = document.querySelector('.btn-prev');
-    const btnNext = document.querySelector('.btn-next');
-    const indicadoresArea = document.getElementById('carrosselIndicadores');
-
-    imgTag.src = fotosAtuais[fotoIndexAtual];
-
-    // Se só tiver 1 foto, esconde os botões de avançar/voltar
-    if (fotosAtuais.length <= 1) {
-        btnPrev.style.display = 'none';
-        btnNext.style.display = 'none';
-        indicadoresArea.innerHTML = '';
-    } else {
-        btnPrev.style.display = 'block';
-        btnNext.style.display = 'block';
-        
-        // Cria as bolinhas (indicadores)
-        indicadoresArea.innerHTML = fotosAtuais.map((_, idx) => 
-            `<span class="carrossel-dot ${idx === fotoIndexAtual ? 'ativo' : ''}" onclick="irParaFoto(${idx})"></span>`
-        ).join('');
-    }
-}
-
-function irParaFoto(idx) {
-    fotoIndexAtual = idx;
-    atualizarCarrossel();
-}
-
-// FECHAR AO CLICAR FORA DA CAIXA OU PRESSIONAR ESC
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('modalNoticia');
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) fecharNoticia();
-        });
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') fecharNoticia();
-    });
-});
-
-
-if (isFinalLink) {
-            li.onclick = (e) => {
-                e.stopPropagation();
-                window.open(value, '_blank');
-            };
-        } else {
-            li.onclick = (e) => {
-                e.stopPropagation(); // ISSO TRAVA O MENU NO ANDROID
-                
-                if (li.classList.contains('active')) {
-                    li.classList.remove('active');
-                    clearDescription();
-                    while (container.children.length > level + 1) {
-                        container.removeChild(container.lastChild);
-                    }
-                    return; 
-                }
-
-                Array.from(currentList.children).forEach(el => el.classList.remove('active'));
-                li.classList.add('active');
-
-                let descText = null;
-                if (value && typeof value === 'object') {
-                    descText = value.description || null;
-                }
-
-                if (descText) showDescription(descText);
-                else clearDescription();
-
-                createNextColumn(level + 1, containerId);
-                renderColumn(value, level + 1, containerId);
-
-                // Rolar suavemente para a nova coluna no mobile
-                setTimeout(() => {
-                    const nextColumn = document.getElementById(`col-${level + 1}`);
-                    if (nextColumn) {
-                        if (window.innerWidth <= 768) {
-                            nextColumn.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }
-                }, 100);
-            };
-        }
->>>>>>> 173667703d4622e0cbb660040f795cb3bb5760c9
