@@ -2200,32 +2200,64 @@ RESPONSIVIDADE
 
 
 /* =========================================================
-   CORREÇÃO: MEGA MENU ESCAPANDO DA PRISÃO DO SCROLL (TELA DIVIDIDA)
+   CORREÇÃO: MEGA MENU MAIS PRÓXIMO E PONTE INVISÍVEL DEFINITIVA
 ========================================================= */
 @media (min-width: 700px) and (max-width: 1200px) {
-    /* 1. Transforma o cabeçalho vermelho inteiro na âncora principal */
+    /* 1. Âncora principal */
     header.main-header {
         position: relative !important;
     }
     
-    /* 2. Remove a âncora dos itens internos para que eles não prendam o menu do acervo */
+    /* 2. Solta as amarras da barra de rolagem */
     header.main-header .nav-wrap,
     header.main-header .nav-menu,
     header.main-header .nav-menu > li {
         position: static !important;
     }
 
-    /* 3. Ejeta a caixa do Acervo para fora da barra rolável */
+    /* 3. Caixa do Acervo puxada para cima */
     header.main-header .mega-menu,
     header.main-header .dropdown-menu {
         position: absolute !important;
-        top: 100% !important; /* Gruda exatamente na linha de baixo da barra vermelha */
-        left: 0 !important;   /* Alinha no começo da tela */
-        width: 100% !important; /* Ocupa a largura total para não encavalar o texto dentro dele */
+        
+        /* A MÁGICA 1: Puxa o menu para perto da barra (aumente o 12px se quiser ainda mais colado) */
+        top: calc(100% - 12px) !important; 
+        
+        left: 0 !important;   
+        width: 100% !important; 
         max-width: 100% !important;
-        z-index: 99999 !important; /* Fica na frente de fotos e textos do site */
+        z-index: 99999 !important; 
         box-sizing: border-box !important;
-        background-color: #f9f9f9 !important; /* Mantém o fundo sólido */
+        background-color: #f9f9f9 !important; 
         box-shadow: 0px 10px 20px rgba(0,0,0,0.15) !important;
     }
+
+    /* 4. A MÁGICA 2: A Ponte agora nasce da caixa branca e sobe até o mouse */
+    header.main-header .mega-menu::before,
+    header.main-header .dropdown-menu::before {
+        content: "" !important;
+        position: absolute !important;
+        top: -40px !important; /* Estica 40px para cima ao encontro da palavra */
+        left: 0 !important;
+        width: 100% !important; 
+        height: 40px !important;
+        background: transparent !important;
+    }
+}
+
+/* =========================================================
+   TRAVA O MEGA MENU ABERTO AO CLICAR (PC E TELA DIVIDIDA)
+========================================================= */
+header.main-header .mega-dropdown.menu-ativo .mega-menu,
+header.main-header .dropdown.menu-ativo .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    max-height: 600px !important; 
+    overflow: visible !important;
+}
+
+header.main-header .mega-dropdown.menu-ativo .mega-menu * {
+    visibility: visible !important;
 }

@@ -384,15 +384,17 @@ document.addEventListener("DOMContentLoaded", function() {
         overlay.addEventListener('click', toggleMenu); // Clicou no fundo escuro, fecha tudo
     }
 
- // --- Lógica do clique na palavra "Acervo" no menu ---
+// --- Lógica do clique na palavra "Acervo" no menu ---
     if (acervoLink && acervoItem) {
         acervoLink.addEventListener('click', function(e) {
-            // No PC em tela cheia, o CSS cuida do hover. No celular/tela dividida, o clique comanda.
-            if (window.innerWidth <= 768 || acervoItem.classList.contains('menu-ativo')) {
-                e.preventDefault(); 
-                e.stopPropagation();
-                acervoItem.classList.toggle('menu-ativo');
-                if(!acervoItem.classList.contains('menu-ativo')) resetarMenuAcervo();
+            e.preventDefault(); 
+            e.stopPropagation();
+            
+            // Liga e desliga a classe que trava o menu aberto
+            acervoItem.classList.toggle('menu-ativo'); 
+            
+            if(!acervoItem.classList.contains('menu-ativo') && typeof resetarMenuAcervo === 'function') {
+                resetarMenuAcervo();
             }
         });
 
@@ -404,10 +406,11 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
 
-        // Se o usuário clicar fora, ele fecha
+        // Se o usuário clicar em qualquer outro lugar do site, o menu fecha
         document.addEventListener('click', function(e) {
             if (!acervoItem.contains(e.target) && acervoItem.classList.contains('menu-ativo')) {
-                resetarMenuAcervo();
+                acervoItem.classList.remove('menu-ativo');
+                if(typeof resetarMenuAcervo === 'function') resetarMenuAcervo();
             }
         });
     }
