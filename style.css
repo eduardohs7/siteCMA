@@ -36,7 +36,7 @@ body {
 .main-header .nav-menu > li > a:visited,
 .main-header .nav-menu > li > a:hover,
 .main-header .nav-menu > li > a:active,
-.main-header .nav-menu > li > a:focus {
+.main-header .nav-menu > li > a:focus { 
     text-decoration: none !important;
     -webkit-text-decoration-line: none !important; /* Força no Safari/iPhone */
     border-bottom: none !important; /* Evita que seja uma borda disfarçada de sublinhado */
@@ -473,7 +473,7 @@ body {
     background-repeat: no-repeat !important;
     background-color: transparent;
     color: #FFFFFF;
-    padding: 35px 0 !important;
+    padding: 60px 0 !important;
     min-height:  auto !important;
     position: relative;
     overflow: hidden;
