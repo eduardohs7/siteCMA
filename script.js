@@ -171,10 +171,10 @@ const acervoData = {
                     "Acessar Documentação do CAHIS": "https://ufpabr.sharepoint.com/:b:/g/IQDuTD_zYQPrSrkaFE22hAdAAaGttt_k8rmt-VcgqGK50SE?e=XQQ2wW"
                 }
             },
-            "Tratamento Arquivístico - Registros Civis (1888-1908)": {
+            "Tratamento Arquivístico - Registros Civis de Casamentos (1888-1908)": {
                 description: "O Projeto de extensão “Tratamento arquivístico do Acervo do Centro de Memória da Amazônia” foi aprovado pelo edital PIBEX/PROEX 2024 e pela congregação do Instituto de Ciências Sociais Aplicadas (ICSA/UFPA) por meio da Portaria 061/2024. O projeto foi executado pela Faculdade de Arquivologia da Universidade Federal do Pará como parte do componente curricular de extensão obrigatória. Por meio desta iniciativa realizou-se a leitura e transcrição paleográficas de registros civis de casamento elaborados entre os anos de 1888 e 1908, visando recuperar e preservar o teor informacional dessa documentação. Os catálogos resultantes das atividades do projeto, aqui disponibilizados, constituem fontes úteis ao exercício da cidadania e a preservação da memória e da história regional, especialmente em relação ao contexto da Belle Époque amazônica. As informações dos catálogos podem ser complementadas por meio de consulta interna às planilhas elaboradas pela equipe do Projeto, nos quais, além dos dados presentes nos catálogos, constam idade, estado civil, profissão, além de observações sobre retificações posteriores etc. Como o projeto ainda está em andamento, atualizações serão efetuadas periodicamente.",
                 items: {
-                    "Acessar Registros Civis": "https://ufpabr.sharepoint.com/:b:/g/IQBMBxBU_u-4TZ4o_q97Uqo6AeLbZOsQNhxmrmAyYkIH_Sg?e=hdVSqw"
+                    "Acessar Registros Civis de Casamentos": "https://ufpabr.sharepoint.com/:b:/g/IQBMBxBU_u-4TZ4o_q97Uqo6AeLbZOsQNhxmrmAyYkIH_Sg?e=hdVSqw"
                 }
             }
         }
