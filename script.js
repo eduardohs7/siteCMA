@@ -432,6 +432,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
 // =========================================
 // SISTEMA DE MODAL FLUTUANTE DE NOTÍCIAS + CARROSSEL
 // =========================================
@@ -527,4 +528,99 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') fecharNoticia();
     });
+});
+
+
+
+/* =========================================================
+   ABRIR MODAL AUTOMATICAMENTE VINDO DA HOME (VERSÃO DIRETA)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+        const idAlvo = window.location.hash; // ex: "#noticia-1"
+        const cardAlvo = document.querySelector(idAlvo);
+        
+        if (cardAlvo) {
+            setTimeout(() => {
+                // 1. Rola suavemente até o card
+                cardAlvo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // 2. Executa diretamente o código JavaScript escrito no onclick do card
+                const funcaoOnClick = cardAlvo.getAttribute('onclick');
+                if (funcaoOnClick) {
+                    // Usa Function para disparar a função abrirNoticia com os dados dela
+                    new Function(funcaoOnClick)();
+                }
+            }, 400); 
+        }
+    }
+});
+
+/* =========================================================
+   CARROSSEL DE NOTÍCIAS (SETAS, BOLINHAS E DESLIZE)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+    const gridNoticias = document.querySelector('.destaques-grid');
+    const setaEsquerda = document.querySelector('.left-arrow');
+    const setaDireita = document.querySelector('.right-arrow');
+    const bolinhas = document.querySelectorAll('.destaques-dot');
+
+    if (gridNoticias && setaEsquerda && setaDireita && bolinhas.length > 0) {
+        
+        // Função que acende a bolinha certa dependendo de onde o carrossel está
+        function atualizarBolinhas() {
+            const scrollAtual = gridNoticias.scrollLeft;
+            const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25; // 25 do gap
+            
+            // Calcula em qual "página" estamos (0 ou 1)
+            let index = Math.round(scrollAtual / larguraCard);
+            
+            // Garante de não acender uma bolinha que não existe
+            if (index >= bolinhas.length) index = bolinhas.length - 1;
+
+            // Apaga todas e acende só a atual
+            bolinhas.forEach(b => b.classList.remove('ativo'));
+            if (bolinhas[index]) bolinhas[index].classList.add('ativo');
+        }
+
+        // Evento da Seta Esquerda
+        setaEsquerda.addEventListener('click', function() {
+            const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25;
+            // Deixa o CSS assumir a suavidade do movimento
+            gridNoticias.scrollLeft -= larguraCard;
+        });
+
+        // Evento da Seta Direita
+        setaDireita.addEventListener('click', function() {
+            const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25;
+            // Deixa o CSS assumir a suavidade do movimento
+            gridNoticias.scrollLeft += larguraCard;
+        }   );
+
+        // Evento da Seta Direita
+        setaDireita.addEventListener('click', function() {
+            const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25;
+            gridNoticias.scrollBy({ left: larguraCard, behavior: 'smooth' });
+        });
+
+        // Torna as bolinhas clicáveis
+        bolinhas.forEach((bolinha) => {
+            bolinha.addEventListener('click', function() {
+                const indexClicado = parseInt(this.getAttribute('data-index'));
+                const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25;
+                
+                // Rola o carrossel exatamente para a posição da bolinha
+                gridNoticias.scrollTo({
+                    left: larguraCard * indexClicado,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sincroniza as bolinhas se o usuário arrastar com o dedo (Mobile)
+        gridNoticias.addEventListener('scroll', function() {
+            clearTimeout(gridNoticias.scrollTimeout);
+            gridNoticias.scrollTimeout = setTimeout(atualizarBolinhas, 100);
+        });
+    }
 });

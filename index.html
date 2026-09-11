@@ -8,7 +8,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css?v=53">
+   <link rel="stylesheet" href="style.css?v=69">
    <link rel="icon" type="image/png" href="images/noticiaDiversos/favicon.ico">
    <link href="images/noticiaDiversos/favicon.png" type="image/png" rel="icon">
    <link href="images/noticiaDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
@@ -152,6 +152,77 @@
       </div>
    </section>
 
+
+   <!--
+     SEÇÃO DE NOTÍCIAS EM DESTAQUE (ESTILO UFPA)
+   -->
+<section class="destaques-ufpa">
+    <div class="container destaques-container">
+        
+        <!-- Coluna da Esquerda: Título e Botão -->
+        <div class="destaques-header">
+            <div class="destaques-title-box">
+                <h2>Notícias em<br>destaque</h2>
+            </div>
+            <a href="noticias.html" class="btn-mais-noticias">mais notícias</a>
+        </div>
+
+        <!-- Coluna da Direita: Cards e Carrossel -->
+        <div class="destaques-cards-wrapper">
+            
+            <!-- Seta Esquerda -->
+            <button class="nav-arrow left-arrow">❮</button>
+
+            <div class="destaques-grid">
+                <!-- Card 1 -->
+                <div class="destaque-card">
+                    <img src="images/noticia05/1.png" alt="Capa da Notícia">
+                    <h3>Redisponibilização do acervo judicial</h3>
+                    <p>Informamos que as estantes deslizantes do acervo do fundo TJ/PA passaram por reparos e...</p>
+                     <a href="noticias.html#noticia-1" class="btn-saiba-mais">saiba mais</a>
+                  </div>
+                
+                <!-- Card 2 -->
+                <div class="destaque-card">
+                    <img src="images/imgNoticia31_livros/1.png" alt="LEITURA">
+                    <h3>Dicas de leitura sobre a pajelança, medicina e práticas populares na Amazônia</h3>
+                    <p>Confira uma seleção de 10 obras essenciais do nosso acervo sobre religiões afro-indígenas, saberes das parteiras do Marajó, cura ribeirinha...</p>
+                     <a href="noticias.html#noticia-2" class="btn-saiba-mais">saiba mais</a>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="destaque-card">
+                    <img src="images/noticiaDiversos/post-novidades-site.png" alt="ACERVO FOTOGRÁFICO">
+                    <h3>Registros fotográficos de Belém no inicio do Século XX</h3>
+                    <p>As seguintes fotos compõem uma pequena parte das fotografias localizadas no acervo de Clóvis Moraes Rêgo, parte das Coleções Pessoais da Biblioteca...</p>
+                     <a href="noticias.html#noticia-3" class="btn-saiba-mais">saiba mais</a>
+                </div>
+
+                <!-- Card 4 (NOVO) -->
+                <div class="destaque-card">
+                    <img src="images/imagemNoticia32/1.jpg" alt="DOCUMENTAÇÃO">
+                    <h3>Documentação Cível "Assistência Judiciária" Disponível para Pesquisa</h3>
+                    <p>Já está disponível para a pesquisa, no Centro de Memória da Amazônia (CMA), a documentação da procedência cível “Assistência Judiciária”...</p>
+                    <a href="noticias.html#noticia-4" class="btn-saiba-mais">saiba mais</a>
+                </div>
+            </div>
+
+            <!-- Seta Direita -->
+            <button class="nav-arrow right-arrow">❯</button>
+            
+            <!-- Bolinhas Indicadoras -->
+            <div class="destaques-dots">
+                <span class="destaques-dot ativo"></span>
+                <span class="destaques-dot"></span>
+
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
    <!-- Bloco de Certificados -->
    <section class="certificates-section container">
       <div class="cert-card-unipix">
@@ -213,7 +284,7 @@
    </footer>
 
    <!-- Importação do arquivo JS externo -->
-   <script src="script.js?v=10"></script>
+   <script src="script.js?v=13"></script>
 
 </body>
 </html>

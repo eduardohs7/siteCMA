@@ -1,3 +1,7 @@
+    /* ==========================================================================
+   3. CÓDIGOS GLOBAIS (COMPARTILHADOS: PC + MOBILE)
+========================================================================== */
+
 /* RESET E CONFIGURAÇÕES GERAIS */
 * {
     margin: 0;
@@ -38,12 +42,12 @@ body {
 .main-header .nav-menu > li > a:active,
 .main-header .nav-menu > li > a:focus { 
     text-decoration: none !important;
+    text-decoration-line: none !important;
     -webkit-text-decoration-line: none !important; /* Força no Safari/iPhone */
     border-bottom: none !important; /* Evita que seja uma borda disfarçada de sublinhado */
     box-shadow: none !important; /* Evita sombras disfarçadas */
     outline: none !important;
 }
-
 
 /* 3. FAZ A BARRINHA CRESCER AO PASSAR O MOUSE OU NA PÁGINA ATIVA */
 .main-header .nav-menu > li > a:hover::after,
@@ -62,13 +66,14 @@ body {
    font-weight: 700 !important; 
    font-size: 14px !important; 
    font-family: 'Montserrat', sans-serif !important;
-
 }
+
 .main-header .nav-menu > li > a:hover,
 .main-header .nav-menu > li > a.active { 
    color: #f0f0f0 !important; 
    text-decoration: underline !important; 
 }
+
 .main-header .nav-menu .arrow { 
    color: #ffffff !important; 
 }
@@ -107,7 +112,7 @@ body {
     transition: width 0.3s ease; /* Faz a barra aparecer deslizando suavemente */
 }
 
-/* 3. FAZ A BARRINHA CRESCER AO PASSAR O MOUSE OU NA PÁGINA ATIVA */
+/* 3. */
 .main-header .nav-menu > li > a:hover::after,
 .main-header .nav-menu > li > a.active::after {
     width: 100%;
@@ -140,11 +145,9 @@ body {
     position: relative;
 }
 
-/* =========================================
-   BLINDAGEM DA LOGO (IMPEDE QUE ELA SEJA ESMAGADA)
-========================================= */
-
-
+/* 
+   BLINDAGEM DA LOGO 
+*/
 .brand-logo {
     height: auto;
     align-items: center;
@@ -158,10 +161,7 @@ body {
     line-height: 1.4rem !important;
     display: block !important;
     margin-bottom: 3px !important;
-
 }
-
-
 
 .logo-sub {
     font-size: 1rem;
@@ -235,14 +235,6 @@ body {
     box-sizing: border-box;
 }
 
-@media (min-width: 769px) {
-    /* Força o Mega Menu a abrir ao passar o mouse no PC */
-    .mega-dropdown:hover .mega-menu {
-        display: block !important;
-        animation: megaFadeIn 0.2s ease-out;
-    }
-}
-
 .mega-menu::before {
     content: "";
     position: absolute;
@@ -312,12 +304,10 @@ body {
     letter-spacing: 0.5px;
 }
 
-
 .mega-menu .miller-list li.selected,
 .mega-menu .miller-list li.active {
    color: #ffffff !important;
 }
- 
 
 .mega-menu .miller-list {
     list-style: none;
@@ -339,8 +329,6 @@ body {
     transition: background 0.15s ease, color 0.15s ease;
     white-space: normal !important;
     word-break: break-word;
-
-    
 }
 
 .mega-menu .miller-list li:hover {
@@ -421,41 +409,6 @@ body {
     color: #777777;
 }
 
-/* --- ADAPTAÇÃO MOBILE (DISPOSITIVOS MÓVEIS) --- */
-@media (max-width: 768px) {
-.mega-menu {
-    width: 95vw !important;
-    min-width: unset !important;
-    padding: 12px;
-    top: 100%;
-    left: 50%;
-}
-
-.mega-menu .miller-container {
-    flex-direction: column !important;
-    height: auto !important;
-    max-height: 450px;
-    overflow-y: auto;
-}
-
-.mega-menu .miller-column {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
-    flex: none !important;
-    border-right: none;
-    border-bottom: 1px solid #EAE2D8;
-}
-
-.miller-preview {
-    width: 100% !important;
-    min-width: 100% !important;
-    border-left: none;
-    border-top: 2px solid #8b2828;
-    margin-top: 10px;
-}
-}
-
 @keyframes megaFadeIn {
     from {
         opacity: 0;
@@ -466,6 +419,7 @@ body {
         transform: translate(-50%, 0);
     }
 }
+
 .hero-unipix {
     background-image: url(images/bannerdefundo1.jpg);
     background-size: 100% !important;
@@ -483,8 +437,6 @@ body {
     max-height: 25px !important;
     width: auto;
 }
-
-
 
 /* Mantém o conteúdo por cima da textura */
 .hero-unipix .container {
@@ -611,8 +563,6 @@ body {
     justify-content: center;
 }
 
-
-
 @keyframes rotateStamp {
     from {
         transform: rotate(0deg);
@@ -715,7 +665,7 @@ body {
 .stats-banner {
     background-color: #8b2828;
     color: #FFFFFF;
-    padding: 20px 0; /* Aumentado para dar mais respiro em cima e embaixo */
+    padding: 20px 0; 
     position: relative;
     overflow: hidden;
 }
@@ -728,7 +678,7 @@ body {
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px; /* Aumentado de 20px para 40px (mais espaço lateral entre eles) */
+    gap: 40px; 
     text-align: center;
 }
 
@@ -737,14 +687,12 @@ body {
     font-size: 3rem; 
     font-weight: 800;
     color: #F4EFEA;
-    /* AQUI: Mudei de 10px para 0 para tirar o espaço abaixo do número */
     margin-bottom: -5; 
     white-space: nowrap; 
     letter-spacing: -1px; 
 }
 
 .stat-item p {
-    /* AQUI: Zerei a margem de cima do texto para garantir que ele cole no H3 */
     margin-top: -2; 
     font-size: 1.15rem; 
     font-weight: 500;
@@ -888,59 +836,6 @@ body {
     margin-left: 2px;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 900px) {
-    .hero-grid, 
-    .about-grid,
-    .cert-card-unipix {
-        flex-direction: column;
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-.hero-title {
-    font-size: 2.2rem;
-}
-
-.hero-actions {
-    justify-content: center;
-}
-
-.stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px; /* Espaço maior no celular também */
-}
-
-.stat-item h3 {
-    font-size: 1.5rem; /* Tamanho seguro para celulares */
-    white-space: nowrap;
-}
-
-.footer-top-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-}
-
-.footer-sub-flex {
-    flex-direction: column;
-    gap: 15px;
-}
-
-.finder-grid {
-    grid-template-columns: 1fr;
-}
-
-.mega-menu {
-    position: static;
-    transform: none;
-    width: 100%;  
-}
-}
-
-/* =========================================
-RESPONSIVIDADE MOBILE (CELULARES E TABLETS)
-========================================= */
-
 /* Esconde o botão do menu hambúrguer no computador */
 .mobile-menu-btn {
     display: none;
@@ -951,220 +846,6 @@ RESPONSIVIDADE MOBILE (CELULARES E TABLETS)
     cursor: pointer;
     padding: 5px 10px;
 }
-
-/* Quando a tela for menor que 768px (Celulares) */
-@media (max-width: 1200px) {
-
-/* 1. Ajuste da Navbar e Logo */
-header.main-header .header-container {
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    padding: 10px 20px !important;
-}
-header.main-header .brand-logo {
-    font-size: 22px !important; 
-}
-header.main-header .brand-logo .logo-sub {
-    font-size: 13px !important;
-    padding: 3px 6px !important;
-}
-.mobile-menu-btn {
-    display: block !important;
-}
-
-/* 2. Menu Oculto (Desce ao clicar) */
-header.main-header .nav-wrap {
-    width: 100% !important;
-    display: none; /* Fica escondido até clicar no botão */
-    margin-top: 15px;
-    transition: all 0.3s ease;
-}
-header.main-header .nav-wrap.menu-aberto {
-    display: block !important;
-    animation: descerMenu 0.3s ease;
-}
-@keyframes descerMenu {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-header.main-header .nav-menu {
-    flex-direction: column !important;
-    background-color: #5d1519 !important; 
-    border-radius: 8px;
-    padding: 10px !important;
-}
-header.main-header .nav-menu > li {
-    margin: 0 !important;
-    width: 100%;
-}
-header.main-header .nav-menu > li > a {
-    display: block !important;
-    padding: 12px 15px !important;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.mega-menu {
-    position: static !important; 
-    width: 100% !important;
-    box-shadow: none !important;
-    margin-top: 10px !important;
-    padding: 10px 5px !important;
-}
-
-.mega-menu-header {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    text-align: left !important;
-    padding-bottom: 15px !important;
-}
-
-.miller-container {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 15px !important; 
-}
-
-.miller-column {
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important; 
-    border: 1px solid #585858 !important; 
-    border-radius: 6px !important;
-    overflow: hidden !important;
-}
-
-.miller-list {
-    max-height: 250px !important; 
-    overflow-y: auto !important;
-}
-
-.miller-list li {
-    white-space: normal !important; 
-    word-wrap: break-word !important;
-    line-height: 1.4 !important;
-    padding: 12px 10px !important;
-    height: auto !important; 
-    border-bottom: 1px solid #f0f0f0 !important;
-}
-
-.hero-grid, 
-.about-grid, 
-.footer-top-grid,
-.noticia-card {
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-/* Reduz o tamanho de títulos gigantes */
-h1, .page-title, .galeria-title, .noticias-title, .hero-title {
-    font-size: 1.8rem !important;
-    text-align: center;
-}
-
-/* 5. Ajuste das Imagens nas Notícias */
-.noticia-img-wrapper {
-    flex: none !important;
-    width: 100% !important;
-    height: 280px !important; 
-    border-radius: 8px 8px 0 0 !important;
-}
-.noticia-img-container {
-    height: 100% !important;
-}
-
-/* =========================================
-    5. AJUSTES DA TELA INICIAL (CELULARES E TABLETS)
-========================================= */
-.hero-unipix {
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    padding: 40px 20px !important;
-    min-height: auto !important;
-}
-
-.hero-unipix .hero-grid {
-    display: grid !important;
-
-    grid-template-columns: 1fr auto !important; 
-    gap: 20px 15px !important;
-    max-width: 480px !important; 
-    margin: 0 auto !important; 
-}
-
-.hero-text-side {
-    display: contents !important; 
-}
-
-/* TÍTULO E TEXTO */
-.hero-title {
-    grid-column: 1 / 3 !important;
-    font-size: 1.5rem !important; 
-    text-align: left !important;
-    margin-bottom: 0 !important;
-    letter-spacing: normal !important; /* Evita letras muito espaçadas */
-}
-
-.hero-desc {
-    grid-column: 1 / 3 !important;
-    font-size: 0.95rem !important;
-    text-align: left !important;
-    margin-bottom: 5px !important;
-    line-height: 1.4 !important;
-}
-
-.hero-actions {
-    grid-column: 1 / 2 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
-    justify-content: center !important;
-}
-
-.hero-actions a {
-    width: 100% !important;
-    font-size: 0.85rem !important;
-    padding: 10px !important;
-    text-align: center !important;
-}
-
-.hero-media-side {
-    grid-column: 2 / 3 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-
-.hero-image-wrapper {
-    width: 100% !important;
-    max-width: 160px !important; 
-    margin: 0 !important;
-}
-
-.hero-main-img {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-}
-
-
-.mega-dropdown:hover .mega-menu,
-.mega-dropdown:focus .mega-menu {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-}
-
-.mega-dropdown.menu-ativo .mega-menu {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-}
-
 
 .mega-dropdown > a .arrow {
     pointer-events: none !important; 
@@ -1188,9 +869,9 @@ h1, .page-title, .galeria-title, .noticias-title, .hero-title {
     font-family: sans-serif !important;
 } 
 
-/* =========================================
+/* 
 BOTÃO VOLTAR AO TOPO
-========================================= */
+ */
 .btn-voltar-topo {
     position: fixed;
     bottom: 30px;
@@ -1229,28 +910,16 @@ BOTÃO VOLTAR AO TOPO
     transform: translateY(0);
 }
 
-/* Deixa um pouco menor no celular para não atrapalhar a leitura */
-@media (max-width: 768px) {
-.btn-voltar-topo {
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-}
-}
-
-/* =========================================
+/* 
 TEXTURA DE LAJOTINHAS (NAVBAR E ESTATÍSTICAS)
-========================================= */
-
+ */
 /* Aplica a textura no Cabeçalho (Navbar) e nas Estatísticas */
 .main-header, 
 .stats-banner {
 /* MANTÉM a cor vinho de fundo original */
 background-color: #7A1C20 !important; 
 
-/* PUXA a imagem da lajotinha (MUDE O NOME DO ARQUIVO AQUI) */
+/* PUXA a imagem da lajotinha*/
 background-image: url('images/lajotinha do cma.png') !important; 
 
 /* FAZ a lajotinha se repetir infinitamente lado a lado */
@@ -1258,41 +927,20 @@ background-repeat: repeat !important;
 
 /* CONTROLA o tamanho da lajotinha (pode aumentar ou diminuir esse valor) */
 background-size: 750px !important; 
-
-/* O TRUQUE MÁGICO: Mistura a lajotinha com a cor vinho para não ficar "cheguei" demais */
 }
 
-/* =========================================
+/* 
 TAMANHO DA IMAGEM DA LOGO NO CABEÇALHO
-========================================= */
+ */
 .logo-img-header {
 height: 70px !important; 
 width: auto !important;
 display: block !important;    
 }
 
-@media (max-width: 992px) {
-.logo-img-header {
-height: 70px !important; 
-}
-}
-
-
-@media (min-width: 993px) {
-.nav-wrap {
-
-    margin-right: 40px !important; 
-}
-
-.nav-menu {
-
-    gap: 20px !important; 
-}
-}
-
-/* =========================================
-ESTILO DA NOVA LOGO (COMPUTADOR)
-========================================= */
+/*
+ESTILO DA NOVA LOGO 
+ */
 .brand-logo-nova {
 display: flex;
 align-items: center;
@@ -1322,156 +970,11 @@ font-weight: 800;
 color: #ffffff;
 }
 
-/* =========================================
-ESTILO DA NOVA LOGO (CELULAR)
-========================================= */
-@media (max-width: 768px) {
-.header-container {
-    /* Força a barra a ficar em 1 única linha, não importando o aperto */
-    flex-wrap: nowrap !important; 
-}
-
-.logo-texto-principal {
-    font-size: 1rem; /* Reduz a frase principal */
-    padding: 1px 4px;
-    line-height: 1;
-    line-height: 1.2rem !important
-}
-
-.logo-texto-ufpa {
-    font-size: 0.90rem; /* Reduz a sigla UFPA */
-    padding: 1px 4px;
-}
-}
-
-/* =========================================
-AJUSTE FINO: PUXAR A LOGO PARA A ESQUERDA
-========================================= */
+/* 
+PUXA A LOGO PARA A ESQUERDA
+ */
 .brand-logo-nova {
-/* O valor negativo "puxa" a logo para a esquerda. 
-    Se quiser mais para a esquerda, aumente para -30px ou -40px */
 margin-left: 5px !important; 
-}
-
-/* Garante que no celular ela não acabe saindo da tela */
-@media (max-width: 992px) {
-.brand-logo-nova {
-    margin-left: -2px !important; 
-}
-}
-
-/* MENU MOBILE */
-@media (max-width: 1200px) {
-/* 1. Drawer */
-.nav-wrap {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Fica escondido fora da tela na direita */
-    width: 80%; /* Ocupa 80% da tela (deixa 20% da página visível) */
-    max-width: 350px;
-    height: 100vh;
-    background-color: #7A1C20; /* Cor vinho da UFPA */
-    box-shadow: -5px 0 20px rgba(0,0,0,0.6); /* Sombra lateral */
-    transition: right 0.4s ease-in-out; /* O deslize suave */
-    z-index: 9999;
-    overflow-y: auto; /* Permite rolar as opções */
-    padding-top: 90px; /* Espaço para o botão fechar lá em cima */
-}
-
-/* Quando o menu estiver aberto, ele desliza para a posição 0 */
-.nav-wrap.menu-aberto {
-    right: 0; 
-}
-
-/* 2. O Fundo Escuro (Parte que sobra da tela) */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 9998;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.4s ease-in-out;
-}
-.menu-overlay.ativo {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* 3. Botão Hambúrguer e Fechar */
-.mobile-menu-btn {
-    position: relative;
-    z-index: 10000; /* Fica acima do menu e da sombra */
-    font-size: 2rem !important; /* Botão bem visível */
-}
-
-/* 4. Lista do Menu Principal */
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 0 25px 40px 25px;
-}
-.nav-menu > li > a {
-    font-size: 1.15rem !important;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 10px;
-    display: block;
-}
-
-/* =========================================
-    O SEGREDO DO ACERVO SUPER COMPACTO
-========================================= */
-.mega-menu {
-    position: static !important; 
-    width: 100% !important;
-    background-color: #f9f9f9 !important; /* Vira um "cartão" branco dentro do menu vinho */
-    border-radius: 8px !important;
-    padding: 8px !important;
-    margin-top: 10px !important;
-    max-height: 50vh  !important;
-    overflow-y: auto !important;
-    overscroll-behavior: contain !important;
-}
-
-/* SUMIMOS com o cabeçalho gigante que ocupava a tela */
-.mega-menu-header {
-    display: none !important; 
-}
-
-/* Diminuímos o buraco entre as colunas */
-.miller-container {
-    display: flex;
-    flex-direction: column;
-    gap: 6px !important;
-    padding: 0 !important;
-}
-
-.miller-column {
-    border: 1px solid #ddd !important;
-    border-radius: 6px !important;
-    background: #fff !important;
-    min-width: 100% !important;
-}
-
-.miller-header {
-    background-color: #ebebeb !important;
-    color: #333 !important;
-    font-size: 0.75rem !important;
-    font-weight: 800 !important;
-    padding: 8px 10px !important;
-}
-
-/* Botões do acervo bem mais finos e delicados */
-.miller-list li {
-    padding: 8px 10px !important;
-    font-size: 0.85rem !important;
-    color: #333 !important;
-    border-bottom: 1px solid #f0f0f0 !important;
-}
 }
 
 /* 
@@ -1520,9 +1023,9 @@ margin-left: 5px !important;
 }
 .noticia-text:last-child { margin-bottom: 0; }
 
-/* =========================================
+/* 
 ACORDEÃO DE RESUMOS
-========================================= */
+ */
 .resumo-item {
     background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px;
     margin-bottom: 10px; overflow: hidden;
@@ -1543,9 +1046,9 @@ ACORDEÃO DE RESUMOS
     padding: 15px; margin: 0; border-top: 1px solid #eee; text-align: justify; font-size: 0.9rem;
 }
 
-/* =========================================
+/* 
 LIGHTBOX (AMPLIADOR GALERIA)
-========================================= */
+ */
 .lightbox {
     display: none; position: fixed; z-index: 99999; 
     top: 0; left: 0; width: 100%; height: 100%; 
@@ -1578,16 +1081,6 @@ LIGHTBOX (AMPLIADOR GALERIA)
 .lightbox-btn.prev { left: 20px; }
 .lightbox-btn.next { right: 20px; }
 
-/* =========================================
-RESPONSIVIDADE
-========================================= */
-@media (max-width: 768px) {
-    .noticia-card { flex-direction: column; }
-    .noticia-img-wrapper { flex: none; height: 350px; } 
-    .lightbox-btn { font-size: 40px; padding: 10px; }
-}
-
-
 .modal-noticia-overlay {
     position: fixed;
     top: 0;
@@ -1605,9 +1098,10 @@ RESPONSIVIDADE
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-/* =========================================
-   CARD DE NOTÍCIA COM CAPA (PREVIEW MODAL)
-========================================= */
+
+/* 
+   CARD DE NOTÍCIA COM CAPA 
+ */
 .card-noticia-preview {
     display: flex;
     flex-direction: row;
@@ -1688,7 +1182,7 @@ RESPONSIVIDADE
 
 .btn-ler-mais {
     align-self: flex-start;
-    background: #7A1C20;
+    background: #8b2828;
     color: #ffffff;
     border: none;
     padding: 9px 18px;
@@ -1701,25 +1195,7 @@ RESPONSIVIDADE
 }
 
 .card-noticia-preview:hover .btn-ler-mais {
-    background-color: #5d1518;
-}
-
-/* Ajuste Responsivo para Mobile */
-@media (max-width: 768px) {
-    .card-noticia-preview {
-        flex-direction: column;
-    }
-    .card-noticia-thumb {
-        flex: none;
-        height: 200px;
-        width: 100%;
-    }
-    .card-noticia-info {
-        padding: 20px;
-    }
-    .card-noticia-titulo {
-        font-size: 1.15rem;
-    }
+    background-color: #8b2828;
 }
 
 /* Quando o JS colocar a classe 'ativo', ele aparece suavemente */
@@ -1777,15 +1253,13 @@ RESPONSIVIDADE
 .modal-titulo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: #1a1a1a; margin: 8px 0; line-height: 1.3; }
 .modal-data { display: block; font-size: 0.85rem; color: #777; margin-bottom: 20px; }
 
-/* =========================================
-   CARROSSEL DA JANELA FLUTUANTE (MODAL)
-========================================= */
+/* MODAL DAS NOTICIAS */
 .carrossel-wrapper { 
     position: relative; 
     width: 100%; 
-    height: 550px; /* Aumentamos a altura para imagens "em pé" ficarem gigantes e legíveis! */
-    background: #f9f9f9; /* Fundo bem clarinho para sumir com as barras laterais */
-    border: 1px solid #ebebeb; /* Borda bem suave */
+    height: 550px; /* Aumenta a altura para imagens "em pé" ficarem gigantes e legíveis! */
+    background: #f9f9f9; 
+    border: 1px solid #ebebeb; 
     border-radius: 8px; 
     overflow: hidden; 
     margin-bottom: 25px; 
@@ -1852,9 +1326,9 @@ RESPONSIVIDADE
 .modal-texto-ampliado { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; line-height: 1.8; color: #333; }
 .modal-texto-ampliado p { margin-bottom: 16px; }
 
-/* =========================================
-   ESTILO DA NOTÍCIA CLICÁVEL (CARD 01)
-========================================= */
+/*
+   ESTILO DA NOTÍCIA CLICÁVEL
+*/
 .card-noticia {
     background: #fff;
     border: 1px solid #e0e0e0;
@@ -1869,29 +1343,10 @@ RESPONSIVIDADE
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     transform: translateY(-3px); /* Dá um pulinho pra cima ao passar o mouse */
 }
-.btn-ler-mais {
-    background: #7A1C20;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    margin-top: 15px;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-}
 
-/* Responsivo celular */
-@media (max-width: 768px) {
-    .modal-noticia-body { padding: 20px; }
-    .modal-titulo { font-size: 1.3rem; }
-    .carrossel-wrapper { height: 240px; }
-    .modal-texto-ampliado { font-size: 0.95rem; }
-}
-
-/* =========================================
-   LIGHTBOX (AMPLIADOR DE IMAGENS - GLOBAL)
-========================================= */
+/*
+   LIGHTBOX (AMPLIADOR DE IMAGENS 
+*/
 .lightbox {
     display: none; 
     position: fixed; 
@@ -1925,7 +1380,6 @@ RESPONSIVIDADE
 .lightbox-btn.prev { left: 20px; }
 .lightbox-btn.next { right: 20px; }
 
-/* CORREÇÃO DA NAVBAR EM TELAS MÉDIAS E NOTEBOOKS */
 .nav-menu li a {
     white-space: nowrap !important;
 }
@@ -1935,130 +1389,309 @@ RESPONSIVIDADE
     min-width: max-content !important; 
 }
 
-/* 3. Quando a tela for de Notebook/Tablet (menor que 1200px) */
-@media (max-width: 1200px) {
-    .nav-menu {
-        gap: 5px !important; /* Diminui o vazio entre os botões */
-    }
-    .nav-menu li a {
-        padding: 8px 10px !important; /* Deixa a área de clique um pouco menor */
-        font-size: 0.9rem !important; /* Reduz a fonte levemente para caber tudo */
+/* 
+Resolve o texto sobreposto na logo
+*/
+.brand-logo * {
+    line-height: 1.3 !important; 
+    white-space: normal !important; 
+}
+
+/* 
+   TRAVA O MEGA MENU ABERTO AO CLICAR
+ */
+header.main-header .mega-dropdown.menu-ativo .mega-menu,
+header.main-header .dropdown.menu-ativo .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    max-height: 600px !important; 
+    overflow: visible !important;
+}
+
+header.main-header .mega-dropdown.menu-ativo .mega-menu * {
+    visibility: visible !important;
+}
+
+
+/* ==========================================================================
+   SEÇÃO NOTÍCIAS EM DESTAQUE (ESTILO UFPA)
+========================================================================== */
+.destaques-ufpa {
+    background-color: #ffffff;
+    padding: 70px 20px;
+}
+
+.destaques-container {
+    display: flex;
+    gap: 60px; /* O vazio entre o título e as notícias */
+    max-width: 1250px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* --- COLUNA ESQUERDA (TÍTULO) --- */
+.destaques-header {
+    flex: 0 0 240px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.destaques-title-box {
+    border-top: 5px solid #B71C1C; /* A linha vermelha da UFPA */
+    padding-top: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.destaques-title-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.btn-mais-noticias {
+    background-color: #B71C1C;
+    color: #ffffff !important;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-mais-noticias:hover {
+    background-color: #8E1515;
+}
+
+/* --- COLUNA DIREITA (TRILHO DO CARROSSEL) --- */
+.destaques-cards-wrapper {
+    flex: 1 !important;
+    position: relative !important;
+    display: block !important;
+    min-width: 0 !important; /* Blinda o layout contra estouros laterais */
+}
+
+.destaques-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; 
+    gap: 25px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    
+    /* A MÁGICA DEFINITIVA DA SUAVIDADE */
+    scroll-behavior: smooth !important; 
+    scroll-snap-type: none !important; /* Arranca o ímã à força no PC */
+    -webkit-overflow-scrolling: touch !important;
+    
+    scrollbar-width: none !important; 
+}
+
+.destaques-grid::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Devolve o ímã apenas para o celular (onde a pessoa usa o dedo) */
+@media (max-width: 992px) {
+    .destaques-grid {
+        scroll-snap-type: x mandatory !important;
     }
 }
 
-/* 4. Se a tela apertar demais antes de virar versão celular (menor que 992px) */
-@media (max-width: 768px) {
-    .header-container {
-        flex-wrap: wrap !important; /* Permite que o menu caia para a linha de baixo */
-        justify-content: center !important; /* Centraliza a logo */
-        padding: 15px 20px !important;
+.destaques-grid::-webkit-scrollbar {
+    display: none !important;
+}
+
+.destaques-grid::-webkit-scrollbar {
+    display: none !important; /* Esconde a barra no Chrome/Safari */
+}
+
+.destaque-card {
+    display: flex !important;
+    flex-direction: column !important;
+    
+    /* Mantém o cálculo exato de 3 cards por vez, mas com respiro perfeito */
+    flex: 0 0 calc(33.333% - 17px) !important; 
+    min-width: calc(33.333% - 17px) !important; 
+    max-width: calc(33.333% - 17px) !important;
+    
+    scroll-snap-align: start !important;
+    box-sizing: border-box !important;
+}
+
+.destaque-card img {
+    /* Mantém a altura grande que você colocou, mas força a imagem inteira a aparecer sem cortes */
+    width: 100% !important;
+    height: 320px !important; /* Altura grande preservada */
+    object-fit: contain !important; /*  Mostra a imagem 100% inteira, sem cortar as pontas! */
+    background-color: #fcfcfc !important; /* Fundo sutil caso a proporção da imagem deixe margens */
+    border-radius: 8px !important;
+    margin-bottom: 15px !important;
+}
+
+.destaque-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+.destaque-card p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empurra o botão "saiba mais" pro fundo sempre alinhado */
+}
+
+/* O botão vazado (outline) */
+.btn-saiba-mais {
+    align-self: flex-start;
+    color: #B71C1C !important;
+    border: 1px solid #B71C1C;
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #B71C1C;
+    color: #ffffff !important;
+}
+
+/* --- SETAS E BOLINHAS --- */
+.nav-arrow {
+    position: absolute;
+    top: 30%; /* Altura exata da imagem */
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    color: #B71C1C;
+    font-size: 1.1rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 10;
+}
+
+.nav-arrow:hover {
+    border-color: #B71C1C;
+    background: #f4f4f4;
+}
+
+/* Posiciona as setas fora da caixa de cards */
+.left-arrow { left: -35px; }
+.right-arrow { right: -35px; }
+
+.destaques-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 30px;
+}
+
+.destaques-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e0e0e0;
+}
+
+.destaques-dot.ativo {
+    background: #B71C1C;
+}
+
+/* --- RESPONSIVIDADE MOBILE --- */
+@media (max-width: 992px) {
+    .destaques-container {
+        flex-direction: column;
+        gap: 30px;
     }
     
+    .destaques-header {
+        flex: none;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .destaques-title-box {
+        border-top: none;
+        border-bottom: 4px solid #B71C1C;
+        padding-top: 0;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        width: auto;
+        display: inline-block;
+    }
+    
+    /* Esconde as setas no celular */
+    .nav-arrow {
+        display: none; 
+    }
+    
+    /* Transforma a grade em um carrossel de arrastar pelo toque */
+    .destaques-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; /* Efeito "imã" ao arrastar */
+        gap: 20px;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Esconde a barra feia no Firefox */
+    }
+    
+    .destaques-grid::-webkit-scrollbar {
+        display: none; /* Esconde a barra feia no Chrome/Safari */
+    }
+    
+    .destaque-card {
+        flex: 0 0 85%; /* Os cards ocupam 85% da tela, deixando a ponta do próximo aparecendo */
+        scroll-snap-align: center;
+    }
+}
+
+/* ==========================================================================
+   1. CÓDIGOS EXCLUSIVOS PARA PC (DESKTOP)
+========================================================================== */
+
+@media (min-width: 769px) {
+    /* Força o Mega Menu a abrir ao passar o mouse no PC */
+    .mega-dropdown:hover .mega-menu {
+        display: block !important;
+        animation: megaFadeIn 0.2s ease-out;
+    }
+}
+
+@media (min-width: 993px) {
     .nav-wrap {
-        margin-top: 15px !important;
-        width: 100% !important;
+        margin-right: 40px !important; 
     }
-
     .nav-menu {
-        justify-content: center !important; /* Centraliza os botões */
-        flex-wrap: wrap !important; /* Permite botões em duas linhas organizadas */
-        gap: 8px !important;
+        gap: 20px !important; 
     }
 }
 
-/* =========================================
-   FORÇA BRUTA CONTRA TEXTO ENCAVALADO NA LOGO
-========================================= */
-.brand-logo * {
-    line-height: 1.3 !important; /* Cria o escudo de espaço entre as linhas */
-    white-space: normal !important; /* Permite a quebra de linha natural */
-}
-
-
-
-/* =========================================
-   CORREÇÃO DEFINITIVA: TRAVAR MENU ACERVO NA ESQUERDA (FIM DO DESLIZE)
-========================================= */
-@media (max-width: 992px) {
-    /* 1. Trava o botão Acervo na esquerda */
-    .mega-dropdown {
-        width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important; /* Proíbe a centralização herdada */
-    }
-
-    /* 2. Congela a caixa branca exatamente debaixo do botão */
-    .mega-menu {
-        position: relative !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        left: 0 !important;
-        margin: 0 !important;
-        padding: 10px !important;
-        transform: none !important; /* Mata qualquer animação de deslize */
-        animation: none !important;
-        transition: none !important;
-    }
-
-    /* 3. Cria o trilho pregado na esquerda (Carrossel Horizontal) */
-    .miller-container {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: flex-start !important; /* A MÁGICA: Obriga as colunas a nascerem na esquerda, e não no meio */
-        align-items: flex-start !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: auto !important; /* Permite arrastar com o dedo */
-        overflow-y: hidden !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-
-    /* 4. Colunas fixas e blindadas */
-    .miller-column {
-        flex: 0 0 250px !important; /* Define a largura fixa de 250px (não amassa) */
-        max-width: 250px !important;
-        margin-right: 15px !important;
-        transform: none !important;
-    }
-}
-
-/* =========================================
-   LEITURA DE TEXTOS NO CELULAR (TIPO ARTIGO LIMPO)
-========================================= */
-@media (max-width: 768px) {
-    /* 1. Desmonta a "caixa" (cartão) para aproveitar toda a tela */
-    .clipping-card {
-        padding: 10px 5px !important; /* Diminui drasticamente as margens internas */
-        border-left: none !important; /* Remove a barra vermelha lateral grossa */
-        background: transparent !important; /* Remove o fundo bege, deixando branco e limpo */
-        box-shadow: none !important; /* Tira a sombra */
-        margin-bottom: 20px !important;
-    }
-
-    /* 2. Formata os parágrafos igual ao site de exemplo */
-    .clipping-text, 
-    .clipping-card p {
-        text-align: left !important; /* A MÁGICA: Texto à esquerda evita palavras espremidas e buracos */
-        font-size: 1.1rem !important; /* Letra num tamanho confortável para ler */
-        line-height: 1.6 !important; /* Espaço ideal entre as linhas */
-        padding: 0 10px !important; /* Dá um leve respiro para a letra não colar na borda do celular */
-        margin-bottom: 15px !important;
-    }
-
-    /* 3. Ajusta os títulos dentro dos textos */
-    .clipping-title {
-        font-size: 1.4rem !important;
-        padding: 0 10px !important;
-        text-align: left !important;
-    }
-}
-
-
-/* =========================================================
-   COMPORTAMENTO SHAREPOINT: SCROLL INTELIGENTE + MEGA MENU ACERVO
-========================================================= */
-
+/* 
+SCROLL INTELIGENTE + MEGA MENU ACERVO
+*/
 @media (min-width: 700px) {
     .mobile-menu-btn { display: none !important; }
 
@@ -2124,7 +1757,7 @@ RESPONSIVIDADE
         transition: background 0.3s ease !important;
     }
 
-    /* SE A TELA FOR APERTADA (MENOR QUE 1200px): LIGA A ROLAGEM E CORTA O EIXO Y */
+    /* SE A TELA FOR APERTADA (MENOR QUE 1200px): LIGA A ROLAGEM*/
     @media (max-width: 1200px) {
         header.main-header .nav-wrap {
             overflow-x: auto !important; 
@@ -2143,7 +1776,7 @@ RESPONSIVIDADE
         }
     }
 
-    /* 3. MENU: A Fita de Botões */
+    /* 3. MENU: A Fita de Botões Deslizantes */
     header.main-header .nav-menu {
         display: flex !important;
         flex-direction: row !important; 
@@ -2178,7 +1811,7 @@ RESPONSIVIDADE
 
     .arrow { font-size: clamp(8px, 0.9vw, 12px) !important; margin-left: 2px !important; }
 
-    /* 4. CORREÇÃO DEFINITIVA DA ALTURA DO MEGA MENU (ACERVO) */
+    /* 4. CORREÇÃO DA ALTURA DO MEGA MENU (ACERVO) */
     header.main-header .mega-dropdown:hover .mega-menu,
     header.main-header .dropdown:hover .dropdown-menu {
         display: block !important;
@@ -2194,10 +1827,613 @@ RESPONSIVIDADE
     }
 }
 
+
+
+/* ==========================================================================
+   2. CÓDIGOS EXCLUSIVOS PARA MOBILE E TABLET (TELA DIVIDIDA)
+========================================================================== */
+
+/* --- ADAPTAÇÃO MOBILE (DISPOSITIVOS MÓVEIS) --- */
+@media (max-width: 768px) {
+    .mega-menu {
+        width: 95vw !important;
+        min-width: unset !important;
+        padding: 12px;
+        top: 100%;
+        left: 50%;
+    }
+    
+    .mega-menu .miller-container {
+        flex-direction: column !important;
+        height: auto !important;
+        max-height: 450px;
+        overflow-y: auto;
+    }
+    
+    .mega-menu .miller-column {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        border-right: none;
+        border-bottom: 1px solid #EAE2D8;
+    }
+    
+    .miller-preview {
+        width: 100% !important;
+        min-width: 100% !important;
+        border-left: none;
+        border-top: 2px solid #8b2828;
+        margin-top: 10px;
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .hero-grid, 
+    .about-grid,
+    .cert-card-unipix {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px; /* Espaço maior no celular também */
+    }
+
+    .stat-item h3 {
+        font-size: 1.5rem; /* Tamanho seguro para celulares */
+        white-space: nowrap;
+    }
+
+    .footer-top-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-sub-flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .finder-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mega-menu {
+        position: static;
+        transform: none;
+        width: 100%;  
+    }
+}
+
+@media (max-width: 1200px) {
+
+    /* 1. Ajuste da Navbar e Logo */
+    header.main-header .header-container {
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        padding: 10px 20px !important;
+    }
+    header.main-header .brand-logo {
+        font-size: 22px !important; 
+    }
+    header.main-header .brand-logo .logo-sub {
+        font-size: 13px !important;
+        padding: 3px 6px !important;
+    }
+    .mobile-menu-btn {
+        display: block !important;
+    }
+    
+    /* 2. Menu Oculto (Desce ao clicar) */
+    header.main-header .nav-wrap {
+        width: 100% !important;
+        display: none; /* Fica escondido até clicar no botão */
+        margin-top: 15px;
+        transition: all 0.3s ease;
+    }
+    header.main-header .nav-wrap.menu-aberto {
+        display: block !important;
+        animation: descerMenu 0.3s ease;
+    }
+    @keyframes descerMenu {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    header.main-header .nav-menu {
+        flex-direction: column !important;
+        background-color: #5d1519 !important; 
+        border-radius: 8px;
+        padding: 10px !important;
+    }
+    header.main-header .nav-menu > li {
+        margin: 0 !important;
+        width: 100%;
+    }
+    header.main-header .nav-menu > li > a {
+        display: block !important;
+        padding: 12px 15px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .mega-menu {
+        position: static !important; 
+        width: 100% !important;
+        box-shadow: none !important;
+        margin-top: 10px !important;
+        padding: 10px 5px !important;
+    }
+    
+    .mega-menu-header {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        text-align: left !important;
+        padding-bottom: 15px !important;
+    }
+    
+    .miller-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important; 
+    }
+    
+    .miller-column {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important; 
+        border: 1px solid #585858 !important; 
+        border-radius: 6px !important;
+        overflow: hidden !important;
+    }
+    
+    .miller-list {
+        max-height: 250px !important; 
+        overflow-y: auto !important;
+    }
+    
+    .miller-list li {
+        white-space: normal !important; 
+        word-wrap: break-word !important;
+        line-height: 1.4 !important;
+        padding: 12px 10px !important;
+        height: auto !important; 
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+    
+    .hero-grid, 
+    .about-grid, 
+    .footer-top-grid,
+    .noticia-card {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Reduz o tamanho de títulos gigantes */
+    h1, .page-title, .galeria-title, .noticias-title, .hero-title {
+        font-size: 1.8rem !important;
+        text-align: center;
+    }
+    
+    /* 5. Ajuste das Imagens nas Notícias */
+    .noticia-img-wrapper {
+        flex: none !important;
+        width: 100% !important;
+        height: 280px !important; 
+        border-radius: 8px 8px 0 0 !important;
+    }
+    .noticia-img-container {
+        height: 100% !important;
+    }
+    
+    /* 
+        5. AJUSTES DA TELA INICIAL MOBILE
+     */
+    .hero-unipix {
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        padding: 40px 20px !important;
+        min-height: auto !important;
+    }
+    
+    .hero-unipix .hero-grid {
+        display: grid !important;
+    
+        grid-template-columns: 1fr auto !important; 
+        gap: 20px 15px !important;
+        max-width: 480px !important; 
+        margin: 0 auto !important; 
+    }
+    
+    .hero-text-side {
+        display: contents !important; 
+    }
+    
+    /* TÍTULO E TEXTO */
+    .hero-title {
+        grid-column: 1 / 3 !important;
+        font-size: 1.5rem !important; 
+        text-align: left !important;
+        margin-bottom: 0 !important;
+        letter-spacing: normal !important; /* Evita letras muito espaçadas */
+    }
+    
+    .hero-desc {
+        grid-column: 1 / 3 !important;
+        font-size: 0.95rem !important;
+        text-align: left !important;
+        margin-bottom: 5px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .hero-actions {
+        grid-column: 1 / 2 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        justify-content: center !important;
+    }
+    
+    .hero-actions a {
+        width: 100% !important;
+        font-size: 0.85rem !important;
+        padding: 10px !important;
+        text-align: center !important;
+    }
+    
+    .hero-media-side {
+        grid-column: 2 / 3 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero-image-wrapper {
+        width: 100% !important;
+        max-width: 160px !important; 
+        margin: 0 !important;
+    }
+    
+    .hero-main-img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+    
+    .mega-dropdown:hover .mega-menu,
+    .mega-dropdown:focus .mega-menu {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+    
+    .mega-dropdown.menu-ativo .mega-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+/* Deixa um pouco menor no celular para não atrapalhar a leitura */
+@media (max-width: 768px) {
+    .btn-voltar-topo {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo-img-header {
+    height: 70px !important; 
+    }
+}
+
+/* 
+ESTILO DA NOVA LOGO (CELULAR)
+ */
+@media (max-width: 768px) {
+    .header-container {
+        /* Força a barra a ficar em 1 única linha, não importando o aperto */
+        flex-wrap: nowrap !important; 
+    }
+    
+    .logo-texto-principal {
+        font-size: 1rem; /* Reduz a frase principal */
+        padding: 1px 4px;
+        line-height: 1;
+        line-height: 1.2rem !important
+    }
+    
+    .logo-texto-ufpa {
+        font-size: 0.90rem; /* Reduz a sigla UFPA */
+        padding: 1px 4px;
+    }
+}
+
+/* Garante que no celular ela não acabe saindo da tela */
+@media (max-width: 992px) {
+    .brand-logo-nova {
+        margin-left: -2px !important; 
+    }
+}
+
+/* =========================================================
+   CORREÇÃO DO MENU MOBILE (SÓ ABRE ABAIXO DE 992px)
+========================================================= */
+@media (max-width: 992px) {
+    /* 1. Drawer */
+    .nav-wrap {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: #7A1C20;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.6);
+        transition: right 0.4s ease-in-out;
+        z-index: 9999;
+        overflow-y: auto;
+        padding-top: 90px;
+    }
+
+    .nav-wrap.menu-aberto {
+        right: 0; 
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 9998;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s ease-in-out;
+    }
+    .menu-overlay.ativo {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-btn {
+        display: block !important;
+        position: relative;
+        z-index: 10000;
+        font-size: 2rem !important;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 25px 40px 25px;
+    }
+    
+    .nav-menu > li > a {
+        font-size: 1.15rem !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 10px;
+        display: block;
+    }
+}   
+    
+    /* 
+        O SEGREDO DO ACERVO SUPER COMPACTO EM TELAS MENORES
+     */
+    .mega-menu {
+        position: static !important; 
+        width: 100% !important;
+        background-color: #f9f9f9 !important; /* Vira um "cartão" branco dentro do menu vinho */
+        border-radius: 8px !important;
+        padding: 8px !important;
+        margin-top: 10px !important;
+        max-height: 50vh  !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain !important;
+    }
+    
+
+    .mega-menu-header {
+        display: none !important; 
+    }
+    
+    /* Diminuímos o buraco entre as colunas */
+    .miller-container {
+        display: flex;
+        flex-direction: column;
+        gap: 6px !important;
+        padding: 0 !important;
+    }
+    
+    .miller-column {
+        border: 1px solid #ddd !important;
+        border-radius: 6px !important;
+        background: #fff !important;
+        min-width: 100% !important;
+    }
+    
+    .miller-header {
+        background-color: #ebebeb !important;
+        color: #333 !important;
+        font-size: 0.75rem !important;
+        font-weight: 800 !important;
+        padding: 8px 10px !important;
+    }
+    
+    /* Botões do acervo bem mais finos e delicados */
+    .miller-list li {
+        padding: 8px 10px !important;
+        font-size: 0.85rem !important;
+        color: #333 !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+
+
+/* RESPONSIVIDADE NOTÍCIAS */
+@media (max-width: 768px) {
+    .noticia-card { flex-direction: column; }
+    .noticia-img-wrapper { flex: none; height: 350px; } 
+    .lightbox-btn { font-size: 40px; padding: 10px; }
+}
+
+/* Ajuste Responsivo para Mobile */
+@media (max-width: 768px) {
+    .card-noticia-preview {
+        flex-direction: column;
+    }
+    .card-noticia-thumb {
+        flex: none;
+        height: 200px;
+        width: 100%;
+    }
+    .card-noticia-info {
+        padding: 20px;
+    }
+    .card-noticia-titulo {
+        font-size: 1.15rem;
+    }
+}
+
+/* Responsivo celular */
+@media (max-width: 768px) {
+    .modal-noticia-body { padding: 20px; }
+    .modal-titulo { font-size: 1.3rem; }
+    .carrossel-wrapper { height: 380px; }
+    .modal-texto-ampliado { font-size: 0.95rem; }
+    .carrossel-slide img{ padding: 0px !important;}
+}
+
+/* 3. Quando a tela for de Notebook/Tablet (menor que 1200px) */
+@media (max-width: 1200px) {
+    .nav-menu {
+        gap: 5px !important; /* Diminui o vazio entre os botões */
+    }
+    .nav-menu li a {
+        padding: 8px 10px !important; /* Deixa a área de clique um pouco menor */
+        font-size: 0.9rem !important; /* Reduz a fonte levemente para caber tudo */
+    }
+}
+
+/* 4. Se a tela apertar demais antes de virar versão mobile */
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap !important; /* Permite que o menu caia para a linha de baixo */
+        justify-content: center !important; /* Centraliza a logo */
+        padding: 15px 20px !important;
+    }
+    
+    .nav-wrap {
+        margin-top: 15px !important;
+        width: 100% !important;
+    }
+
+    .nav-menu {
+        justify-content: center !important; /* Centraliza os botões */
+        flex-wrap: wrap !important; /* Permite botões em duas linhas organizadas */
+        gap: 8px !important;
+    }
+}
+
+/* 
+ TRAVAR MENU ACERVO NA ESQUERDA 
+ */
+@media (max-width: 992px) {
+    /* 1. Trava o botão Acervo na esquerda */
+    .mega-dropdown {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Proíbe a centralização herdada */
+    }
+
+    /* 2. Congela a caixa branca exatamente debaixo do botão */
+    .mega-menu {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* 3. Cria o trilho fixo na esquerda para mobile */
+    .miller-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important; /* colune nasce na esquerda */
+        align-items: flex-start !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important; /* Permite arrastar com o dedo */
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* 4. Colunas fixas  */
+    .miller-column {
+        flex: 0 0 250px !important; 
+        max-width: 250px !important;
+        margin-right: 15px !important;
+        transform: none !important;
+    }
+}
+
+/* 
+MELHORA OS TAMANHOS DE TEXTOS LONGOS 
+ */
+@media (max-width: 768px) {
+    
+    .clipping-card {
+        padding: 10px 5px !important; /* Diminui as margens internas */
+        border-left: none !important; 
+        background: transparent !important; 
+        box-shadow: none !important; 
+        margin-bottom: 20px !important;
+    }
+
+    /* 2. Formata os parágrafos*/
+    .clipping-text, 
+    .clipping-card p {
+        text-align: left !important; /* evita palavras espremidas e buracos no texto */
+        font-size: 1.1rem !important; /* Letra num tamanho confortável para ler */
+        line-height: 1.6 !important; /* Espaço ideal entre as linhas */
+        padding: 0 10px !important; /* Dá um leve respiro para a letra não colar na borda do celular */
+        margin-bottom: 15px !important;
+    }
+
+    /* 3. Ajusta os títulos dentro dos textos */
+    .clipping-title {
+        font-size: 1.4rem !important;
+        padding: 0 10px !important;
+        text-align: left !important;
+    }
+}
+
 @media (max-width: 699px) {
     .mobile-menu-btn { display: block !important; }
 }
-
 
 /* =========================================================
    CORREÇÃO: MEGA MENU MAIS PRÓXIMO E PONTE INVISÍVEL DEFINITIVA
@@ -2245,19 +2481,176 @@ RESPONSIVIDADE
     }
 }
 
-/* =========================================================
-   TRAVA O MEGA MENU ABERTO AO CLICAR (PC E TELA DIVIDIDA)
-========================================================= */
-header.main-header .mega-dropdown.menu-ativo .mega-menu,
-header.main-header .dropdown.menu-ativo .dropdown-menu {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    height: auto !important;
-    max-height: 600px !important; 
-    overflow: visible !important;
+
+
+
+/* 
+   itens centralizados mobile   */
+ 
+@media (max-width: 768px) {
+    /* 1. Empilha todos os elementos verticalmente */
+    .hero-unipix .hero-grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 25px !important;
+    }
+    /* 2. Textos 100% centralizados */
+    .hero-title,
+    .hero-desc {
+        text-align: center !important;
+    }
+
+    /* 3. CAIXA DE BOTÕES: Centralizada e travada em 320px */
+    .hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 320px !important; /* A mágica da largura igual à imagem */
+        margin: 0 auto !important; /* Centraliza a caixa na tela */
+        gap: 12px !important;
+    }
+
+    /* Força os botões a esticarem até o limite de 320px */
+    .hero-actions a {
+        width: 100% !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        justify-content: center !important;
+    }
+
+    /* 4. Prepara o terreno da imagem para o meio da tela */
+    .hero-media-side {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* 5. CAIXA DA IMAGEM: Travada nos mesmos 320px */
+    .hero-image-wrapper {
+        width: 100% !important;
+        max-width: 320px !important; /* Exatamente a mesma largura dos botões */
+        margin: 0 auto !important;
+    }
+} 
+
+/* Devolve o efeito magnético apenas para o toque de dedo no Mobile */
+@media (max-width: 992px) {
+    .destaques-grid {
+        scroll-snap-type: x mandatory !important;
+    }
 }
 
-header.main-header .mega-dropdown.menu-ativo .mega-menu * {
-    visibility: visible !important;
+
+/* =========================================================
+   CORREÇÃO DEFINITIVA DOS CARDS NO MOBILE (1 CARD POR VEZ)
+========================================================= */
+@media (max-width: 992px) {
+    .destaque-card {
+        /* A MÁGICA: O card agora ocupa 85% da tela do celular, ficando largo, legível e centralizado */
+        flex: 0 0 85% !important; 
+        min-width: 85% !important; 
+        max-width: 85% !important;
+        
+        scroll-snap-align: center !important; /* Trava o card bem no meio da tela ao arrastar */
+    }
+
+    /* Ajusta o espaçamento lateral do carrossel para dar respiro ao primeiro e último card */
+    .destaques-grid {
+        padding: 0 15px !important;
+    }
+}
+
+/* =========================================================
+   MENU NA MESMA LINHA COM ROLAGEM BRANCA (SEM CORTAR ACERVOS)
+========================================================= */
+@media (min-width: 700px) {
+    /* 1. Esconde o menu hambúrguer no PC */
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    /* 2. Coloca Logo e Menu na mesma linha perfeitamente */
+    header.main-header .header-container {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        position: relative !important; /* Torna o cabeçalho a âncora geral */
+    }
+
+    /* 3. A caixa de botões ganha a barra rolável branca */
+    header.main-header .nav-wrap {
+        display: flex !important;
+        flex: 1 !important; /* Ocupa todo o espaço restante ao lado da logo */
+        overflow-x: auto !important; /* Esconde o que sobrar e cria a barra */
+        
+        /* O SEGREDO: position static liberta o dropdown de ser cortado pela rolagem */
+        position: static !important; 
+        
+        margin-top: 0 !important;
+        padding-bottom: 5px !important;
+    }
+
+    /* 4. Proíbe os botões de caírem para a linha de baixo */
+    header.main-header .nav-menu {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        gap: 18px !important;
+        margin-left: auto !important; /* Empurra os botões para a direita */
+        padding: 0 !important;
+        position: static !important;
+    }
+
+    /* 5. Impede os botões de amassarem */
+    header.main-header .nav-menu > li {
+        flex-shrink: 0 !important; 
+        position: static !important; /* Solta a âncora individual para não bugar */
+    }
+
+    header.main-header .nav-menu > li > a {
+        display: inline-block !important;
+        white-space: nowrap !important; /* Proíbe o texto de quebrar */
+        border-bottom: none !important;
+    }
+
+    /* 6. Encaixa o Acervos solto no meio da tela (livre da barra de rolagem) */
+    header.main-header .mega-menu, 
+    header.main-header .dropdown-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 100% !important;
+        max-width: 1160px !important;
+        min-width: 700px !important;
+        z-index: 99999 !important;
+    }
+
+    /* 7. O visual da barrinha branca elegante */
+    header.main-header .nav-wrap::-webkit-scrollbar {
+        height: 5px !important;
+    }
+    header.main-header .nav-wrap::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 4px !important;
+    }
+    header.main-header .nav-wrap::-webkit-scrollbar-thumb {
+        background: #ffffff !important;
+        border-radius: 4px !important;
+    }
+}
+
+
+header.main-header .nav-menu {
+    background-color: transparent !important; 
+    
+    box-shadow: none !important; 
+    border: none !important;
+}
+
+header.main-header .nav-wrap {
+    background-color: transparent !important;
 }

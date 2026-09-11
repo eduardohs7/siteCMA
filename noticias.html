@@ -8,7 +8,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css?v=47">
+   <link rel="stylesheet" href="style.css?v=55">
    <link rel="icon" type="image/png" href="images/noticiaDiversos/favicon.ico">
    <link href="images/noticiaDiversos/favicon.png" type="image/png" rel="icon">
    <link href="images/noticiaDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
@@ -70,7 +70,7 @@
 
             <!-- NOTÍCIA 04: INFORME DE INDISPONIBILIDADE DE DOCUMENTOS -->
             <div class="noticias-content">
-               <div class="card-noticia-preview" onclick='abrirNoticia({
+               <div class="card-noticia-preview" id="noticia-1" onclick='abrirNoticia({
                   categoria: "INFORME",
                   titulo: "Redisponibilização do acervo judicial",
                   fotos: [
@@ -97,10 +97,10 @@
                </div>
 
 
-            <!-- NOTÍCIA 04: INFORME DE INDISPONIBILIDADE DE DOCUMENTOS -->
-               <div class="card-noticia-preview" onclick='abrirNoticia({
+            <!-- NOTÍCIA 03: NOVIDADE NO ACERVO -->
+               <div class="card-noticia-preview" id="noticia-4" onclick='abrirNoticia({
                   categoria: "NOVIDADE NO ACERVO",
-                  titulo: "Indisponibilização parcial do acervo judicial",
+                  titulo: "Documentação Cível Assistência Judiciária Disponível para Pesquisa",
                   fotos: [
                      "images/imagemNoticia32/1.jpg",
                      "images/imagemNoticia32/2.jpg",
@@ -130,7 +130,7 @@
                   </div>
                </div>
 
-               <div class="card-noticia-preview" onclick='abrirNoticia({
+               <div class="card-noticia-preview" id="noticia-2" onclick='abrirNoticia({
                   categoria: "DICAS DE LEITURA",
                   titulo: "Dicas de leitura sobre a pajelança, medicina e práticas populares na Amazônia",
                   data: "Biblioteca CMA",
@@ -176,7 +176,7 @@
                </div>
 
    
-                  <div class="card-noticia-preview" onclick='abrirNoticia({
+                  <div class="card-noticia-preview" id="noticia-3" onclick='abrirNoticia({
                      categoria: "ACERVO FOTOGRÁFICO",
                      titulo: "Registros fotográficos de Belém no inicio do Século XX",
                      fotos: [
@@ -189,7 +189,6 @@
                   })'>
                      <!-- Imagem de Capa -->
                      <div class="card-noticia-thumb">
-                           <!-- Troquei a foto aqui para a correta de Belém Antiga -->
                            <img src="images/noticiaDiversos/post-novidades-site.png" alt="Capa da Notícia">
                      </div>
 
