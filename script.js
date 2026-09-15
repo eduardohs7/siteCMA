@@ -70,10 +70,6 @@ const acervoData = {
                 },
                 "Documentos Digitalizados": {
                     "Processos-Crime pré-1870": "https://ufpabr.sharepoint.com/:f:/g/IgAYqLvkfLw5QqZOILqPQdNDAa5r7tAnLUFtI0qzGnvtxfw?e=xhyuri",
-                    "Processo Severa Romana": {
-                        "Severa Romana": "https://ufpabr.sharepoint.com/:b:/g/IQDGSrIHTQG0SaJ9mMeWz8A1AWN_Qi6ncQuTQaA-F8lLsFw?e=YN65Dt",
-                        "Severa Romana Transcrito": "https://ufpabr.sharepoint.com/:b:/g/IQAGMDSOdx2fQ4qFCcZwxigsAbXVGTU479_u1Vj4Fnkc_rA?e=9FTPle"
-                    },
                     "1ª Vara Penal": "https://ufpabr.sharepoint.com/:b:/g/IQCrSqlxCCWDQ7TZzjE5OkIRAajWH8CZLCFKHwRy2mCHuRw?e=SNU8ZV"
                 }
             },
@@ -93,6 +89,18 @@ const acervoData = {
         description: "Constituídas a partir de doações de acervos bibliográficos por instituições e pesquisadores, a Biblioteca do Centro de Memória da Amazônia guarda um número considerável de coleções de livros.",
         items: {
             "Acesse a Biblioteca": "biblioteca.html"
+        }
+    },
+    "Obras Raras": {
+        description: "",
+        items: {
+                "Documentos Digitalizados": {
+            "Processo Severa Romana": {
+                "Severa Romana": "https://ufpabr.sharepoint.com/:b:/g/IQDGSrIHTQG0SaJ9mMeWz8A1AWN_Qi6ncQuTQaA-F8lLsFw?e=YN65Dt",
+                "Severa Romana Transcrito": "https://ufpabr.sharepoint.com/:b:/g/IQAGMDSOdx2fQ4qFCcZwxigsAbXVGTU479_u1Vj4Fnkc_rA?e=9FTPle"
+            },
+                "Atividades Subversivas": "https://ufpabr.sharepoint.com/:b:/g/IQCujChYsDtESLP4yNSItgSIATnaMZBQ0mb8Xh1-60hP3mo?e=NaqCEq"
+        }
         }
     },
     "Projetos": {
@@ -310,9 +318,7 @@ function createNextColumn(level, containerId = 'millerContainer') {
     }
 }
 
-/**
- * 7. FUNÇÕES DE DESCRIÇÃO
- */
+/* 7. FUNCOES DE DESCRICAOO*/
 function showDescription(text) {
     let detailsBox = document.getElementById('millerDetails');
     if (!detailsBox) return;
@@ -328,9 +334,9 @@ function clearDescription() {
     }
 }
 
-// ==========================================
-// MESTRE: MENU RESPONSIVO + LÓGICA DO ACERVO + VOLTAR AO TOPO
-// ==========================================
+
+// : MENU RESPONSIVO + LÓGICA DO ACERVO + VOLTAR AO TOPO
+
 document.addEventListener("DOMContentLoaded", function() {
     const headerContainer = document.querySelector('.header-container');
     const navWrap = document.querySelector('.nav-wrap');
