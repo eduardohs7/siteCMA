@@ -9,7 +9,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css?v=47">
+   <link rel="stylesheet" href="style.css?v=75">
    <link rel="icon" type="image/png" href="images/noticiaDiversos/favicon.ico">
    <link href="images/noticiaDiversos/favicon.png" type="image/png" rel="icon">
    <link href="images/noticiaDiversos/favicon-apple.png" sizes="128x128" type="image/png" rel="apple-touch-icon">
@@ -136,6 +136,26 @@
       @media (max-width: 768px) {
          .lightbox-btn { font-size: 40px; padding: 10px; }
       }
+
+
+   @media (max-width: 768px) {
+    /* 2. Estica a moldura até quase colar na tela */
+    .clipping-card {
+        width: 100% !important;
+        padding: 20px 12px !important; /* O 12px deixa a gordura interna bem fininha */
+        margin: 0 0 20px 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Conserta o texto para não ficar cheio de buracos */
+    .clipping-card p, 
+    .clipping-text {
+        text-align: left !important;
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+    }
+}
+
    </style>
 </head>
 <body>
@@ -353,7 +373,7 @@
    </div>
 
    <!-- Script JS externo e Script da Galeria -->
-   <script src="script.js?v=7"></script>
+   <script src="script.js?v=14"></script>
    
    <script>
       // Lógica do Botão "Mostrar Mais / Mostrar Menos"

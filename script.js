@@ -70,10 +70,6 @@ const acervoData = {
                 },
                 "Documentos Digitalizados": {
                     "Processos-Crime pré-1870": "https://ufpabr.sharepoint.com/:f:/g/IgAYqLvkfLw5QqZOILqPQdNDAa5r7tAnLUFtI0qzGnvtxfw?e=xhyuri",
-                    "Processo Severa Romana": {
-                        "Severa Romana": "https://ufpabr.sharepoint.com/:b:/g/IQDGSrIHTQG0SaJ9mMeWz8A1AWN_Qi6ncQuTQaA-F8lLsFw?e=YN65Dt",
-                        "Severa Romana Transcrito": "https://ufpabr.sharepoint.com/:b:/g/IQAGMDSOdx2fQ4qFCcZwxigsAbXVGTU479_u1Vj4Fnkc_rA?e=9FTPle"
-                    },
                     "1ª Vara Penal": "https://ufpabr.sharepoint.com/:b:/g/IQCrSqlxCCWDQ7TZzjE5OkIRAajWH8CZLCFKHwRy2mCHuRw?e=SNU8ZV"
                 }
             },
@@ -93,6 +89,18 @@ const acervoData = {
         description: "Constituídas a partir de doações de acervos bibliográficos por instituições e pesquisadores, a Biblioteca do Centro de Memória da Amazônia guarda um número considerável de coleções de livros.",
         items: {
             "Acesse a Biblioteca": "biblioteca.html"
+        }
+    },
+    "Obras Raras": {
+        description: "",
+        items: {
+                "Documentos Digitalizados": {
+            "Processo Severa Romana": {
+                "Severa Romana": "https://ufpabr.sharepoint.com/:b:/g/IQDGSrIHTQG0SaJ9mMeWz8A1AWN_Qi6ncQuTQaA-F8lLsFw?e=YN65Dt",
+                "Severa Romana Transcrito": "https://ufpabr.sharepoint.com/:b:/g/IQAGMDSOdx2fQ4qFCcZwxigsAbXVGTU479_u1Vj4Fnkc_rA?e=9FTPle"
+            },
+                "Atividades Subversivas": "https://ufpabr.sharepoint.com/:b:/g/IQCujChYsDtESLP4yNSItgSIATnaMZBQ0mb8Xh1-60hP3mo?e=NaqCEq"
+        }
         }
     },
     "Projetos": {
@@ -171,10 +179,10 @@ const acervoData = {
                     "Acessar Documentação do CAHIS": "https://ufpabr.sharepoint.com/:b:/g/IQDuTD_zYQPrSrkaFE22hAdAAaGttt_k8rmt-VcgqGK50SE?e=XQQ2wW"
                 }
             },
-            "Tratamento Arquivístico - Registros Civis (1888-1908)": {
+            "Tratamento Arquivístico - Registros Civis de Casamentos (1888-1908)": {
                 description: "O Projeto de extensão “Tratamento arquivístico do Acervo do Centro de Memória da Amazônia” foi aprovado pelo edital PIBEX/PROEX 2024 e pela congregação do Instituto de Ciências Sociais Aplicadas (ICSA/UFPA) por meio da Portaria 061/2024. O projeto foi executado pela Faculdade de Arquivologia da Universidade Federal do Pará como parte do componente curricular de extensão obrigatória. Por meio desta iniciativa realizou-se a leitura e transcrição paleográficas de registros civis de casamento elaborados entre os anos de 1888 e 1908, visando recuperar e preservar o teor informacional dessa documentação. Os catálogos resultantes das atividades do projeto, aqui disponibilizados, constituem fontes úteis ao exercício da cidadania e a preservação da memória e da história regional, especialmente em relação ao contexto da Belle Époque amazônica. As informações dos catálogos podem ser complementadas por meio de consulta interna às planilhas elaboradas pela equipe do Projeto, nos quais, além dos dados presentes nos catálogos, constam idade, estado civil, profissão, além de observações sobre retificações posteriores etc. Como o projeto ainda está em andamento, atualizações serão efetuadas periodicamente.",
                 items: {
-                    "Acessar Registros Civis": "https://ufpabr.sharepoint.com/:b:/g/IQBMBxBU_u-4TZ4o_q97Uqo6AeLbZOsQNhxmrmAyYkIH_Sg?e=hdVSqw"
+                    "Acessar Registros Civis de Casamentos": "https://ufpabr.sharepoint.com/:b:/g/IQBMBxBU_u-4TZ4o_q97Uqo6AeLbZOsQNhxmrmAyYkIH_Sg?e=hdVSqw"
                 }
             }
         }
@@ -310,9 +318,7 @@ function createNextColumn(level, containerId = 'millerContainer') {
     }
 }
 
-/**
- * 7. FUNÇÕES DE DESCRIÇÃO
- */
+/* 7. FUNCOES DE DESCRICAOO*/
 function showDescription(text) {
     let detailsBox = document.getElementById('millerDetails');
     if (!detailsBox) return;
@@ -328,9 +334,9 @@ function clearDescription() {
     }
 }
 
-// ==========================================
-// MESTRE: MENU RESPONSIVO + LÓGICA DO ACERVO + VOLTAR AO TOPO
-// ==========================================
+
+// : MENU RESPONSIVO + LÓGICA DO ACERVO + VOLTAR AO TOPO
+
 document.addEventListener("DOMContentLoaded", function() {
     const headerContainer = document.querySelector('.header-container');
     const navWrap = document.querySelector('.nav-wrap');
@@ -432,6 +438,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
 // =========================================
 // SISTEMA DE MODAL FLUTUANTE DE NOTÍCIAS + CARROSSEL
 // =========================================
@@ -528,3 +535,98 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') fecharNoticia();
     });
 });
+
+
+
+/* =========================================================
+   ABRIR MODAL AUTOMATICAMENTE VINDO DA HOME (VERSÃO DIRETA)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+        const idAlvo = window.location.hash; // ex: "#noticia-1"
+        const cardAlvo = document.querySelector(idAlvo);
+        
+        if (cardAlvo) {
+            setTimeout(() => {
+                // 1. Rola suavemente até o card
+                cardAlvo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // 2. Executa diretamente o código JavaScript escrito no onclick do card
+                const funcaoOnClick = cardAlvo.getAttribute('onclick');
+                if (funcaoOnClick) {
+                    // Usa Function para disparar a função abrirNoticia com os dados dela
+                    new Function(funcaoOnClick)();
+                }
+            }, 400); 
+        }
+    }
+});
+
+/* =========================================================
+   CARROSSEL DE NOTÍCIAS (SETAS, BOLINHAS E DESLIZE)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+    const gridNoticias = document.querySelector('.destaques-grid');
+    const setaEsquerda = document.querySelector('.left-arrow');
+    const setaDireita = document.querySelector('.right-arrow');
+    const bolinhas = document.querySelectorAll('.destaques-dot');
+
+    if (gridNoticias && setaEsquerda && setaDireita && bolinhas.length > 0) {
+        
+        // Função que acende a bolinha certa dependendo de onde o carrossel está
+        function atualizarBolinhas() {
+            const scrollAtual = gridNoticias.scrollLeft;
+            const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25; // 25 do gap
+            
+            // Calcula em qual "página" estamos (0 ou 1)
+            let index = Math.round(scrollAtual / larguraCard);
+            
+            // Garante de não acender uma bolinha que não existe
+            if (index >= bolinhas.length) index = bolinhas.length - 1;
+
+            // Apaga todas e acende só a atual
+            bolinhas.forEach(b => b.classList.remove('ativo'));
+            if (bolinhas[index]) bolinhas[index].classList.add('ativo');
+        }
+
+        // Evento da Seta Esquerda
+        setaEsquerda.addEventListener('click', function() {
+            const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25;
+            // Deixa o CSS assumir a suavidade do movimento
+            gridNoticias.scrollLeft -= larguraCard;
+        });
+
+        // Evento da Seta Direita
+        setaDireita.addEventListener('click', function() {
+            const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25;
+            // Deixa o CSS assumir a suavidade do movimento
+            gridNoticias.scrollLeft += larguraCard;
+        }   );
+
+        // Evento da Seta Direita
+        setaDireita.addEventListener('click', function() {
+            const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25;
+            gridNoticias.scrollBy({ left: larguraCard, behavior: 'smooth' });
+        });
+
+        // Torna as bolinhas clicáveis
+        bolinhas.forEach((bolinha) => {
+            bolinha.addEventListener('click', function() {
+                const indexClicado = parseInt(this.getAttribute('data-index'));
+                const larguraCard = gridNoticias.querySelector('.destaque-card').offsetWidth + 25;
+                
+                // Rola o carrossel exatamente para a posição da bolinha
+                gridNoticias.scrollTo({
+                    left: larguraCard * indexClicado,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sincroniza as bolinhas se o usuário arrastar com o dedo (Mobile)
+        gridNoticias.addEventListener('scroll', function() {
+            clearTimeout(gridNoticias.scrollTimeout);
+            gridNoticias.scrollTimeout = setTimeout(atualizarBolinhas, 100);
+        });
+    }
+});0
